@@ -1,0 +1,430 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Provolution Project Impact Assessment Schema",
+  "version": "0.1",
+  "description": "Standard template for multi-dimensional impact assessment of Provolution projects",
+  "type": "object",
+  
+  "required": [
+    "project_meta",
+    "ghg_accounting",
+    "environmental",
+    "social",
+    "governance"
+  ],
+  
+  "properties": {
+    
+    "project_meta": {
+      "type": "object",
+      "required": ["id", "title", "location", "lifetime_years", "provolution_domain"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-H][0-9]{2}$",
+          "description": "Project ID (e.g., D17 for Hanf-Ökosystem)",
+          "examples": ["A01", "B07", "D17"]
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "short_description": {
+          "type": "string",
+          "maxLength": 500
+        },
+        "location": {
+          "type": "object",
+          "properties": {
+            "country": {"type": "string"},
+            "region": {"type": "string"},
+            "coordinates": {
+              "type": "object",
+              "properties": {
+                "lat": {"type": "number", "minimum": -90, "maximum": 90},
+                "lon": {"type": "number", "minimum": -180, "maximum": 180}
+              }
+            },
+            "context": {
+              "type": "string",
+              "enum": ["rural", "urban", "peri-urban", "mixed"]
+            }
+          }
+        },
+        "lifetime_years": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "description": "Project lifetime in years"
+        },
+        "provolution_domain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["A_governance", "B_production", "C_energy", "D_food_land", "E_education", "F_technology", "G_monitoring", "H_meta"]
+          },
+          "minItems": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": ["idea", "pilot", "scale-up", "mature", "completed"],
+          "description": "Project maturity stage"
+        }
+      }
+    },
+    
+    "ghg_accounting": {
+      "type": "object",
+      "required": ["baseline_scenario", "project_scenario", "scopes", "annual_impact"],
+      "properties": {
+        "baseline_scenario": {
+          "type": "string",
+          "description": "Description of business-as-usual scenario"
+        },
+        "project_scenario": {
+          "type": "string",
+          "description": "Description of project intervention"
+        },
+        "scopes": {
+          "type": "object",
+          "properties": {
+            "scope1_direct": {"type": "boolean"},
+            "scope2_energy": {"type": "boolean"},
+            "scope3_value_chain": {"type": "boolean"}
+          }
+        },
+        "annual_impact": {
+          "type": "object",
+          "description": "GHG impact by gas type (negative = reduction)",
+          "properties": {
+            "co2": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number", "description": "t CO2/year"},
+                "uncertainty": {
+                  "type": "object",
+                  "properties": {
+                    "p05": {"type": "number"},
+                    "p95": {"type": "number"}
+                  }
+                }
+              }
+            },
+            "ch4_co2eq": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "gwp_factor": {"type": "number", "default": 28}
+              }
+            },
+            "n2o_co2eq": {
+              "type": "object",
+              "properties": {
+                "value": {"type": "number"},
+                "gwp_factor": {"type": "number", "default": 265}
+              }
+            },
+            "f_gases_co2eq": {
+              "type": "number"
+            },
+            "total_co2eq": {
+              "type": "number",
+              "description": "Total GHG impact in t CO2eq/year"
+            }
+          }
+        },
+        "trajectory": {
+          "type": "object",
+          "description": "GHG impact over time",
+          "properties": {
+            "year1": {"type": "number"},
+            "year5": {"type": "number"},
+            "year10": {"type": "number"},
+            "year20": {"type": "number"}
+          }
+        },
+        "leakage_risk": {
+          "type": "object",
+          "properties": {
+            "percentage": {"type": "number", "minimum": 0, "maximum": 100},
+            "mitigation": {"type": "string"}
+          }
+        }
+      }
+    },
+    
+    "environmental": {
+      "type": "object",
+      "description": "Environmental impacts beyond GHG",
+      "properties": {
+        "water": {
+          "type": "object",
+          "properties": {
+            "consumption_change_m3_per_year": {"type": "number"},
+            "quality_impact": {
+              "type": "string",
+              "enum": ["very_positive", "positive", "neutral", "negative", "very_negative"]
+            },
+            "description": {"type": "string"}
+          }
+        },
+        "land_use": {
+          "type": "object",
+          "properties": {
+            "area_affected_ha": {"type": "number"},
+            "type_of_change": {
+              "type": "string",
+              "enum": ["reforestation", "afforestation", "restoration", "conversion", "intensification", "no_change"]
+            },
+            "soil_quality_change": {
+              "type": "string",
+              "enum": ["very_positive", "positive", "neutral", "negative", "very_negative"]
+            },
+            "soil_carbon_sequestration_t_per_ha_year": {"type": "number"}
+          }
+        },
+        "biodiversity": {
+          "type": "object",
+          "properties": {
+            "impact_assessment": {
+              "type": "string",
+              "enum": ["very_positive", "positive", "neutral", "negative", "very_negative"]
+            },
+            "msa_change": {
+              "type": "number",
+              "description": "Change in Mean Species Abundance (0-1 scale)",
+              "minimum": -1,
+              "maximum": 1
+            },
+            "habitat_affected": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["forest", "grassland", "wetland", "marine", "urban_green", "agricultural"]
+              }
+            },
+            "description": {"type": "string"}
+          }
+        }
+      }
+    },
+    
+    "social": {
+      "type": "object",
+      "description": "Social and equity impacts",
+      "properties": {
+        "equity_score": {
+          "type": "number",
+          "minimum": -1,
+          "maximum": 1,
+          "description": "Distributional impact: +1 = very progressive, 0 = neutral, -1 = very regressive"
+        },
+        "beneficiaries": {
+          "type": "object",
+          "properties": {
+            "low_income_share": {"type": "number", "minimum": 0, "maximum": 1},
+            "medium_income_share": {"type": "number", "minimum": 0, "maximum": 1},
+            "high_income_share": {"type": "number", "minimum": 0, "maximum": 1}
+          }
+        },
+        "resilience": {
+          "type": "object",
+          "properties": {
+            "climate_risk_reduction": {
+              "type": "object",
+              "properties": {
+                "flood": {"type": "number", "description": "% reduction"},
+                "drought": {"type": "number"},
+                "heat": {"type": "number"}
+              }
+            },
+            "food_security_impact": {
+              "type": "string",
+              "enum": ["very_positive", "positive", "neutral", "negative", "very_negative"]
+            },
+            "energy_security_impact": {
+              "type": "string",
+              "enum": ["very_positive", "positive", "neutral", "negative", "very_negative"]
+            }
+          }
+        },
+        "co_benefits": {
+          "type": "object",
+          "properties": {
+            "health": {
+              "type": "object",
+              "properties": {
+                "air_quality_improvement": {"type": "string"},
+                "avoided_deaths_per_year": {"type": "integer"},
+                "economic_value_usd_per_year": {"type": "number"}
+              }
+            },
+            "employment": {
+              "type": "object",
+              "properties": {
+                "jobs_created": {"type": "integer"},
+                "jobs_transformed": {"type": "integer"},
+                "living_wage_percentage": {"type": "number", "minimum": 0, "maximum": 100}
+              }
+            },
+            "education": {
+              "type": "object",
+              "properties": {
+                "climate_literacy_improvement": {"type": "number"},
+                "technical_skills_improvement": {"type": "number"}
+              }
+            }
+          }
+        }
+      }
+    },
+    
+    "governance": {
+      "type": "object",
+      "description": "Governance and compliance",
+      "required": ["compliance_check"],
+      "properties": {
+        "compliance_check": {
+          "type": "object",
+          "properties": {
+            "environmental_law": {"type": "boolean", "description": "Complies with applicable environmental regulations"},
+            "data_protection": {"type": "boolean"},
+            "community_consent": {"type": "boolean", "description": "Free, Prior, Informed Consent (FPIC) obtained"},
+            "human_rights": {"type": "boolean"}
+          }
+        },
+        "certification": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Gold_Standard", "VCS_Verra", "SBTi", "EU_Taxonomy", "B_Corp", "Fair_Trade", "Organic", "Other"]
+          }
+        },
+        "greenwashing_checks": {
+          "type": "object",
+          "properties": {
+            "additionality_verified": {"type": "boolean"},
+            "permanence_assessed": {"type": "boolean"},
+            "leakage_prevented": {"type": "boolean"},
+            "double_counting_prevented": {"type": "boolean"}
+          }
+        },
+        "red_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identified risks or concerns"
+        }
+      }
+    },
+    
+    "energy_rebound": {
+      "type": "object",
+      "description": "Energy footprint and rebound effects (optional)",
+      "properties": {
+        "digitalization_footprint": {
+          "type": "object",
+          "properties": {
+            "data_centers_kwh_per_year": {"type": "number"},
+            "networks_kwh_per_year": {"type": "number"},
+            "devices_kwh_per_year": {"type": "number"},
+            "total_emissions_t_co2eq": {"type": "number"}
+          }
+        },
+        "rebound_risk": {
+          "type": "object",
+          "properties": {
+            "direct_rebound_factor": {"type": "number", "minimum": 0, "maximum": 1},
+            "indirect_rebound_factor": {"type": "number"},
+            "mitigation_strategy": {"type": "string"}
+          }
+        }
+      }
+    },
+    
+    "transformation_pathway": {
+      "type": "object",
+      "description": "Systemic transformation context (optional)",
+      "properties": {
+        "pathway_alignment": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["P1_Energy_Industry", "P2_Land_Agriculture", "P3_Resilient_Communities", "P4_Circular_Economy", "P5_Digital_Transformation"]
+          }
+        },
+        "lock_in_risk": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Risk of creating path dependencies"
+        },
+        "carbon_budget_contribution": {
+          "type": "number",
+          "description": "Cumulative CO2eq reduction contribution to 1.5°C budget (Gt)"
+        }
+      }
+    },
+    
+    "secj_integration": {
+      "type": "object",
+      "description": "Integration with Probatio Systemica SEC-J Framework (J-Score added v1.0, see 06_CANON/SECJ_SPEC_v1.0.md). Replaces sec_integration as of 2026-04-27.",
+      "properties": {
+        "sufficiency_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "efficiency_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "consistency_score": {"type": "number", "minimum": 0, "maximum": 1},
+        "justice_score": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "J = (equity_score + 1) / 2. Pflicht bei vollstaendiger SEC-J-Bewertung. null = noch nicht bewertet. J-Veto ausgeloest wenn J < 0.50."
+        },
+        "veto_triggered": {
+          "type": ["boolean", "null"],
+          "description": "true wenn justice_score < 0.50 (J-Veto aktiv). Bei veto_triggered = true ist secj_total null und die Massnahme nicht zulaessig."
+        },
+        "secj_total": {
+          "type": ["number", "null"],
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Aggregierter SEC-J-Score. null wenn veto_triggered = true oder justice_score = null."
+        },
+        "calculation_method": {
+          "type": "string",
+          "default": "secj = 0.40*S + 0.25*E + 0.15*C + 0.20*J (Provolution SEC-J v1.0, Gewichte: S=0.40, E=0.25, C=0.15, J=0.20)"
+        }
+      }
+    },
+    
+    "data_quality": {
+      "type": "object",
+      "description": "Data quality and uncertainty assessment",
+      "properties": {
+        "tier_level": {
+          "type": "string",
+          "enum": ["tier_1_ipcc_defaults", "tier_2_regional", "tier_3_measured"],
+          "description": "IPCC tier system for data quality"
+        },
+        "uncertainty_method": {
+          "type": "string",
+          "enum": ["monte_carlo", "expert_judgment", "sensitivity_analysis", "none"]
+        },
+        "confidence_level": {
+          "type": "string",
+          "enum": ["very_low", "low", "medium", "high", "very_high"]
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reference": {"type": "string"},
+              "url": {"type": "string", "format": "uri"},
+              "date": {"type": "string", "format": "date"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

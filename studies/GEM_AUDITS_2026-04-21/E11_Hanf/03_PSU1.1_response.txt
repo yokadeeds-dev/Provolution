@@ -1,0 +1,6 @@
+# PSU 1.1 Response (placeholder)
+
+Original content removed for privacy reasons (2026-04-27).
+Reason: contained absolute Windows path with username and
+reference to unrelated external project.
+See ERRATUM_2026-04-27.md for context if relevant.

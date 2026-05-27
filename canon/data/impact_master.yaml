@@ -1,0 +1,738 @@
+# Impact Master Data - Single Source of Truth (Multi-Impact)
+# Provolution Framework - Multi-Dimensional Impact Assessment
+# Version: 2.0 (erweitert von CO2-only zu Multi-Impact)
+# Datum: 2026-01-24
+# Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
+#
+# Kanonische Hebel-Liste: 06_CANON/HEBEL_KATALOG_v1.0.md
+# Diese Datei ist operationale Multi-Impact-Schicht für Hebel
+# mit quantifizierten Werten.
+
+meta:
+  version: "2.0"
+  last_updated: "2026-01-24"
+  description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
+  source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
+  schema_version: "0.1"
+  
+  changelog:
+    v2_1_2026q1:
+      - "Portfolio-Benchmark Q1/2026 initial kalibriert: 26.0 EUR/t CO2 (10y)"
+      - "n=11 Impact-Apps eingerechnet, 19 Enabler-Apps separat klassifiziert"
+      - "D16 (CO2-Senken Boden) stellt den Median-cost_rate"
+      - "Outlier-Flags: B07, B09 (ultra-low plausibel), D18 (high plausibel)"
+      - "Runbook-Referenz: 20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md v1.0"
+    v2_0:
+      - "Erweitert von CO2-only zu Multi-Impact Framework"
+      - "GHG: CH4, N2O, F-Gase ergänzt"
+      - "Environmental: Wasser, Land, Biodiversität"
+      - "Social: Equity, Resilience, Co-Benefits"
+      - "Energy: Rebound-Effekte, Digitalisierung"
+      - "Governance: Compliance, Greenwashing-Schutz"
+    v1_1:
+      - "Wissenschaftliche Methodik-Sektion"
+      - "GHG Protocol + IPCC AR6 Standards"
+    v1_0:
+      - "Initial Release: CO2-Bilanz"
+
+# ============================================================================
+# TEIL 1: GREENHOUSE GAS (GHG) ACCOUNTING - ERWEITERT
+# ============================================================================
+
+ghg_accounting:
+  
+  # CO2-Bilanz (wie bisher)
+  co2:
+    gesamt:
+      reduktion_hart: -58.0  # Gt CO₂eq/Jahr — n=40 (Basis 30 Apps -50.7 + I33/I34/J01 -4.3 + C-2026-008 PF+Hanf -3.0)
+      vermeidung_weich: -28.5
+      total_potenzial: -85.5
+      anteil_global_emissions: 1.04  # >100% = Net Negative (inkl. aktive Sequestration D16)
+      korrelation_theorie_praxis: 0.94
+    
+    # Domain-Totals (A-J) — synchron zu co2_master.yaml
+    domains:
+      A_governance: -8.2
+      B_production: -15.8
+      C_energy: -12.3
+      D_food_land: -9.4
+      E_education: -1.8
+      F_technology: -2.1
+      G_monitoring: -0.6
+      H_meta: -0.5
+      I_mobilitaet: -1.3
+      J_konstruktion: -3.0
+
+  # Weitere Treibhausgase (NEU)
+  methane_ch4:
+    description: "Methan-Emissionen (CH4) in CO2eq-Äquivalenten"
+    gwp_factor: 28  # GWP100 nach IPCC AR6
+    
+    domains:
+      B_production:
+        total: -2.8  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Abfallmanagement (B10): Reduktion durch Kreislaufwirtschaft"
+          - "Biomasse (B12): Vermiedene Deponierung"
+      
+      D_food_land:
+        total: -3.2  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Regenerative Landwirtschaft (D15): Verbesserte Gülle-Bewirtschaftung"
+          - "Ernährungswandel (D18): Reduzierte Tierhaltung"
+      
+      C_energy:
+        total: -1.5  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Leckagen in Erdgas-Infrastruktur: Vermieden durch Elektrifizierung"
+    
+    gesamt: -7.5  # Gt CO₂eq/Jahr (zusätzlich zu CO₂)
+    unsicherheit: [-9.5, -5.8]  # 95% CI
+  
+  nitrous_oxide_n2o:
+    description: "Lachgas-Emissionen (N2O) in CO2eq-Äquivalenten"
+    gwp_factor: 265  # GWP100 nach IPCC AR6
+    
+    domains:
+      D_food_land:
+        total: -4.8  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Regenerative Landwirtschaft (D15): Reduzierter Mineraldünger"
+          - "Präzisionslandwirtschaft: Optimierte N-Ausbringung"
+      
+      B_production:
+        total: -0.8  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Industrieprozesse: Verbesserte Katalysatoren"
+    
+    gesamt: -5.6  # Gt CO₂eq/Jahr
+    unsicherheit: [-7.2, -4.3]  # 95% CI
+  
+  f_gases:
+    description: "Fluorierte Gase (HFCs, PFCs, SF6, NF3)"
+    
+    domains:
+      C_energy:
+        total: -0.4  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Kältemittel in Wärmepumpen: Natürliche Alternativen"
+      
+      B_production:
+        total: -0.3  # Gt CO₂eq/Jahr
+        hauptquellen:
+          - "Elektroindustrie: SF6-Ersatz in Schaltanlagen"
+    
+    gesamt: -0.7  # Gt CO₂eq/Jahr
+    unsicherheit: [-1.0, -0.5]  # 95% CI
+  
+  # Gesamt-GHG-Bilanz (ALLE Treibhausgase)
+  ghg_total:
+    co2: -57.0
+    ch4_co2eq: -7.5
+    n2o_co2eq: -5.6
+    f_gases_co2eq: -0.7
+    total: -64.5  # Gt CO₂eq/Jahr
+    unsicherheit: [-81.2, -48.6]  # 95% CI
+
+# ============================================================================
+# TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
+# ============================================================================
+# Eigene strukturelle Schicht parallel zu A-J Domains
+# Variant C laut PHASE_6D_PLAN.md + 99_META/CODE_HANDOFF_2026-05-08.md
+# Quelle: 06_CANON/04_Band4_Community_Integrations.md
+
+community_integrations:
+  beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-J Hebel-Domains"
+  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.0) vs. reduktion_hart (-58.0)
+  integrations:
+    C-2026-008:
+      id: "C-2026-008"
+      hash: "PENDING"  # source_sha256 (Präzisionsfermentation.docx) — finaler Hash in Commit C/D
+      sec_community: 1.0
+      plausibility_p: 1.0
+      decision_date: "2026-04-18"
+      evidence_level: 2
+      dossier: "07_SOURCE/community_dossiers/generated/C-2026-008_dossier.md"
+      quelle: "06_CANON/04_Band4_Community_Integrations.md"
+      co2_impact_gt_per_year: -3.0  # PF -2.0 + Hanf-Kaskade -1.0
+
+# ============================================================================
+# TEIL 2: ENVIRONMENTAL IMPACTS (über GHG hinaus)
+# ============================================================================
+
+environmental:
+  
+  water:
+    description: "Wasserverbrauch und -qualität"
+    unit: "km³/Jahr (Kubikkilometer pro Jahr)"
+    
+    domains:
+      D_food_land:
+        consumption_change: -850  # km³/Jahr eingespart
+        hauptmaßnahmen:
+          - name: "D15 Regenerative Landwirtschaft"
+            impact: -420
+            mechanism: "Verbesserte Wasserretention im Boden"
+          - name: "D18 Ernährungswandel"
+            impact: -380
+            mechanism: "Reduzierte Fleischproduktion (wasserintensiv)"
+          - name: "D17 Hanf-Ökosystem"
+            impact: -50
+            mechanism: "Hanf vs. Baumwolle (10x weniger Wasser)"
+      
+      B_production:
+        consumption_change: -280  # km³/Jahr
+        hauptmaßnahmen:
+          - name: "B07 Kreislaufwirtschaft"
+            impact: -200
+            mechanism: "Recycling vs. Primärproduktion"
+          - name: "B11 Industrietransformation"
+            impact: -80
+            mechanism: "Prozessoptimierung"
+      
+      C_energy:
+        consumption_change: +45  # km³/Jahr (Erhöhung)
+        hinweis: "Kühlwasser für Wärmepumpen, teilweise Rückführung"
+    
+    gesamt: -1085  # km³/Jahr netto eingespart
+    kontext: "Globaler Wasserverbrauch ~4,600 km³/Jahr → 24% Einsparung"
+    qualität:
+      nitrat_reduction: "42%"  # Weniger Auswaschung
+      pesticide_reduction: "68%"  # Weniger Kontamination
+  
+  land_use:
+    description: "Landnutzung und Flächenbedarf"
+    unit: "Mha (Millionen Hektar)"
+    
+    land_use_change:
+      freed_land: +420  # Mha freigesetzt
+      mechanism: "Ernährungswandel + intensivere nachhaltige Landwirtschaft"
+      
+      allocation:
+        reforestation: +180  # Mha (43%)
+        rewilding: +120  # Mha (29%)
+        agroforestry: +80   # Mha (19%)
+        urban_greening: +40  # Mha (9%)
+    
+    soil_sealing_reduction:
+      urban_areas: -12  # Mha entsiegelt
+      mechanism: "Urbane Begrünung, Schwammstadt-Konzepte"
+    
+    soil_quality:
+      soil_organic_carbon_increase: +85  # Gt C über 50 Jahre
+      erosion_reduction: "65%"  # Weniger Bodenerosion
+      source: "D15, D16, D17 kombiniert"
+  
+  biodiversity:
+    description: "Biodiversitäts-Impact (qualitativ + quantifiziert wo möglich)"
+    
+    msa_index:
+      description: "Mean Species Abundance - Proxy für Biodiversität"
+      baseline: 0.58  # Aktuell (2025)
+      provolution_scenario_2050: 0.72  # Ziel
+      improvement: "+24%"
+      mechanism: "Habitat-Wiederherstellung, reduzierte Chemie, Agroforstwirtschaft"
+    
+    habitat_restoration:
+      forest: +180  # Mha
+      wetlands: +45  # Mha
+      grasslands: +95  # Mha
+      marine_protected: +120  # Mha (Ozeane)
+    
+    pesticide_reduction:
+      neonicotinoids: "-85%"
+      glyphosate: "-72%"
+      impact: "Insekten-Biomasse-Erholung erwartet"
+    
+    pollinator_support:
+      flower_strips: +8  # Mha
+      diverse_crops: +120  # Mha (D17 Hanf, diverse Fruchtfolgen)
+
+# ============================================================================
+# TEIL 3: SOCIAL & EQUITY IMPACTS
+# ============================================================================
+
+social:
+  
+  equity:
+    description: "Klimagerechtigkeit und Verteilungs-Effekte"
+    
+    distributional_impact:
+      beneficiaries:
+        low_income: 0.42  # 42% der Benefits gehen an unterste 40%
+        medium_income: 0.38
+        high_income: 0.20
+      
+      cost_burden:
+        low_income: 0.18  # 18% der Kosten
+        medium_income: 0.35
+        high_income: 0.47
+      
+      net_equity_score: +0.68  # Positiv = progressiv
+      interpretation: "Untere Einkommensgruppen profitieren überproportional"
+    
+    regional_equity:
+      global_north_south:
+        technology_transfer: "Systematisch in F23 (R&D), F25 (Tech-Transfer)"
+        capacity_building: "E19-E21 prioritär Global South"
+        financing: "Climate Finance inklusive Adaptation"
+      
+      rural_urban:
+        rural_benefits: "+45%"  # Überproportional (D15-D18, H30)
+        urban_benefits: "+35%"
+        peri_urban: "+20%"
+  
+  resilience:
+    description: "Anpassungsfähigkeit und Klimaresilienz"
+    
+    climate_risk_reduction:
+      flood_risk: "-38%"  # Durch Schwammstadt, Renaturierung
+      drought_risk: "-42%"  # Bodenwasser-Retention
+      heat_stress: "-28%"  # Urbane Begrünung
+    
+    food_security:
+      stability_index: +0.35  # Verbesserung
+      mechanism: "Diverse Fruchtfolgen, lokale Systeme, reduzierte Importabhängigkeit"
+    
+    energy_security:
+      import_dependency: "-68%"  # Fossile Energien
+      local_generation: "+85%"  # Erneuerbare
+  
+  co_benefits:
+    description: "Zusatznutzen über Klima hinaus"
+    
+    health:
+      air_quality_improvement:
+        pm2_5_reduction: "45%"
+        avoided_deaths_per_year: 2800000  # 2.8 Mio/Jahr
+        economic_value: 420  # Mrd USD/Jahr
+      
+      active_mobility:
+        health_gain: 180  # Mrd USD/Jahr
+        mechanism: "Fahrrad-Infrastruktur (C13, urbane Planung)"
+    
+    employment:
+      jobs_created: 42000000  # 42 Mio Jobs weltweit
+      domains:
+        renewables: 18000000
+        circular_economy: 12000000
+        regenerative_agriculture: 8000000
+        other: 4000000
+      
+      quality:
+        living_wage: "78%"  # Anteil mit existenzsicherndem Lohn
+        formal_employment: "85%"
+    
+    education:
+      climate_literacy: "+68%"  # E19-E21
+      technical_skills: "+55%"  # F22, F23
+
+# ============================================================================
+# TEIL 4: ENERGY & REBOUND EFFECTS
+# ============================================================================
+
+energy_system:
+  
+  digitalization_footprint:
+    description: "Energie-Fußabdruck der Provolution-Digitalisierung"
+    
+    components:
+      data_centers:
+        power_consumption: 2.8  # TWh/Jahr
+        emissions: 0.85  # Mt CO₂eq/Jahr
+        mechanism: "AI-Monitoring (G28), Plattform-Betrieb"
+      
+      networks:
+        power_consumption: 1.2  # TWh/Jahr
+        emissions: 0.35  # Mt CO₂eq/Jahr
+      
+      end_devices:
+        power_consumption: 3.5  # TWh/Jahr
+        emissions: 1.1  # Mt CO₂eq/Jahr
+        mechanism: "Sensoren, IoT, User Devices"
+      
+      total:
+        power: 7.5  # TWh/Jahr
+        emissions: 2.3  # Mt CO₂eq/Jahr
+        anteil_an_gesamtbilanz: 0.000035  # 0.0035% — minimal vs. -64.5 Gt
+    
+    mitigation:
+      renewable_powered: "100%"  # Ziel für alle Infrastruktur
+      efficiency_improvement: "+35%"  # Über 10 Jahre
+  
+  rebound_effects:
+    description: "Verhaltens- und System-Rebound bei Effizienz-Maßnahmen"
+    
+    types:
+      direct_rebound:
+        description: "Mehr Nutzung weil billiger/effizienter"
+        estimated_magnitude: 0.25  # 25% des Effizienzgewinns aufgezehrt
+        domains_affected: ["C_energy", "B_production"]
+        mitigation: "Cap-and-Trade, absolute Limits"
+      
+      indirect_rebound:
+        description: "Eingesparte Kosten für anderen Konsum"
+        estimated_magnitude: 0.15  # 15%
+        mitigation: "Carbon Pricing, Circular Economy"
+      
+      economy_wide:
+        description: "Strukturelle Produktivitäts-Effekte"
+        estimated_magnitude: 0.10  # 10%
+        mitigation: "Degrowth-kompatible Governance"
+    
+    net_rebound_factor: 0.50  # 50% Rebound gesamt
+    adjusted_impact: -32.3  # Gt CO₂eq/Jahr (von -64.5)
+    hinweis: "Konservative Schätzung bereits in -50.7 Hauptwert teilweise integriert"
+
+# ============================================================================
+# TEIL 5: GOVERNANCE & COMPLIANCE
+# ============================================================================
+
+governance:
+  
+  greenwashing_protection:
+    description: "Mechanismen gegen Greenwashing und fragwürdige Claims"
+    
+    quality_criteria:
+      additionality:
+        definition: "Würde ohne Intervention nicht passieren"
+        verification: "Baseline-Vergleich, Counterfactual-Analyse"
+      
+      permanence:
+        definition: "Langfristige Wirkung (min. 20 Jahre)"
+        verification: "Monitoring, Reversibilitäts-Risiko-Assessment"
+      
+      leakage_prevention:
+        definition: "Keine Verlagerung von Emissionen"
+        verification: "System-Boundary-Analyse, Scope 3 Tracking"
+      
+      double_counting_prevention:
+        definition: "Keine mehrfache Anrechnung derselben Wirkung"
+        verification: "Hierarchische Allokation, Registry-System"
+    
+    certification_standards:
+      required:
+        - "Gold Standard"
+        - "Verified Carbon Standard (Verra)"
+        - "Science Based Targets (SBTi)"
+      blacklist:
+        - "Selbst-zertifizierte Offsets ohne Third-Party"
+        - "Baseline-Manipulation"
+        - "Nicht-zusätzliche Projekte"
+  
+  compliance_framework:
+    description: "Rechtlicher und ethischer Compliance-Layer"
+    
+    environmental_law:
+      frameworks:
+        - "EU Taxonomy for Sustainable Activities"
+        - "CSRD (Corporate Sustainability Reporting Directive)"
+        - "Nationale Umweltgesetze"
+      mechanism: "Automatische Checks in A01 Priorisierung"
+    
+    data_protection:
+      frameworks:
+        - "GDPR (Europa)"
+        - "Lokale Datenschutzgesetze"
+      mechanism: "Privacy-by-Design in G27-G29"
+    
+    community_rights:
+      principles:
+        - "Free, Prior, Informed Consent (FPIC)"
+        - "Benefit Sharing"
+        - "Participatory Governance"
+      domains: "Besonders D15-D18, A04"
+  
+  failure_detection:
+    description: "Früherkennung von Fehlanreizen und unbeabsichtigten Effekten"
+    
+    red_flags:
+      - "Hohe CO₂-Wirkung aber negative Social Score"
+      - "Verletzung von Menschenrechten"
+      - "Biodiversitäts-Verlust trotz Klima-Nutzen"
+      - "Leakage > 30%"
+    
+    action:
+      threshold: "Automatische Eskalation an Governance Board"
+      remediation: "Projekt-Pause, Re-Design, oder Abbruch"
+
+# ============================================================================
+# TEIL 6: SYSTEMIC PATHWAYS & TRANSFORMATION
+# ============================================================================
+
+transformation_pathways:
+  
+  scenarios:
+    description: "Globale Transformations-Szenarien"
+    
+    reference_baseline:
+      name: "Business as Usual (BAU)"
+      emissions_2050: 65  # Gt CO₂eq/Jahr
+      temperature: 3.2  # °C Erwärmung
+    
+    provolution_low:
+      name: "Konservative Adoption (30%)"
+      emissions_2050: 45  # Gt CO₂eq/Jahr
+      temperature: 2.4  # °C
+      probability: 0.35
+    
+    provolution_medium:
+      name: "Mittlere Adoption (60%)"
+      emissions_2050: 25  # Gt CO₂eq/Jahr
+      temperature: 1.8  # °C
+      probability: 0.45
+    
+    provolution_high:
+      name: "Optimale Adoption (90%)"
+      emissions_2050: 5   # Gt CO₂eq/Jahr (Net-Zero)
+      temperature: 1.5  # °C
+      probability: 0.20
+  
+  lock_ins:
+    description: "Pfadabhängigkeiten und Lock-in Risiken"
+    
+    identified:
+      fossil_infrastructure:
+        risk: "Hohe Kapitalintensität verzögert Transition"
+        mitigation: "Stranded Asset Management, frühzeitiger Phase-Out"
+        domains: "C11-C14"
+      
+      behavioral:
+        risk: "Gewohnheiten und Präferenzen"
+        mitigation: "Nudging, Infrastruktur-Veränderung"
+        domains: "D18, E19-E21"
+      
+      institutional:
+        risk: "Regulatorische Trägheit"
+        mitigation: "Multi-Level-Governance, Pionier-Jurisdiktionen"
+        domains: "A01-A06"
+  
+  carbon_budget:
+    description: "Verbleibende CO₂-Budgets und Provolution-Beitrag"
+    
+    ipcc_budget_1_5c: 400  # Gt CO₂ verbleibend (ab 2025)
+    provolution_cumulative_reduction_to_2050: 1268  # Gt CO₂eq
+    
+    interpretation: >
+      Provolution würde bei voller Umsetzung das 1.5°C-Budget um Faktor 3
+      übertreffen, ermöglicht damit auch Kompensation schwer-vermeidbarer
+      Emissionen und negative Emissionen für Overshoot-Korrektur.
+
+# ============================================================================
+# TEIL 7: METADATA & VALIDATION
+# ============================================================================
+
+validation:
+  
+  data_quality:
+    tier_distribution:
+      tier_1_ipcc_defaults: 0.25  # 25% der Daten
+      tier_2_regional: 0.45  # 45%
+      tier_3_measured: 0.30  # 30%
+    target: "Min. Tier 2 für alle Key Applications"
+  
+  uncertainty_overall:
+    method: "Monte Carlo Simulation (10,000 iterations)"
+    ghg_total:
+      mean: -64.5  # Gt CO₂eq/Jahr
+      p05: -81.2
+      p95: -48.6
+      relative: "±25%"
+    
+    environmental:
+      water: "±18%"
+      land: "±22%"
+      biodiversity: "±35% (hohe Unsicherheit)"
+    
+    social:
+      equity_score: "±12%"
+      health_benefits: "±28%"
+  
+  external_validation:
+    benchmarks:
+      - source: "IPCC AR6 Mitigation Pathways"
+        our_estimate: "Conservative (-15% vs. optimistic scenarios)"
+      - source: "IEA Net Zero 2050"
+        alignment: "95% overlap in key technologies"
+      - source: "Project Drawdown"
+        comparison: "Our -64.5 Gt vs. their -58 Gt (higher due to systemic integration)"
+  
+  peer_review_status:
+    methodology: "Ready for submission"
+    data: "Awaiting expert validation on biodiversity metrics"
+    overall: "Publication-ready with minor gaps"
+
+# ============================================================================
+# TEIL 8: SCHEMA DEFINITION
+# ============================================================================
+
+project_impact_schema:
+  version: "0.1"
+  description: "Standard-Template für jedes Provolution-Projekt"
+  sec_j_migration: "sec_integration → secj_integration (SEC-J v1.0, 2026-04-27)"
+  secj_spec: "06_CANON/SECJ_SPEC_v1.0.md"
+  
+  required_fields:
+    - project_id
+    - title
+    - location
+    - lifetime_years
+    - ghg_accounting (min. CO2, Scope 1/2/3)
+    - environmental_check (water, land, biodiversity)
+    - social_equity_score
+    - governance_compliance
+  
+  optional_fields:
+    - energy_rebound_assessment
+    - pathway_allocation
+    - lock_in_risk
+  
+  template_location: "20_CANON/templates/PROJECT_IMPACT_TEMPLATE.json"
+
+# ============================================================================
+# CHANGE LOG
+# ============================================================================
+
+changelog:
+  "2.0":
+    date: "2026-01-24"
+    changes:
+      - "Vollständiges Multi-Impact Framework"
+      - "GHG erweitert: CH4, N2O, F-Gase"
+      - "Environmental: Wasser, Land, Biodiversität quantifiziert"
+      - "Social: Equity, Resilience, Co-Benefits systematisch"
+      - "Energy: Digitalisierungs-Footprint, Rebound-Effekte"
+      - "Governance: Greenwashing-Schutz, Compliance-Layer"
+      - "Pathways: Szenarien, Lock-ins, Carbon Budget"
+      - "ProjectImpactSchema v0.1 definiert"
+  
+  "1.1":
+    date: "2026-01-24"
+    changes:
+      - "Wissenschaftliche Methodik-Sektion"
+      - "GHG Protocol + IPCC AR6 Standards integriert"
+  
+  "1.0":
+    date: "2026-01-24"
+    changes:
+      - "Initial Release: CO2-Bilanz SSOT"
+
+# ============================================================================
+# TEIL X: PORTFOLIO-BENCHMARK (E-II Formel, quartalsweise kalibriert)
+# ============================================================================
+# Referenz: Band 5 Kapitel 2.1 (E-II Portfolio-Normalisierung)
+# Runbook: 20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md
+# Methodik:
+#   cost_rate(M) = R(M) / W(M)                   [EUR / t CO2eq, 10y kumuliert]
+#   cost_rate_benchmark = Median( cost_rate(M_i) ) über Impact-Apps
+#   E(M) = max(0, min(1, 1 - cost_rate(M) / cost_rate_benchmark))
+
+portfolio_benchmark:
+
+  current:
+    quartal: "2026Q1"
+    cost_rate_benchmark: 26.0
+    einheit: "EUR_pro_t_CO2_10y"
+    n_apps_impact: 11          # Apps mit quantifizierter CO2-Wirkung
+    n_apps_enabler: 19         # Enabler ohne direkte CO2-Wirkung (excluded)
+    n_apps_band4_total: 30
+    median_app_id: "D16"       # D16 CO2-Senken Boden (26.0 EUR/t)
+    berechnet_am: "2026-04-18"
+    berechnet_von: "Framework-Maintainer (Claude Code Session)"
+    status: "initial_calibration"
+
+  impact_apps:  # 11 Apps mit quantifizierter CO2-Wirkung
+    B07:
+      name: "Kreislaufwirtschaft"
+      r_10y_eur: 1.5e9
+      w_10y_gt_co2: 230
+      cost_rate_eur_per_t: 0.00652
+      e_score: 1.00
+      outlier_flag: "ultra-low — hohe CO2-Wirkung bei niedrigem Invest (plausibel)"
+    B08:
+      name: "Biopolymere (Hanf)"
+      r_10y_eur: 1.5e10
+      w_10y_gt_co2: 15
+      cost_rate_eur_per_t: 1.00
+      e_score: 0.962
+    B09:
+      name: "Materialfluss-Steuerung"
+      r_10y_eur: 7.0e5
+      w_10y_gt_co2: 0.2
+      cost_rate_eur_per_t: 0.0035
+      e_score: 1.00
+      outlier_flag: "ultra-low — IoT-Tool mit indirekter CO2-Wirkung (Transport-Reduktion), plausibel"
+    B10:
+      name: "Abfall-zu-Ressource"
+      r_10y_eur: 3.0e10
+      w_10y_gt_co2: 20
+      cost_rate_eur_per_t: 1.50
+      e_score: 0.942
+    C11:
+      name: "Erneuerbare Integration"
+      r_10y_eur: 4.0e12
+      w_10y_gt_co2: 150
+      cost_rate_eur_per_t: 26.67
+      e_score: 0.00   # knapp über Benchmark → kein E-Vorteil, S+C tragen
+    C13:
+      name: "Smart Grids"
+      r_10y_eur: 6.0e11
+      w_10y_gt_co2: 5
+      cost_rate_eur_per_t: 120.0
+      e_score: 0.00
+    C14:
+      name: "Dezentrale Versorgung"
+      r_10y_eur: 9.0e11
+      w_10y_gt_co2: 3
+      cost_rate_eur_per_t: 300.0
+      e_score: 0.00
+    D15:
+      name: "Regenerative Landwirtschaft"
+      r_10y_eur: 7.0e11
+      w_10y_gt_co2: 40
+      cost_rate_eur_per_t: 17.50
+      e_score: 0.327
+    D16:
+      name: "CO2-Senken (Boden)"
+      r_10y_eur: 1.3e12
+      w_10y_gt_co2: 50
+      cost_rate_eur_per_t: 26.0
+      e_score: 0.00   # Median-App, definiert Benchmark per Konstruktion
+      role: "median — definiert cost_rate_benchmark"
+    D17:
+      name: "Hanf-Anbau (Nutzpflanze)"
+      r_10y_eur: 1.5e11
+      w_10y_gt_co2: 1.85
+      cost_rate_eur_per_t: 81.08
+      e_score: 0.00
+    D18:
+      name: "Urbane Landwirtschaft"
+      r_10y_eur: 3.0e11
+      w_10y_gt_co2: 0.5
+      cost_rate_eur_per_t: 600.0
+      e_score: 0.00
+      outlier_flag: "high — Vertical Farming energieintensiv (10x Median); plausibel, rechtfertigt E=0"
+
+  enabler_apps_excluded:  # 19 Apps ohne quantifizierte CO2-Wirkung
+    domain_a: ["A01", "A02", "A03", "A04", "A05", "A06"]  # Governance
+    domain_c_enabler: ["C12"]                              # Speicher als Enabler für C11
+    domain_e: ["E19", "E20", "E21", "E22"]                 # Bildung/Soziales
+    domain_f: ["F23", "F24", "F25", "F26"]                 # Technologie
+    domain_g: ["G27"]                                       # Monitoring
+    domain_h: ["H30", "H31", "H32"]                         # Meta-Framework
+
+  history:
+    - quartal: "2026Q1"
+      cost_rate_benchmark: 26.0
+      delta_zum_vorquartal: null
+      median_app: "D16"
+      trigger: "Initialkalibrierung nach Runbook v1.0"
+      commit_ref: "2026-04-18 Claude Code Session — Addendum Audit-Log"
+
+  validation_checkliste_q1_2026:
+    vollstaendigkeit_band4_apps_erfasst: true           # 30/30 Apps geprüft
+    enabler_trennung_korrekt: true                      # 19 Enabler separat
+    einheiten_konsistenz: true                          # alle R in €, W in Gt, 10y
+    outlier_check_durchgefuehrt: true                   # B07, B09, D18 plausibilisiert
+    delta_plausibilitaet: "N/A (initial)"
+    peer_review_ready: true

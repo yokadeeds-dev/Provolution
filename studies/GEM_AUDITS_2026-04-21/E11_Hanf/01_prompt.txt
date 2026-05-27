@@ -1,0 +1,39 @@
+Modus: PS:FULL
+
+Prüfbitte für die Extension E11 (Hanf-Universalanwendungen) des Provolution-Frameworks, Stand v1.0 (2026-02-06). Datum heute: 2026-04-21.
+
+Fokus: (a) Ist die aggregierte 3,2-Gt-CO2-Einsparungs-Zahl beim 100-Mha-Szenario tragfähig? (b) Ist die 4-App-Erweiterung I35-I38 systemisch konsistent? (c) Ist die Termination-Regel (SEC-P < 0.60 → TERMINATE) bei C-Anwendungen (Anti-Tumor, Alzheimer, Parkinson) methodisch sauber?
+
+---
+
+### E11: HANF-UNIVERSALANWENDUNGEN — KERN
+
+Integration von 80 SEC-geprüften Hanfanwendungen in 5 Kategorien (A Industrie/20, B Umwelt-Landwirtschaft/15, C Medizin/20, D Lebensmittel/15, E Energie/10) mit Durchschnitts-SEC-P von 0.76-0.85.
+
+**Erweiterung Domäne I um 4 neue Apps:**
+- I35 Hanf-Phytoremediation (SEC 0.88): Bodensanierung, Kosten 5-15 Euro/m3 (vs. 50-500 Euro/m3 konventionell), Zielstoffe Cd/Pb/As/Hg/PAH/Sr-90/Cs-137.
+- I36 Hanf-Lebensmittelcluster (SEC 0.91): vollständiges Protein, Omega-6:3 3:1, allergenarm.
+- I37 Hanf-Industriecluster (SEC 0.84): Substitution >50% technisch möglich (Kunststoffe, Baumwolle, Glasfaser, Holz, Beton), noch nicht kostenneutral, Break-Even 2027-2030.
+- I38 Hanf-Medizin/Wellness (SEC 0.80): validierte Apps (CBD-Epilepsie, Hanfsamenöl, Hanfprotein, Ekzem, Akne) SEC-P >=0.75; zu terminierend: Anti-Tumor 0.52, Alzheimer 0.55, Parkinson 0.58.
+
+**Hempcrete-Spezifikation (I33-Integration):**
+CO2-Bilanz -130 kg/m3 (vs. Portland +250), Dämmwert 0.07 W/mK (vs. 1.7), Gewicht 350 kg/m3 (vs. 2400), Brandverhalten B1.
+
+**Aggregiertes Gesamtpotenzial (100 Mio. ha Szenario):**
+- B Umwelt: 2324 Mt CO2/Jahr (72%)
+- A Industrie: 705 Mt CO2/Jahr (22%)
+- E Energie: 127 Mt CO2/Jahr (4%)
+- D Lebensmittel: 62 Mt CO2/Jahr (2%)
+- C Medizin: 9 Mt CO2/Jahr (<1%)
+- GESAMT ca. 3227 Mt = 3,2 Gt CO2/Jahr (ca. 8% globaler Emissionen)
+
+**Skalierungs-Roadmap 2026-2030:**
+2026: Pilot 10k ha EU / 2027: 50k ha (Lebensmittel Mainstream, BMW/Mercedes Serien) / 2028: 200k ha (Hempcrete DIN/EN-Zulassung) / 2029: 500k ha / 2030: 1 Mio. ha EU-Standard.
+
+**Klassifikation (Cross-Ref zu Extension E2):** Hanf = NIEDRIGES Risiko (nur auf Agrarflächen, keine invasive Etablierung).
+
+**Sicherheits-Klausel:** Behauptungen zu SEC-P-<0.60-Anwendungen (Anti-Tumor, Alzheimer, Parkinson) sind nicht SEC-konform und dürfen nicht kommuniziert werden.
+
+---
+
+Bitte Vollkaskade mit Fazit-First-Output.

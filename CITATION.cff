@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this framework, please cite it as below."
+authors:
+  - family-names: "Dietz"
+    given-names: "Yoka Tobias"
+    orcid: "0009-0006-2349-9002"
+title: "Probatio Systemica & Provolution: A Multi-Impact Framework for Climate Transformation"
+version: 2.1
+date-released: 2026-05-09
+url: "https://github.com/yokadeeds-dev"
+repository-code: "https://github.com/yokadeeds-dev/Provolution"
+license: CC0-1.0
+keywords:
+  - climate transformation
+  - decision framework
+  - SEC-J principle
+  - climate justice
+  - systems thinking
+  - climate science
+  - sustainability
+abstract: |
+  Probatio Systemica provides a neutral mathematical framework for systematic
+  verification of complex decisions, formalized through the SEC-J principle
+  (Sufficient, Efficient, Consistent, Just) with J-veto at J < 0.50.
+  Provolution applies this framework to climate transformation, with the
+  Multi-Impact Assessment Framework v2.0 as operational measurement layer
+  covering 6 dimensions (GHG, Environmental, Social, Energy, Governance,
+  Pathways). Quantified impact: -58.0 Gt CO₂eq/year across 40 canonical
+  levers plus community-integrated submissions, spanning 10 domains.

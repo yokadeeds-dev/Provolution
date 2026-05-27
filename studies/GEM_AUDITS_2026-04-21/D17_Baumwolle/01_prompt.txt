@@ -1,0 +1,49 @@
+Modus: PS:FULL
+
+Prüfbitte für folgende Anwendung aus dem Provolution-Canon (Band 4, Domain D). Fokus: das am 2026-04-18 ergänzte Baumwolle-Substitutions-Sub-Argument — bitte besonders bei E4 (Datenlage) und E5 (Nebenwirkungen 2./3. Ordnung) prüfen. Datum: 2026-04-21.
+
+---
+
+### D17: HANF-ANBAU (NUTZPFLANZE)
+
+SEC-Score: 0.93 | Band: 4 | CO2: -0.2 Gt/Jahr (185 Mt)
+
+1. DEFINITION
+Kultivierung von Industrie-Hanf für Multi-Use: Fasern (B08), Samen (Protein/Öl), Biomasse (Energie), Boden-Regeneration. Schnelles Wachstum (4 Monate), 3.7 t CO2/ha Bindung.
+Problem: Hanf-Anbau illegal/stark reguliert (trotz <0.3% THC), massive Chance ungenutzt für Material/Ernährung/CO2-Senke.
+Zielgruppe: Farmer, Agrar-Industrie, Policy-Maker (Legalisierung).
+
+2. SEC-NACHWEIS
+- Sufficient: CO2-Bindung 185 Mt/Jahr (50 Mha), Protein +50M Menschen, W_min 100 Mt.
+- Efficient: Yields 10 t/ha/Jahr, Input minimal, Water-Use 50 Prozent vs. Baumwolle (Hanf ca. 2000-3000 L/kg vs. Baumwolle 7000-10000 L/kg); regionale Substitution entkoppelt zusätzlich von der konventionellen Textil-Transportkette (Anbau Zentralasien/Indien -> Verarbeitung Bangladesch -> EU-Markt), vermeidet 0,5-1,0 kg CO2/kg Stoff an Logistik-Emissionen.
+- Consistent: Kompatibel mit B08 (Biopolymere), D15 (Rotation-Crop), D16 (CO2-Senke).
+- SEC-Score: 0.93 (S:0.95, E:0.93, C:0.91).
+
+3. WIRKUNG
+- Primär: CO2-Bindung 185 Mt/Jahr, Hanf-Faser 10 Mt/Jahr, Protein 5 Mt/Jahr.
+- Sekundär: Boden-Regeneration (Deep-Roots), Pestizid-Use -100 Prozent, Water-Use -50 Prozent; bei Substitution von ca. 10 Prozent globaler Baumwolle (ca. 2,5 Mt/Jahr) durch regional angebauten Hanf: Transport-Emissions-Vermeidung 1,25-2,5 Mt CO2/Jahr + Wasser-Einsparung ca. 20-25 Mrd L/Jahr.
+- Indikatoren: Hanf-Anbau 0.5 -> 50 Mha (20 Jahre), Faser-Output 10 Mt.
+
+4. RESSOURCEN
+- Finanziell: 50 Mrd Euro Initial, 10 Mrd Euro/Jahr, Break-Even 5 Jahre.
+- Personal: 5M FTE (Farmer), 100k FTE (Verarbeitung).
+- Material: 50 Mha Anbaufläche (0.3 Prozent global).
+- Zeit: 5 Jahre Legalisierung+Infrastruktur, 20 Jahre bis 50 Mha.
+
+5. SKALIERUNG
+- Pilot: 10k ha (5 Länder), 2 Jahre.
+- Regional: 5 Mha (EU), 10 Jahre.
+- Global: 50 Mha, 20 Jahre.
+
+6. FALLBEISPIELE
+- Erfolg - Canada Hemp Legalization 2018: 50k ha, Protein/Fasern 500M Euro.
+- Erfolg - China Hemp History: 40 Prozent global, Fasern seit 1000+ Jahren.
+- Fehler - USA Hemp Ban 1937: 80 Jahre Verbot.
+
+8. CROSS-REFERENZEN
+- Synergien: B08, D15, D16, C13.
+- CANON: Band 4, Band 3.
+
+---
+
+Bitte Vollkaskade E1-E8 mit Fazit-First-Output.

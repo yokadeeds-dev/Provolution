@@ -1,0 +1,146 @@
+Probatio Systemica (No P) 1.1 hat gesagt:
+
+Willkommen bei Probatio Systemica Universal.
+
+Als Auditor führe ich die Prüfung der Maßnahme D17: Hanf-Anbau (Nutzpflanze) gemäß dem SEC-J-Standard (v1.1) durch. Da kein spezifischer Modus gewählt wurde, starte ich mit PS:FULL.
+
+[MMM Phase M1] — Einheitenklärung
+
+Maßnahme: Flächendeckende Kultivierung von Industrie-Hanf zur Substitution von Baumwolle und Bereitstellung von Biomasse/Protein.
+
+Skala: Makro (Global/Systemisch).
+
+Wirkungsvariable W(M): CO2-Bindung in Mt/Jahr.
+
+Bezugsraum: Global (Fokus auf 50 Mha Anbaufläche).
+
+Zeitraum: 20 Jahre bis zum Zielzustand.
+
+[MMM Phase M2] — Zieldefinition
+
+Wirkungsziel W(M): 185 Mt CO2-Bindung pro Jahr.
+
+Mindestziel W_min: 100 Mt CO2-Bindung pro Jahr (vorgegeben).
+
+Status: PASS (Operationalisierung und Zielwerte liegen vor).
+
+[MMM Phase M3] — MMM-Artefakt
+[MMM-ARTEFAKT]
+Maßnahme      : D17 Hanf-Anbau (Nutzpflanze)
+Skala         : Makro
+Bezugsraum    : Global (0,3 % der globalen Agrarfläche)
+Zeitraum      : 20 Jahre (bis 2046)
+Wirkungsziel  : W(M) = 185 Mt CO2/Jahr
+Mindestziel   : W_min = 100 Mt CO2/Jahr
+Annahmen      : Legalisierung erfolgt; Infrastruktur für Verarbeitung wird aufgebaut.
+MMM-Status    : PASS
+
+[PS: S-Prüfung] — SUFFICIENT
+
+Erreicht die Maßnahme das Mindestziel?W(M)=185 Mt | W
+min
+	​
+
+=100 Mt.
+Da 185≥100:S = 1,00
+
+[PS: E-Prüfung] — EFFICIENT
+
+1. S-konforme Alternativen:
+
+A: Konventionelle Aufforstung (großer Flächenbedarf, langsame Bindung).
+
+B: Ausbau von Direct Air Capture (hoher Energieaufwand/Kosten).
+
+C: Substitution durch Flachsanbau (ähnliche Faser-Eigenschaften).
+
+2. Ressourcenaufwand (R):
+
+R(M) (Hanf): 10 Mrd. €/Jahr (nach Initialphase).
+
+R_min (Flachs): ca. 12 Mrd. €/Jahr (geringere Biomasse-Effizienz pro ha).
+
+R_max (DAC): ca. 150 Mrd. €/Jahr (basierend auf ~800 €/t CO2 bei 185 Mt).
+
+3. Berechnung:
+
+E=1−(10−12)/(150−12)
+
+Da R(M)<R
+min
+	​
+
+ (Hanf ist die günstigste der betrachteten Optionen), wird E nach Logik gedeckelt:E = 1,00 (unter Vorbehalt der Datenlage E4: Kosten für globale Logistikumstellung sind Schätzwerte).
+
+[PS: C-Prüfung] — CONSISTENT
+
+1. Systembereiche (I_ges):
+Agrarpolitik, Textilindustrie, Lebensmittelrecht (Samen), Bauwirtschaft (Dämmstoff), Pharmarecht (THC-Regulierung). I_ges = 5.
+
+2. Konflikte (K):
+
+K1: Widerspruch zu geltenden Betäubungsmittelgesetzen in diversen Jurisdiktionen.
+
+K2: Konkurrenz zu bestehenden Baumwoll-Subventionsregimes.K = 2.
+
+3. Abhängigkeitslücken (U):
+
+U1: Fehlende industrielle Verarbeitungsketten für Hanftextilien im Vergleich zu Baumwolle.U = 1.
+
+4. Berechnung:
+
+C=1−(2+1)/5=1−0,60
+
+C = 0,40Hinweis: C < 0,70. Die Maßnahme ist systemisch stark konfliktbehaftet.
+
+[PS: J-Prüfung] — JUSTICE
+
+Zugang (0,80): Hanf wächst in fast allen Klimazonen; ermöglicht regionalere Produktion.
+
+Verteilung (0,60): Nutzen bei Farmern hoch, aber Gefahr der Monopolisierung durch Saatgut-Patente.
+
+Vulnerabilität (0,70): Reduziert Wasserstress in Regionen mit Baumwollanbau (Schutz lokaler Ressourcen).
+
+Partizipation (0,40): Aktuell stark Top-Down reguliert; Einbindung von Kleinbauern in die Legalisierungsdebatte oft gering.
+
+J = (0,80 + 0,60 + 0,70 + 0,40) / 4 = 0,625J = 0,63 (Kein Veto, da J ≥ 0,50).
+
+[ERGEBNIS]
+
+Label: nicht tragfähig (C)
+
+Begründung: Während die Maßnahme klimatisch hocheffektiv (S=1,00) und ressourceneffizient (E=1,00) ist, scheitert sie an der systemischen Konsistenz. Die rechtlichen Hürden (K) und der Mangel an industrieller Infrastruktur (U) im Vergleich zum etablierten Baumwoll-Sektor erzeugen eine zu hohe Reibung im Gesamtsystem.
+
+JSON
+{
+  "mmm": {
+    "massnahme": "D17: Hanf-Anbau (Nutzpflanze)",
+    "skala": "Makro",
+    "bezugsraum": "Global",
+    "zeitraum": "20 Jahre",
+    "wirkungsziel": "185 Mt CO2/Jahr",
+    "w_min": "100 Mt CO2/Jahr",
+    "annahmen": ["Globale Legalisierung von Nutzhanf", "Substitutionsrate 10% Baumwolle"],
+    "status": "PASS"
+  },
+  "sec_j": {
+    "S": { "wert": 1.0, "begruendung": "Ziel von 100 Mt CO2 wird mit 185 Mt deutlich überschritten." },
+    "E": { "wert": 1.0, "begruendung": "Ressourcenaufwand pro gebundener Tonne CO2 im Vergleich zu DAC oder alternativen Fasern minimal.", "alternativen_bekannt": true },
+    "C": { "wert": 0.4, "konflikte": ["Betäubungsmittelrecht", "Baumwoll-Subventionen"], "abhaengigkeitsluecken": ["Fehlende industrielle Verarbeitungsketten"], "begruendung": "Hohe regulatorische Widerstände und struktureller Rückstand zur Baumwollindustrie." },
+    "J": {
+      "zugang": 0.8,
+      "verteilung": 0.6,
+      "vulnerabilitaet": 0.7,
+      "partizipation": 0.4,
+      "j_gesamt": 0.63,
+      "veto_aktiv": false,
+      "begruendung": "Positiver Einfluss auf lokale Wasserressourcen, aber Defizite bei der Partizipation der Akteure."
+    },
+    "secj_geometrisch": 0.71,
+    "secj_arithmetisch": 0.76
+  },
+  "label": "nicht tragfähig (C)",
+  "label_begruendung": "Unterschreitung des Schwellenwerts für Konsistenz (C=0,40 < 0,70).",
+  "offene_fragen": ["Wie hoch sind die tatsächlichen Kosten für den globalen Aufbau der Textil-Infrastruktur?"],
+  "naechste_schritte": ["Harmonisierung des internationalen Rechtsrahmens für Nutzhanf", "Förderprogramme für Verarbeitungs-Cluster."]
+}
