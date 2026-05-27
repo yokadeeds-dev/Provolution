@@ -1,0 +1,214 @@
+{
+  "project_meta": {
+    "id": "D17",
+    "title": "Regenerativer Industriehanf für klimapositive Baustoffe",
+    "short_description": "Umstellung von 50 ha konventionellem Ackerbau auf Industriehanf mit Integration in regionale Baustoff-Wertschöpfungskette. Kombination aus Carbon Farming, Biodiversitäts-Förderung und ländlicher Wertschöpfung.",
+    "location": {
+      "country": "Deutschland",
+      "region": "Nordrhein-Westfalen",
+      "coordinates": {
+        "lat": 51.5,
+        "lon": 7.5
+      },
+      "context": "rural"
+    },
+    "lifetime_years": 20,
+    "provolution_domain": ["D_food_land", "B_production"],
+    "status": "pilot"
+  },
+  
+  "ghg_accounting": {
+    "baseline_scenario": "Konventionelle Fruchtfolge (Getreide/Mais) mit hohem Mineraldünger- und Pestizid-Einsatz, ohne gezielte Kohlenstoff-Senken in Produkten",
+    "project_scenario": "Industriehanf-Anbau mit Biomasse-Verarbeitung zu Dämmstoffen/Hanfbeton, Reststoffe teilweise zu Biochar, Management optimiert auf Bodenaufbau",
+    "scopes": {
+      "scope1_direct": true,
+      "scope2_energy": true,
+      "scope3_value_chain": true
+    },
+    "annual_impact": {
+      "co2": {
+        "value": -580,
+        "uncertainty": {
+          "p05": -740,
+          "p95": -460
+        },
+        "breakdown": {
+          "biomass_sequestration": -530,
+          "soil_carbon": -100,
+          "avoided_emissions": -50,
+          "operations": 100
+        }
+      },
+      "ch4_co2eq": {
+        "value": -15,
+        "gwp_factor": 28,
+        "source": "Vermiedene anaerobe Bedingungen vs. konventionelle Praxis"
+      },
+      "n2o_co2eq": {
+        "value": -85,
+        "gwp_factor": 265,
+        "source": "Reduzierter N-Dünger (180 kg → 40 kg N/ha)"
+      },
+      "f_gases_co2eq": 0,
+      "total_co2eq": -680
+    },
+    "trajectory": {
+      "year1": -320,
+      "year5": -580,
+      "year10": -680,
+      "year20": -680
+    },
+    "leakage_risk": {
+      "percentage": 15,
+      "mitigation": "Hanf als Ergänzung zur Fruchtfolge, nicht Verdrängung von Nahrungsmitteln; regionale Kreisläufe minimieren indirekte Landnutzungsänderung"
+    }
+  },
+  
+  "environmental": {
+    "water": {
+      "consumption_change_m3_per_year": -25000,
+      "quality_impact": "positive",
+      "description": "Hanf benötigt 10x weniger Wasser als Baumwolle; reduzierte Nitrat-Auswaschung durch geringeren Dünger-Einsatz"
+    },
+    "land_use": {
+      "area_affected_ha": 50,
+      "type_of_change": "intensification",
+      "soil_quality_change": "very_positive",
+      "soil_carbon_sequestration_t_per_ha_year": 2.0,
+      "description": "Tiefwurzelnde Kultur verbessert Bodenstruktur, reduziert Erosion, erhöht SOC (Soil Organic Carbon)"
+    },
+    "biodiversity": {
+      "impact_assessment": "positive",
+      "msa_change": 0.12,
+      "habitat_affected": ["agricultural"],
+      "description": "Geringerer Pestizid-Einsatz, Pollenangebot für Insekten, Diversifizierung der Agrarlandschaft, Förderung Bodenleben"
+    },
+    "supply_chain": {
+      "transport_delta_kg_co2_per_kg_fiber": -0.4,
+      "basis": "Konventionelle Baumwolle: ~8.000–12.000 km Seetransport (Usbekistan/Indien/China → Europa). Hanf: klimaadaptiv, in gemäßigten Zonen global anbaubar → Rohstoff wird regional verfügbar, Transportkette entfällt strukturell.",
+      "scaling_note": "Bei globaler Hanf-Adoption (10 Mt Faserpotenzial/Jahr) entspricht das ~3–5 Mt CO₂/Jahr vermiedener Transportemissionen — konservativ, da Seefracht-Effizienz steigt, Scope-3-Emissionen aber systemisch eliminiert werden.",
+      "description": "Hanf ist in über 40 Ländern anbaubar und wird mittelfristig global verfügbar sein. Die langen Importwege konventioneller Textilfasern (Baumwolle, Polyester-Vorprodukte) entfallen, sobald regionale Hanf-Wertschöpfungsketten etabliert sind. Dies stärkt den E-Score durch strukturelle Scope-3-Reduktion ohne zusätzliche Intervention."
+    }
+  },
+  
+  "social": {
+    "equity_score": 0.68,
+    "beneficiaries": {
+      "low_income_share": 0.45,
+      "medium_income_share": 0.38,
+      "high_income_share": 0.17
+    },
+    "resilience": {
+      "climate_risk_reduction": {
+        "flood": 0,
+        "drought": 12,
+        "heat": 0
+      },
+      "food_security_impact": "neutral",
+      "energy_security_impact": "positive"
+    },
+    "co_benefits": {
+      "health": {
+        "air_quality_improvement": "Reduzierte Staubemissionen vs. konventionell",
+        "avoided_deaths_per_year": 0,
+        "economic_value_usd_per_year": 0
+      },
+      "employment": {
+        "jobs_created": 3,
+        "jobs_transformed": 12,
+        "living_wage_percentage": 85
+      },
+      "education": {
+        "climate_literacy_improvement": 8,
+        "technical_skills_improvement": 15
+      }
+    }
+  },
+  
+  "governance": {
+    "compliance_check": {
+      "environmental_law": true,
+      "data_protection": true,
+      "community_consent": true,
+      "human_rights": true
+    },
+    "certification": [
+      "Organic",
+      "Other"
+    ],
+    "greenwashing_checks": {
+      "additionality_verified": true,
+      "permanence_assessed": true,
+      "leakage_prevented": true,
+      "double_counting_prevented": true
+    },
+    "red_flags": [
+      "Marktvolatilität Hanfpreise - Mitigation: Mehrjährige Verträge",
+      "Abhängigkeit von wenigen Abnehmern - Mitigation: Produktdiversifizierung"
+    ]
+  },
+  
+  "energy_rebound": {
+    "digitalization_footprint": {
+      "data_centers_kwh_per_year": 0,
+      "networks_kwh_per_year": 120,
+      "devices_kwh_per_year": 450,
+      "total_emissions_t_co2eq": 0.28
+    },
+    "rebound_risk": {
+      "direct_rebound_factor": 0.05,
+      "indirect_rebound_factor": 0.10,
+      "mitigation_strategy": "Lokale Kreislaufwirtschaft, keine Substitution durch fossile Alternativen"
+    }
+  },
+  
+  "transformation_pathway": {
+    "pathway_alignment": [
+      "P1_Energy_Industry",
+      "P2_Land_Agriculture",
+      "P3_Resilient_Communities"
+    ],
+    "lock_in_risk": "medium",
+    "carbon_budget_contribution": 0.0136
+  },
+  
+  "secj_integration": {
+    "sufficiency_score": 0.88,
+    "efficiency_score": 0.92,
+    "consistency_score": 0.95,
+    "justice_score": null,
+    "veto_triggered": null,
+    "secj_total": null,
+    "calculation_method": "secj = 0.40*S + 0.25*E + 0.15*C + 0.20*J — J ausstehend (equity_score fuer D17 noch zu bewerten). Legacy sec_total war 0.91 (Formel 0.5S+0.3E+0.2C, nicht mehr kanoisch)."
+  },
+  
+  "data_quality": {
+    "tier_level": "tier_2_regional",
+    "uncertainty_method": "monte_carlo",
+    "confidence_level": "high",
+    "sources": [
+      {
+        "reference": "Carus et al. 2013, nova-Institute - Industrial Hemp Carbon Sequestration",
+        "url": "https://www.nova-institut.de",
+        "date": "2013-06-15"
+      },
+      {
+        "reference": "IPCC AR6 AFOLU Guidelines",
+        "url": "https://www.ipcc.ch/report/ar6/wg3/",
+        "date": "2022-04-04"
+      },
+      {
+        "reference": "Umweltbundesamt - Emissionsfaktoren Deutschland",
+        "url": "https://www.umweltbundesamt.de",
+        "date": "2023-01-01"
+      }
+    ]
+  },
+  
+  "_comments": {
+    "note": "Dieses Projekt-Assessment folgt dem ProjectImpactSchema v0.1",
+    "schema_location": "20_CANON/templates/PROJECT_IMPACT_SCHEMA.json",
+    "last_updated": "2026-01-24",
+    "status": "Example for H01 Hanf Pilot - ready for integration into 03_PILOTEN/"
+  }
+}
