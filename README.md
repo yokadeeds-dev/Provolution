@@ -1,26 +1,29 @@
 # Provolution
 
-> **A comprehensive climate transformation framework evaluating 43 levers across 10 domains using the SEC-J methodology. Total assessed mitigation potential: −58.0 Gt CO₂eq/year.**
+> **A scientific framework for systemic assessment of climate transformation measures, applying the Probatio-Systemica methodology (SEC-J principle) across ten domains. A living document — current quantitative results are maintained in the CANON data files.**
 
 ---
 
 ## Übersicht
 
-**Provolution** ist die anwendungsbezogene Ebene eines wissenschaftlichen Frameworks zur Klimatransformation. Sie operationalisiert die zugrundeliegende Methodik **Probatio Systemica** auf das konkrete Problem der globalen Treibhausgas-Reduktion und bewertet 43 Hebel über zehn Domänen (A–J) hinweg.
+**Provolution** ist die anwendungsbezogene Ebene eines wissenschaftlichen Frameworks zur Klimatransformation. Sie operationalisiert die zugrundeliegende Methodik **Probatio Systemica** auf das konkrete Problem der globalen Treibhausgas-Reduktion und bewertet einen Katalog von Hebeln über zehn Domänen (A–J) hinweg.
 
 **Probatio Systemica** ist ein neutrales, mathematisch fundiertes Framework zur systemischen Verifikation komplexer Maßnahmen. Es formalisiert das **SEC-J-Prinzip** (Sufficient, Efficient, Consistent, Just) mit einer formalen Veto-Bedingung bei J < 0.50 und stellt eine modulare Familie von Prüfprotokollen (PS-U, PV, PD, PI, PN, PP, PT) bereit. Die methodische Grundlage ist kulturunabhängig und nicht klimaspezifisch.
 
 **Provolution** wendet dieses Framework auf Klimatransformation an und ergänzt es um das **Multi-Impact Assessment Framework v2.0** als operationelle Messebene über sechs Dimensionen (GHG, Environmental, Social, Energy, Governance, Pathways).
 
+Provolution ist explizit als *living document* konzipiert: methodische Justierungen, neue Hebel-Integrationen und aktualisierte Score-Aggregationen sind die Regel, nicht die Ausnahme. Konkrete Kennzahlen sind in den CANON-Datendateien autoritativ versioniert.
+
 ---
 
 ## Zentrale Ergebnisse
 
-- 43 Hebel (40 kanonische + 3 Stub) in 10 Domänen (A–J) bewertet
-- Gesamt-Reduktionspotenzial: **−58.0 Gt CO₂eq/Jahr**
-- SEC-J-Methodik mit J-Veto bei J < 0.50 (Antifragility-begründet)
-- Multi-Impact Framework v2.0 über 6 Impact-Dimensionen
+- Hebel über zehn Domänen (A–J) SEC-J-bewertet
+- Multi-Impact Framework v2.0 über sechs Impact-Dimensionen
+- J-Veto bei J < 0.50 (Antifragility-begründet)
 - Methodisch konform mit GHG Protocol und IPCC AR6
+
+Aktuelle quantitative Kennzahlen (Hebel-Anzahl, CO₂-Reduktionspotenzial, Domain-Aggregationen) sind versions-abhängig und werden in den CANON-Daten geführt: [`canon/data/co2_master.yaml`](canon/data/co2_master.yaml) und [`canon/data/impact_master.yaml`](canon/data/impact_master.yaml).
 
 ---
 
@@ -66,7 +69,7 @@ Eine methodische Update-Notiz zur Migration vom dreiachsigen SEC- zum vierachsig
 
 ## Peer-Review & Publikation
 
-Das Manuskript wird derzeit für die wissenschaftliche Begutachtung vorbereitet. Geplante Erstunterbreitung: **Earth System Governance**.
+Manuskript eingereicht bei **Earth System Governance** (Elsevier) als Solo-Submission. Das eingereichte Dokument ist frozen — der hier im Repository sichtbare Stand entwickelt sich parallel weiter.
 
 - Journal Submission Package: [`manuscript/JOURNAL_SUBMISSION_PACKAGE.md`](manuscript/JOURNAL_SUBMISSION_PACKAGE.md)
 - Peer Review Package: [`manuscript/PEER_REVIEW_PACKAGE.md`](manuscript/PEER_REVIEW_PACKAGE.md)
@@ -75,7 +78,7 @@ Das Manuskript wird derzeit für die wissenschaftliche Begutachtung vorbereitet.
 - Manuscript Draft (blind): [`manuscript/MANUSCRIPT_DRAFT_v0.1_BLIND.md`](manuscript/MANUSCRIPT_DRAFT_v0.1_BLIND.md)
 - Cover Letter: [`manuscript/COVER_LETTER_EarthSystemGovernance.md`](manuscript/COVER_LETTER_EarthSystemGovernance.md)
 - Publication Figures: [`manuscript/figures/`](manuscript/figures/)
-- Interne Gutachten (PS-U/PS1P/PS2): [`manuscript/peer_reviews/`](manuscript/peer_reviews/)
+- Frameworks-interne Gutachten: [`manuscript/peer_reviews/`](manuscript/peer_reviews/)
 
 ---
 
