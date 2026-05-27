@@ -1,0 +1,51 @@
+{
+  "title": "Probatio Systemica & Provolution: A Multi-Impact Framework for Climate Transformation",
+  "description": "<p>Provolution applies the <strong>Probatio Systemica</strong> methodology to the problem of global climate transformation. The framework formalizes the <strong>SEC-J principle</strong> (Sufficient, Efficient, Consistent, Just) with a strict veto condition at J &lt; 0.50 (justice veto, antifragility-grounded after Taleb 2012) and an operational <strong>Multi-Impact Assessment Framework v2.0</strong> covering six impact dimensions: GHG accounting, environmental, social and equity, energy and rebound, governance, and systemic pathways.</p><p>Probatio Systemica itself is a neutral, mathematically founded framework for systemic verification of complex decisions. It is culture-independent and not climate-specific. Its modular family of seven evaluation modules (PS-U, PV, PD, PI, PN, PP, PT) allows verification of measures, factual claims, political decisions, institutions, media discourse, philosophical arguments, and temporal score drift.</p><p>This deposit includes the complete CANON documents (German originals, English translations), the master data files (CO₂ and multi-impact), methodology documentation, application examples (pilots, Kreislauf cases), reproducibility studies, and supporting tools. The framework is designed as a <em>living document</em> — current quantitative results are maintained in the CANON data files; this release captures a specific version snapshot.</p><p>License: CC0-1.0 Universal. The Open Hardware License (OHL) applies to the data layer in parallel.</p>",
+  "creators": [
+    {
+      "name": "Dietz, Tobias Yoka",
+      "affiliation": "Independent Researcher, Hamm, Germany",
+      "orcid": "0009-0006-2349-9002"
+    }
+  ],
+  "upload_type": "publication",
+  "publication_type": "other",
+  "access_right": "open",
+  "license": "CC0-1.0",
+  "language": "deu",
+  "keywords": [
+    "climate transformation",
+    "climate policy",
+    "decision framework",
+    "SEC-J principle",
+    "climate justice",
+    "systems thinking",
+    "climate science",
+    "sustainability",
+    "Probatio Systemica",
+    "Provolution",
+    "Multi-Impact Framework",
+    "carbon mitigation",
+    "GHG accounting",
+    "open science"
+  ],
+  "communities": [
+    { "identifier": "climate-change-mitigation" },
+    { "identifier": "open-science" }
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/yokadeeds-dev/Provolution",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    },
+    {
+      "scheme": "url",
+      "identifier": "https://provolution.org",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-other"
+    }
+  ],
+  "notes": "Continuous-development framework. Specific quantitative results (number of levers, CO2 reduction potentials, domain aggregations) are version-dependent and live in canon/data/co2_master.yaml and canon/data/impact_master.yaml within the deposit."
+}

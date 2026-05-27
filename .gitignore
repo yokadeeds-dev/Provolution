@@ -8,6 +8,7 @@ Thumbs.db
 .venv/
 *.egg-info/
 dist/
+_build_outputs/
 build/
 *.bak
 *.backup
