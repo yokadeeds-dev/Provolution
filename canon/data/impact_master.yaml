@@ -9,13 +9,21 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.0"
-  last_updated: "2026-01-24"
+  version: "2.1"
+  last_updated: "2026-05-28"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
-  
+
   changelog:
+    v2_1_2026-05-28:
+      - "Sync mit co2_master.yaml v1.3 (PR #4 vom 2026-05-28): reduktion_hart -58.0 → -58.6"
+      - "B09/B10 Drift-Resolution: Domain B total -15.8 → -14.6"
+      - "D19 Algen-Bioraffinerie Promotion: Domain D total -9.4 → -9.7"
+      - "K01-K04 Marine & Küste integriert: Domain K -1.5 (neue 11. Domain)"
+      - "ghg_total.co2 -57.0 → -58.6 (interne Inkonsistenz behoben)"
+      - "ghg_total.total -64.5 als pending markiert: Overlap-Re-Computation in v2.2 vorgesehen"
+      - "Adressiert ChatGPT-Außenleser-Audit 2026-05-28 + PF-Reports v1.0.1"
     v2_1_2026q1:
       - "Portfolio-Benchmark Q1/2026 initial kalibriert: 26.0 EUR/t CO2 (10y)"
       - "n=11 Impact-Apps eingerechnet, 19 Enabler-Apps separat klassifiziert"
@@ -41,27 +49,28 @@ meta:
 
 ghg_accounting:
   
-  # CO2-Bilanz (wie bisher)
+  # CO2-Bilanz (synchron mit co2_master.yaml v1.3, Stand 2026-05-28)
   co2:
     gesamt:
-      reduktion_hart: -58.0  # Gt CO₂eq/Jahr — n=40 (Basis 30 Apps -50.7 + I33/I34/J01 -4.3 + C-2026-008 PF+Hanf -3.0)
+      reduktion_hart: -58.6  # Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 37 band4-canonical + 5 yaml-only + 5 community + 2 STUB
       vermeidung_weich: -28.5
-      total_potenzial: -85.5
-      anteil_global_emissions: 1.04  # >100% = Net Negative (inkl. aktive Sequestration D16)
+      total_potenzial: -87.1  # v2.1: -58.6 + -28.5 = -87.1
+      anteil_global_emissions: 1.065  # 106.5% = Net Negative (inkl. aktive Sequestration D16)
       korrelation_theorie_praxis: 0.94
-    
-    # Domain-Totals (A-J) — synchron zu co2_master.yaml
+
+    # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.3
     domains:
       A_governance: -8.2
-      B_production: -15.8
+      B_production: -14.6  # v2.1: -15.8 → -14.6 nach B09/B10-Drift-Resolution (wasserstoff/ccs → materialfluss-steuerung/abfall-zu-ressource)
       C_energy: -12.3
-      D_food_land: -9.4
+      D_food_land: -9.7   # v2.1: -9.4 → -9.7 nach D19 Algen-Bioraffinerie Promotion
       E_education: -1.8
       F_technology: -2.1
       G_monitoring: -0.6
       H_meta: -0.5
       I_mobilitaet: -1.3
       J_konstruktion: -3.0
+      K_marine: -1.5  # v2.1 NEU: Domain K Blue-Carbon (Mangroven K01 -0.75 + Seegras K02 -0.35 + Kelp K03 -0.20 + Salzmarschen K04 -0.20)
 
   # Weitere Treibhausgase (NEU)
   methane_ch4:
@@ -127,12 +136,13 @@ ghg_accounting:
   
   # Gesamt-GHG-Bilanz (ALLE Treibhausgase)
   ghg_total:
-    co2: -57.0
+    co2: -58.6  # v2.1: -57.0 → -58.6 (sync mit gesamt.reduktion_hart)
     ch4_co2eq: -7.5
     n2o_co2eq: -5.6
     f_gases_co2eq: -0.7
-    total: -64.5  # Gt CO₂eq/Jahr
+    total: -64.5  # Gt CO₂eq/Jahr — PENDING v2.2: enthält Overlap-Bereinigung gegenüber naiver Summe -72.4 (-58.6+-7.5+-5.6+-0.7); Overlap-Re-Computation auf v2.1-Basis vorgesehen
     unsicherheit: [-81.2, -48.6]  # 95% CI
+    note: "ghg_total.total Overlap-Bereinigung in v2.0 mit alten CO2-Werten gerechnet; vollständiges Re-Computation in v2.2 vorgesehen. Der ChatGPT-Audit-Befund (2026-05-28) zur Differenz CO2 vs total ist methodisch erklärbar durch Overlap-Korrektur (CO2-Maßnahmen reduzieren auch CH4/N2O), nicht durch Rechenfehler."
 
 # ============================================================================
 # TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
@@ -142,8 +152,8 @@ ghg_accounting:
 # Quelle: 06_CANON/04_Band4_Community_Integrations.md
 
 community_integrations:
-  beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-J Hebel-Domains"
-  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.0) vs. reduktion_hart (-58.0)
+  beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-K Hebel-Domains"
+  total: -3.0  # Gt CO₂eq/Jahr v2.1 — erklärt Differenz Domain-Summe (-55.6 mit Domain K) vs. reduktion_hart (-58.6)
   integrations:
     C-2026-008:
       id: "C-2026-008"
