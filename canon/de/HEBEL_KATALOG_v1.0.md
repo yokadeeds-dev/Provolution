@@ -201,6 +201,46 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 - ⚠️ **I36 PS:FULL-bewertet (2026-05-28):** Verdict TEILBESTANDEN, SEC 0,85-Schätzung bestätigt aber empirische Fundierung (Materialbelastbarkeit + Antriebs-Roadmap) noch ausstehend. **Empfehlung: hinter I34-Promotion zurückstellen.** Report: `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_REPORT_I36_2026-05-28.md`. **Zusatz-Befund:** PS:FULL bewertete neben I36 auch die Gesamt-Roadmap und bestätigte alle vier kritischen Ebenen (E1/E3/E6/E8) — die Integrations-Strategie selbst ist methodisch validiert (über die Einzel-Hebel-Bewertung hinaus).
 - ⏳ **D17a + B-neu/B13 zu PS 3.0 Gemini geroutet (2026-05-28):** Routing-Trace `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_3.0_ROUTING_D17a_B13.md`, Rückkanal ausstehend.
 
+15. **PS-U 2.0 SEC-J-Nachrüstung des kompletten Kanons (2026-05-28 spät-Nacht)** — User-PF-Sitzung hat die architektonische Lücke geschlossen: Band 4 v4.2 hatte vor 2026-05-10 (Verankerung der PS-U 2.0 SEC-J-Spec) nur SEC-Werte, kein J. PF-Audit-Sitzung 2026-05-28 (PS-U:STANDARD + PS-U:JUSTICE in Gemini) hat alle Hebel der Domains B, C, D **individuell** mit J-Scores + SEC-J nachgerüstet (13 Hebel kalkuliert) und Domains A, E, F, G, H **batch-bewertet** (Domain-Ø). Verdict: **KANON VOLLSTÄNDIG AUF SEC-J v2.0 AKTUALISIERT** — Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; **B09 J=0,72 + C12 J=0,82 als Warnschwellen** dokumentiert mit Implementierungs-Auflagen. **Zentralisiert in:** `canon/data/impact_master.yaml` v2.2 TEIL 6.5 `sec_j_scores`. Vollständiger Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`. **Folge-Sub-Phasen:** Einzelhebel-J-Berechnung für A/E/F/G/H, sowie I33-I36, J01, K01-K04, B11/B12/B13, Kategorie-A-AUTO_INTEGRATE-Kandidaten, Communities. Band 4 §2.SEC-NACHWEIS-Updates für alle 30+ Hebel als eigener Folge-PR.
+
+---
+
+## SEC-J-Master-Übersicht (PS-U 2.0)
+
+Individuell kalkulierte SEC-J-Werte (Audit 2026-05-28):
+
+| ID | S | E | C | J | SEC-J | Note |
+|---|:---:|:---:|:---:|:---:|:---:|---|
+| **B07** Kreislauf | 0,95 | 0,92 | 0,92 | 0,90 | **0,93** | |
+| **B08** Biopolymere Hanf | 0,92 | 0,87 | 0,92 | 0,85 | **0,90** | Zertifizierungs-Barriere für Kleinbauern beachten |
+| **B09** Materialfluss | 0,85 | 0,95 | 0,82 | **0,72** | **0,85** | ⚠️ Warnschwelle J<0,80 — Algorithmisches-Management-Risiko |
+| **B10** Abfall-Ressource | 0,93 | 0,90 | 0,90 | 0,88 | **0,91** | |
+| **C11** Erneuerbare | 0,95 | 0,95 | 0,92 | 0,85 | **0,93** | |
+| **C12** Speicher | 0,88 | 0,90 | 0,90 | 0,82 | **0,88** | ⚠️ Li/Co-Abbau — H31 + Lieferketten-Transparenz zwingend |
+| **C13** Smart Grid | 0,90 | 0,93 | 0,90 | 0,88 | **0,90** | |
+| **C14** Dezentral | 0,90 | 0,88 | 0,86 | **0,95** | **0,89** | |
+| **D15** Regen-LW | 0,93 | 0,92 | 0,91 | 0,90 | **0,92** | |
+| **D16** Boden-CO₂ | 0,92 | 0,92 | 0,86 | 0,88 | **0,90** | G27-Monitoring der Carbon-Payments zwingend |
+| **D17** Hanf-Anbau | 0,95 | 0,93 | 0,91 | 0,92 | **0,93** | |
+| **D18** Urbane LW | 0,85 | 0,82 | 0,92 | **0,94** | **0,88** | |
+| **D19** Algen-Bioraffinerie | 0,85 | 0,78 | 0,86 | 0,85 | **0,84** | |
+
+Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
+
+| Domäne | Ø J | Ø SEC-J | Note |
+|---|:---:|:---:|---|
+| **A** Governance | 0,92 | 0,92 | A01/A02 demokratisieren Entscheidungs-Zugang |
+| **E** Bildung & Soziales | 0,93 | 0,93 | E21 PS-U:JUSTICE J=0,95 als Justice-Anker |
+| **F** Technologie | 0,90 | 0,90 | F25 bricht Patentmonopole |
+| **G** Monitoring | 0,90 | 0,90 | |
+| **H** Meta-Framework | 0,90 | 0,90 | H31 Internalisierung Externalitäten |
+
+**Gesamt-Ø SEC-J (Rest-Portfolio): 0,91** · **J-Veto-Auslösungen: 0** · **J-Warnschwellen <0,80: 2** (B09, C12)
+
+**Pending (J-Berechnung ausstehend):** I33–I36, J01, K01–K04, B11, B12, B13, F22, F27, G25, G26, G30, H33, E23, C-2026-001/003/004/007/008. Sowie Einzelhebel-Werte innerhalb der Batch-bewerteten Domains A, E, F, G, H.
+
+**Formel:** SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J · **J-Veto:** J<0,50 → SEC-J=null · **Quelle:** `canon/data/impact_master.yaml` v2.2 TEIL 6.5 + `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`
+
 ---
 
 ## Cross-References
@@ -216,6 +256,12 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 ---
 
 ## Versions-History
+
+**v1.6 (2026-05-28, spät-Nacht):**
+- ✅ **PS-U 2.0 SEC-J-Nachrüstung des kompletten Kanons** (Drift-Item #15): User-PF-Sitzung hat die architektonische Lücke (Band 4 v4.2 SEC-only, kein J) geschlossen. 13 Hebel individuell kalkuliert (Domains B/C/D), 5 Domains batch-bewertet (A/E/F/G/H). Werte zentralisiert in `canon/data/impact_master.yaml` v2.2 TEIL 6.5 sec_j_scores.
+- Neue SEC-J-Master-Übersichtstabelle in diesem Dokument
+- Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto; B09 J=0,72 + C12 J=0,82 als Warnschwellen mit Implementierungs-Auflagen dokumentiert
+- ChatGPT-Außenleser-Audit-Befund "SEC vs SEC-J historische Trennung" damit adressiert
 
 **v1.5 (2026-05-28, spät):**
 - ✅ **Drift-Resolution B09/B10** (Drift-Item #2): YAML-Tags `wasserstoff/ccs` → `materialfluss_steuerung/abfall_zu_ressource` mit band4-konformen Werten (B09 -0.5, B10 -2.0). H2/CCS-Werte als zukünftige separate Hebel zurückgestellt
