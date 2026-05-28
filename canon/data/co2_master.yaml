@@ -10,12 +10,19 @@
 # mit quantifizierter CO2-Wirkung).
 
 meta:
-  version: "1.3"
+  version: "1.4"
   last_updated: "2026-05-28"
   description: "Zentrale CO₂-Bilanz aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 - Gesamtbilanz"
   changelog_v1_2: "PF-Report-Adressierung (E4 Datenlage): A03-A06/E20/E21/F23 Tag-Drifts korrigiert; B13 -0.3 ergänzt; Domain K Marine & Küste mit 4 Stub-Hebeln K01-K04 angelegt (-1.5 Gt); Gesamt-Werte aktualisiert: reduktion_hart -58.0 → -59.8; B09/B10 inhaltliche Drift bleibt als offener Punkt"
   changelog_v1_3: "Drift-Resolutions 2026-05-28: (1) B09 wasserstoff -2.8 → materialfluss-steuerung -0.5 (band4-canonical Wert; H2 als separater Hebel-Kandidat zurückgestellt, partial-coverage durch B11 transformation -1.8 angedeutet); (2) B10 ccs -1.2 → abfall-zu-ressource -2.0 (band4-canonical Wert; CCS als separater Hebel-Kandidat zurückgestellt); (3) D19 Algen-Bioraffinerie unter D_food_land neu hinzugefügt (-0.3 Gt; Promotion Kategorie B → A, vollintegriert Band 4 v4.2); (4) K01-K04 STUB-Status → band4-canonical (Vollkonzepte in Band 4 v4.2 KAPITEL 10b); Domain B total: -16.1 → -14.6; Domain D total: -9.4 → -9.7; gesamt.reduktion_hart: -59.8 → -58.6"
+  changelog_v1_4: "PS-U 2.0 SEC-J-Nachrüstung 2026-05-28 (User-PF-Sitzung): Architektonische Lücke geschlossen — alle in der Sitzung bewerteten Hebel haben jetzt J-Score + SEC-J. Datentechnisch sind die SEC-J-Werte in impact_master.yaml v2.2 unter sec_j_scores zentral abgelegt. Domain B, C, D individuell kalkuliert; Domain A, E, F, G, H batch-bewertet (Einzelhebel-Berechnung ausstehend). Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; B09 J=0,72 als Warnschwelle dokumentiert (Algorithmisches-Management-Risiko). Vollständiger Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+
+# Hinweis zur SEC-J-Integration (v1.4):
+# co2_master.yaml bleibt CO2-only-SSoT (Quantitäten in Gt CO₂eq).
+# Die SEC-J-Werte (S, E, C, J, SEC-J) pro Hebel sind in impact_master.yaml v2.2
+# unter sec_j_scores zentralisiert. Pfad: canon/data/impact_master.yaml
+# Spec: canon/de/SECJ_SPEC_v1.0.md
   
 # Wissenschaftliche Methodologie (für Peer Review)
 methodology:

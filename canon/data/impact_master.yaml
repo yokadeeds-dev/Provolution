@@ -9,13 +9,21 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.1"
+  version: "2.2"
   last_updated: "2026-05-28"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_2_2026-05-28:
+      - "PS-U 2.0 SEC-J-Nachrüstung: TEIL 6.5 sec_j_scores neu — schließt architektonische Lücke (Band 4 v4.2 hatte vor 2026-05-10 nur SEC, kein J)"
+      - "Individuell kalkuliert: 13 Hebel (Domain B, C, D)"
+      - "Batch-bewertet: 5 Domain-Durchschnitte (A, E, F, G, H)"
+      - "Pending: I33-I36, J01, K01-K04, B11/B12/B13, F22/F27/G25/G26/G30/H33/E23, C-2026-*"
+      - "Gesamt-Ø SEC-J = 0.91; kein J<0.50-Veto; B09 J=0.72 + C12 J=0.82 als Warnschwellen mit Implementierungs-Auflagen"
+      - "Audit-Quelle: User-PF-Sitzung 2026-05-28 (PS-U:STANDARD + PS-U:JUSTICE in Gemini)"
+      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
     v2_1_2026-05-28:
       - "Sync mit co2_master.yaml v1.3 (PR #4 vom 2026-05-28): reduktion_hart -58.0 → -58.6"
       - "B09/B10 Drift-Resolution: Domain B total -15.8 → -14.6"
@@ -527,6 +535,119 @@ transformation_pathways:
       Provolution würde bei voller Umsetzung das 1.5°C-Budget um Faktor 3
       übertreffen, ermöglicht damit auch Kompensation schwer-vermeidbarer
       Emissionen und negative Emissionen für Overshoot-Korrektur.
+
+# ============================================================================
+# TEIL 6.5: SEC-J SCORES (PS-U 2.0 SEC-J Nachrüstung 2026-05-28)
+# ============================================================================
+# Quelle: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md
+# Methodik: canon/de/SECJ_SPEC_v1.0.md
+# Formel: SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J
+# J-Veto: J<0,50 → SEC-J = null (absolutes Veto)
+# J-Warnschwelle: J<0,80 → Implementierungs-Auflagen erforderlich
+
+sec_j_scores:
+  meta:
+    version: "1.0"
+    last_updated: "2026-05-28"
+    audit_source: "User-PF-Sitzung 2026-05-28 (Probatio Familia v1.0.1, Modus PS-U:STANDARD + PS-U:JUSTICE)"
+    audit_report: "studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+    formula: "SEC-J = 0.30*S + 0.25*E + 0.30*C + 0.15*J"
+    veto_threshold: 0.50
+    warning_threshold: 0.80
+
+  # Individuell kalkulierte SEC-J-Werte (PS-U:STANDARD Audit)
+  individual_calculated:
+
+    # Domain B — Produktion & Material
+    B07_kreislaufwirtschaft: { s: 0.95, e: 0.92, c: 0.92, j: 0.90, sec_j: 0.93 }
+    B08_biopolymere_hanf:    { s: 0.92, e: 0.87, c: 0.92, j: 0.85, sec_j: 0.90 }
+    B09_materialfluss:       { s: 0.85, e: 0.95, c: 0.82, j: 0.72, sec_j: 0.85, warning: "J<0.80 — Algorithmisches-Management-Risiko (Digital Twin); Implementierungs-Auflage: Arbeitnehmervertretungen zwingend beim Design der Tracking-Systeme" }
+    B10_abfall_zu_ressource: { s: 0.93, e: 0.90, c: 0.90, j: 0.88, sec_j: 0.91 }
+
+    # Domain C — Energie & Infrastruktur
+    C11_erneuerbare: { s: 0.95, e: 0.95, c: 0.92, j: 0.85, sec_j: 0.93 }
+    C12_speicher:    { s: 0.88, e: 0.90, c: 0.90, j: 0.82, sec_j: 0.88, warning: "J<0.85 — Li-Ion-Rohstoffgewinnung Globaler Süden; Tragfähigkeit nur durch H31-Regulierungen + B09-Lieferketten-Transparenz" }
+    C13_smart_grid:  { s: 0.90, e: 0.93, c: 0.90, j: 0.88, sec_j: 0.90 }
+    C14_dezentral:   { s: 0.90, e: 0.88, c: 0.86, j: 0.95, sec_j: 0.89 }
+
+    # Domain D — Ernährung & Landnutzung
+    D15_regen_landwirtschaft: { s: 0.93, e: 0.92, c: 0.91, j: 0.90, sec_j: 0.92 }
+    D16_co2_senken_boden:     { s: 0.92, e: 0.92, c: 0.86, j: 0.88, sec_j: 0.90, note: "J3 Verteilung erfordert G27-Carbon-Payment-Monitoring (€100 Mrd/Jahr nicht an Agrarkonzerne)" }
+    D17_hanf_anbau:           { s: 0.95, e: 0.93, c: 0.91, j: 0.92, sec_j: 0.93 }
+    D18_urbane_landwirtschaft: { s: 0.85, e: 0.82, c: 0.92, j: 0.94, sec_j: 0.88 }
+    D19_algen_bioraffinerie:  { s: 0.85, e: 0.78, c: 0.86, j: 0.85, sec_j: 0.84 }
+
+  # Batch-bewertete Domain-Durchschnitte (PS-U:STANDARD/JUSTICE Batch-Audit)
+  # Einzelhebel-Berechnung ausstehend
+  domain_batch:
+    A_governance:
+      mean_j: 0.92
+      mean_sec_j: 0.92
+      note: "A01 SEC-Priorisierung + A02 Entscheidungskarte objektivieren politische Prozesse → demokratisiert J2 Partizipation"
+    E_bildung:
+      mean_j: 0.93
+      mean_sec_j: 0.93
+      note: "E21 GERECHTIGKEITS-MECHANISMEN unter PS-U:JUSTICE-Modus J=0.95 als systemischer J-Anker für alle physischen Maßnahmen"
+    F_technology:
+      mean_j: 0.90
+      mean_sec_j: 0.90
+      note: "F25 Open-Source-Infrastruktur bricht Patentmonopole des Globalen Nordens (J1 Zugang)"
+    G_monitoring:
+      mean_j: 0.90
+      mean_sec_j: 0.90
+    H_meta:
+      mean_j: 0.90
+      mean_sec_j: 0.90
+      note: "H31 Regulierungs-Framework erzwingt Internalisierung von Externalitäten (Verursacher trägt Kosten, nicht Vulnerable)"
+
+  # Noch nicht kalkuliert (eigene Folge-Sub-Phasen)
+  pending:
+    mobility:
+      - I33  # Kreislauf-Auto (band4-canonical)
+      - I34  # STUB Kreislauf-LNF
+      - I35  # PS-U TRAGFÄHIG 2026-05-28 (S 0.85, E 0.90, C 0.80, J 0.80, SEC-J 0.84 — separater PS-U-Report)
+      - I36  # PS:FULL TEILBESTANDEN 2026-05-28 (empirische Fundierung ausstehend)
+    construction:
+      - J01  # STUB Kreislauf-Gebäude
+    marine:
+      - K01  # Mangroven
+      - K02  # Seegras
+      - K03  # Kelp
+      - K04  # Salzmarschen
+    yaml_only:
+      - B11  # transformation -1.8
+      - B12  # biomasse -2.5
+      - B13  # band4-canonical NEU 2026-05-27
+      - F22  # AUTO_INTEGRATE Kategorie A
+      - G28  # ki_monitoring
+      - G29  # blockchain_tracking
+    auto_integrate_categories:
+      - F27  # Carbon-Pricing
+      - G25  # Nachhaltige Mobilität
+      - G26  # Resiliente Städte
+      - G30  # Globales Klimasystem-Monitoring
+      - H33  # Diplomatische Klimakooperation
+      - E23  # Operatives Gerechtigkeits-Mapping
+    communities:
+      - C-2026-001  # Photovoltaik-Wasserdesinfektion
+      - C-2026-003  # Regenwasser-Speicherung Silos
+      - C-2026-004  # Regenwasser-Schwimmer
+      - C-2026-007  # Globale Energie-Effizienz
+      - C-2026-008  # Präzisionsfermentation + Hanf-Kaskade
+
+  # Aggregat
+  aggregate:
+    gesamt_durchschnitt_sec_j: 0.91
+    j_veto_auslosungen: 0
+    j_warnung_schwelle_unter_0_80: 2  # B09 (0.72), C12 (0.82)
+    note: "Gesamt-Ø SEC-J berechnet aus Rest-Portfolio (Batch + Individuell); vollständiger Ø über alle Hebel nach Abschluss pending-Liste"
+
+  # Verbindlichkeit für Folge-Aktionen
+  implementation_constraints:
+    B09: "Arbeitnehmervertretungen zwingend beim Design der Digital-Twin-Tracking-Systeme (Anti-Algorithmisches-Management)"
+    B08: "DIN EN 13432 + THC-Zertifizierung darf keine unüberwindbare Markteintrittsbarriere für Kleinbauern werden"
+    C12: "Internationale Regulierungen (H31) + Lieferketten-Transparenz (B09) zwingend für Li/Co-Abbau; sonst Veto-Risiko (J<0.50)"
+    D16: "Carbon-Payments (€100 Mrd/Jahr) erfordern G27-Governance-Monitoring; sonst landen Gelder bei Agrarkonzernen statt lokalen Farmen"
 
 # ============================================================================
 # TEIL 7: METADATA & VALIDATION
