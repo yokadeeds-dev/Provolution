@@ -446,7 +446,7 @@ Die Meta-Anwendung H30 (CO₂-Bepreisung bei €80/t, EU-ETS-Maßstab) generiert
 
 **4. Longitudinale Validierung.** Wenn Provolution-Anwendungen in Realwelt-Implementierung eintreten, sollten empirische SEC-Scores verfolgt und mit den Pre-Implementierungsschätzungen verglichen werden. Dies ermöglicht iterative Rekalibrierung der Vorhersagegenauigkeit des Frameworks.
 
-**5. SEC-J-Dimension.** Eine Gerechtigkeitserweiterung des SEC-Scores (SEC-J = 0,5·S + 0,3·E + 0,1·C + 0,1·J) befindet sich in Entwicklung, um Verteilungsgerechtigkeit formal als vierte Komponente des Verifikationsstandards einzubeziehen, statt sie ausschließlich über die Konsistenzprüfung zu behandeln.
+**5. SEC-J-Dimension.** [Corrigendum 2026-04-27: Die im Manuskript-Entwurf v0.1 angegebene Formel SEC-J = 0,5·S + 0,3·E + 0,1·C + 0,1·J entsprach einer frühen Entwicklungsversion. SECJ_SPEC v1.0 (2026-04-27) korrigierte sie zu SEC-J = 0,40·S + 0,25·E + 0,15·C + 0,20·J mit J-Veto bei J < 0,50. Siehe `canon/en/CORRIGENDUM_2026-04-27.md`.] [Corrigendum 2026-05-28: SECJ_SPEC v1.0 ist seit der PS-U 2.0 Extension (2026-05-10) selbst DEPRECATED. Aktuelle autoritative Formeln sind STANDARD-Modus `SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J` und JUSTICE-Modus `SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J`. Siehe `canon/de/06_framework_extensions_v2.0_SECJ.md` und `canon/en/CORRIGENDUM_2026-05-28.md`.] Eine Gerechtigkeitserweiterung des SEC-Scores (SEC-J = 0,5·S + 0,3·E + 0,1·C + 0,1·J) befindet sich in Entwicklung, um Verteilungsgerechtigkeit formal als vierte Komponente des Verifikationsstandards einzubeziehen, statt sie ausschließlich über die Konsistenzprüfung zu behandeln.
 
 ---
 

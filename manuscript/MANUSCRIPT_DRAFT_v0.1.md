@@ -446,7 +446,7 @@ The meta-application H30 (carbon pricing at €80/t, EU ETS scale) generates app
 
 **4. Longitudinal validation.** As Provolution applications enter real-world implementation, empirical SEC scores should be tracked and compared against the pre-implementation estimates. This will allow iterative recalibration of the framework's predictive accuracy.
 
-**5. SEC-J dimension.** A justice extension to the SEC score (SEC-J = 0.5·S + 0.3·E + 0.1·C + 0.1·J) is under development to formally incorporate distributional equity as a fourth component of the verification standard, rather than treating it solely through the consistency check.
+**5. SEC-J dimension.** [Corrigendum 2026-04-27: The formula SEC-J = 0.5·S + 0.3·E + 0.1·C + 0.1·J stated in manuscript draft v0.1 reflected an early development version. SECJ_SPEC v1.0 (2026-04-27) corrected it to SEC-J = 0.40·S + 0.25·E + 0.15·C + 0.20·J with J-veto at J < 0.50. See `canon/en/CORRIGENDUM_2026-04-27.md`.] [Corrigendum 2026-05-28: SECJ_SPEC v1.0 itself has been DEPRECATED since the PS-U 2.0 Extension (2026-05-10). Current authoritative formulas are STANDARD mode `SEC-J(m) = 0.30·S + 0.25·E + 0.30·C + 0.15·J` and JUSTICE mode `SEC-J(m, justice) = 0.25·S + 0.15·E + 0.20·C + 0.40·J`. See `canon/de/06_framework_extensions_v2.0_SECJ.md` and `canon/en/CORRIGENDUM_2026-05-28.md`.] A justice extension to the SEC score (SEC-J = 0.5·S + 0.3·E + 0.1·C + 0.1·J) is under development to formally incorporate distributional equity as a fourth component of the verification standard, rather than treating it solely through the consistency check.
 
 ---
 
