@@ -98,3 +98,13 @@ line 439). All in-document terminology has been migrated to "Corrigendum".
 **References:**
 - COPE Guidelines: https://publicationethics.org/guidance/Guideline
 - Elsevier Editorial Policy on Corrections: https://www.elsevier.com/about/policies/article-withdrawal
+
+---
+
+## Forward Reference (added 2026-05-28)
+
+**SECJ_SPEC v1.0** referenced as "canonical" in this 2026-04-27 corrigendum is itself **DEPRECATED** since the PS-U 2.0 Extension (`canon/de/06_framework_extensions_v2.0_SECJ.md`) on 2026-05-10.
+
+A second-stage corrigendum (`canon/en/CORRIGENDUM_2026-05-28.md`) updates the formula reference from v1.0 to PS-U 2.0 (STANDARD + JUSTICE modes). All future external corrections should cite the v2.0 spec, not v1.0.
+
+The submitted manuscript's Discussion §5 (referenced here, line 439 in `MANUSCRIPT_DRAFT_v0.1_BLIND.md`) now carries inline annotations for both corrigenda.
