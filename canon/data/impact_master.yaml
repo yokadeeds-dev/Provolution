@@ -9,13 +9,18 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.2"
+  version: "2.3"
   last_updated: "2026-05-28"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_3_2026-05-28:
+      - "Spec-Klärung: SECJ_SPEC v1.0 als DEPRECATED markiert; framework_extensions_v2.0_SECJ.md ist autoritativ (PS-U 2.0)"
+      - "sec_j_scores.meta v1.0 → v1.1 mit spec_reference, formula_standard + formula_justice (statt single formula)"
+      - "PR #6/#7-Werte sind methodisch korrekt nach PS-U 2.0 STANDARD-Modus"
+      - "Externer PF-Report-Konflikt (SECJ_SPEC v1.0 0.40·S+0.25·E+0.15·C+0.20·J vs PS-U 2.0 STANDARD 0.30·S+0.25·E+0.30·C+0.15·J) aufgelöst: v1.0 deprecated"
     v2_2_2026-05-28:
       - "PS-U 2.0 SEC-J-Nachrüstung: TEIL 6.5 sec_j_scores neu — schließt architektonische Lücke (Band 4 v4.2 hatte vor 2026-05-10 nur SEC, kein J)"
       - "Individuell kalkuliert: 13 Hebel (Domain B, C, D)"
@@ -540,20 +545,29 @@ transformation_pathways:
 # TEIL 6.5: SEC-J SCORES (PS-U 2.0 SEC-J Nachrüstung 2026-05-28)
 # ============================================================================
 # Quelle: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md
-# Methodik: canon/de/SECJ_SPEC_v1.0.md
-# Formel: SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J
+# Methodik: canon/de/06_framework_extensions_v2.0_SECJ.md (autoritativ seit 2026-05-10)
+# Formel STANDARD: SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J
+# Formel JUSTICE:  SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J
 # J-Veto: J<0,50 → SEC-J = null (absolutes Veto)
+# J-Flag SOZIALE INKONSISTENZ: J<0,40 → Pflicht-Hinweis + Empfehlung
 # J-Warnschwelle: J<0,80 → Implementierungs-Auflagen erforderlich
+# DEPRECATED: SECJ_SPEC v1.0 Formel war 0.40·S + 0.25·E + 0.15·C + 0.20·J — siehe canon/de/SECJ_SPEC_v1.0.md Deprecation-Markierung
 
 sec_j_scores:
   meta:
-    version: "1.0"
+    version: "1.1"
     last_updated: "2026-05-28"
     audit_source: "User-PF-Sitzung 2026-05-28 (Probatio Familia v1.0.1, Modus PS-U:STANDARD + PS-U:JUSTICE)"
     audit_report: "studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
-    formula: "SEC-J = 0.30*S + 0.25*E + 0.30*C + 0.15*J"
+    spec_reference: "canon/de/06_framework_extensions_v2.0_SECJ.md (PS-U 2.0 Extension, autoritativ seit 2026-05-10)"
+    formula_standard: "SEC-J(m) = 0.30*S + 0.25*E + 0.30*C + 0.15*J"
+    formula_justice: "SEC-J(m, justice) = 0.25*S + 0.15*E + 0.20*C + 0.40*J"
+    formula_used_for_individual_calculated: "STANDARD"
+    formula_used_for_E21: "JUSTICE (PS-U:JUSTICE-Modus, J=0.95 als Justice-Anker)"
     veto_threshold: 0.50
+    flag_soziale_inkonsistenz_threshold: 0.40
     warning_threshold: 0.80
+    spec_v1_0_status: "DEPRECATED — alte Formel war 0.40*S + 0.25*E + 0.15*C + 0.20*J; siehe canon/de/SECJ_SPEC_v1.0.md Deprecation-Markierung"
 
   # Individuell kalkulierte SEC-J-Werte (PS-U:STANDARD Audit)
   individual_calculated:
