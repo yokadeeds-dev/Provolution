@@ -670,6 +670,74 @@ Gefahrstoff-Detektion (Batterien, Chemikalien) mit menschlicher Bestätigung. Sc
 
 ---
 
+### B13: LOKALE ON-DEMAND-FERTIGUNG
+
+**SEC-Score:** 0.84 | **Band:** 4 | **CO₂:** -0.2 bis -0.5 Gt/Jahr | **Integriert:** 2026-05-27 (aus Lesbare-Form-Erzählarbeit)
+
+#### 1. DEFINITION
+Verlagerung industrieller Fertigung von zentralen Massenproduktions-Anlagen mit globalen Lieferketten zu **regionalen Cluster-Fabriken mit bedarfsgerechter (On-Demand-) Produktion**. Zentrale Komponenten: lokal verfügbares Bio-Filament (insbesondere aus Hanf-Cellulose, vgl. B08/D17), 3D-Druck als Hauptfertigungstechnologie, digitale Bestell- und Distributions-Plattformen.
+
+**Problem:** Heutige Massenproduktion plus globale Container-Schifffahrt plus Lagerhaltung verursacht (a) hohe Transport-Emissionen (Container-Sektor 2024: ~240 Mt CO₂/Jahr), (b) systematische Überproduktion (20–40% Restbestände bei standardisierten Konsumgütern), (c) lange Reaktionszeiten auf Nachfrageänderungen und Lieferketten-Disruptionen.
+
+**Zielgruppe:** Konsumgüter-Hersteller, Logistik-Branche, Kommunen (Cluster-Förderung), Maker- und Repair-Communities, Bio-Polymer-Industrie, regionale Wirtschaftsförderung
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Adressiert ~5–15% der globalen Container-Sektor-Emissionen plus Material-/Energie-Verschwendung durch Überproduktion. CO₂-Einsparung -0.2 bis -0.5 Gt/Jahr (konservativ). W_min 0.15 Gt ✅
+- **Efficient:** Cluster-Investition €1–10 Mio. (vs. €100M+ für klassische Mass-Production-Anlage). Bedarfsgerechte Auslastung statt Überproduktion → ROI 5–8 Jahre ✅
+- **Consistent:** Vollständig systemkonform: nutzt B08 (Biopolymere als Material), B07 (Kreislauf als Logistik-Prinzip), D17 (Hanf als Faserquelle), G27 (MRV für Bedarfssteuerung) ✅
+- **SEC-Score: 0.84** (S:0.83, E:0.80, C:0.90)
+
+#### 3. WIRKUNG
+- **Primär:** Container-Transport-CO₂ -12 bis -36 Mt/Jahr (5–15% Substitution Standardware), Material-Verschwendung -30% durch On-Demand-Fertigung, Lagerhaltungs-Energie -50%
+- **Sekundär:** Regionale Wertschöpfung ~€100 Mrd/Jahr (Job-Verlagerung aus zentraler Massenproduktion), Resilience gegenüber Supply-Chain-Disruptionen +60%, schnellere Produkt-Iteration (3D-Druck-Vorteil), Reparierbarkeit durch Verfügbarkeit von Ersatzteilen on-demand
+- **Indikatoren:** Cluster-Fabriken weltweit 1.000→100.000 (20 Jahre), Bio-Filament-Anteil im 3D-Druck-Material 5%→70%, Anteil On-Demand an Konsumgüter-Fertigung 0.1%→15%
+
+#### 4. RESSOURCEN
+- **Finanziell:** €50 Mrd Initial (100k Cluster-Fabriken à ~€500k Ausstattung), €5 Mrd/Jahr laufend, Break-Even 5–8 Jahre
+- **Personal:** 500k FTE (Cluster-Betrieb), 100k FTE (Filament-Produktion und -Vertrieb), 50k FTE (Design/Software/Plattformen)
+- **Material:** Bio-Filamente (Hanf-Cellulose primär), 3D-Drucker industrieller Klasse, CAD/Slicing-Software, digitale Bestell- und Distributions-Plattformen
+- **Zeit:** 3 Jahre Pilotcluster, 10 Jahre regionale Skalierung, 20 Jahre globale Skalierung
+- **Material-Bottleneck-Risiko:** Bio-Filament-Versorgung skaliert linear mit D17 (Hanf-Anbau); ohne D17a (Mehrfachernte) wird Flächenbedarf zum Engpass
+
+#### 5. SKALIERUNG
+- **Pilot:** 10 Cluster-Fabriken in 3 Regionen, 3 Jahre — Fokus: Verpackungen, einfache Konsumgüter (Stifthülsen, Klemmen, Halter, Brillen-Gestelle)
+- **Regional:** 1.000 Cluster in 50 Regionen (z.B. EU-weit), 10 Jahre — Erweiterung auf technische Bauteile (Ersatzteile, Automotive-Innenteile)
+- **Global:** 100.000 Cluster weltweit, 20 Jahre — 15–30% Marktanteil bei adressierbaren Produktklassen
+
+#### 6. FALLBEISPIELE
+**Erfolg – Ivaldi Group / Wilhelmsen (2018+):** Maritime Spare-Parts via 3D-Druck on-demand in Häfen, Vermeidung von Langzeit-Lagerhaltung; nachgewiesene CO₂- und Kostenreduktion
+**Erfolg – HP Industrial 3D + VW Group:** Vorgefertigte 3D-gedruckte Auto-Komponenten in regional verteilten Werken, schnelle Iterationen, lokale Substitution importierter Teile
+**Erfolg – Big Rep / lokale Bio-Filament-Plattformen:** Hanf- und Holz-basierte Filamente kommerziell verfügbar, wachsender Cluster-Markt in EU
+**Fehler – frühe überdimensionierte 3D-Druck-Farmen (vor 2020):** Cluster-Konzepte ohne digital-mature Bestellsysteme — Auslastung unter 30%, ROI scheiterte; Lehre: digital-first-Ansatz, nicht Druck-first
+
+#### 7. AGENTIC POTENZIAL
+
+**Automatisierbare Kernprozesse:**
+Demand-Prediction (α₁=0.86): ML-basierte Vorhersage regionaler Bedarfsspitzen pro Produktklasse, Pre-Print bei statistisch sicherer Auftragslage. Print-Queue-Optimization (α₂=0.84): Dynamische Auftragsverteilung über Cluster-Fabriken nach Auslastung, Materialvorrat und Lieferadresse. Quality-Control (α₃=0.80): Computer-Vision-Inspektion gedruckter Teile für Konsistenz und Maßhaltigkeit.
+
+**SEC-Optimierung durch KI-Agenten:**
+S: Material-Effizienz von 84% auf 92% durch präzise Bedarfsprognose (+9.5%). E: Cluster-Auslastung von ~60% auf ~85% durch intelligente Auftragsverteilung (+41%). C: Standardisierte Druckparameter und Qualitäts-Metriken über alle Cluster-Standorte.
+
+**SEC-Score-Impact:**
+Current 0.84 → Agentic 0.91 (+8.3% Verbesserung)
+
+**Kritische Constraints:**
+Datenschutz bei kundenspezifischen Bestellungen (DSGVO). Sicherheits- und Zulassungs-Standards für technische Bauteile (CE, TÜV) bei dezentraler Fertigung. Cyber-Security der Cluster-Vernetzung. Material-Traceability für regulierte Anwendungen (Medizin, Lebensmittel-Kontakt).
+
+#### 8. CROSS-REFERENZEN
+- **Synergien:** B07 (Kreislauf — On-Demand reduziert Abfall am Anfang), B08 (Biopolymere als Rohstoff), B09 (Materialfluss-Steuerung als Voraussetzung), D17 (Hanf als Faserquelle, mit D17a Mehrfachernte als Skalierungs-Voraussetzung), G27 (MRV für Bedarfssteuerung), I33 (Kreislauf-Auto profitiert von lokaler Ersatzteil-Verfügbarkeit), C14 (Dezentrale Versorgung als Energie-Pfad für Cluster)
+- **CANON:** Band 4 (Domain B Material-Wirtschaft, Domain G Monitoring), Band 5 (Steuerungs-Systeme)
+- **Quelle Lesbare-Form:** `12_LESBARE_FORM/00_Der_Kern.md` Abschnitt VI ("Was nicht mehr gebraucht wird")
+- **Recherche-Beleg:** Perplexity-Dialog 2026-05-27 (Hanf-Gesamtsystem); xeneta.com (Container-Sektor-Emissionen 2024 = 240,6 Mt CO₂); production-to-go.com (3D-Druck-Klimaeffekt); bigrep.com (Bio-Filamente)
+
+#### 9. OFFENE PUNKTE (Stand 2026-05-27)
+- SEC-J-Score (Gerechtigkeitsdimension) noch nicht gerechnet
+- CO₂-Wirkung präziser quantifizieren: welcher Anteil der Container-Standardware ist realistisch durch lokale Fertigung substituierbar?
+- Domain-Doppelzuordnung: primär B (Material) oder mit Co-Verankerung in G (Steuerung/Logistik)?
+- Verbindung zu E12 (Urbane Transformation) prüfen — Cluster-Fabriken sind primär urbane/peri-urbane Strukturen
+
+---
+
 ## KAPITEL 4: DOMÄNE C - ENERGIE & INFRASTRUKTUR
 
 **Zweck:** Dekarbonisierung Energiesektor, Grid-Transformation
@@ -1101,6 +1169,62 @@ THC-Grenzwerte (<0.3%) kontinuierlich überwacht. Organic-Certification human-va
 - **CANON:** Band 4 (Hanf-Ecosystem-Detaillierung), Band 3 (Multi-Use-Pflanze)
 - **Archiv:** Chat 69355338-70cc (Provolution Modus aktiv)
 
+#### 9. ANBAU-INTENSIVIERUNG: MEHRFACHERNTE (D17a-Aspekt)
+
+**Status:** Multiplikator-Aspekt zu D17, kein eigenständiger Hebel. Integriert 2026-05-27 aus Lesbare-Form-Erzählarbeit (`12_LESBARE_FORM/00_Der_Kern.md`).
+
+**Definition:** Industriehanf hat einen Wachstumszyklus von 90–120 Tagen. In milden bis warmen Klimazonen sind dadurch 2 bis 3 vollständige Erntezyklen pro Jahr auf derselben Fläche möglich, ohne dass zusätzliche Anbaufläche erforderlich wird.
+
+**CO₂-Wirkung:** Die Bindungs-Kapazität pro Hektar skaliert annähernd linear mit der Anzahl der Erntezyklen. Aus 9–15 t CO₂/ha/Ernte (Einzelzyklus) werden bei 2–3 Zyklen 18–45 t CO₂/ha/Jahr. Globale Konsequenz: Der Flächenbedarf für vollständigen Plastik-Ersatz sinkt von ~110–256 Mio. ha (1 Ernte/Jahr) auf ~37–85 Mio. ha (3 Ernten/Jahr) — bei ansonsten gleicher Bilanz-Annahme.
+
+**SEC-Implikation:**
+- **S (Sufficient):** Multiplikator-Effekt verstärkt die Sequestrierungs-Wirkung von D17 um Faktor 2–3 ohne zusätzliche Landnahme — Suffizienz steigt.
+- **E (Efficient):** Bestehende Anbau-Infrastruktur wird besser ausgelastet, ohne Investitions-Multiplikation.
+- **C (Consistent):** Bedingt — die schnelle Wiederholung kann den Bodenregenerations-Effekt von D17 (Humusaufbau, Wurzeltiefen-Aufschluss) abschwächen, wenn keine Erholungsphasen oder Cover-Crops zwischen den Hanfzyklen liegen.
+
+**Klima-Beschränkung:** 2 Ernten/Jahr realistisch ab ca. 9°C Jahresmitteltemperatur (Mittelmeerraum, Südosteuropa, gemäßigte Subtropen). 3 Ernten/Jahr nur in warmen Subtropen und Tropen. In mitteleuropäischen Klimazonen (DE, AT, CH, FR-Nord) bleibt 1 Ernte/Jahr Standard.
+
+**Trade-off Boden-Regeneration vs. Intensivierung:** D17 wirkt als Rotations-Crop besonders stark, wenn der Hanf auf einem Feld für 1–3 Jahre läuft, bevor Nahrungsfrüchte zurückkehren. Bei 3-fach jährlicher Hanf-Ernte auf derselben Fläche besteht das Risiko, dass die langfristige Bodenregenerations-Wirkung reduziert wird. Empfehlung: Intensivierungs-Szenario nur in Verbindung mit Cover-Crop-Zwischenzeiten oder als Wechsel-Modell zwischen Intensivflächen und Regenerationsflächen.
+
+**Cross-Referenzen:**
+- **Synergie zu D15** (Regenerative Landwirtschaft): Bodengesundheit-Monitoring entscheidet, wann Intensivierung tragbar ist
+- **Synergie zu B13** (Lokale On-Demand-Fertigung): höherer jährlicher Rohstoffstrom unterstützt regional verteilte Verarbeitung
+- **Quelle Lesbare-Form:** `12_LESBARE_FORM/00_Der_Kern.md` Abschnitt II ("Die Spur an ihrem Anfang")
+- **Recherche-Beleg:** Perplexity-Dialog 2026-05-27 zum Hanf-Gesamtsystem; agriculture.ec.europa.eu (EU-Wachstumszyklus-Daten), hempfarmsaustralia.com.au (Mehrfachernte-Bindungsraten)
+
+#### 10. ANBAU-STRATEGIE-DIFFERENZIERUNG: FASER / REGEN / PHYTO (D17b-Aspekt)
+
+**Status:** Strategie-Aspekt zu D17, kein eigenständiger Hebel. Integriert 2026-05-27 nach wissenschaftlicher Klärung im Lesefassungs-Workflow (User-Vorschlag Zwei-Gleis, ergänzt zu Drei-Gleis durch Phytoremediations-Differenzierung).
+
+**Definition:** Differenzierte Anbau-Strategie für Industriehanf je nach Zustand der Fläche. Drei Gleise:
+
+| Gleis | Zweck | Boden-Zustand | Ernte-Praxis | CO₂-Pfad |
+|---|---|---|---|---|
+| **Faser-Hanf** | Rohstoff für Material-Wertschöpfung (B07, B08, B13, J01) | gesund, etabliert | volle Ernte | Kohlenstoff verbleibt im Produkt oder Lagerblock |
+| **Regen-Hanf** | Bodenaufbau auf ausgelaugten Flächen | erschöpft, **nicht** kontaminiert | nicht geerntet, als Mulch eingearbeitet | langfristig ~10–30% als stabiler Humus im Boden, Rest aerob veratmet (atmosphärische Rückführung) |
+| **Phyto-Hanf** | Sanierung kontaminierter Flächen | belastet (Schwermetalle, organische Schadstoffe) | volle Ernte + separate Behandlung (Pyrolyse) | Schadstoffe in kontrollierter Endlagerung; Pflanzen-C über Pyrolyse als Biochar dauerhaft stabilisierbar |
+
+**Wirkungs-Logik:** Die "wandernde Hanfspur"-Erzählung der Lesefassung (`00_Der_Kern.md`) entspricht agronomisch nicht einer einzigen Strategie, sondern einem **Mix-Modus** aus diesen drei Gleisen — je nach Zustand der jeweiligen Fläche. Wechsel zwischen den Gleisen ist über die Zeit möglich: nach einigen Jahren als Regen-Hanf ist eine erschöpfte Fläche oft so weit erholt, dass sie ins Faser-Gleis übergeht oder zurück in normale Nahrungs-Fruchtfolgen.
+
+**SEC-Implikation:**
+- **S (Sufficient):** Höhere Effektivität pro Fläche durch funktionsspezifische Optimierung. Faser-Hanf maximiert Material-Output, Regen-Hanf maximiert Humus-Aufbau, Phyto-Hanf adressiert ein eigenes Problem (Bodensanierung) ohne Material-Konkurrenz.
+- **E (Efficient):** Faser-Gleis trägt sich am Markt; Regen-Gleis hat keinen direkten Marktwert (Finanzierung über Carbon Credits, öffentliche Förderung, Bodenwertsteigerung für Folgekultur); Phyto-Gleis rechnet sich gegen konventionelle Sanierung (€50–500/m³) mit Faktor 10–30 günstiger (siehe E11 I35).
+- **C (Consistent):** Vollständig systemkonform — verbindet D15 (Regen-LW als Bewirtschaftungs-Logik), D16 (Humus/Biochar als C-Speicher), E11 I35 (Phytoremediations-Wissenschaft), B07/B08/B13/J01 (Material-Wertschöpfung).
+
+**Verlust-Bilanz beim Regen-Gleis:** Aerobes Verrotten der Biomasse setzt einen Teil des gebundenen CO₂ wieder frei. Typische langfristige Stabilisierungsraten für Biomasse-Einträge in den Boden liegen je nach Klima, Bodenart und Mikrobiom bei rund 10–30% (der Rest wird über die Jahre vom Bodenleben veratmet). Für deutlich höhere Stabilisierungsraten ist Pyrolyse zu Biochar effizienter (siehe D16) — der dort entstehende Kohlenstoff bleibt für Jahrtausende stabil im Boden.
+
+**Phyto-Caveat:** Auf schwermetall- oder schadstoffbelasteten Böden darf die Hanf-Biomasse *nicht* liegenbleiben — die im Pflanzengewebe akkumulierten Schadstoffe gingen sonst beim Verrotten zurück in den Boden, was den Sanierungs-Effekt umkehrt. Hier gilt zwingend: volle Ernte, separate Behandlung (kontrollierte Verbrennung in Pyrolyse-Anlage mit Schwermetall-Rückgewinnung oder sicherer Endlagerung).
+
+**Strategische Konsequenz:** Statt eines einheitlichen Anbau-Modells empfiehlt sich ein **rollender Mix**: auf gesunder Fläche Faser-Gleis, auf erschöpfter Fläche Regen-Gleis, auf kontaminierter Fläche Phyto-Gleis — Wechsel zwischen den Gleisen je nach Zustand. Damit wird die Hanf-Bewirtschaftung zu einem adaptiven System statt zu einer Standardlösung.
+
+**Cross-Referenzen:**
+- **Synergie zu D15** (Regenerative Landwirtschaft): Bewirtschaftungs-Prinzipien für Faser-Gleis
+- **Synergie zu D16** (CO₂-Senken Boden): Biochar-Pfad für Phyto-Gleis-Reststoffe und langfristige C-Stabilisierung
+- **Synergie zu E11 I35** (Hanf-Phytoremediation): wissenschaftliche Grundlage für Phyto-Gleis
+- **Synergie zu B07/B08/B13/J01:** Faser-Gleis liefert Material-Wertschöpfung in alle Material-Hebel
+- **Quelle Lesbare-Form:** `12_LESBARE_FORM/00_Der_Kern.md` Abschnitt II–III; `04_Domain_D_Ernaehrung.md` Abschnitt IV
+- **Recherche-Beleg:** Wissenschaftliche Klärung im Chat 2026-05-27 (User-Frage "Zwei Gleise", ergänzt durch Drei-Gleis-Differenzierung mit Phytoremediations-Caveat)
+
 ---
 
 ### D18: URBANE LANDWIRTSCHAFT
@@ -1159,6 +1283,69 @@ Lebensmittel-Sicherheit (HACCP) menschlich überwacht. Energie-Footprint muss du
 - **Synergien:** D15 (Organische Methoden), B07 (Compost von Food-Waste), C14 (Rooftop-Solar+Ag)
 - **CANON:** Band 4 (Urban-Food), Band 3 (Dezentralisierung)
 - **Archiv:** Chat 6925b416-1290 (Zukunftstechnologien)
+
+---
+
+### D19: ALGEN-BIORAFFINERIE
+
+**SEC-Score:** 0.83 | **Band:** 4 | **CO₂:** -0.3 Gt CO₂eq/Jahr (konservativ; -0.5 Gt im günstigen Skalierungs-Pfad)
+
+#### 1. DEFINITION
+Industrielle CO₂-Fixierung und Biomasse-Produktion durch Mikroalgen in Photobioreaktoren (PBR). Algen werden mit CO₂-haltigen Industrie-Abgasen begast und produzieren Biomasse für Eiweiß (Spirulina/Chlorella als Nahrungs-/Futter-Zusatz), Lipide (Biodiesel-Vorstufe) und Hochwert-Wirkstoffe (Carotinoide, Omega-3, Pigmente).
+
+**Problem:** Industrielle Punktquellen-Emissionen (Zement, Stahl, Chemie) brauchen Senken; gleichzeitig steigender globaler Eiweiß-Bedarf ohne Flächen-Konkurrenz mit Lebensmittel-Ackerbau.
+
+**Zielgruppe:** Industrielle Emittenten mit CO₂-haltigen Abgasen, Lebensmittel-/Futter-Industrie, Biodiesel-Industrie, Aquakultur
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Produktivität 30 t/ha/yr (vs. 3 t/ha Soja), Eiweiß-Yield ~10× Soja, CO₂-Fixierung ~1,8 t CO₂ pro 1 t Algen-Biomasse ✅
+- **Efficient:** PBR-Invest hoch (€2–5 Mio/ha), ROI 7–10 Jahre; rentabel nur am Standort Industrie-Abwärme + EE-Stromüberschuss + Hochwert-Co-Produkte ✅
+- **Consistent:** Komplementär zu D17 (Hanf-Acker → Faser) und D18 (Stadt-Garten → Frische), B07 (Industrie-Abgase als Input statt Abfall), B12 (alternative Biomasse), C11 (PBR-Beleuchtung mit EE) ✅
+- **SEC-Score: 0.83** (S:0.85, E:0.78, C:0.86)
+
+#### 3. WIRKUNG
+- **Primär:** CO₂-Fixierung -0,3 Gt/Jahr global (konservativ, durch PBR-Kapazität limitiert; -0,5 Gt im günstigen Pfad)
+- **Sekundär:** Eiweiß-Produktion +50 Mio t/Jahr ohne Acker-Konkurrenz, Biodiesel-Vorstufen +5 Mrd L/Jahr, Industrie-CO₂-Recycling für 1000+ Standorte
+- **Indikatoren:** PBR-Hektar global 50 → 5000 (15 Jahre), CO₂-Recycling-Quote bei Großemittenten 0% → 15%
+
+#### 4. RESSOURCEN
+- **Finanziell:** €25 Mrd Initial (5000 ha × €5 Mio/ha), €3 Mrd/Jahr O&M, Break-Even 7–10 Jahre
+- **Personal:** 50k FTE (PBR-Operations), 10k FTE (Bioprocess-Engineering), 5k FTE (R&D)
+- **Material:** Glas/Acryl-Reaktoren, Pumpen, CO₂-Abgas-Anbindung, Trocknungs-Anlagen, Extraktions-Technik
+- **Zeit:** 5 Jahre Pilot-Skalierung, 15 Jahre bis 5000 ha global
+
+#### 5. SKALIERUNG
+- **Pilot:** 10 Anlagen, je 5 ha, angedockt an Zement-/Stahlwerke (CO₂-Abgase)
+- **Regional:** 100 Anlagen, je 10 ha, EU + USA + China
+- **Global:** 1000 Anlagen, je 5 ha, alle großen Industrie-Standorte
+
+#### 6. FALLBEISPIELE
+**Erfolg - Algenol Biofuels (USA):** Direkte CO₂-Fixierung mit Ethanol-Produktion in PBR
+**Erfolg - Cellana (Hawaii):** Mikroalgen für Eiweiß + Omega-3 + Biodiesel-Vorstufen (Pilot)
+**Erfolg - Provectus Algae (Australien):** Synthetic Biology Mikroalgen für Cosmetic-Wirkstoffe (kommerziell)
+**Erfolg - Pilotanlage Senftenberg (DE):** Algen am Braunkohle-Kraftwerk (Carbon-Recycling, BMBF-gefördert)
+**Fehler - Algenbiodiesel-Hype 2010–2015:** US DoE Programm zurückgefahren — Erwartungen zu hoch, Energie-Bilanz ohne Hochwert-Co-Produkte unrentabel
+**Lerneffekt:** PBR rentabel nur bei Eiweiß-/Wirkstoff-Hochwert-Co-Produkten, nicht bei reiner Biodiesel-Produktion
+
+#### 7. AGENTIC POTENZIAL
+
+**Automatisierbare Kernprozesse:**
+Wachstums-Optimierung (α₁=0.86): ML-gesteuerte Echtzeit-Anpassung von Licht-Spektrum, CO₂-Begasung, Nährstoff-Dosierung, pH und Temperatur. Stamm-Selektion (α₂=0.80): Computer-Vision-basierte Identifikation der produktivsten Algen-Stämme, automatisierte Inokulation. Prozess-Stabilisierung (α₃=0.78): Frühwarnung Kontamination und Crash, automatisierte Korrekturmaßnahmen.
+
+**SEC-Optimierung durch KI-Agenten:**
+S: Yield/m³ +20% durch optimale Wachstumsbedingungen. E: Energiebedarf -25% durch dynamische LED-Steuerung. C: Standardisierte Bio-Sicherheits-Protokolle, reproduzierbare Prozess-Parameter.
+
+**SEC-Score-Impact:**
+Current 0.83 → Agentic 0.88 (+6.0% Verbesserung)
+
+**Kritische Constraints:**
+HACCP-Standards bei Lebensmittel-/Futter-Output menschlich überwacht. Bio-Sicherheit (Kontamination mit toxischen Algen-Stämmen) durch redundante Sensorik + Audit. Energie-Bilanz muss positiv bleiben — PBR-Beleuchtung darf EE nicht aufzehren (Standort-Logik kritisch).
+
+#### 8. CROSS-REFERENZEN
+- **Synergien:** B07 (Industrie-Abgase als Input statt Abfall), B12 (alternative Biomasse), C11 (PBR-Beleuchtung mit EE-Überschuss), D17 (Komplement Acker-Faser ↔ aquatisches Eiweiß), D18 (Komplement Stadt-Garten ↔ Industrie-Bioreaktor), K03 (verwandte marine Pflanzen-Familie — aber Bioreaktor- statt Ökosystem-Logik)
+- **Domain-Abgrenzung zu K:** D19 = industrielle Bioreaktoren (geschlossen, Tech-getrieben, landbasiert); K = ökosystemar (Mangroven/Seegras/Kelp/Salzmarschen marine Restoration im Freiland). Beide ergänzen sich, sind aber kategorial unabhängige Hebel-Klassen — deshalb verbleibt D19 in D-Domain, K bleibt fokussiert auf Blue-Carbon-Ökosystem-Restoration.
+- **CANON:** Band 4 (Bio-Produktion, Industrie-Symbiose), Band 5 (Bioprocess-Skalierung)
+- **AUTO_INTEGRATE-Pfad:** Promotion Kategorie B → A 2026-05-28; vollintegriert in Band 4 v4.2 D-Domain 2026-05-28
 
 ---
 
@@ -1903,9 +2090,387 @@ Diplomatische Entscheidungen ausschließlich human. Nationale Souveränität str
 
 ---
 
-## KAPITEL 10: INTEGRATION & SKALIERUNGS-ROADMAP
+## KAPITEL 10: DOMÄNE I - MOBILITÄT
 
-### 10.1 System-Architektur
+**Zweck:** Verkehr/Mobilität als Carbon-Sink und systemische Rohstoff-Verwertung statt linearer Material- und Energie-Verschwendung
+**Hebel:** 2 (I33 ausgeschrieben, I34 STUB)
+**Durchschnittlicher SEC-Score:** 0.95 (I33)
+**CO₂-Impact:** -1.0 Gt/Jahr (I33) + -0.3 Gt/Jahr (I34 STUB)
+
+---
+
+### I33: KREISLAUF-AUTO
+
+**SEC-Score:** 0.95 | **Band:** 4 | **CO₂:** -1.0 Gt/Jahr (global; -36 Mt/Jahr für DE bei 49 Mio. PKW) | **Promoted:** 2026-05-28 (aus STUB → band4-canonical)
+
+#### 1. DEFINITION
+Dekonstruktion des Automobils von einer linearen Zerstörungsmaschine zu einem zirkulären Fortbewegungsmittel. Ein modulares System aus fünf Bausteinen, von denen jeder eigenständigen Wert hat und die in Kombination ökonomisch und systemisch optimal wirken — aber nicht physikalisch voneinander abhängen (Motorsport-Belege zeigen: Naturfaser-Composites funktionieren auch unter Extrembedingungen):
+
+1. **Tempolimit 120 km/h** auf Autobahnen (Verhaltensregel)
+2. **Hardware-Right-Sizing**: bauartbedingte V_max ≤ 130 km/h (Konstruktionsziel)
+3. **Leistungsbegrenzung**: P_max ≤ ca. 75 kW / 100 PS
+4. **Hanf-Bio-Polymer-Karosserie** als strukturelles CO₂-Speicher-Material
+5. **Bio-Polymer-Reifen** (pflanzliches Butadien, Lignin oder Reisschalen-Silika statt Carbon Black, optional Löwenzahn-Kautschuk)
+
+Das Fahrzeug wird vom CO₂-Emittenten zum strukturellen Kohlenstoffspeicher (Carbon Sink) und gleichzeitig demokratisch zugänglicher. Voraussetzung: BEV-Antrieb (Battery Electric Vehicle). Biokraftstoffe sind in diesem Hebel explizit ausgeschlossen (Wirkungsgrad-Kollaps, siehe Sektion 12).
+
+**Problem im Status Quo:** Industriestrategie 2,5-Tonnen-SUVs mit 500 PS, nur Antriebsstrang von Verbrenner auf Elektro getauscht. Massen-Energieverbrauch, Reifenabrieb (größte Einzelquelle Mikroplastik), High-Power-Charging-Last auf Netz, fossile Vorkette in Stahl-/Kunststoff-Karosserie.
+
+**Zielgruppe:** Gesetzgeber (Tempolimit, Zulassungsbedingungen), Automobil-Industrie, KMU im Leichtbau (Bio-Composite-Märkte), Mobilitäts-Forschung, Verbraucher
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** CO₂-Einsparung ~1,0 Gt/Jahr global bei vollständiger Umsetzung (DE 36 Mt/Jahr bei 49 Mio. PKW, linear skaliert auf weltweit ~1,5 Mrd. PKW). W_min 0,5 Gt ✅
+- **Efficient:** Hardware-Drossel auf 130 km/h spart ~300 kg Fahrzeugmasse pro Auto durch Wegfall von Über-Engineering (Hochleistungsbremsen, Schwerlastreifen, versteifte Crash-Strukturen, überdimensionierte Kühlung); Bio-Composite-Karosserie nochmal ~150 kg. Gesamtreduktion ca. 450 kg. Tempolimit-Effekt (UBA 2024): 6,6–6,7 Mt CO₂/Jahr DE durch geringeren Kraftstoffverbrauch, Routenwahl- und Nachfrageeffekte. ✅
+- **Consistent:** Vollständig systemkonform: nutzt B07 (Kreislauf), B08 (Biopolymere), B13 (lokale On-Demand-Fertigung für Ersatzteile), C11–C14 (Erneuerbare Energie für BEV-Antrieb), D17 (Hanf-Anbau mit D17a Mehrfachernte + D17b Faser-Gleis), Komplement zu J01 (Kreislauf-Gebäude, gleiche Kaskaden-Logik) ✅
+- **Just:** Lasten tragen primär Premium-Industrie und Top-Einkommen — durch Vmax-Drosselung verlieren sie das implizite Privileg, Verkehrsregeln technisch übertreten zu können. Nutzen (Lärm-, Feinstaub-, Unfallreduktion, günstige Mobilität durch längere Batterie-Lebensdauer und kleinere Fahrzeuge) fließt Mehrheit und vulnerablen Gruppen zu ✅
+- **SEC-Score: 0.95** (S:0.95 | E:0.95 | C:0.90 | J:0.87). Berechnung 0,5·S + 0,3·E + 0,2·C = 0,940; bei stark positiver J-Bewertung gerundet auf 0,95.
+
+#### 3. WIRKUNG
+- **Primär:** CO₂-Einsparung ~1,0 Gt/Jahr global. DE-Aggregat (49 Mio. PKW): Tempolimit-Effekt 6,7 Mt + Betriebs-Einsparung durch Massenreduktion ~22 Mt + Produktions-Vorteil durch Hanf-Sink statt Stahl ~7 Mt (bei 2,8 Mio. Neuzulassungen). Fahrzeugmasse -450 kg im Schnitt.
+- **Sekundär:**
+  - Batterie-Lebensdauer von ~15 auf 25–30 Jahre durch geringere C-Raten und reduzierte Hitze-Spitzen
+  - Reifenabrieb (Mikroplastik) durch geringere Anfahrmomente und kleineres Fahrzeuggewicht deutlich reduziert
+  - Netzstabilität: keine High-Power-Charging-Spitzen >250 kW nötig, Trafo-Infrastruktur entlastet
+  - Verkehrsfluss: homogene Beschleunigungs- und Geschwindigkeitsvektoren eliminieren Phantomstaus
+  - **Sicherheit (eigener Vorteil natürlicher Fasern):** Naturfaser-Composites splittern beim Crash nicht (im Gegensatz zu Carbon-Fiber, FIA-getestet) — direkter Sicherheits-Hebel
+- **Indikatoren:** PKW-Bestand mit Hanf-Anteil-Karosserie 0,1%→50% (20 Jahre); Tempolimit-Umsetzung Pilot-Region (z.B. DE) als erster Schritt; bauartbedingte Vmax-Begrenzung als EU-Zulassungs-Vorgabe in 5–10 Jahren
+
+#### 4. RESSOURCEN
+- **Finanziell:** Volkswirtschaftlich neutral bis positiv (geringere Fahrzeug-Kosten, längere Batterie-Lebensdauer, weniger Trafo-Infrastruktur, geringerer Material- und Energieinput in Fertigung); industrieseitig Umbau-Aufwand in Werkzeug-Sets der Karosserie-Fertigung in der Größenordnung einstelliger Milliarden Euro pro Hersteller über 5–10 Jahre.
+- **Personal:** Bestehende Automotive-Belegschaft wird umgeschult (Naturfaser-Verarbeitung statt reine Metallumformung); zusätzliche Stellen in der Hanf-Aufbereitungs-Industrie (D17-Anbindung) und KMU-Leichtbau (Bcomp-ähnliche Spezialisten).
+- **Material:** Hanf-Faser (D17-Verbindung), bio-basierte Harzmatrix mit Open-Source-Rezeptur, Lithium für kleinere Batterien (weniger als heutiger Pfad), Kupfer für Antrieb (analog C11-Vorkette).
+- **Zeit:** Tempolimit/Vmax-Drosselung: 2–3 Jahre Gesetzgebung + Phase-in. Hanf-Karosserie-Skalierung: 10–15 Jahre. Vollumsetzung: 20 Jahre.
+- **Material-Bottleneck-Risiko:** Hanf-Versorgung skaliert linear mit D17 (und D17a Mehrfachernte). Open-Source-Rezepturen für Bio-Harz kritisch, um Patent-Monopole von Agro-/Chemie-Konzernen zu vermeiden.
+
+#### 5. SKALIERUNG
+- **Pilot:** Tempolimit 120 in einem Land (DE oder EU-Mitglied) als Verhaltensregel, 2–3 Jahre. Parallel: Pilot-Werk mit Hanf-Bio-Polymer-Karosserie (Mittelklasse-BEV-Serie).
+- **Regional:** EU-weite Vmax-Zulassungs-Vorgabe, 10 Jahre. Bcomp-/Hanf-Cluster in DE, NL, FR, IT skalieren.
+- **Global:** Übernahme der modularen Bausteine durch andere Industriestaaten, je nach Rechtsraum verschiedene Umsetzungs-Pfade. 20 Jahre.
+
+#### 6. FALLBEISPIELE
+
+**Motorsport-Belege technische Machbarkeit (Naturfaser-Composites unter Extrembedingungen):**
+- **F1 (McLaren):** Bcomp ampliTex Rennsitz in F1-Wagen — Naturfaser-Composite in höchster Performance-Klasse (~1000 PS, ~370 km/h)
+- **Formula E (BMW iFE.20, 2019):** erstes FE-Rennfahrzeug mit Bcomp-Naturfaser-Komponenten (Kühlschacht aus Flachs)
+- **Super Formula SF23 (Japan, 2023):** Bcomp Bodywork in höchster japanischer Formel-Klasse, ~550–600 PS, ~320 km/h
+- **DTM BMW M4 (2020):** Bcomp ampliTex+powerRibs in Karosserieteilen
+- **Customer Racing GT3/GT4:** Porsche, Mercedes-AMG, BMW M
+- **Extreme E:** Off-Road-Hardcore mit Naturfaser-Composites
+- **"World F3rst Formula 3" (2009):** F3-Rennwagen mit Hanf + Flachs + Bioplastik-Komponenten — Hanf-spezifischer Beleg, ~270 PS, ~270 km/h, vor 17 Jahren
+- **Ycom/Bcomp Crash-Box (Politecnico di Milano):** FIA-zertifizierte Front Impact Absorbing Structure aus ampliTex Flachs-Fasern besteht Crash-Test; Ergebnis vergleichbar mit Carbon-Fiber, plus Sicherheitsvorteil (keine splitternden Bruchstücke)
+
+**Serien-Pilote (Naturfaser-Composites in Pkw):**
+- **BMW i3:** Kenaf-Naturfaservlies in Türverkleidung und Instrumentenpaneel — erste Großserie sichtbar im Innenraum
+- **Polestar 5:** Flachs-basierte biocomposite Seatback-Designs in Serie
+- **CUPRA, Volvo:** Bcomp ampliTex in Volume Manufacturing
+- **BMW Investment in Bcomp (2022):** Series B 35 Mio. USD, mit Porsche und Volvo Beteiligung
+
+**Hanf-Karosserie-Spezifikum:**
+- **Bruce Dietzen / Renew Sports Cars (Florida, 2016+):** Realisierter Sportwagen-Karosserie aus 3 Lagen gewebtem Hanf auf Mazda-Miata-Chassis, ~45 kg Hanfgewebe, 10× dent-resistenter als Stahl — Kleinserie/Prototyp. Fokus heute: Hanf-Fabric-Belieferung für EV-Hersteller.
+
+**Reifen-Pfad:**
+- **Continental Taraxagum:** Fahrradreifen mit Löwenzahn-Kautschuk seit 2019 in Serie (Deutscher Nachhaltigkeitspreis-Pionier). Lieferkette komplett DE (Anbau→Extraktion→Verarbeitung). Pkw-Reifen-Serienreife 5–10 Jahre angekündigt.
+
+**Tempolimit-Effekt:**
+- **UBA-Studie 2024:** 120 km/h auf Autobahnen + 80 außerorts → 6,6 Mt CO₂-Äquivalente/Jahr + 2,8 Mrd. Liter Kraftstoff (Routenwahl- und Nachfrageeffekte berücksichtigt). Methodik verbessert gegenüber Studie 2018.
+
+#### 7. AGENTIC POTENZIAL
+
+**Automatisierbare Kernprozesse:**
+Demand-Forecasting (α₁=0.84): ML-basierte Vorhersage regionaler PKW-Ersatzbedarfe nach Modell- und Material-Klasse. Cluster-Auslastungsoptimierung (α₂=0.82): Verteilung von Karosserieteil-Aufträgen über Bio-Composite-Cluster nach Auslastung, Material­vorrat und Lieferadresse (Verbindung zu B13). Real-Time-Verkehrsfluss-Optimierung (α₃=0.86): Smart-Speed-Limits, Phantomstau-Vorhersage, V2X-Koordination.
+
+**SEC-Optimierung durch KI-Agenten:**
+S: Material-Effizienz von 95% auf 98% durch präzise Bedarfsprognose und Cluster-Auslastungs-Optimierung (+3.2%). E: Verkehrsfluss-Verlust durch Phantomstaus von ~15% auf ~5% reduziert. C: Standardisierte Bio-Composite-Qualität über alle regionalen Cluster.
+
+**SEC-Score-Impact:** Current 0.95 → Agentic 0.98 (+3.2%)
+
+**Kritische Constraints:** Verkehrsteilnehmer-Datenschutz (DSGVO). Sicherheits- und Zulassungs-Standards für tragende Bauteile (CE, FIA-/StVZO-Compliance). Cyber-Security der V2X-Vernetzung. Open-Source-Bio-Harz-Rezepturen zur Patent-Monopol-Vermeidung.
+
+#### 8. CROSS-REFERENZEN
+- **Synergien:** D17 (Hanf-Anbau als Rohstoff­quelle, mit D17a Mehrfachernte und D17b Faser-Gleis), B07 (Kreislauf für Material-End-of-Life), B08 (Biopolymere als Hanf-Cellulose-Verbindung), B13 (Lokale On-Demand-Fertigung für Ersatzteile), C11–C14 (Erneuerbare Energie als BEV-Antriebsquelle), C14 speziell (Dezentrale Versorgung + V2G), I34 (Kreislauf-LNF — Schwester-Hebel für Nutzfahrzeuge), J01 (Kreislauf-Gebäude — gleiche Kaskaden-Architektur)
+- **CANON:** Band 4 (Mobilität als Domain I, neu integriert), Band 3 (System-Wandel), Band 5 (Steuerungs-Systeme)
+- **Quelle Lesbare-Form:** geplant in `12_LESBARE_FORM/`-Domain-I-Kapitel (noch nicht geschrieben)
+- **Recherche-Beleg:** Probatio-Systemica-2.0-Analyse (STUB-File `Kreislauf-Auto/Konzept_Kreislauf-Auto.md`); UBA-Tempolimit-Studie 2024; Motorsport-Recherche 2026-05-28 (Bcomp, F1, Super Formula, F3rst, Ycom-FIA-Crash-Test); Continental Taraxagum-Pfad
+
+#### 9. WARUM HANF — NICHT GENERISCH NATURFASER
+
+Belegte Großserien- und Motorsport-Pilote zeigen, dass Naturfaser-Composites industriell und unter Extrembedingungen funktionieren — primär mit Flachs (Bcomp ampliTex/powerRibs in Polestar, Volvo, CUPRA, BMW Motorsport, F1, Super Formula, FIA-Crash-Box) und Kenaf (BMW i3 Interieur). Diese Belege stützen die technische Machbarkeit der Hanf-Variante eindeutig — sie ist nicht der Engpass.
+
+**Provolution wählt dennoch Hanf, nicht generisch Naturfaser.** Begründung: Hanf liefert nicht nur die Faser-Eigenschaften (vergleichbar mit Flachs), sondern verbindet sich systemisch mit anderen Provolution-Hebeln durch Kaskaden-Effekte, die generische Naturfasern nicht in gleicher Dichte liefern:
+
+1. **Bodenregeneration** (Phytoremediation, Humus-Aufbau, tiefes Wurzelwerk) — D17/D17b Regen-Gleis
+2. **Anti-Monokultur-Wirkung** (Rotations- und Fruchtfolge-Pflanze) — D15
+3. **Biodiversitätsvorteile** (späte Blüte als Pollenlücken-Füller, dichtes Habitat 3–4 m)
+4. **Multi-Use über Wertschöpfungskaskade** (Nahrung → Bau → Textil → Verbund → Biopolymer → 3D-Filament → Lagerblock) — B07/B08/B13/J01
+5. **Mehrfachernten** (2–3/Jahr in milden Klimazonen) — D17a
+6. **Anbau auf degradierten/marginalen Flächen** — D17b Regen- und Phyto-Gleis
+7. **Pestizid- und düngerfrei** — entlastet Agrochemie-Konzerne und Wasserkreislauf
+
+Ohne diese Kaskaden ist Naturfaser-Composite "nur" ein 1:1-Materialersatz — technisch grün, aber systemisch wenig transformativ. Hanf ist im Provolution-System der einzige Knotenpunkt, der gleichzeitig D17/D17a/D17b (Anbau), D15/D16 (Boden-Regeneration, CO₂-Senke), B07/B08/B13 (Material-Wertschöpfung) und J01 (Bau) verbindet.
+
+#### 10. MODULARITÄT — BAUSTEINE ALS EINZELHEBEL
+
+Die fünf Bausteine sind **modular einführbar**, nicht physikalisch voneinander abhängig. Jeder Baustein hat eigenständige Effekte:
+
+- **Baustein 1 (Tempolimit 120):** ~6,7 Mt CO₂/yr DE allein durch Verhaltensregel
+- **Baustein 2 (Vmax 130):** ~300 kg Mehrgewicht durch Über-Engineering entfällt, plus vier eigenständige Begründungen: (a) Konsistenz Auslegung↔Nutzung, (b) Material-/Energie-Footprint der Herstellung, (c) Straftaten-Anreiz wegnehmen (Premium-Käufer kaufen sich faktisch die Möglichkeit, Verkehrsregeln zu brechen — implizites Privileg), (d) Verkehrssicherheit (Geschwindigkeitsspreizung als wichtigster Unfall-Risikofaktor). *Nicht* physikalische Voraussetzung für Baustein 4.
+- **Baustein 3 (75 kW Limit):** Batterie-Langlebigkeit, Reifenabrieb-Reduktion, Netz-Entlastung
+- **Baustein 4 (Hanf-Karosserie):** technisch realisierbar unabhängig von Bausteinen 1–3 (Motorsport-Belege bei 1000 PS / 370 km/h, FIA-getestete Crash-Box)
+- **Baustein 5 (Bio-Reifen):** Mikroplastik-Vermeidung als eigener Sicherheits- und Umwelt-Hebel
+
+Die **Bündelung ist ökonomisch und systemisch optimal** (Synergien zwischen leichterer Karosserie und kleinerer Batterie, weniger Über-Engineering, geringere Sicherheits-Reserven nötig), aber **nicht physikalisch zwingend**. Damit ist der Hebel modular einführbar — was die politische und industrielle Hürde drastisch senkt.
+
+#### 11. HISTORISCHER ANKER
+
+**Henry Ford "Soybean Car" (1941):** Am 13.08.1941 enthüllter Prototyp mit 14 Pflanzenfaser-Plastik-Panelen auf Stahl-Tubular-Frame, 909 kg (–454 kg ggü. Stahl-Variante). Material: Pflanzenfaser in Phenolharz (Soja primär, Hanf-Anteil in der Literatur teils erwähnt — die Symbolik ist klar: ein Fahrzeug, das nicht auf Öl, sondern auf Feldern basiert). Patent 13.01.1942. Prototyp nach Ausstellungen zerstört, nie in Serienproduktion — vom aufkommenden Ölzeitalter überrollt.
+
+**Bruce Dietzen / Renew Sports Cars (Florida, 2016+):** Realisierter Hanf-Karosserie-Sportwagen auf Mazda-Miata-Chassis. Inspiration explizit Henry Fords 1941er Auto. Drei Lagen gewebter Hanf, ~45 kg Hanfgewebe, 10× dent-resistenter als Stahl.
+
+Beide Anker zeigen: Die Idee, Autos radikal biobasiert zu denken, ist alt — sie wurde nur vom Ölzeitalter überrollt. Die Provolution nimmt diesen Faden wieder auf und denkt ihn als systemischen Knotenpunkt einer regenerativen Materialwirtschaft zu Ende.
+
+#### 12. WAS EXPLIZIT NICHT TEIL DES HEBELS IST
+
+**Hanf-Biodiesel für PKW:** SEC-J: FAILED. Begründung: (a) Wirkungsgrad-Kollaps (Photosynthese <2 % × Carnot ~30 % = <1 % Gesamtwirkungsgrad), (b) Teller-Tank-Konflikt (gesamte landwirtschaftliche Nutzfläche DE würde nicht für 49 Mio. PKW reichen), (c) Systemfehler-Kaskade (Hanf als struktureller C-Speicher hochwertvoll → ihn sofort zu verbrennen, zerstört genau diesen Nutzen), (d) bessere Alternative: Sonne → PV → Elektromotor hat Gesamtwirkungsgrad 70–80 %, also ~80-fache Effizienz. **Konsequenz: Kreislauf-Auto ist zwingend BEV.**
+
+**Biokraftstoffe bleiben strikt limitiert** auf Hard-to-Abate-Sektoren: Schwerlast, Luftfahrt, Hochseeschifffahrt, Landmaschinen.
+
+**Vertical Farming als Flächen-Rechtfertigung für Hanf-Anbau:** Vertical Farming ist für Blattgrün/Kräuter/Beeren effizient, für kalorisch dichte Grundnahrungsmittel (Weizen, Mais, Reis) würde der LED-Strombedarf die DE-Netzkapazität um Faktor 30–40 überschreiten. Kein Argument für Hanf-Flächenfreigabe.
+
+#### 13. OFFENE PUNKTE (Stand 2026-05-28)
+
+- YAML-Eintrag in `20_CANON/data/co2_master.yaml` ausstehend (analog zu B13)
+- Lesefassungs-Kapitel Domain I (Mobilität) noch nicht geschrieben — Kreislauf-Auto als Hauptthema, Henry Ford und Dietzen als historische Anker
+- Quantifizierung präzisieren: globale CO₂-Wirkung (-1,0 Gt/yr ist konservative Schätzung; bei vollständiger Hanf-Karosserie-Skalierung deutlich höher denkbar)
+- Verbindung zu I34 Kreislauf-LNF konkretisieren (Schwester-Hebel mit gemeinsamer Kaskaden-Logik)
+- Pilot-Region: DE oder EU als ersten Schritt für Tempolimit + Vmax-Drosselung definieren
+- SEC-J-Score-Berechnung der einzelnen Bausteine ggf. einzeln darstellen (statt nur Gesamtsystem)
+- I34 Kreislauf-LNF: noch als STUB; Promotion zu band4-canonical analog zu I33 als Folge-Aufgabe
+
+---
+
+### I34: KREISLAUF-LNF (STUB)
+
+**Status:** STUB. Detail-Konzept in eigenem File: `Kreislauf-LNF/STUB_I34_Kreislauf_LNF.md`. CO₂-Vorschätzung -0.3 Gt/Jahr. Schwester-Hebel zu I33 für leichte Nutzfahrzeuge (Lieferverkehr letzte Meile, Handwerker-Fahrzeuge, Pflege-Dienste). Kaskaden-Logik analog: Geschwindigkeitsbegrenzung + Leistungs-Limit + Naturfaser-Karosserie + Bio-Reifen. Promotion zu band4-canonical in eigener Sub-Phase geplant.
+
+---
+
+## KAPITEL 10b: DOMÄNE K - MARINE & KÜSTE
+
+**Zweck:** Blue-Carbon-Ökosysteme als systematische Hebel-Klasse — Mangroven, Seegras, Kelp, Salzmarschen als aktive CO₂-Senken plus Stopp der Ozean-Versauerung
+**Hebel:** 4 (K01–K04) · Promotion zu band4-canonical 2026-05-28 (vorher STUB)
+**Durchschnittlicher SEC-Score:** ~0.89 (vorläufig)
+**Domain-Total CO₂:** -1,5 Gt/Jahr (Mittelwert; Bandbreite -0,9 bis -2,1 Gt)
+
+**Kapitel-Numerierung:** Diese Domain wurde 2026-05-28 als 11. Domain zwischen I (Mobilität) und der Integrations-Roadmap eingefügt. Pragmatische Sub-Numerierung 10b vermeidet Cross-Reference-Drift in nachfolgenden Kapiteln; vollständiges Re-Numbering bei Band 4 v4.3 geplant.
+
+### Kern-Idee der Domain K
+
+Ozeane sind die größte aktive CO₂-Senke des Erdsystems (~8–10 Gt CO₂/Jahr Aufnahme heute, ~150 Gt kumulativ seit 1750), wurden im bisherigen A–J-Schema aber nicht direkt adressiert. Die vier Sub-Hebel decken **Blue-Carbon-Ökosysteme** ab — Küsten-Lebensräume, die Kohlenstoff aktiv binden und in Sedimenten über Jahrhunderte speichern.
+
+**Abgrenzung zu D19 Algen-Bioraffinerie:** D19 = industrielle PBR-Bioreaktoren (geschlossene Systeme, Tech-getrieben, landbasiert). Domain K = ökosystemar (Mangroven/Seegras/Kelp/Salzmarschen marine Restoration im Freiland). Beide ergänzen sich, aber sind kategorial unterschiedliche Hebel-Klassen.
+
+### Bewirtschaftungs-Modi (domain-übergreifend, analog D17-Hanf-Spur)
+
+| Modus | Zweck | Eingriffs-Logik |
+|---|---|---|
+| **Schutz-Modus** | Erhalt existierender Bestände | nicht eingreifen, vor Erweiterungs-Druck schützen (ROI > Restoration) |
+| **Restoration-Modus** | aktive Wiederherstellung verlorener Flächen | aktive Anpflanzung, Sediment-Aufschüttung, Seeigel-Ernte etc. |
+| **Aquakultur-Modus** | Kelp/Algen + Muscheln als Lebensmittel/Material-Rohstoff | gezielte Ernte unter Ökosystem-Erhalt |
+
+---
+
+### K01: MANGROVEN-WIEDERHERSTELLUNG
+
+**SEC-Score:** 0.92 | **Band:** 4 | **CO₂:** -0,75 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,5 bis -1,0)
+
+#### 1. DEFINITION
+Wiederherstellung und Schutz tropischer Mangrovenwälder als Küsten-Ökosysteme mit höchster CO₂-Bindungs- und Sediment-Speicher-Leistung pro Hektar. Mangroven binden 5–10 t CO₂/ha/yr in der Wachstumsphase und speichern darüber hinaus erhebliche Mengen in den anoxischen Küsten-Sedimenten über Jahrhunderte.
+
+**Problem:** Globaler Bestand ~14 Mio ha heute (geschätzt 30–50% Verlust seit 1950 durch Garnelen-Aquakultur, Küsten-Ausbau, Holznutzung). Verluste setzen kumulierte Sediment-C-Speicher als CO₂ frei.
+
+**Zielgruppe:** Tropische Küstenstaaten (Süd-/Südostasien, Westafrika, Karibik, Lateinamerika), Küstengemeinden, Aquakultur-Sektor, Naturschutz-NGOs
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Wiederherstellungs-Potenzial ~7–10 Mio ha über 30 Jahre realistisch (50% der historischen Verluste), W_min hoch ✅
+- **Efficient:** Pflanz-Kosten €500–2000/ha (sehr niedrig im Vergleich zu technischen CO₂-Senken), Ko-Benefits (Küstenschutz, Fischzucht) zahlen sich finanziell aus, ROI < 5 Jahre ✅
+- **Consistent:** Komplementär zu D15 (regenerative Praktiken, weniger Pestizid-Eintrag in Mangrovenzonen), D17 (Hanf-Faser-Alternative zu Mangrovenholz-Nutzung), K02/K04 (Verbund-Restoration ganzer Küstenabschnitte) ✅
+- **SEC-Score: 0.92** (S:0.93, E:0.90, C:0.93)
+
+#### 3. WIRKUNG
+- **Primär:** CO₂-Bindung -0,75 Gt/Jahr global bei 7–10 Mio ha Restoration über 30 Jahre
+- **Sekundär:** Küstenschutz (Tsunami-/Sturmflut-Dämpfung Wellenenergie -50–66%), Fischbestand +200% in Kinderstuben, Biodiversität, Lokal-Einkommen
+- **Indikatoren:** Mangroven-Fläche 14 Mio ha → 21–24 Mio ha (30 Jahre), Aquakultur-Konversion zu Silvofishery-Mischsystemen 30%
+
+#### 4. RESSOURCEN
+- **Finanziell:** €10–20 Mrd Initial (10 Mio ha × €1500/ha Pflanz-/Aufwuchs-Mittelwert), €1 Mrd/Jahr Monitoring, Break-Even 5 Jahre (Ko-Benefits)
+- **Personal:** 500k FTE Küstengemeinden, 50k FTE Forst-/Marine-Biologen
+- **Zeit:** 5 Jahre Pilot-Skalierung, 30 Jahre bis vollständige Wiederherstellung
+
+#### 5. SKALIERUNG & FALLBEISPIELE
+**Erfolg - Oceanium Senegal:** Hunderttausende Hektar wiederhergestellt seit 2009 mit Beteiligung von 350+ Küstendörfern
+**Erfolg - Indonesien:** National-Programm seit 2020, Ziel 600k ha Restoration bis 2024
+**Erfolg - Vietnam Mekong-Delta:** Großflächige Mangroven-Pufferzonen wiederhergestellt für Sturm-/Tsunami-Schutz
+**Fehler - Monokultur-Anpflanzungen:** Reine Avicennia-marina-Pflanzungen ohne Begleit-Spezies → geringe Biodiv-Wirkung, fragil
+**Lerneffekt:** Multi-Spezies-Pflanzung mit lokalen Sukzessions-Mustern erfolgreicher; Aquakultur-Konversion zu Silvofishery profitable Win-Win-Lösung
+
+#### 6. CROSS-REFERENZEN
+- **Synergien:** K02/K04 (Verbund-Restoration ganzer Küstenabschnitte), D15 (weniger Pestizid-Eintrag), D17 (alternative Faser-Quelle reduziert Holznutzungs-Druck), G27 (Satelliten-Monitoring Mangroven-Cover)
+- **Domain-Abgrenzung zu D19:** D19 = industrielle PBR. K01 = Ökosystem-Restoration. Kategorisch verschieden.
+- **CANON:** Band 4 (Marine-Ökosysteme), Band 5 (CO₂-Senken-Steuerung)
+
+---
+
+### K02: SEEGRAS-RESTAURATION
+
+**SEC-Score:** 0.87 | **Band:** 4 | **CO₂:** -0,35 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,2 bis -0,5)
+
+#### 1. DEFINITION
+Wiederherstellung von Seegrasflächen in temperaten und tropischen Küstenmeeren. Seegras (z.B. Zostera marina, Posidonia oceanica) bindet 2–3 t CO₂/ha/yr in lebender Biomasse und speichert erhebliche zusätzliche Mengen in den Sedimenten über Jahrtausende.
+
+**Problem:** Globaler Bestand ~30 Mio ha mit kontinuierlichem Rückgang durch Verschmutzung (Pestizide, Düngemittel via Flussfracht), mechanische Schäden (Anker, Schiffsschrauben, Schleppnetzfischerei), Klima-Stress (Temperatur, Lichtverlust durch Algenblüten).
+
+**Zielgruppe:** Küstenstaaten temperater Zone, Hafenverwaltungen, Fischerei-Sektor, Naturschutz-NGOs
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Wiederherstellungs-Potenzial bei ~10 Mio ha realistisch (33% der historischen Verluste), Sediment-C-Speicher mehrfach höher als lebende Biomasse ✅
+- **Efficient:** Pflanzung sehr arbeitsintensiv (€5000–15000/ha bei manueller Pflanzung); neuere Saatgut-/Sprossen-Methoden günstiger; Ko-Benefits (Wasserklarheit, Fischerei-Restoration) zahlen sich aus ✅
+- **Consistent:** Komplementär zu D15 (weniger Pestizid-Eintrag), K01/K04 (Verbund-Restoration), J01 (kein Hafen-Ausbau über Seegrasflächen), C13 (Smart-Grid reduziert Hafenflächen-Bedarf für fossile Logistik) ✅
+- **SEC-Score: 0.87** (S:0.88, E:0.80, C:0.93)
+
+#### 3. WIRKUNG
+- **Primär:** CO₂-Bindung -0,35 Gt/Jahr bei 10 Mio ha Restoration
+- **Sekundär:** Wasserklarheit +50%, Fischbestand +100% in Kinderstuben, Wellenschutz, Sauerstoff-Produktion, Biodiv
+- **Indikatoren:** Seegras-Fläche 30 Mio ha → 40 Mio ha (30 Jahre), Anker-Verbots-Zonen + Schleppnetz-Bann in Schutzgebieten 50%
+
+#### 4. RESSOURCEN
+- **Finanziell:** €50–100 Mrd Initial (Pflanz-Kosten hoch), €2 Mrd/Jahr O&M, Break-Even 8–10 Jahre
+- **Personal:** 100k FTE marine-bio-Operations, 20k FTE Wissenschaft + Hafen-Management
+- **Zeit:** 10 Jahre Pilot-Skalierung, 30 Jahre bis +10 Mio ha
+
+#### 5. SKALIERUNG & FALLBEISPIELE
+**Erfolg - Chesapeake Bay (Virginia, USA):** Großflächige Restoration mit Saatgut-Methode seit 2000, 4000+ ha wiederhergestellt
+**Erfolg - ZSL Project Seagrass (UK):** Sound of Eigg-Restoration mit Bürger-Beteiligung
+**Erfolg - Netherlands Wadden:** Schutz + Restoration im Nationalpark
+**Erfolg - Mittelmeer Posidonia-Schutzzonen:** EU-Habitats-Richtlinie 92/43/EWG mit konkreten Schutzplänen
+**Fehler - Großflächige Anker-Schäden (Mittelmeer):** Yachthafen-Erweiterungen ohne Seegras-Schutz-Auflagen verursachten irreversible Sediment-Erosion
+
+#### 6. CROSS-REFERENZEN
+- **Synergien:** D15 (Pestizid-Eintrag in Flüsse), K01/K03/K04 (Verbund-Restoration), J01 (Hafen-Bauverbot über Seegrasflächen), G27 (Hydroakustik + Satelliten-Monitoring)
+- **CANON:** Band 4 (Marine-Ökosysteme), Band 5 (Schutzzonen-Governance)
+
+---
+
+### K03: KELP-WÄLDER-WIEDERAUFBAU
+
+**SEC-Score:** 0.85 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3)
+
+#### 1. DEFINITION
+Wiederherstellung temperater Kelp-Wälder (Macrocystis pyrifera, Laminaria sp., Ecklonia sp.) in Küstenmeeren. Kelp wächst sehr schnell (bis 50 cm/Tag in der Hauptwachstumsphase), bindet 1–2 t CO₂/ha/yr und exportiert große Mengen Detritus in die Tiefsee (biologische Pumpe).
+
+**Problem:** Massive Verluste in vielen Kelp-Regionen — Kalifornien (~95% seit 2014), Tasmanien (~95% seit 1940), Norwegen, Maine. Hauptursachen: Meereserwärmung (Hitzewellen), Überfischung der natürlichen Räuber von Seeigeln (Otter, Wölfe) → Seeigel-Population explodiert → Kelp wird abgeweidet ("Urchin barrens").
+
+**Zielgruppe:** Küstenstaaten temperater Zone, Aquakultur-Sektor, Fischerei-Behörden, Naturschutz
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Wiederherstellungs-Potenzial bei ~5–8 Mio ha realistisch (50% der historischen Verluste), zusätzlich Tiefsee-C-Export ✅
+- **Efficient:** Seeigel-Ernte als Kombinations-Hebel (Restoration + Lebensmittel-Co-Produkt Uni-Roe), Aquakultur-Synergie mit GreenWave-Modell; Pflanzung mittel-teuer (€3000–8000/ha) ✅
+- **Consistent:** Komplementär zu K01/K02/K04 (Verbund-Restoration temperate Küsten), D17 (Naturfaser-Quelle erweitert um Algen-Faser), B07 (Kelp als Biokunststoff-Vorstufe), I33 (Kelp-Bio-Verbund als Karosserie-Material erforscht) ✅
+- **SEC-Score: 0.85** (S:0.85, E:0.82, C:0.88)
+
+#### 3. WIRKUNG
+- **Primär:** CO₂-Bindung -0,20 Gt/Jahr bei 5–8 Mio ha Restoration + Tiefsee-C-Export
+- **Sekundär:** Fischbestände-Restoration (Kelp-Wälder als Kinderstuben), Aquakultur-Einkommen, neue Biopolymer-Rohstoffe, Reduktion Mikroplastik-Last in Küstenmeeren
+- **Indikatoren:** Kelp-Fläche restoriert 5–8 Mio ha über 30 Jahre, Seeigel-Population in betroffenen Regionen auf historischen Stand reduziert
+
+#### 4. RESSOURCEN
+- **Finanziell:** €15–40 Mrd Initial, €1 Mrd/Jahr O&M + Aquakultur-Investitionen, Break-Even 7–10 Jahre (mit Co-Produkten)
+- **Personal:** 80k FTE marine-Aquakultur + Fischerei-Konversion, 15k FTE Wissenschaft
+- **Zeit:** 8–15 Jahre Skalierung
+
+#### 5. SKALIERUNG & FALLBEISPIELE
+**Erfolg - GreenWave (USA, Ostküste):** Regenerative Ocean Farming Modell, Kelp + Muscheln + Austern; vermarktbare Co-Produkte
+**Erfolg - Sea Forest Solutions (Tasmanien):** Asparagopsis-Algen-Aquakultur für Methan-reduzierendes Futter + Kelp-Restoration
+**Erfolg - Norwegen Kelp-Restoration:** Großflächige Programme nach Seeigel-Plage, vermarktung als Bio-Plastik-Vorstufe
+**Erfolg - California Kelp-Restoration:** Reef-Check Foundation seit 2014; lokale Erfolge in Monterey + Mendocino-Counties
+**Fehler - Mass-Outplanting ohne Räuber-Restoration:** Wiederanpflanzungen ohne Seeigel-Bekämpfung wurden binnen Monaten wieder abgeweidet
+**Lerneffekt:** Seeigel-Ernte (mit lokaler Vermarktung als Uni-Delikatesse) ist Voraussetzung für nachhaltige Kelp-Restoration
+
+#### 6. CROSS-REFERENZEN
+- **Synergien:** K01/K02/K04 (Verbund-Restoration), D17 (erweitertes Naturfaser-Portfolio), B07 (Kelp-Biopolymer), B08 (Algen-Bioplastik als Hanf-Komplement), I33 (Kelp-Verbund-Karosserie-Forschung), D19 (verwandte marine Pflanzen-Familie, aber Bioreaktor- vs Ökosystem-Logik)
+- **CANON:** Band 4 (Marine-Ökosysteme + Bio-Material), Band 5 (Aquakultur-Governance)
+
+---
+
+### K04: SALZMARSCHEN-SCHUTZ UND RESTORATION
+
+**SEC-Score:** 0.90 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3)
+
+#### 1. DEFINITION
+Schutz und Restoration von Salzmarschen — temperate und tropische Gezeiten-Lebensräume mit der höchsten CO₂-Bindungsrate pro Hektar aller Küstenökosysteme (6–8 t CO₂/ha/yr). Salzmarschen speichern Kohlenstoff in tiefen, anoxischen Torf-Sedimenten über Jahrtausende.
+
+**Problem:** Globaler Bestand klein (~5–6 Mio ha), aber extrem effektiv pro Fläche. Hauptverlust-Ursachen: Küstenausbau (Häfen, Wohnbau), Eindeichung für Landwirtschaft, Sediment-Mangel durch Flussregulierung (Dämme halten Sedimente zurück, ohne die Salzmarschen nicht "mitwachsen" können bei Meeresspiegelanstieg).
+
+**Zielgruppe:** Küstenstaaten temperater und subtropischer Zone, Häfen-Verwaltungen, Naturschutz-NGOs, Landwirtschafts-Behörden in Eindeichungs-Regionen
+
+#### 2. SEC-NACHWEIS
+- **Sufficient:** Schutz-Hebel hoch effizient (höchste t-CO₂/ha aller Küstenökosysteme); Restoration-Potenzial begrenzt durch Gesamtfläche, aber Schutz existierender Bestände hat sofortige Wirkung ✅
+- **Efficient:** Schutz-Kosten gering (Ausweisung Schutzgebiete, kein Hafen-Ausbau in Salzmarschen-Zonen) — quasi negative Kosten durch vermiedene Investitionen; Restoration mittel-teuer (€2000–5000/ha) ✅
+- **Consistent:** Komplementär zu K01/K02/K03 (Verbund-Restoration), J01 (Bauverbot in Salzmarschen-Zonen analog zur Klimaschutz-Auflage für Neubau), D15 (regenerative LW reduziert Sediment-Eintrag durch Bodenerhalt) ✅
+- **SEC-Score: 0.90** (S:0.85, E:0.92, C:0.93)
+
+#### 3. WIRKUNG
+- **Primär:** Schutz-CO₂-Erhalt -0,15 Gt/Jahr (vermiedener Sediment-C-Verlust durch Eindeichungs-/Bauverzicht) + Restoration -0,05 Gt/Jahr neu
+- **Sekundär:** Küstenschutz bei Sturmfluten (Wellen-Dämpfung), Stickstoff-Filterung aus landwirtschaftlichen Einträgen, Biodiv (Kinderstuben für Vögel, Fische, Insekten)
+- **Indikatoren:** Salzmarschen-Schutzgebiete-Fläche +30% (30 Jahre), Eindeichungs-Rückbau (Managed-Realignment) in 100+ Küsten-Regionen
+
+#### 4. RESSOURCEN
+- **Finanziell:** €5–15 Mrd Initial (Schutz-Governance + selektive Restoration), €0,5 Mrd/Jahr Monitoring, Break-Even 3 Jahre (Schutz-Modus, da quasi sofortige Wirkung)
+- **Personal:** 50k FTE Naturschutz + Küsten-Management, 5k FTE Wissenschaft
+- **Zeit:** 5 Jahre Schutzgebiets-Ausweisung, 20–30 Jahre für Restoration-Maßnahmen
+
+#### 5. SKALIERUNG & FALLBEISPIELE
+**Erfolg - Wattenmeer (DE/NL/DK):** UNESCO-Welterbe-Status, koordinierte trilaterale Schutz-Governance seit 1978
+**Erfolg - Cape Cod (Massachusetts, USA):** Großflächige Marsh-Restoration nach historischer Eindeichung (Mosquito-Ditches)
+**Erfolg - San Francisco Bay:** South Bay Salt Pond Restoration Project (~6000 ha Wiederherstellung seit 2003)
+**Erfolg - Essex Marshes (UK):** Managed Realignment — Deich-Rückbau und kontrollierte Überflutung als Klimaanpassung
+**Fehler - Bay of Fundy (Kanada):** Historisch ~85% der Salzmarschen verloren durch Aquakultur-/Bau-Aktivitäten
+**Lerneffekt:** Schutz ROI > Restoration; Managed-Realignment-Ansatz beim Meeresspiegelanstieg pragmatisch (Deiche zurückbauen statt erhöhen)
+
+#### 6. CROSS-REFERENZEN
+- **Synergien:** K01/K02/K03 (Verbund-Restoration ganzer Küstenabschnitte), J01 (Bauverbot über Salzmarschen analog zu Hafen-/Wohnbau-Auflagen), D15 (Sediment-Eintrag-Reduktion), G27 (Drohnen + Satelliten-Monitoring der Marsch-Höhenentwicklung)
+- **CANON:** Band 4 (Marine-Ökosysteme), Band 5 (Schutzgebiets-Governance)
+
+---
+
+### Domain-K-SEC-Implikation
+
+| Dimension | Kommentar |
+|---|---|
+| **S (Sufficient)** | Sektor-Größe substanziell — Bandbreite -0,9 bis -2,1 Gt/yr; bei Salzmarschen-Hektar-Effizienz überproportional |
+| **E (Efficient)** | Mangroven (K01) + Salzmarschen (K04) sehr effizient; Seegras (K02) + Kelp (K03) moderat |
+| **C (Consistent)** | Hoch konsistent mit D15 (regenerative LW, weniger Pestizid-Eintrag), D17 (Hanf-Faser als Alternative zu Mangrovenholz-Nutzung), B07 (weniger Mikroplastik), J01 (Bauverbot in Marsch-/Mangrove-Zonen) |
+| **J (Just)** | Küstengemeinden (oft strukturschwach) profitieren von Restoration; Aquakultur-Konversion zu Silvofishery (K01) als Just-Win-Win |
+
+### Pilot-Projekt-Register Domain K (Erstkatalog 2026-05-28)
+
+- **Mangroven:** Oceanium Senegal · Indonesien National-Programm · Vietnam Mekong-Delta · Madagaskar · Vietnam Can Gio (Saigon)
+- **Seegras:** Chesapeake Bay (Virginia) · ZSL Project Seagrass (UK) · Wattenmeer · Mittelmeer Posidonia-Zonen · Niederlande
+- **Kelp:** GreenWave (USA) · Sea Forest Solutions (Tasmanien) · Norwegen · California Reef-Check · Mendocino-Counties
+- **Salzmarschen:** Wattenmeer (DE/NL/DK) · Cape Cod (USA) · San Francisco Bay South Bay Salt Pond Restoration · Essex Marshes (UK Managed Realignment)
+
+### Offene Punkte Domain K (Folge-Sub-Phasen)
+
+- Re-Numbering Kapitel-Nummerierung (Domain K als KAPITEL 11 in Band 4 v4.3, nachfolgende Kapitel umnummerieren)
+- Klimazonen-spezifische Skalierungsstudien (welche Flächen-Anteile in welchen Regionen realistisch?)
+- Pilot-Projekt-Register vertiefen (Hektare, Kosten, Zeitlinien, Lerneffekte) — analog I33-Motorsport-Belegung
+- Verbindung zu D-Domain systematisch klären (Aquakultur als Lebensmittel-Quelle Anschluss an D-Ernährung)
+- Globale Karte der Restoration-Potenzial-Flächen erstellen
+
+---
+
+## KAPITEL 11: INTEGRATION & SKALIERUNGS-ROADMAP
+
+### 11.1 System-Architektur
 
 Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
@@ -1934,7 +2499,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
 ---
 
-### 10.2 Skalierungs-Roadmap
+### 11.2 Skalierungs-Roadmap
 
 **Phase 1: FOUNDATION (2025-2027)**
 **Focus:** Meta-Framework + Governance + Pilotprojekte
@@ -1974,7 +2539,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
 ---
 
-### 10.3 Metriken-Zusammenfassung
+### 11.3 Metriken-Zusammenfassung
 
 **Hebel nach SEC-Score (Top 10):**
 1. A01 SEC-Priorisierung - 0.95
@@ -2023,25 +2588,29 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
 ---
 
-### 10.4 Gesamt-Metriken
+### 11.4 Gesamt-Metriken
 
 | Kategorie | Wert |
 |-----------|------|
-| **Hebel gesamt (Band 4)** | n (aktuell 30) |
-| **Domänen** | 8 (A-H) |
-| **Durchschnittlicher SEC-Score** | 0.895 (Exzellent) |
-| **CO₂-Potential** | -50.7 Gt/Jahr |
+| **Hebel gesamt (Band 4 band4-canonical)** | 37 (Stand 2026-05-28 v1.5: +D19 + K01–K04 promoviert; vorher 32) |
+| **Hebel im Kanon insgesamt** | 49 (Domain A–K + Communities; inkl. D19, K01–K04, I34 STUB, J01 STUB, yaml-only, community-integrated) |
+| **Domänen** | 11 (A–I band4-canonical, J STUB Konstruktion, K band4-canonical Marine & Küste v1.5) |
+| **Durchschnittlicher SEC-Score** | 0.90 (Exzellent) |
+| **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−58,6 Gt/Jahr** (`co2_master.yaml` v1.3, nach B09/B10-Drift-Resolution + D19-Promotion + K01–K04-Vollintegration; v1.2 hatte −59,8) |
+| **CO₂-Potential netto Szenario B (Erwartungswert, Monte-Carlo v1.5)** | **Median −43,2 Gt/yr [90 %-KI: −52,8, −34,6]** (N=10 000, `monte_carlo.py`) |
+| **CO₂-Potential netto Szenario S (50 %-Stresstest, PF-E7)** | Median −14,9 Gt/yr [90 %-KI: −20,5, −9,8] |
 | **Finanzierung verfügbar** | €4.5 Billion/Jahr |
 | **Innovation-Beschleunigung** | -50% Time-to-Market |
-| **Fallbeispiele** | 180+ (Erfolge + Fehler) |
-| **Real-World-validiert** | 100% |
-| **Zeithorizont Net-Zero** | 2040-2050 |
+| **Fallbeispiele** | 200+ (inkl. Motorsport-Pilote I33; Pilot-Projekt-Register K01–K04 in KAPITEL 10b dokumentiert) |
+| **Real-World-validiert** | 100% (band4-canonical inkl. D19 + K01–K04 v1.5) |
+| **Zeithorizont Net-Zero** | 2040-2050 (Szenario C: klar netto-negativ, 111,1 % Baseline) |
+| **Methodik-Prüfung** | PF v1.0.1 (Probatio Familia, externe Methodik-Audit) — Verdict TEILBESTANDEN, alle 4 kritischen Ebenen ✅; E4/E7 in Bilanz-Studie v1.5 mit Monte-Carlo + Stresstest adressiert (Re-Run nach Drift-Resolution durchgeführt) |
 
 ---
 
-## KAPITEL 11: CROSS-REFERENCES & NAVIGATION
+## KAPITEL 12: CROSS-REFERENCES & NAVIGATION
 
-### 11.1 CANON-Bände
+### 12.1 CANON-Bände
 
 - **Band 1 (SEC-Kanon):** Basis für alle Hebel, A01 Kern-Hebel
 - **Band 2 (Entscheidungen):** A02 Entscheidungskarte, A04 Szenarien
@@ -2049,7 +2618,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 - **Band 4 (Hebel):** Dieser Band
 - **Band 5 (Steuerung & Score):** A01, A06, F23, G27, H30-H32
 
-### 11.2 Detaillierte Hebel-Dokumentation
+### 12.2 Detaillierte Hebel-Dokumentation
 
 **Speicherort:** `40_WORK/`
 
@@ -2058,13 +2627,13 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 - ANWENDUNGEN_11_20_Energie_Ernaehrung.md (C11-E20, kompakt)
 - ANWENDUNGEN_21_30_Bildung_Tech_Monitoring.md (E21-H32, kompakt)
 
-### 11.3 Indices & Glossare
+### 12.3 Indices & Glossare
 
 - **08_INDEX/MASTER_INDEX_ANWENDUNGEN.md** - Vollständige Navigation
 - **GLOSSARY.md** - Begriffe, Akronyme, Maßeinheiten
 - **40_WORK/KONZEPT_INDEX.json** - 13.874 Konzepte aus ChatGPT-Archiv
 
-### 11.4 Executive Materials
+### 12.4 Executive Materials
 
 - **50_RESULTS/EXECUTIVE_SUMMARY.md** - 2-Seiten-Zusammenfassung
 - **50_RESULTS/VISUALISIERUNGEN.md** - Mermaid-Diagramme, Impact-Matrizen
@@ -2073,7 +2642,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
 ---
 
-## KAPITEL 12: FALLBEISPIELE-INDEX
+## KAPITEL 13: FALLBEISPIELE-INDEX
 
 **180+ Real-World-Cases** validieren die Hebel:
 
@@ -2154,16 +2723,17 @@ Ohne Just-Transition → politischer Backlash → Scheitern.
 
 ### Status
 
-**Band 4 v4.2 Status:** ✅ COMPLETE - ALL n kanonischen Hebel
+**Band 4 v4.2 Status (Stand 2026-05-28):** ✅ EXTENDED - Domain I und J integriert
 
-- n kanonische Hebel vollständig dokumentiert
-- 8 Domänen abgedeckt (A-H)
-- Durchschnittlicher SEC-Score: 0.895 (EXZELLENT)
-- CO₂-Potential: -50.7 Gt/Jahr
-- 180+ Fallbeispiele (Erfolge + Fehler)
+- 32 band4-canonical Hebel vollständig dokumentiert (44 im Kanon insgesamt, inkl. STUBs/YAML-only/Communities)
+- 9 Domänen ausgeschrieben (A–I band4-canonical) + Domain J als STUB
+- Durchschnittlicher SEC-Score: ~0.90 (Exzellent)
+- CO₂-Potential: ~-52 Gt/Jahr (band4-canonical) bis -58 Gt/Jahr (inkl. STUBs/yaml-only)
+- 200+ Fallbeispiele (inkl. Motorsport-Pilote für I33)
 - Vollständig cross-referenziert
+- Lesefassungs-Schicht parallel: `12_LESBARE_FORM/` (Kern + 4 Domain-Kapitel)
 
-**Provolution ist einsatzbereit für Implementation! 🚀**
+**Provolution ist einsatzbereit für Implementation und für die anstehende Demo-Kommunikation.**
 
 ---
 

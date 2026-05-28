@@ -1,0 +1,61 @@
+==============================================================================
+PROVOLUTION CO2-BILANZ · MONTE-CARLO-SIMULATION
+==============================================================================
+N=10000 Iterationen pro Szenario · seed=42
+Brutto Schicht 1: -58.6 ±5.9 Gt CO2eq/yr
+Quelle: co2_master.yaml v1.3 + Bilanz-Studie §6 (v1.5 update)
+
+──────────────────────────────────────────────────────────────────────────────
+A · konservativ-realistisch
+  Parameter: impl=70%, rebound=20%, engpässe=3.0 Gt, klima=2.0 Gt
+  Mittelwert: -31.4 Gt CO2eq/yr (Standardabweichung ±4.5)
+  Median:     -31.3 Gt CO2eq/yr
+  90% KI:     [-39.1, -24.2] Gt CO2eq/yr
+  50% IQR:    [-34.4, -28.4] Gt CO2eq/yr
+
+──────────────────────────────────────────────────────────────────────────────
+B · mittel-realistisch (Erwartungswert)
+  Parameter: impl=75%, rebound=15%, engpässe=2.0 Gt, klima=1.5 Gt
+  Mittelwert: -43.3 Gt CO2eq/yr (Standardabweichung ±5.5)
+  Median:     -43.2 Gt CO2eq/yr
+  90% KI:     [-52.8, -34.6] Gt CO2eq/yr
+  50% IQR:    [-47.0, -39.5] Gt CO2eq/yr
+
+──────────────────────────────────────────────────────────────────────────────
+C · optimistisch-realistisch
+  Parameter: impl=85%, rebound=8%, engpässe=1.0 Gt, klima=0.5 Gt
+  Mittelwert: -61.3 Gt CO2eq/yr (Standardabweichung ±7.0)
+  Median:     -61.1 Gt CO2eq/yr
+  90% KI:     [-73.1, -50.2] Gt CO2eq/yr
+  50% IQR:    [-65.9, -56.4] Gt CO2eq/yr
+
+──────────────────────────────────────────────────────────────────────────────
+S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)
+  Parameter: impl=50%, rebound=30%, engpässe=5.0 Gt, klima=3.0 Gt
+  Mittelwert: -15.0 Gt CO2eq/yr (Standardabweichung ±3.3)
+  Median:     -14.9 Gt CO2eq/yr
+  90% KI:     [-20.5, -9.8] Gt CO2eq/yr
+  50% IQR:    [-17.1, -12.7] Gt CO2eq/yr
+
+==============================================================================
+ZUSAMMENFASSUNG · ZITIERBARE KERNZAHLEN
+==============================================================================
+
+Szenario                                             Median                 90% KI
+──────────────────────────────────────────────────────────────────────────────
+A · konservativ-realistisch                           -31.3         [-39.1, -24.2]
+B · mittel-realistisch (Erwartungswert)               -43.2         [-52.8, -34.6]
+C · optimistisch-realistisch                          -61.1         [-73.1, -50.2]
+S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)      -14.9          [-20.5, -9.8]
+
+Globale Baseline (IPCC AR6, 2023): 55.0 Gt CO2eq/yr
+
+Szenario                                           % Baseline
+──────────────────────────────────────────────────────────────────────────────
+A · konservativ-realistisch                            56.9%  (Teil-Reduktion)
+B · mittel-realistisch (Erwartungswert)                78.5%  (Klima-positiv-Pfad)
+C · optimistisch-realistisch                          111.1%  (Net-Zero erreicht)
+S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)       27.0%  (Teil-Reduktion)
+
+PF-Report E4-Adressierung: Monte-Carlo-Propagation auf 3 Hauptszenarien + Stresstest ✓
+PF-Report E7-Adressierung: Stresstest 50%-Umsetzung als 4. Szenario ✓

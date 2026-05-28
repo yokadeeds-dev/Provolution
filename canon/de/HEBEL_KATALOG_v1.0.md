@@ -39,16 +39,17 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | A05 | PILOTPROJEKT-FRAMEWORK | konfliktloesung | band4-canonical | -0.9 | ⚠️ YAML-Tag-Drift |
 | A06 | SKALIERUNGS-PROTOKOLL | kompetenz | band4-canonical | -0.8 | ⚠️ YAML-Tag-Drift |
 
-### Domain B — Material/Produktion (6)
+### Domain B — Material/Produktion (7)
 
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
 | B07 | KREISLAUFWIRTSCHAFT | kreislaufwirtschaft | band4-canonical | -23.0 | konsistent |
 | B08 | BIOPOLYMERE (HANF) | bio_polymere | band4-canonical | -1.5 | konsistent |
-| B09 | MATERIALFLUSS-STEUERUNG | wasserstoff | band4-canonical | -2.8 | ⚠️ **inhaltliche Drift** (YAML referenziert anderen Hebel) |
-| B10 | ABFALL-ZU-RESSOURCE | ccs | band4-canonical | -1.2 | ⚠️ **inhaltliche Drift** (YAML referenziert anderen Hebel) |
+| B09 | MATERIALFLUSS-STEUERUNG | materialfluss_steuerung | band4-canonical | -0.5 | ✅ konsistent (v1.5 Drift-Resolution 2026-05-28: Tag wasserstoff/-2.8 → materialfluss_steuerung/-0.5 nach band4-canonical) |
+| B10 | ABFALL-ZU-RESSOURCE | abfall_zu_ressource | band4-canonical | -2.0 | ✅ konsistent (v1.5 Drift-Resolution 2026-05-28: Tag ccs/-1.2 → abfall_zu_ressource/-2.0 nach band4-canonical) |
 | B11 | — | transformation | yaml-only | -1.8 | nicht in Band 4; YAML seit Commit 6bc312e |
 | B12 | — | biomasse | yaml-only | -2.5 | nicht in Band 4; YAML seit Commit 6bc312e |
+| B13 | LOKALE ON-DEMAND-FERTIGUNG | (noch nicht in YAML) | band4-canonical | -0.2 bis -0.5 | neu 2026-05-27 (aus Lesbare-Form integriert) — YAML-Eintrag ausstehend |
 
 ### Domain C — Energie & Infrastruktur (4)
 
@@ -67,6 +68,7 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | D16 | CO₂-SENKEN (BODEN) | co2_senken_boden | band4-canonical | -5.0 | konsistent |
 | D17 | HANF-ANBAU (NUTZPFLANZE) | hanf_oekosystem | band4-canonical | -2.8 | konsistent |
 | D18 | URBANE LANDWIRTSCHAFT | ernaehrung | band4-canonical | -1.6 | konsistent |
+| D19 | ALGEN-BIORAFFINERIE | algen_bioraffinerie | band4-canonical | -0.3 | ✅ NEU v1.5 2026-05-28: Promotion Kategorie B → A (SEC 0.83 > 0.82); vollintegriert Band 4 v4.2 §5 D-Domain; D-bleibt-Entscheidung (kategoriell anders als K: Bioreaktor vs Ökosystem-Restoration) |
 
 ### Domain E — Bildung & Bewusstsein (4)
 
@@ -107,14 +109,35 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
-| I33 | — (in eigenem File) | kreislauf_auto | stub | -1.0 | STUB-File `Kreislauf-Auto/Konzept_Kreislauf-Auto.md`; nominell in 6D-A zu Band 4 hinzugefügt, aber nicht im File |
-| I34 | — (in eigenem File) | kreislauf_lnf | stub | -0.3 | STUB-File `Kreislauf-LNF/STUB_I34_Kreislauf_LNF.md` |
+| I33 | KREISLAUF-AUTO | kreislauf_auto | band4-canonical | -1.0 | Promoted 2026-05-28 stub→band4-canonical (Kap. 10 Domäne I in Band 4 v4.2); STUB-File `Kreislauf-Auto/Konzept_Kreislauf-Auto.md` bleibt als ausführliche Konzept-Historie |
+| I34 | — (in eigenem File) | kreislauf_lnf | stub | -0.3 | STUB-File `Kreislauf-LNF/STUB_I34_Kreislauf_LNF.md`; Promotion zu band4-canonical analog I33 als Folge-Aufgabe |
 
 ### Domain J — Konstruktion (1)
 
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
 | J01 | — (in eigenem File) | kreislauf_gebaeude | stub | -3.0 | STUB-File `Kreislauf-Gebaeude/STUB_J01_Kreislauf_Gebaeude.md` |
+
+### Domain K — Marine & Küste (4) · neu 2026-05-28
+
+| ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
+|---|---|---|---|---:|---|
+| K01 | MANGROVEN-WIEDERHERSTELLUNG | mangroven | band4-canonical | -0.75 | ✅ v1.5 STUB → band4-canonical: Vollkonzept Band 4 v4.2 KAPITEL 10b mit 8-Sektionen-Format (~5–10 t CO₂/ha/yr; ~14 Mio ha global heute; Restoration-Potenzial 7–10 Mio ha über 30 Jahre) |
+| K02 | SEEGRAS-RESTAURATION | seegras | band4-canonical | -0.35 | ✅ v1.5 STUB → band4-canonical: Vollkonzept Band 4 v4.2 KAPITEL 10b (~2–3 t CO₂/ha/yr; ~30 Mio ha global; Restoration sehr arbeitsintensiv aber realisierbar) |
+| K03 | KELP-WÄLDER-WIEDERAUFBAU | kelp | band4-canonical | -0.20 | ✅ v1.5 STUB → band4-canonical: Vollkonzept Band 4 v4.2 KAPITEL 10b (~1–2 t CO₂/ha/yr + Tiefsee-C-Export; massive Verluste Kalifornien/Tasmanien; Seeigel-Ernte als Voraussetzung) |
+| K04 | SALZMARSCHEN-SCHUTZ UND RESTORATION | salzmarschen | band4-canonical | -0.20 | ✅ v1.5 STUB → band4-canonical: Vollkonzept Band 4 v4.2 KAPITEL 10b (~6–8 t CO₂/ha/yr — höchste Effizienz pro ha; Schutz > Restoration; UNESCO-Welterbe Wattenmeer als Vorbild) |
+
+**Domain K Total (Stub-Schätzung):** -0.9 bis -2.1 Gt CO₂eq/yr (Mittelwert ~-1.5)
+
+**Querschnitts-Notiz Marine-Wirkung:** Die direkten Marine-Hebel K01–K04 wirken zusammen mit indirekten Effekten anderer Domains auf das Meer:
+- B07 Kreislauf + B08 Hanf-Biopolymere → Mikroplastik-Reduktion in Ozeanen
+- D15 Regen-LW + D17 Hanf → Pestizid-/Düngerschwemmen-Reduktion → Meeres-Todeszone-Reduktion
+- B13 Lokale On-Demand-Fertigung → reduzierte Container-Schifffahrt → weniger Verschmutzung/Lärm
+- C11 Erneuerbare → schrumpfende Erdöl-Förderung → weniger Tanker-Spills
+
+Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Kandidat): industriell-Bioreaktor-basiert, deshalb in D-Domain belassen, nicht in K verschoben. Bei Promotion zusätzlich -0.3 bis -0.5 Gt/yr.
+
+**Marine-Domain Reserve-Potenzial bei Voll-Ausbau:** ~-2 bis -3 Gt CO₂eq/yr (inkl. D19), plus qualitative Co-Benefits (Versauerungs-Stopp, biologische Pumpe, Phytoplankton-Stabilisierung — siehe Bilanz-Studie §11).
 
 ### Community-Integrations (5, außerhalb A-J)
 
@@ -132,13 +155,14 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 
 | Wert | Anzahl | Anmerkung |
 |---|---:|---|
-| **n_band4_canonical** | 30 | A01-A06, B07-B10, C11-C14, D15-D18, E19-E22, F23-F26, G27, H30-H32 |
-| **n_stub** | 3 | I33, I34, J01 |
+| **n_band4_canonical** | 37 | A01-A06, B07-B10, B13, C11-C14, D15-D19, E19-E22, F23-F26, G27, H30-H32, I33, K01-K04 (v1.5: +D19 +K01-K04) |
+| **n_stub** | 2 | I34, J01 (v1.5: K01-K04 zu band4-canonical promoted) |
 | **n_yaml_only** | 5 | B11, B12, F22, G28, G29 (echte Hebel laut DEC_2026-05-09 Q1=(a)) |
 | **n_communities_integrated** | 5 | C-2026-001/003/004/007/008 |
-| **n_total_kanonisch** | **43** | Hebel-Katalog v1.0 |
-| **n_yaml_quantified** | 35 | YAML SSOT (34 A-J + 1 Community) — **Subset** des Katalogs |
-| CO2-Reduktion (YAML, hart) | -58.0 Gt/yr | aus `co2_master.yaml gesamt.reduktion_hart` |
+| **n_total_kanonisch** | **49** | Hebel-Katalog v1.5: +D19 (=48+1) |
+| **n_domains** | **11** | A–K (Domain K voll-integriert 2026-05-28 v1.5) |
+| **n_yaml_quantified** | 36 | YAML SSOT (v1.3: 35+1 mit D19) — **Subset** des Katalogs |
+| CO2-Reduktion (YAML, hart) | -58.6 Gt/yr | v1.3 nach B09/B10-Drift-Resolution + D19-Promotion (vorher v1.2 -59.8) |
 
 ---
 
@@ -146,7 +170,7 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 
 1. **A03-A06 YAML-Tag-Drift** — Tags `transparenz/partizipation/konfliktloesung/kompetenz` widersprechen Band 4 Namen (Risikoabschätzung/Szenarien-Vergleich/Pilotprojekt-Framework/Skalierungs-Protokoll). Mögliche Erklärung: YAML wurde vor Band 4 v4.2 Konsolidierung erstellt. Auflösung: YAML-Tags umbenennen, CO2-Werte verifizieren.
 
-2. **B09/B10 inhaltliche Drift** — YAML-Tags (`wasserstoff`, `ccs`) referenzieren ANDERE Hebel als Band 4-Inhalte (`Materialfluss-Steuerung`, `Abfall-zu-Ressource`). Möglicherweise: YAML hat alte B09=Wasserstoff/B10=CCS-Konzeption, Band 4 v4.2 hat finale B09=Materialfluss/B10=Abfall-zu-Ressource. Auflösung: User-Wissen erforderlich, welche CO2-Werte zu welchen Hebeln gehören.
+2. **B09/B10 inhaltliche Drift** — ✅ **RESOLVED v1.5 2026-05-28**. Auflösung: YAML auf band4-canonical-Inhalte korrigiert (B09 = materialfluss_steuerung -0.5; B10 = abfall_zu_ressource -2.0). Vormals zugeordnete Wasserstoff (-2.8) und CCS (-1.2) zurückgestellt als separate zukünftige Hebel-Kandidaten — H2 partial in B11_transformation -1.8 abgedeckt (enthält H2-Direktreduktion), CCS bekommt eigenen Slot bei späterer Promotion. Netto-Effekt auf Bilanz: +1.5 Gt (weniger Reduktion) → reduktion_hart -59.8 → -58.6 (kombiniert mit D19 -0.3).
 
 3. **E20/E21/F23 YAML-Tag-Drift** — analog A03-A06.
 
@@ -155,6 +179,27 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 5. **Band 4-only Hebel (E22, F24, F25, F26)** — CO2-Werte erheben oder explizit als "non-quantified" markieren. Bei Aufnahme in YAML: Q2-Konvention `co2_impact: 0` vermeiden (siehe DEC_2026-05-09).
 
 6. **STUB-Hebel (I33, I34, J01)** — Aufnahme in Band 4 v4.3 als eigene Sub-Phase, basierend auf STUB-Files in `Kreislauf-Auto/`, `Kreislauf-LNF/`, `Kreislauf-Gebaeude/`.
+
+7. **B13 YAML-Eintrag ausstehend (neu 2026-05-27)** — `LOKALE ON-DEMAND-FERTIGUNG` ist in Band 4 v4.2 voll ausgeschrieben (band4-canonical), aber noch nicht in `20_CANON/data/co2_master.yaml` ergänzt. CO2-Wert: -0.2 bis -0.5 Gt/Jahr (Bandbreite, konservativ).
+
+8. **D17a Multiplikator-Aspekt (neu 2026-05-27)** — `Mehrfachernte` ist als Sektion 9 innerhalb des D17-Eintrags dokumentiert, nicht als eigener Hebel. Falls künftig als eigenständiger Slot benötigt, ID D17a reserviert. SEC-Implikation: positive S/E, bedingt C (Boden-Regenerations-Trade-off).
+
+9. **D17b Strategie-Differenzierung (neu 2026-05-27)** — `Faser-/Regen-/Phyto-Gleis` als Anbau-Strategie-Differenzierung in D17 Sektion 10 dokumentiert, nicht als eigener Hebel. ID D17b reserviert. Verlust-Bilanz beim Regen-Gleis: nur 10–30% des Pflanzen-C stabilisiert als Humus, Rest aerob veratmet (für höhere Stabilisierungsraten siehe D16/Biochar). Phyto-Caveat: Biomasse auf kontaminierten Böden muss separat entsorgt werden, sonst kehren Schadstoffe in den Boden zurück.
+
+10. **I33 Promotion stub→band4-canonical (neu 2026-05-28)** — Kreislauf-Auto-Konzept aus Probatio-Systemica-2.0-Analyse voll im Band-4-Format ausgeschrieben in Kapitel 10 "Domäne I — Mobilität" mit 13 Sektionen. Korrigiert gegenüber ursprünglichem STUB: Bausteine sind modular einführbar, nicht physikalisch zwingend voneinander abhängig (Motorsport-Belege: F1/Super Formula/FIA-Crash-Box). Tempolimit und Vmax-Drosselung haben eigenständige Begründungen (Auslegung↔Nutzung, Straftaten-Anreiz, Sicherheit). YAML-Eintrag in `co2_master.yaml` ausstehend.
+
+11. **Band-4-Kapitel-Umnummerierung (2026-05-28)** — Bei I33-Promotion neu eingefügtes "Kapitel 10: Domäne I" hat alte Kapitel 10/11/12 (Integration/Cross-References/Fallbeispiele-Index) zu 11/12/13 verschoben, inkl. Sub-Sektionen 10.x→11.x und 11.x→12.x. Backup vor Umnummerierung: `04_Band4_Anwendungen_v4.2.md.bak_2026-05-28_pre-I33`.
+
+12. **Domain K Marine & Küste neu (2026-05-28)** — ✅ **RESOLVED v1.5 2026-05-28**. STUB-File `Marine-Kueste/STUB_K_Marine_Kueste.md` angelegt; K01-K04 als band4-canonical promoviert, Vollkonzepte in Band 4 v4.2 KAPITEL 10b mit 8-Sektionen-Format (Definition / SEC-Nachweis / Wirkung / Ressourcen / Skalierung+Fallbeispiele / Cross-Refs). Pilot-Projekt-Register angelegt für alle 4 Sub-Hebel. Re-Numbering der nachfolgenden Kapitel in Band 4 v4.3 vorgesehen (pragmatisches Workaround "KAPITEL 10b" vermeidet Cross-Reference-Drift).
+
+13. **PF-Report v1.0.1 externe Methodik-Prüfung CO₂-Bilanz (2026-05-28)** — CO₂-Bilanz-Studie v1.1 durch Probatio-Systemica-Modul der Probatio Familia geprüft. Verdict: TEILBESTANDEN — alle vier kritischen Ebenen E1/E3/E6/E8 bestanden; E4 Datenlage und E7 Skalierung als ⚠️ markiert wegen YAML-Drifts (siehe Drift-Items 1–3), fehlender Monte-Carlo-Unsicherheits-Propagation und ausstehender Sensitivitätsanalyse bei 50 %-Umsetzung. ✅ **E4 und E7 in v1.4/v1.5 adressiert** durch Monte-Carlo-Skript + Stresstest-Szenario S. Dokumentation in `STUDIES/CO2_BILANZ_2026-05-28/PF_REPORT_v1.0.1_2026-05-28.md`.
+
+14. **PF-Report v1.0.1 externe Methodik-Prüfung AUTO-INTEGRATE (2026-05-28 spät)** — Kandidaten-Bündel `08_INDEX/AUTO_INTEGRATE_KANDIDATEN.md` durch Probatio-Systemica-Modul der Probatio Familia geprüft. Verdict: TEILBESTANDEN — alle vier kritischen Ebenen E1/E3/E6/E8 bestanden; drei ⚠️ in nicht-kritischen Ebenen: (E2) G26 Resiliente Städte braucht klarere Adaptation-Wirkungsmetrik (statt CO₂-Reduktion); (E4) SEC-Scores ausstehend bei D17a, B-neu, I35, I36; (E7) B11 Industrielle Transformation H₂-abhängig, Re-Bewertung ~2028 (bereits in Kategorie C dokumentiert). Vollständiger Report: `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PF_REPORT_v1.0.1_2026-05-28.md`.
+
+**Adressierungs-Status E4 (Stand 2026-05-28 spät-Nacht):**
+- ✅ **I35 PS-U-vollberechnet (2026-05-28):** Verdict TRAGFÄHIG, SEC 0,84 (S 0,85 / E 0,90 / C 0,80 / J 0,80) — Promotion-fähig (> 0,82 Schwelle). Report: `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_U_REPORT_I35_2026-05-28.md`
+- ⚠️ **I36 PS:FULL-bewertet (2026-05-28):** Verdict TEILBESTANDEN, SEC 0,85-Schätzung bestätigt aber empirische Fundierung (Materialbelastbarkeit + Antriebs-Roadmap) noch ausstehend. **Empfehlung: hinter I34-Promotion zurückstellen.** Report: `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_REPORT_I36_2026-05-28.md`. **Zusatz-Befund:** PS:FULL bewertete neben I36 auch die Gesamt-Roadmap und bestätigte alle vier kritischen Ebenen (E1/E3/E6/E8) — die Integrations-Strategie selbst ist methodisch validiert (über die Einzel-Hebel-Bewertung hinaus).
+- ⏳ **D17a + B-neu/B13 zu PS 3.0 Gemini geroutet (2026-05-28):** Routing-Trace `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_3.0_ROUTING_D17a_B13.md`, Rückkanal ausstehend.
 
 ---
 
@@ -171,6 +216,43 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 ---
 
 ## Versions-History
+
+**v1.5 (2026-05-28, spät):**
+- ✅ **Drift-Resolution B09/B10** (Drift-Item #2): YAML-Tags `wasserstoff/ccs` → `materialfluss_steuerung/abfall_zu_ressource` mit band4-konformen Werten (B09 -0.5, B10 -2.0). H2/CCS-Werte als zukünftige separate Hebel zurückgestellt
+- ✅ **D19 Algen-Bioraffinerie Promotion** Kategorie B → A: vollintegriert als 5. Hebel der D-Domain in Band 4 v4.2 §5 (8-Sektionen-Format, SEC 0.83, CO₂ -0.3 Gt). D-bleibt-Entscheidung (kategoriell anders als K)
+- ✅ **K01-K04 Promotion stub→band4-canonical** (Drift-Item #12): Vollkonzepte in Band 4 v4.2 KAPITEL 10b (Mangroven/Seegras/Kelp/Salzmarschen mit 8-Sektionen-Format + Pilot-Projekt-Register)
+- Aggregate Änderungen: n_band4_canonical 32 → 37 (+D19 +K01-K04); n_stub 6 → 2 (nur I34, J01); n_total 48 → 49; reduktion_hart -59.8 → -58.6 (B09/B10 +1.5 weniger Reduktion + D19 -0.3 mehr); Domain B Total -16.1 → -14.6; Domain D Total -9.4 → -9.7
+- Drift-Items #2 + #12 als RESOLVED markiert
+
+**v1.4 (2026-05-28, abends):**
+- Domain K Marine & Küste neu angelegt mit 4 Stub-Hebeln (K01 Mangroven, K02 Seegras, K03 Kelp, K04 Salzmarschen) — systematische Erweiterung um Blue-Carbon-Senken-Ökosysteme
+- Domain-Total konservativ -0.9 bis -2.1 Gt/yr; Reserve-Potenzial bis -2 bis -3 Gt/yr mit D19 Algen-Bioraffinerie
+- Aggregate: n_stub 2→6, n_total 44→48, n_domains 10→11 (A–K)
+- Zwei neue Drift-Items: #12 Domain K angelegt, STUB-File-Anlage ausstehend; #13 PF-Report v1.0.1 externe Methodik-Prüfung mit Verdict TEILBESTANDEN
+- Quelle: Bilanz-Studie v1.2 §11 (Ozean-Wechselwirkung) hat Blue-Carbon-Hebel-Klasse als systemische Lücke identifiziert; User-Entscheidung 2026-05-28 zur Domain-K-Einrichtung
+
+**v1.3 (2026-05-28):**
+- I33 KREISLAUF-AUTO als band4-canonical promoted (Kapitel 10 Domäne I in Band 4 v4.2 neu eingefügt mit 13 Sektionen)
+- Domain-I-Stand: I33 band4-canonical + I34 stub (war zuvor: beide stub)
+- Aggregate: n_band4_canonical 31→32, n_stub 3→2 (n_total bleibt 44)
+- Kapitel-Umnummerierung Band 4: alte 10/11/12 (Integration/Cross-Refs/Fallbeispiele-Index) → 11/12/13
+- Zwei neue Drift-Items (10: I33-Promotion + YAML-Eintrag ausstehend; 11: Umnummerierung mit Backup-Hinweis)
+- Workflow-Memorien etabliert: `feedback_hemp_cascade_priority` (Hanf wegen Kaskaden, nicht Material-Eigenschaft), `feedback_provolution_not_status_quo` (Großserien-Status kein Hebel-Kriterium)
+- Korrekturen im I33-Konzept: Modularität statt physikalischer Zwingung; Tempolimit/Vmax mit vier eigenständigen Begründungen
+- Quelle: Wissenschaftliche Begutachtung im Konzept-Workflow 2026-05-28 (Motorsport-Recherche: Bcomp/F1/Super Formula/F3rst/Ycom-FIA-Crash-Box; UBA-Tempolimit-Studie 2024)
+
+**v1.2 (2026-05-27):**
+- D17 Sektion 10 ergänzt: D17b Anbau-Strategie-Differenzierung (Faser-/Regen-/Phyto-Gleis)
+- Drift-Item 9 hinzugefügt
+- Quelle: Wissenschaftliche Klärung im Lesefassungs-Workflow 2026-05-27 (User-Frage "Zwei Gleise", verfeinert zu Drei-Gleis-Modell)
+
+**v1.1 (2026-05-27):**
+- B13 LOKALE ON-DEMAND-FERTIGUNG als neuer band4-canonical Hebel hinzugefügt (Domain B: 6→7 Hebel)
+- D17a Mehrfachernte als Sub-Notiz innerhalb D17-Eintrag dokumentiert (kein eigener Hebel)
+- n_band4_canonical: 30→31, n_total_kanonisch: 43→44
+- 2 neue Drift-Items (B13 YAML-Eintrag ausstehend; D17a-Status)
+- Quelle: Lesbare-Form-Erzählarbeit `12_LESBARE_FORM/00_Der_Kern.md`; Perplexity-Dialog 2026-05-27
+- Workflow-Prinzip "Kanon vor Lesefassung" etabliert (Memory-Eintrag)
 
 **v1.0 (2026-05-09):**
 - Initial Release

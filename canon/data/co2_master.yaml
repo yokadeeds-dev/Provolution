@@ -10,10 +10,12 @@
 # mit quantifizierter CO2-Wirkung).
 
 meta:
-  version: "1.1"
-  last_updated: "2026-01-24"
+  version: "1.3"
+  last_updated: "2026-05-28"
   description: "Zentrale CO₂-Bilanz aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 - Gesamtbilanz"
+  changelog_v1_2: "PF-Report-Adressierung (E4 Datenlage): A03-A06/E20/E21/F23 Tag-Drifts korrigiert; B13 -0.3 ergänzt; Domain K Marine & Küste mit 4 Stub-Hebeln K01-K04 angelegt (-1.5 Gt); Gesamt-Werte aktualisiert: reduktion_hart -58.0 → -59.8; B09/B10 inhaltliche Drift bleibt als offener Punkt"
+  changelog_v1_3: "Drift-Resolutions 2026-05-28: (1) B09 wasserstoff -2.8 → materialfluss-steuerung -0.5 (band4-canonical Wert; H2 als separater Hebel-Kandidat zurückgestellt, partial-coverage durch B11 transformation -1.8 angedeutet); (2) B10 ccs -1.2 → abfall-zu-ressource -2.0 (band4-canonical Wert; CCS als separater Hebel-Kandidat zurückgestellt); (3) D19 Algen-Bioraffinerie unter D_food_land neu hinzugefügt (-0.3 Gt; Promotion Kategorie B → A, vollintegriert Band 4 v4.2); (4) K01-K04 STUB-Status → band4-canonical (Vollkonzepte in Band 4 v4.2 KAPITEL 10b); Domain B total: -16.1 → -14.6; Domain D total: -9.4 → -9.7; gesamt.reduktion_hart: -59.8 → -58.6"
   
 # Wissenschaftliche Methodologie (für Peer Review)
 methodology:
@@ -115,10 +117,10 @@ methodology:
     plausibility: "Total -57.0 Gt/year = 104% of global emissions (55 Gt baseline) = Net Negative; physically consistent via active sequestration (D16 Boden-CO2-Senken -5 Gt)"
 
 gesamt:
-  reduktion_hart: -58.0  # Harte, verifizierbare Emissionsreduktionen — n=40 (Basis 30 Apps -50.7 + I33/I34/J01 -4.3 + C-2026-008 PF+Hanf -3.0)
-  vermeidung_weich: -28.5  # Vermiedene/verhinderte Emissionen
-  total_potenzial: -85.5  # Summe aller Potenziale
-  anteil_global_emissions: 1.04  # 104% der globalen Emissionen (55 Gt Baseline) = Net Negative
+  reduktion_hart: -58.6  # Aktualisiert 2026-05-28 v1.3: -59.8 (v1.2) + B09/B10 Drift-Korrektur (+1.5; weniger Reduktion nach Tag-Drift-Auflösung) + D19 Promotion (-0.3) = -58.6
+  vermeidung_weich: -28.5  # Vermiedene/verhinderte Emissionen (Schicht 2 Kaskaden in Bilanz-Studie)
+  total_potenzial: -87.1  # Aktualisiert v1.3: -58.6 + -28.5 = -87.1
+  anteil_global_emissions: 1.065  # 106.5% der globalen Emissionen (55 Gt Baseline) = Net Negative (v1.3)
   korrelation_theorie_praxis: 0.94  # Mathematische Validierung
   
 # Domain-spezifische Bilanzen (A-J)
@@ -130,23 +132,24 @@ domains:
     apps:
       A01_sec_priorisierung: -2.0  # Indirekt via optimale Ressourcen-Allokation
       A02_entscheidungskarte: -1.5  # Beschleunigte Policy-Implementation
-      A03_transparenz: -1.8  # Reduzierte Ineffizienzen
-      A04_partizipation: -1.2  # Community-getriebene Lösungen
-      A05_konfliktloesung: -0.9  # Vermiedene Blockaden
-      A06_kompetenz: -0.8  # Kapazitäts-Aufbau
+      A03_risikoabschaetzung: -1.8  # Reduzierte Ineffizienzen (Tag korrigiert 2026-05-28 nach Band-4-Autorität, vorher: transparenz)
+      A04_szenarien_vergleich: -1.2  # Community-getriebene Lösungen (Tag korrigiert 2026-05-28, vorher: partizipation)
+      A05_pilotprojekt_framework: -0.9  # Vermiedene Blockaden (Tag korrigiert 2026-05-28, vorher: konfliktloesung)
+      A06_skalierungs_protokoll: -0.8  # Kapazitäts-Aufbau (Tag korrigiert 2026-05-28, vorher: kompetenz)
       
   B_production:
     name: "Produktion & Industrie"
-    total: -15.8  # Nach Überschneidungs-Bereinigung
+    total: -14.6  # v1.3 2026-05-28: Drift-Resolution B09/B10. Vorher -16.1 (mit alten Tags wasserstoff/ccs); jetzt nach Band-4-konformer Korrektur -14.6
     beschreibung: "Kreislaufwirtschaft, Materialeffizienz, Prozessinnovation"
     apps:
-      B07_kreislaufwirtschaft: -23.0  # ACHTUNG: Enthält Überschneidungen mit B08-B12
+      B07_kreislaufwirtschaft: -23.0  # ACHTUNG: Enthält Überschneidungen mit B08-B13
       B08_bio_polymere: -1.5
-      B09_wasserstoff: -2.8
-      B10_ccs: -1.2
+      B09_materialfluss_steuerung: -0.5  # v1.3 2026-05-28 Drift-Resolution: Tag wasserstoff/-2.8 ersetzt durch band4-canonical Inhalt (Band 4 v4.2 §3 B09 = MATERIALFLUSS-STEUERUNG, SEC 0.87, ROI 1.2 Monate). CO₂-Wirkung indirekt (Tracking enables andere Hebel); konservativer Wert -0.5 Gt. H2-Wirkung ehemals hier ist partial in B11_transformation -1.8 (enthält H2-Direktreduktion) abgedeckt; eigenständiger H2-Hebel-Vorschlag separat in zukünftiger Sub-Phase.
+      B10_abfall_zu_ressource: -2.0  # v1.3 2026-05-28 Drift-Resolution: Tag ccs/-1.2 ersetzt durch band4-canonical Inhalt (Band 4 v4.2 §3 B10 = ABFALL-ZU-RESSOURCE, SEC 0.91, CO₂ -2 Gt/Jahr). CCS-Wirkung ehemals hier ist separater zukünftiger Hebel-Kandidat (Domain D oder neu).
       B11_transformation: -1.8
       B12_biomasse: -2.5
-    hinweis: "B07 Überschneidungen bereits in Domain-Total bereinigt"
+      B13_lokale_on_demand_fertigung: -0.3  # Konservativer Mittelwert (Bandbreite -0.2 bis -0.5); neu 2026-05-28 nach band4-canonical Promotion (Kapitel 3 Domäne B, Band 4 v4.2)
+    hinweis: "B07 Überschneidungen bereits in Domain-Total bereinigt; B13 -0.3 hinzugefügt 2026-05-28; B09/B10 Drift-Resolution 2026-05-28 (v1.3): Tags + Werte auf band4-canonical korrigiert, ehemalige wasserstoff/-2.8 und ccs/-1.2-Werte als separate zukünftige Hebel zurückgestellt"
       
   C_energy:
     name: "Energie & Infrastruktur"
@@ -161,14 +164,15 @@ domains:
       
   D_food_land:
     name: "Ernährung & Landnutzung"
-    total: -9.4
-    beschreibung: "Regenerative Landwirtschaft, CO₂-Senken, Ernährungswandel"
+    total: -9.7  # v1.3 2026-05-28: -9.4 + D19 -0.3 = -9.7
+    beschreibung: "Regenerative Landwirtschaft, CO₂-Senken, Ernährungswandel, industrielle Bio-Produktion"
     apps:
       D15_regen_landwirtschaft: -4.0
       D16_co2_senken_boden: -5.0  # + 200 Gt kumulativ über 50 Jahre
       D17_hanf_oekosystem: -2.8
       D18_ernaehrung: -1.6
-    hinweis: "D16 kumulatives Potenzial nicht in Jahreswert enthalten"
+      D19_algen_bioraffinerie: -0.3  # v1.3 2026-05-28: Promotion Kategorie B → A (SEC 0.83 > 0.82 Schwelle); industrielle PBR-CO₂-Fixierung aus Industrie-Abgasen + Eiweiß-Produktion. Vollkonzept Band 4 v4.2 §5 D-Domain. Domain-Entscheidung D-bleibt: kategoriell anders als K (Bioreaktor vs Ökosystem-Restoration). Bandbreite -0.3 bis -0.5; konservativ -0.3.
+    hinweis: "D16 kumulatives Potenzial nicht in Jahreswert enthalten; D19 neu v1.3 als 5. Hebel der D-Domain"
       
   E_education:
     name: "Bildung & Bewusstsein"
@@ -176,8 +180,8 @@ domains:
     beschreibung: "Verhaltensänderung, Kompetenz-Aufbau, Kulturwandel"
     apps:
       E19_sec_literacy: -0.8  # Indirekt via bessere Entscheidungen
-      E20_klima_bildung: -0.6
-      E21_erfahrungslernen: -0.4
+      E20_partizipation: -0.6  # Tag korrigiert 2026-05-28 nach Band-4-Autorität, vorher: klima_bildung
+      E21_gerechtigkeits_mechanismen: -0.4  # Tag korrigiert 2026-05-28, vorher: erfahrungslernen
       
   F_technology:
     name: "Technologie & Innovation"
@@ -185,7 +189,7 @@ domains:
     beschreibung: "Innovation-Beschleunigung, Technology Transfer"
     apps:
       F22_open_innovation: -1.2  # Beschleunigte Diffusion
-      F23_tech_transfer: -0.9
+      F23_forschungs_priorisierung: -0.9  # Tag korrigiert 2026-05-28 nach Band-4-Autorität, vorher: tech_transfer. ANNAHME: Wert -0.9 gehört zu F23 (FORSCHUNGS-PRIORISIERUNG, band4-canonical), nicht zu F24 (TECH-TRANSFER, ebenfalls band4-canonical, noch nicht quantifiziert). Verifikation durch User ausstehend.
       
   G_monitoring:
     name: "Monitoring & Kontrolle"
@@ -221,6 +225,17 @@ domains:
     apps:
       J01_kreislauf_gebaeude: -3.0  # STUB: Neubauten + Kernsanierungen mit Bio-Materialien; SEC ~0.93
     hinweis: "J01 ist STUB — CO₂-Schätzung konservativ (adressierbarer Anteil Neubauten/Kernsanierungen); Vollkonzept ausstehend (Kreislauf-Gebaeude/STUB_J01_Kreislauf_Gebaeude.md)"
+
+  K_marine:
+    name: "Marine & Küste"
+    total: -1.5  # Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0.9 bis -2.1); neu 2026-05-28
+    beschreibung: "Blue-Carbon-Ökosysteme — Mangroven, Seegras, Kelp, Salzmarschen als aktive CO₂-Senken plus Versauerungs-Stopp"
+    apps:
+      K01_mangroven: -0.75       # STUB Mittelwert (Bandbreite -0.5 bis -1.0); 5-10 t CO2/ha/yr; ~14 Mio ha global heute, 30-50% Verlust seit 1950
+      K02_seegras: -0.35         # STUB Mittelwert (Bandbreite -0.2 bis -0.5); 2-3 t CO2/ha/yr; ~30 Mio ha global im Rückgang
+      K03_kelp: -0.20            # STUB Mittelwert (Bandbreite -0.1 bis -0.3); 1-2 t CO2/ha/yr; massive Verluste in Kalifornien/Tasmanien
+      K04_salzmarschen: -0.20    # STUB Mittelwert (Bandbreite -0.1 bis -0.3); 6-8 t CO2/ha/yr (höchste Effizienz pro ha)
+    hinweis: "K01-K04 v1.3 2026-05-28 STUB → band4-canonical: Vollkonzepte in Band 4 v4.2 KAPITEL 10b (Mangroven/Seegras/Kelp/Salzmarschen) mit 8-Sektionen-Format. CO2-Werte unverändert (Mittelwerte aus Bandbreiten). Bewirtschaftungs-Modi Schutz/Restoration/Aquakultur dokumentiert. Pilot-Projekt-Register angelegt. Re-Numbering der nachfolgenden Kapitel in Band 4 v4.3 vorgesehen."
       
 # Community-Integrations (außerhalb A-J Hebel-Domains)
 # Eigene strukturelle Schicht parallel zu domains:
@@ -244,7 +259,7 @@ community_integrations:
 # Zusätzliche Metriken für Analyse
 metrics:
   durchschnitt_sec_score: 0.914
-  anzahl_anwendungen: 35  # Aktueller Stand — n wächst dynamisch: AUTO-INTEGRATE (SEC ≥ 0.82) erhöht n
+  anzahl_anwendungen: 36  # v1.3 2026-05-28: +D19 (Promotion zu band4-canonical); n wächst dynamisch via AUTO-INTEGRATE (SEC ≥ 0.82)
   anzahl_domains: 10
   hoechste_einzelanwendung: 
     id: "B07"
