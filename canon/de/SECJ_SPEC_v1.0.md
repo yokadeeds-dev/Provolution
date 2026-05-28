@@ -1,14 +1,33 @@
 # SEC-J Spezifikation v1.0
 
-**Status:** Kanonisch
-**Datum:** 2026-04-27
+**Status:** ⚠️ **DEPRECATED seit 2026-05-10** — siehe `06_framework_extensions_v2.0_SECJ.md` für aktuelle PS-U 2.0 Formel mit STANDARD- und JUSTICE-Modi
+**Datum:** 2026-04-27 (Original) · Deprecation-Markierung 2026-05-28
 **Autor:** Yoka Dieng
 
 ---
 
-## Zweck
+## ⚠️ Wichtiger Hinweis (2026-05-28)
 
-Diese Spezifikation definiert SEC-J als die normative Bewertungstheorie des Provolution-Frameworks und ihre Operationalisierung über Multi-Impact-Indikatoren. Sie ist Single Source of Truth für alle SEC-J-Berechnungen in den CANON-Bänden 1–5.
+Diese v1.0-Spezifikation definierte eine einzige SEC-J-Aggregations-Formel mit den Gewichten **0,40·S + 0,25·E + 0,15·C + 0,20·J**.
+
+Mit der PS-U 2.0 Extension am 2026-05-10 wurde diese auf **zwei differenzierte Modi** aufgespalten:
+
+- **STANDARD-Modus** (für normale Maßnahmen-Audits): `SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J`
+- **JUSTICE-Modus** (für Gerechtigkeits-fokussierte Audits, z.B. E21): `SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J`
+
+Plus: J<0,40 → Flag **SOZIALE INKONSISTENZ** (Pflicht-Hinweis + Empfehlung) als zusätzlicher Schwellenwert *** NEU in 2.0 ***.
+
+**Maßgebliche Spec ist jetzt `06_framework_extensions_v2.0_SECJ.md`**. Diese v1.0-Datei bleibt zur historischen Nachvollziehbarkeit, ist aber für alle Berechnungen ab 2026-05-10 NICHT mehr autoritativ.
+
+**Konsequenzen für SEC-J-Werte im Repo:**
+- Alle SEC-J-Berechnungen in `canon/data/impact_master.yaml` v2.2 (PR #6) und `canon/de/04_Band4_Anwendungen_v4.2.md` (PR #7) verwenden korrekt die PS-U 2.0 STANDARD-Formel
+- Der externe PF-Report-Bestätigung der v1.0-Formel (`studies/EXTERNAL_AUDIT_2026-05-28/CHATGPT_AUSSENLESER_2026-05-28.md` u.a.) bezog sich auf die FORMALE Korrektheit der v1.0-Definition, nicht auf die Aktualität gegenüber v2.0
+
+---
+
+## Zweck (HISTORISCH — siehe Hinweis oben)
+
+Diese Spezifikation definiert SEC-J als die normative Bewertungstheorie des Provolution-Frameworks und ihre Operationalisierung über Multi-Impact-Indikatoren. Sie WAR Single Source of Truth für alle SEC-J-Berechnungen in den CANON-Bänden 1–5 bis zur PS-U 2.0 Extension (`06_framework_extensions_v2.0_SECJ.md`).
 
 ---
 
@@ -68,12 +87,21 @@ Das J-Veto ist absolut. Es kann nicht durch hohe Werte in anderen Dimensionen ko
 
 ---
 
-## 5. SEC-J Aggregations-Formel
+## 5. SEC-J Aggregations-Formel (⚠️ DEPRECATED — siehe v2.0)
 
-Wenn J ≥ 0,50 (kein Veto), wird der aggregierte SEC-J-Score berechnet als:
+**HISTORISCH (v1.0, deprecated 2026-05-10):**
+
+Wenn J ≥ 0,50 (kein Veto), wurde der aggregierte SEC-J-Score in v1.0 berechnet als:
 
 ```
-SECJ = 0,40·S + 0,25·E + 0,15·C + 0,20·J
+SECJ = 0,40·S + 0,25·E + 0,15·C + 0,20·J   ← DEPRECATED v1.0
+```
+
+**AKTUELL (v2.0 PS-U Extension, `06_framework_extensions_v2.0_SECJ.md`):**
+
+```
+SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J          ← STANDARD-Modus
+SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J  ← JUSTICE-Modus
 ```
 
 **Gewichte v1.0 und Begründung:**

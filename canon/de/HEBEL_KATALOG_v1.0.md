@@ -201,7 +201,9 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 - ⚠️ **I36 PS:FULL-bewertet (2026-05-28):** Verdict TEILBESTANDEN, SEC 0,85-Schätzung bestätigt aber empirische Fundierung (Materialbelastbarkeit + Antriebs-Roadmap) noch ausstehend. **Empfehlung: hinter I34-Promotion zurückstellen.** Report: `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_REPORT_I36_2026-05-28.md`. **Zusatz-Befund:** PS:FULL bewertete neben I36 auch die Gesamt-Roadmap und bestätigte alle vier kritischen Ebenen (E1/E3/E6/E8) — die Integrations-Strategie selbst ist methodisch validiert (über die Einzel-Hebel-Bewertung hinaus).
 - ⏳ **D17a + B-neu/B13 zu PS 3.0 Gemini geroutet (2026-05-28):** Routing-Trace `STUDIES/AUTO_INTEGRATE_AUDIT_2026-05-28/PS_3.0_ROUTING_D17a_B13.md`, Rückkanal ausstehend.
 
-15. **PS-U 2.0 SEC-J-Nachrüstung des kompletten Kanons (2026-05-28 spät-Nacht)** — User-PF-Sitzung hat die architektonische Lücke geschlossen: Band 4 v4.2 hatte vor 2026-05-10 (Verankerung der PS-U 2.0 SEC-J-Spec) nur SEC-Werte, kein J. PF-Audit-Sitzung 2026-05-28 (PS-U:STANDARD + PS-U:JUSTICE in Gemini) hat alle Hebel der Domains B, C, D **individuell** mit J-Scores + SEC-J nachgerüstet (13 Hebel kalkuliert) und Domains A, E, F, G, H **batch-bewertet** (Domain-Ø). Verdict: **KANON VOLLSTÄNDIG AUF SEC-J v2.0 AKTUALISIERT** — Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; **B09 J=0,72 + C12 J=0,82 als Warnschwellen** dokumentiert mit Implementierungs-Auflagen. **Zentralisiert in:** `canon/data/impact_master.yaml` v2.2 TEIL 6.5 `sec_j_scores`. Vollständiger Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`. **Folge-Sub-Phasen:** Einzelhebel-J-Berechnung für A/E/F/G/H, sowie I33-I36, J01, K01-K04, B11/B12/B13, Kategorie-A-AUTO_INTEGRATE-Kandidaten, Communities. Band 4 §2.SEC-NACHWEIS-Updates für alle 30+ Hebel als eigener Folge-PR.
+15. **PS-U 2.0 SEC-J-Nachrüstung des kompletten Kanons (2026-05-28 spät-Nacht)** — User-PF-Sitzung hat die architektonische Lücke geschlossen: Band 4 v4.2 hatte vor 2026-05-10 (Verankerung der PS-U 2.0 SEC-J-Spec) nur SEC-Werte, kein J. PF-Audit-Sitzung 2026-05-28 (PS-U:STANDARD + PS-U:JUSTICE in Gemini) hat alle Hebel der Domains B, C, D **individuell** mit J-Scores + SEC-J nachgerüstet (13 Hebel kalkuliert) und Domains A, E, F, G, H **batch-bewertet** (Domain-Ø). Verdict: **KANON VOLLSTÄNDIG AUF SEC-J v2.0 AKTUALISIERT** — Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; **B09 J=0,72 + C12 J=0,82 als Warnschwellen** dokumentiert mit Implementierungs-Auflagen. **Zentralisiert in:** `canon/data/impact_master.yaml` v2.3 TEIL 6.5 `sec_j_scores`. Vollständiger Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`. **Folge-Sub-Phasen:** Einzelhebel-J-Berechnung für A/E/F/G/H, sowie I33-I36, J01, K01-K04, B11/B12/B13, Kategorie-A-AUTO_INTEGRATE-Kandidaten, Communities. Band 4 §2.SEC-NACHWEIS-Updates für alle 30+ Hebel als eigener Folge-PR.
+
+16. **SECJ_SPEC v1.0 ↔ PS-U 2.0 Spec-Konflikt aufgelöst (2026-05-28 spät-Nacht)** — ✅ **RESOLVED**. ChatGPT-Außenleser-Audit und 4. PF-Report (`SEC-J Multi.md` aus User-Sitzung) haben offengelegt, dass das Repo **zwei nicht-synchrone SEC-J-Spezifikationen** enthielt: (1) `canon/de/SECJ_SPEC_v1.0.md` mit alter Formel `SECJ = 0,40·S + 0,25·E + 0,15·C + 0,20·J` und (2) `canon/de/06_framework_extensions_v2.0_SECJ.md` mit der PS-U 2.0 Erweiterung — `SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J` (STANDARD) und `SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J` (JUSTICE). Die User-PF-Sitzungen nutzten korrekt PS-U 2.0 STANDARD. Auflösung: **SECJ_SPEC_v1.0.md mit DEPRECATED-Markierung** + Verweis auf v2.0 als autoritative Spec; `impact_master.yaml` v2.2 → v2.3 mit `spec_reference` + getrennten `formula_standard` und `formula_justice` Feldern. PR #6/#7-Werte bleiben methodisch korrekt (sie wurden nach PS-U 2.0 STANDARD berechnet).
 
 ---
 
@@ -239,7 +241,12 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 
 **Pending (J-Berechnung ausstehend):** I33–I36, J01, K01–K04, B11, B12, B13, F22, F27, G25, G26, G30, H33, E23, C-2026-001/003/004/007/008. Sowie Einzelhebel-Werte innerhalb der Batch-bewerteten Domains A, E, F, G, H.
 
-**Formel:** SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J · **J-Veto:** J<0,50 → SEC-J=null · **Quelle:** `canon/data/impact_master.yaml` v2.2 TEIL 6.5 + `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`
+**Formel STANDARD:** `SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J` (PS-U 2.0, für normale Maßnahmen-Audits)
+**Formel JUSTICE:** `SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J` (PS-U 2.0, für Gerechtigkeits-fokussierte Audits, z.B. E21)
+**J-Veto:** J<0,50 → SEC-J=null · **J-Flag SOZIALE INKONSISTENZ:** J<0,40 → Pflicht-Hinweis · **Warnschwelle:** J<0,80 → Implementierungs-Auflagen
+**Quelle (autoritativ):** `canon/de/06_framework_extensions_v2.0_SECJ.md` (PS-U 2.0 Extension)
+**Daten-SSoT:** `canon/data/impact_master.yaml` v2.3 TEIL 6.5 + `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`
+**Deprecated:** `canon/de/SECJ_SPEC_v1.0.md` (alte Single-Formel 0,40·S + 0,25·E + 0,15·C + 0,20·J)
 
 ---
 
@@ -256,6 +263,12 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.7 (2026-05-28, spät-Nacht):**
+- ✅ **Spec-Konflikt SECJ_SPEC v1.0 vs PS-U 2.0 aufgelöst** (Drift-Item #16): SECJ_SPEC_v1.0.md als DEPRECATED markiert; `06_framework_extensions_v2.0_SECJ.md` ist autoritativ
+- impact_master.yaml v2.2 → v2.3 mit korrektem Spec-Verweis + formula_standard + formula_justice
+- PR #6/#7-Werte verifiziert als methodisch korrekt nach PS-U 2.0 STANDARD-Modus
+- Hinweis in SEC-J-Master-Übersicht: Formeln beide dokumentiert, Modi klar getrennt
 
 **v1.6 (2026-05-28, spät-Nacht):**
 - ✅ **PS-U 2.0 SEC-J-Nachrüstung des kompletten Kanons** (Drift-Item #15): User-PF-Sitzung hat die architektonische Lücke (Band 4 v4.2 SEC-only, kein J) geschlossen. 13 Hebel individuell kalkuliert (Domains B/C/D), 5 Domains batch-bewertet (A/E/F/G/H). Werte zentralisiert in `canon/data/impact_master.yaml` v2.2 TEIL 6.5 sec_j_scores.
