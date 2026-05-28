@@ -449,7 +449,8 @@ Systemischer Ansatz zur Transformation linearer Produktions-Systeme (Take-Make-W
 - **Sufficient:** Ressourcen-Verschwendung -70% (90%→20%), CO₂ -45%, W_min 50% ✅
 - **Efficient:** ROI 3-5 Jahre, Material-Kosten -40%, Energie -30%, hocheffizient ✅
 - **Consistent:** Kompatibel mit B08 (Biopolymere), B09 (Materialfluss), B10 (Abfall-Ressource) ✅
-- **SEC-Score: 0.93** (S:0.95, E:0.92, C:0.92)
+- **Just:** +5M Jobs Reparatur-/Refurbish-Sektor (Entry-Level/Handwerk) stärken lokale Wirtschaftskreisläufe; Reduktion der globalen Müll-Last (-45% CO₂, -70% Ressourcen) trifft historisch überproportional Globalen Süden (J3 Verteilung, J4 Vulnerabilität) ✅
+- **SEC-J-Score: 0.93** (S:0.95, E:0.92, C:0.92, J:0.90 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** Ressourcen-Verschwendung -70%, CO₂-Emissionen -45% (23 Gt/Jahr)
@@ -508,7 +509,8 @@ Ersatz petrochemischer Polymere durch biobasierte Alternativen aus nachwachsende
 - **Sufficient:** CO₂-Reduktion 1.5 Gt/Jahr (50% Substitution), Plastik-Abfall -60%, W_min 1 Gt ✅
 - **Efficient:** Hanf 3.7 t CO₂/ha gebunden, kostenneutral bei Scale ✅
 - **Consistent:** Kompatibel mit B07 (Kreislauf), D17 (Hanf-Anbau) ✅
-- **SEC-Score: 0.90** (S:0.92, E:0.87, C:0.92)
+- **Just:** Stärkt ländliche Strukturen (100k FTE Farmer) gegenüber globalen Petrochemie-Konzernen (J3 Verteilung). Constraint: DIN EN 13432- und THC-Zertifizierung darf keine Markteintrittsbarriere für Kleinbauern werden ⚠️
+- **SEC-J-Score: 0.90** (S:0.92, E:0.87, C:0.92, J:0.85 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Reduktion 1.5 Gt/Jahr, Plastik-Abfall -60%
@@ -567,7 +569,8 @@ Digital-Twin-basiertes System zur Real-Time-Steuerung von Materialflüssen. Opti
 - **Sufficient:** Material-Verschwendung -25% (30%→5%), Transparenz +70%, W_min 20% ✅
 - **Efficient:** €200k vs. €2M Verschwendung/Jahr, ROI 1.2 Monate (!), extrem effizient ✅
 - **Consistent:** Kompatibel mit B07 (Kreislauf), B10 (Abfall-Tracking), G27 (Monitoring) ✅
-- **SEC-Score: 0.87** (S:0.85, E:0.95, C:0.82)
+- **Just:** ⚠️ **Warnschwelle J<0,80** — Digital-Twin-Modell birgt Machtasymmetrien (Algorithmisches Management, IoT-Überwachung von Belegschaften). Implementierungs-Auflage: zwingender Einschluss von Arbeitnehmervertretungen beim Design der Tracking-Systeme; Datenschutz-Compliance als kritischer Fail-Safe ⚠️
+- **SEC-J-Score: 0.85** (S:0.85, E:0.95, C:0.82, J:0.72 — PS-U 2.0 Nachrüstung 2026-05-28; **niedrigster J-Wert der Domain B**)
 
 #### 3. WIRKUNG
 - **Primär:** Material-Verschwendung -25%, Lagerkosten -40%, Lead-Time -30%
@@ -626,7 +629,8 @@ Systematische Transformation von Abfallströmen zu wertvollen Ressourcen durch S
 - **Sufficient:** Abfall -80% (50→10 Gt/Jahr), Recovery +€400 Mrd/Jahr, W_min 60% ✅
 - **Efficient:** ROI 3 Jahre, Material-Verkauf +€400 Mrd/Jahr, profitabel ✅
 - **Consistent:** Kompatibel mit B07 (Kreislauf), B08 (Bio), B09 (Tracking) ✅
-- **SEC-Score: 0.91** (S:0.93, E:0.90, C:0.90)
+- **Just:** Beendet Kontamination von "Fence-line Communities" (Anwohner von Deponien/Verbrennungsanlagen, J4 Vulnerabilität); 200k FTE im Sortiersektor mit Arbeitsschutz-Constraint abgesichert (J3 Verteilung) ✅
+- **SEC-J-Score: 0.91** (S:0.93, E:0.90, C:0.90, J:0.88 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** Abfall -80%, Ressourcen-Recovery €400 Mrd/Jahr
@@ -762,7 +766,8 @@ Systematische Integration erneuerbarer Energien (Solar, Wind, Wasser) in bestehe
 - **Sufficient:** CO₂-Reduktion 15 Gt/Jahr (80% Erneuerbare), W_min 10 Gt ✅
 - **Efficient:** LCOE Solar/Wind €30-40/MWh vs. Kohle €60-100/MWh, 50% günstiger ✅
 - **Consistent:** Kompatibel mit C12 (Speicherung), C13 (Smart Grids), C14 (Dezentral) ✅
-- **SEC-Score: 0.94** (S:0.95, E:0.95, C:0.92)
+- **Just:** Schaffung von ~40 Mio. neuen EE-Arbeitsplätzen wird durch Just-Transition-Komponenten an Schutz der ~15 Mio. fossilen Sektor-Jobs gekoppelt (J3 Verteilung); lokale Luftverschmutzung -60% kommt überproportional marginalisierten Gruppen zugute (J4 Vulnerabilität) ✅
+- **SEC-J-Score: 0.93** (S:0.95, E:0.95, C:0.92, J:0.85 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Reduktion 15 Gt/Jahr, Erneuerbare 20%→80%
@@ -823,7 +828,8 @@ Multi-Technologie-Portfolio für Energie-Speicherung: Batterien, Pumpspeicher, W
 - **Sufficient:** Speicher 0.5→3 TWh nötig (80% Erneuerbare), W_min 2 TWh ✅
 - **Efficient:** Battery-Cost €300→€50/kWh (2030), Pumpspeicher €20/kWh, effizient ✅
 - **Consistent:** Kompatibel mit C11 (Integration), C13 (Smart Dispatch), D16 (H₂) ✅
-- **SEC-Score: 0.89** (S:0.88, E:0.90, C:0.90)
+- **Just:** ⚠️ J=0,82 — J3 (Verteilungswirkung) als Nadelöhr: Li-Ion-Rohstoffgewinnung birgt strukturelle Ausbeutungsrisiken im Globalen Süden. Tragfähigkeit nur durch harte C-Bindungen (Recycling-Compliance, EU Battery Regulation) + Diversifizierung (Pumpspeicher, Thermal) gesichert ⚠️
+- **SEC-J-Score: 0.88** (S:0.88, E:0.90, C:0.90, J:0.82 — PS-U 2.0 Nachrüstung 2026-05-28; **Warnschwelle**)
 
 #### 3. WIRKUNG
 - **Primär:** Speicher 0.5→3 TWh (15 Jahre), Erneuerbare-Nutzung +30%
@@ -882,7 +888,8 @@ Intelligente Stromnetze mit bidirektionaler Kommunikation, Real-Time-Monitoring,
 - **Sufficient:** Grid-Effizienz +15% (90%→95%), Blackout-Risiko -60%, W_min 10% ✅
 - **Efficient:** €300 Mrd Investment, €100 Mrd/Jahr Einsparung, ROI 3 Jahre ✅
 - **Consistent:** Kompatibel mit C11 (Erneuerbare), C12 (Speicher-Dispatch), C14 (Mikro-Grids) ✅
-- **SEC-Score: 0.91** (S:0.90, E:0.93, C:0.90)
+- **Just:** Blackout-Risiko -60% schützt primär vulnerable Bevölkerungsgruppen (Krankenhäuser, Pflege; J1 Zugang); Datenschutz-Risiken bei Smart-Meters durch dokumentierte Lerneffekte (Pacific Gas) mitigiert (J4) ✅
+- **SEC-J-Score: 0.90** (S:0.90, E:0.93, C:0.90, J:0.88 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** Grid-Effizienz +15%, Verluste 10%→5%, Peak-Load -20%
@@ -941,7 +948,8 @@ Shift von zentralen Großkraftwerken zu dezentralen Mikro-Grids und Prosumern. S
 - **Sufficient:** Resilience +70%, Energy-Access +1 Mrd Menschen, W_min 500M ✅
 - **Efficient:** Mikro-Grid €60/MWh vs. Grid-Extension €200/MWh (remote), 3x günstiger ✅
 - **Consistent:** Kompatibel mit C11 (Erneuerbare), C12 (Local Storage), C13 (Bidirektional) ✅
-- **SEC-Score: 0.88** (S:0.90, E:0.88, C:0.86)
+- **Just:** Exzellente Verteilungswirkung (J3 = 0,95) — ermöglicht 1 Mrd. Menschen Energie-Zugang (Off-grid/Developing); bricht Single-Point-of-Failure-Zentralisierung auf; etabliert Community-Ownership (+50%) ✅
+- **SEC-J-Score: 0.89** (S:0.90, E:0.88, C:0.86, J:0.95 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** Energy-Access +1 Mrd, Grid-Resilience +70%, Community-Ownership +50%
@@ -1009,7 +1017,8 @@ Landwirtschafts-System das Boden regeneriert statt degradiert. Praktiken: No-Til
 - **Sufficient:** CO₂-Sequestrierung 4 Gt/Jahr (50% Umstellung), Boden-Gesundheit +60%, W_min 2 Gt ✅
 - **Efficient:** Yields konstant/+10%, Input-Kosten -30%, profitabel ✅
 - **Consistent:** Kompatibel mit D16 (CO₂-Senken), D17 (Hanf-Rotation), B07 (Kreislauf) ✅
-- **SEC-Score: 0.92** (S:0.93, E:0.92, C:0.91)
+- **Just:** Input-Kosten-Senkung (Dünger/Pestizide -30%) sichert kleine Farmen ökonomisch (J3 Verteilung); Schutz der Existenzgrundlage Boden für kommende Generationen (J4 Vulnerabilität) ✅
+- **SEC-J-Score: 0.92** (S:0.93, E:0.92, C:0.91, J:0.90 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Sequestrierung 4 Gt/Jahr, Boden-Gesundheit +60%, Erosion -80%
@@ -1068,7 +1077,8 @@ Systematische Nutzung von Böden als CO₂-Senken durch erhöhten organischen Ko
 - **Sufficient:** CO₂-Sequestrierung 5 Gt/Jahr (volle Nutzung), W_min 3 Gt ✅
 - **Efficient:** Cost €10-50/t CO₂ vs. DAC €300/t, 6-30x kosteneffizienter ✅
 - **Consistent:** Kompatibel mit D15 (Regen-Ag), D17 (Hanf-Anbau), C11 (Biomasse) ✅
-- **SEC-Score: 0.90** (S:0.92, E:0.92, C:0.86)
+- **Just:** Priorisiert explizit indigene Landrechte als kritischen Constraint; Verteilung von Carbon-Payments (€100 Mrd/Jahr) direkt an 500M Farmer stärkt J3 massiv. Constraint: G27-Monitoring erforderlich, sonst landen Gelder bei Agrarkonzernen statt lokalen Farmen ✅
+- **SEC-J-Score: 0.90** (S:0.92, E:0.92, C:0.86, J:0.88 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Sequestrierung 5 Gt/Jahr, Boden-C +200-300 Gt (kumulativ 50 Jahre)
@@ -1127,7 +1137,8 @@ Kultivierung von Industrie-Hanf für Multi-Use: Fasern (B08), Samen (Protein/Öl
 - **Sufficient:** CO₂-Bindung 185 Mt/Jahr (50 Mha), Protein +50M Menschen, W_min 100 Mt ✅
 - **Efficient:** Yields 10 t/ha/Jahr, Input minimal, Water-Use 50 % vs. Baumwolle (Hanf ca. 2 000–3 000 L/kg vs. Baumwolle 7 000–10 000 L/kg); regionale Substitution entkoppelt zusätzlich von der konventionellen Textil-Transportkette (Anbau Zentralasien/Indien → Verarbeitung Bangladesch → EU-Markt), vermeidet 0,5–1,0 kg CO₂/kg Stoff an Logistik-Emissionen ✅
 - **Consistent:** Kompatibel mit B08 (Biopolymere), D15 (Rotation-Crop), D16 (CO₂-Senke) ✅
-- **SEC-Score: 0.93** (S:0.95, E:0.93, C:0.91)
+- **Just:** Saatgut zugänglich, keine Patentmonopole wie bei Hochleistungs-Mais/Soja (J1 Zugang); ersetzt Monokulturen, reduziert Pestizid-Einsatz auf 0% und schützt Landwirte vor Verschuldungsspiralen (J3); stärkt Resilienz des globalen Südens durch anspruchslose Kultivierung und regionale Verarbeitung (J4) ✅
+- **SEC-J-Score: 0.93** (S:0.95, E:0.93, C:0.91, J:0.92 — PS-U 2.0 Nachrüstung 2026-05-28; **Spitzenreiter Domain D**)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Bindung 185 Mt/Jahr, Hanf-Faser 10 Mt/Jahr, Protein 5 Mt/Jahr
@@ -1242,7 +1253,8 @@ Nahrungsmittel-Produktion in Städten: Vertical-Farms, Rooftop-Gardens, Communit
 - **Sufficient:** Urban-Food-Production 5% lokal, Transport-CO₂ -50 Mt/Jahr, W_min 30 Mt ✅
 - **Efficient:** Yield/m² 10x vs. Rural (Vertical), aber Energy-Intensiv (LED), Break-Even komplex ✅
 - **Consistent:** Kompatibel mit D15 (Organisch), B07 (Food-Waste-Compost), C14 (Dezentral-Energie) ✅
-- **SEC-Score: 0.86** (S:0.85, E:0.82, C:0.92)
+- **Just:** Adressiert gezielt das Problem der "Food Deserts" (Lebensmittelwüsten, -40%) in marginalisierten Stadtgebieten (J1 Zugang); fördert Community-Building (+60%) und sichert den direkten Zugang zu frischer Nahrung für urbane Armuts-Milieus ✅
+- **SEC-J-Score: 0.88** (S:0.85, E:0.82, C:0.92, J:0.94 — PS-U 2.0 Nachrüstung 2026-05-28; **höchstes J Domain D**)
 
 #### 3. WIRKUNG
 - **Primär:** Urban-Food-Production 0%→5%, Transport-CO₂ -50 Mt/Jahr, Food-Miles -80%
@@ -1301,7 +1313,8 @@ Industrielle CO₂-Fixierung und Biomasse-Produktion durch Mikroalgen in Photobi
 - **Sufficient:** Produktivität 30 t/ha/yr (vs. 3 t/ha Soja), Eiweiß-Yield ~10× Soja, CO₂-Fixierung ~1,8 t CO₂ pro 1 t Algen-Biomasse ✅
 - **Efficient:** PBR-Invest hoch (€2–5 Mio/ha), ROI 7–10 Jahre; rentabel nur am Standort Industrie-Abwärme + EE-Stromüberschuss + Hochwert-Co-Produkte ✅
 - **Consistent:** Komplementär zu D17 (Hanf-Acker → Faser) und D18 (Stadt-Garten → Frische), B07 (Industrie-Abgase als Input statt Abfall), B12 (alternative Biomasse), C11 (PBR-Beleuchtung mit EE) ✅
-- **SEC-Score: 0.83** (S:0.85, E:0.78, C:0.86)
+- **Just:** Erzeugt +50 Mio t/Jahr hochwertiges Eiweiß ohne Flächenkonkurrenz zum Lebensmittel-Ackerbau (verhindert "Food vs Fuel"-Preistreiberei auf dem Weltmarkt); bindet sich an Industrieabgase und schützt potenziell Industriestandorte/Jobs im Strukturwandel ✅
+- **SEC-J-Score: 0.84** (S:0.85, E:0.78, C:0.86, J:0.85 — PS-U 2.0 Nachrüstung 2026-05-28)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Fixierung -0,3 Gt/Jahr global (konservativ, durch PBR-Kapazität limitiert; -0,5 Gt im günstigen Pfad)
