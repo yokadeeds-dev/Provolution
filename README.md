@@ -7,6 +7,8 @@
 > **Status:** Preprint / living repository, eingereicht bei *Earth System Governance*. **Noch nicht extern peer-reviewed.** Alle Reduktions-Totale sind gescreente Potenziale unter Annahmen — keine Prognosen.
 >
 > 🛡️ **Stärkste Einwände — offen benannt und beantwortet:** [`canon/LIMITATIONS.md`](canon/LIMITATIONS.md) (Limitations & Anticipated Critiques). Antifragil: das System besitzt seine Angriffsfläche, statt sie zu verstecken.
+>
+> 🧭 **Gutachter:innen:** fachliche Lesereihenfolge in [`FOR_REVIEWERS.md`](FOR_REVIEWERS.md) (Reviewer-Einstieg, keine Laienfassung).
 
 ---
 
