@@ -67,6 +67,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 - **Interne Methodik-Audits (Probatio Familia, „PF"):** Selbst-administrierte Prüfläufe in separater KI-Umgebung (Gemini Gems). Das sind **strukturierte Selbst-Prüfungen, kein unabhängiges Peer Review.** Berichte: `studies/EXTERNAL_AUDIT_2026-05-28/`.
 - **Reliabilitäts-Studie:** Inter-Rater + Blind-Retest (N=10, seed=42) in `studies/RELIABILITY_2026-04-20/` — methodischer Reproduzierbarkeits-Beleg, aber innerhalb der Autoren-Infrastruktur, **nicht** extern.
 - **Konsequenz:** Formulierungen wie „validated", „ready", „100 % gaps closed" beziehen sich auf **interne Checklisten**, nicht auf externe Begutachtung. Sie werden in den Manuskript-Paketen entsprechend nüchtern markiert (siehe §5).
+- **Stärkste Einwände offen benannt + beantwortet:** [`canon/LIMITATIONS.md`](LIMITATIONS.md) (Limitations & Anticipated Critiques) — antifragiles Besitzen der Angriffsfläche statt Verstecken.
 
 ---
 
