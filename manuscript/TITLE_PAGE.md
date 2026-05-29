@@ -5,6 +5,8 @@ Probatio Systemica & Provolution: A Systematic, Quantified Framework for Climate
 
 **Draft:** v0.1 — 2026-04-18
 
+> **STATUS:** SUBMITTED SNAPSHOT — Titel-/Autoren-Seite zu Draft v0.1 (2026-04-18). Aktuelle Werte & Status: [`canon/STATUS.md`](../canon/STATUS.md).
+
 ---
 
 **Author:**

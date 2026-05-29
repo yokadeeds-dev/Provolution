@@ -2,16 +2,15 @@
 
 **Project:** Probatio Systemica & Provolution  
 **Date:** 2026-01-23  
-**Status:** Ready for Submission  
+**Status:** SUPERSEDED — siehe Banner (Ziel-Journal revidiert, Vor-Kanon-Werte)  
 
 ---
 
-> ⚠️ **Snapshot 2026-01-23 — überholt.** Submission-Target wurde
+> ⚠️ **STATUS: SUPERSEDED (Snapshot 2026-01-23).** Submission-Target wurde
 > revidiert: tatsächlich eingereicht an **Earth System Governance**
-> (2026-04-19, BLIND). Corrigendum dokumentiert in
-> `10_ENGLISH/ERRATUM_2026-04-27.md`. Werte (n=30, -50.7 Gt, SEC ohne J)
-> reflektieren Vor-6D-Stand. Aktueller Repo-Stand: `README.md` +
-> `01_STRATEGIE/PHASE_6D_PLAN.md`.
+> (2026-04-19, BLIND). Corrigenda: [`canon/en/CORRIGENDUM_2026-04-27.md`](../canon/en/CORRIGENDUM_2026-04-27.md)
+> + [`CORRIGENDUM_2026-05-28.md`](../canon/en/CORRIGENDUM_2026-05-28.md). Werte (n=30, -50.7 Gt, SEC ohne J)
+> reflektieren Vor-Kanon-Stand. **Autoritativer Stand & Werte-Glossar:** [`canon/STATUS.md`](../canon/STATUS.md).
 
 ---
 
