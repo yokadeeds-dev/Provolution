@@ -436,7 +436,7 @@ Go/No-Go-Entscheidungen human-getroffen. Risiko-Akzeptanz human-definiert. Stake
 
 ### B07: KREISLAUFWIRTSCHAFT
 
-**SEC-Score:** 0.93 | **Band:** 4 | **CO₂:** -23 Gt/Jahr
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -23 Gt/Jahr
 
 #### 1. DEFINITION
 Systemischer Ansatz zur Transformation linearer Produktions-Systeme (Take-Make-Waste) zu zirkulären Kreisläufen. Materialien bleiben in Nutzung durch Re-Use, Repair, Refurbish, Recycle.
@@ -496,7 +496,7 @@ Material-Deklaration und Circularity-Claims human-auditiert. Menschliche Entsche
 
 ### B08: BIOPOLYMERE (HANF)
 
-**SEC-Score:** 0.90 | **Band:** 4 | **CO₂:** -1.5 Gt/Jahr
+**SEC-J-Score:** 0.90 | **Band:** 4 | **CO₂:** -1.5 Gt/Jahr
 
 #### 1. DEFINITION
 Ersatz petrochemischer Polymere durch biobasierte Alternativen aus nachwachsenden Rohstoffen. Fokus auf Hanf wegen hoher CO₂-Bindung, schnellem Wachstum, Multi-Nutzbarkeit.
@@ -556,7 +556,7 @@ Food-Contact- und Medizinprodukte-Zulassung human-geprüft. Abbaubarkeits-Zertif
 
 ### B09: MATERIALFLUSS-STEUERUNG
 
-**SEC-Score:** 0.87 | **Band:** 5
+**SEC-J-Score:** 0.85 | **Band:** 5
 
 #### 1. DEFINITION
 Digital-Twin-basiertes System zur Real-Time-Steuerung von Materialflüssen. Optimiert Ressourcen-Nutzung, minimiert Verschwendung, erhöht Transparenz.
@@ -616,7 +616,7 @@ Menschliche Freigabe bei Supplier-Wechsel >€100k. Datenschutz bei Supply-Chain
 
 ### B10: ABFALL-ZU-RESSOURCE
 
-**SEC-Score:** 0.91 | **Band:** 4 | **CO₂:** -2 Gt CO₂eq/Jahr
+**SEC-J-Score:** 0.91 | **Band:** 4 | **CO₂:** -2 Gt CO₂eq/Jahr
 
 #### 1. DEFINITION
 Systematische Transformation von Abfallströmen zu wertvollen Ressourcen durch Sortierung, Verarbeitung, Up-Cycling. "Waste = Food" Prinzip.
@@ -753,7 +753,7 @@ Datenschutz bei kundenspezifischen Bestellungen (DSGVO). Sicherheits- und Zulass
 
 ### C11: ERNEUERBARE INTEGRATION
 
-**SEC-Score:** 0.94 | **Band:** 4 | **CO₂:** -15 Gt/Jahr
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -15 Gt/Jahr
 
 #### 1. DEFINITION
 Systematische Integration erneuerbarer Energien (Solar, Wind, Wasser) in bestehende Stromnetze. Löst Intermittenz durch Smart-Grid, Demand-Response, Speicher-Kombination.
@@ -815,7 +815,7 @@ Netzstabilitäts-Entscheidungen bleiben bei Grid-Operatoren. Blackout-Risiko-Sch
 
 ### C12: ENERGIE-SPEICHERUNG
 
-**SEC-Score:** 0.89 | **Band:** 4
+**SEC-J-Score:** 0.88 | **Band:** 4
 
 #### 1. DEFINITION
 Multi-Technologie-Portfolio für Energie-Speicherung: Batterien, Pumpspeicher, Wasserstoff, Thermal Storage. Überbrückt Intermittenz von Erneuerbaren.
@@ -875,7 +875,7 @@ Thermische Überwachung mit Notabschaltung. Brandschutz-Systeme human-überwacht
 
 ### C13: SMART GRIDS
 
-**SEC-Score:** 0.91 | **Band:** 4
+**SEC-J-Score:** 0.90 | **Band:** 4
 
 #### 1. DEFINITION
 Intelligente Stromnetze mit bidirektionaler Kommunikation, Real-Time-Monitoring, automatischer Laststeuerung. Optimiert Angebot/Nachfrage, integriert Erneuerbare+Speicher+E-Mobility.
@@ -935,7 +935,7 @@ Grid-Code-Konformität für alle AI-Entscheidungen. Menschliche Override-Befugni
 
 ### C14: DEZENTRALE VERSORGUNG
 
-**SEC-Score:** 0.88 | **Band:** 4
+**SEC-J-Score:** 0.89 | **Band:** 4
 
 #### 1. DEFINITION
 Shift von zentralen Großkraftwerken zu dezentralen Mikro-Grids und Prosumern. Solar auf Dächern, lokale Batterien, Community-Energy-Systeme.
@@ -1004,7 +1004,7 @@ Community-Governance und Ownership-Modelle human-entschieden. Netzsynchronisatio
 
 ### D15: REGENERATIVE LANDWIRTSCHAFT
 
-**SEC-Score:** 0.92 | **Band:** 4 | **CO₂:** -4 Gt/Jahr
+**SEC-J-Score:** 0.92 | **Band:** 4 | **CO₂:** -4 Gt/Jahr
 
 #### 1. DEFINITION
 Landwirtschafts-System das Boden regeneriert statt degradiert. Praktiken: No-Till, Cover-Crops, Crop-Rotation, Composting, Mob-Grazing. Erhöht Boden-Kohlenstoff, Biodiversität, Wasser-Retention.
@@ -1064,7 +1064,7 @@ Organic-Standards human-zertifiziert. Farmer-Akzeptanz und lokales Wissen priori
 
 ### D16: CO₂-SENKEN (BODEN)
 
-**SEC-Score:** 0.90 | **Band:** 4 | **CO₂:** -5 Gt/Jahr + 200 Gt kumulativ
+**SEC-J-Score:** 0.90 | **Band:** 4 | **CO₂:** -5 Gt/Jahr + 200 Gt kumulativ
 
 #### 1. DEFINITION
 Systematische Nutzung von Böden als CO₂-Senken durch erhöhten organischen Kohlenstoff-Aufbau. Kombiniert Regenerative Ag, Aufforstung, Biochar, Wetland-Restoration.
@@ -1124,7 +1124,7 @@ Additionalität und Permanenz human-validiert (kein Double-Counting). Indigene L
 
 ### D17: HANF-ANBAU (NUTZPFLANZE)
 
-**SEC-Score:** 0.93 | **Band:** 4 | **CO₂:** -0.2 Gt/Jahr (185 Mt)
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -0.2 Gt/Jahr (185 Mt)
 
 #### 1. DEFINITION
 Kultivierung von Industrie-Hanf für Multi-Use: Fasern (B08), Samen (Protein/Öl), Biomasse (Energie), Boden-Regeneration. Schnelles Wachstum (4 Monate), 3.7 t CO₂/ha Bindung.
@@ -1240,7 +1240,7 @@ THC-Grenzwerte (<0.3%) kontinuierlich überwacht. Organic-Certification human-va
 
 ### D18: URBANE LANDWIRTSCHAFT
 
-**SEC-Score:** 0.86 | **Band:** 4
+**SEC-J-Score:** 0.88 | **Band:** 4
 
 #### 1. DEFINITION
 Nahrungsmittel-Produktion in Städten: Vertical-Farms, Rooftop-Gardens, Community-Gardens, Aquaponics. Reduziert Transport, erhöht Frische, stärkt Urban-Resilience.
@@ -1300,7 +1300,7 @@ Lebensmittel-Sicherheit (HACCP) menschlich überwacht. Energie-Footprint muss du
 
 ### D19: ALGEN-BIORAFFINERIE
 
-**SEC-Score:** 0.83 | **Band:** 4 | **CO₂:** -0.3 Gt CO₂eq/Jahr (konservativ; -0.5 Gt im günstigen Skalierungs-Pfad)
+**SEC-J-Score:** 0.84 | **Band:** 4 | **CO₂:** -0.3 Gt CO₂eq/Jahr (konservativ; -0.5 Gt im günstigen Skalierungs-Pfad)
 
 #### 1. DEFINITION
 Industrielle CO₂-Fixierung und Biomasse-Produktion durch Mikroalgen in Photobioreaktoren (PBR). Algen werden mit CO₂-haltigen Industrie-Abgasen begast und produzieren Biomasse für Eiweiß (Spirulina/Chlorella als Nahrungs-/Futter-Zusatz), Lipide (Biodiesel-Vorstufe) und Hochwert-Wirkstoffe (Carotinoide, Omega-3, Pigmente).
@@ -2608,8 +2608,12 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 | **Hebel gesamt (Band 4 band4-canonical)** | 37 (Stand 2026-05-28 v1.5: +D19 + K01–K04 promoviert; vorher 32) |
 | **Hebel im Kanon insgesamt** | 49 (Domain A–K + Communities; inkl. D19, K01–K04, I34 STUB, J01 STUB, yaml-only, community-integrated) |
 | **Domänen** | 11 (A–I band4-canonical, J STUB Konstruktion, K band4-canonical Marine & Küste v1.5) |
-| **Durchschnittlicher SEC-Score** | 0.90 (Exzellent) |
-| **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−58,6 Gt/Jahr** (`co2_master.yaml` v1.3, nach B09/B10-Drift-Resolution + D19-Promotion + K01–K04-Vollintegration; v1.2 hatte −59,8) |
+| **Durchschnittlicher SEC-J-Score (PS-U 2.0)** | **0,91** (alle bewerteten Hebel; siehe SEC-J-Master-Übersicht in `canon/de/HEBEL_KATALOG_v1.0.md` v1.7) |
+| **Domain-Ø SEC-J (individuell kalkuliert)** | B 0,90 · C 0,90 · D 0,89 (auf Basis 13 PS-U 2.0 STANDARD-Berechnungen) |
+| **Domain-Ø SEC-J (Batch-bewertet, PR #11 ✅ TRAGFÄHIG)** | A 0,92 · E 0,93 (E21 unter JUSTICE J=0,95) · F 0,90 · G 0,90 · H 0,90 |
+| **SEC-J Warnschwellen (J < 0,80)** | 2 Hebel: B09 J=0,72 (Algorithmisches-Management-Risiko) · C12 J=0,82 (Li/Co-Abbau) — Implementierungs-Auflagen in `impact_master.yaml` v2.3 `sec_j_scores.implementation_constraints` |
+| **J-Veto-Auslösungen (J < 0,50)** | 0 (keine) |
+| **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−58,6 Gt/Jahr** (`co2_master.yaml` v1.4, nach B09/B10-Drift-Resolution + D19-Promotion + K01–K04-Vollintegration; v1.2 hatte −59,8) |
 | **CO₂-Potential netto Szenario B (Erwartungswert, Monte-Carlo v1.5)** | **Median −43,2 Gt/yr [90 %-KI: −52,8, −34,6]** (N=10 000, `monte_carlo.py`) |
 | **CO₂-Potential netto Szenario S (50 %-Stresstest, PF-E7)** | Median −14,9 Gt/yr [90 %-KI: −20,5, −9,8] |
 | **Finanzierung verfügbar** | €4.5 Billion/Jahr |
