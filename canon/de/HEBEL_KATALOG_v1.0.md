@@ -112,11 +112,11 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | I33 | KREISLAUF-AUTO | kreislauf_auto | band4-canonical | -1.0 | Promoted 2026-05-28 stub→band4-canonical (Kap. 10 Domäne I in Band 4 v4.2); STUB-File `Kreislauf-Auto/Konzept_Kreislauf-Auto.md` bleibt als ausführliche Konzept-Historie |
 | I34 | — (in eigenem File) | kreislauf_lnf | stub | -0.3 | STUB-File `Kreislauf-LNF/STUB_I34_Kreislauf_LNF.md`; Promotion zu band4-canonical analog I33 als Folge-Aufgabe |
 
-### Domain J — Konstruktion (1)
+### Domain J — Konstruktion (1) · band4-canonical seit 2026-05-29
 
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
-| J01 | — (in eigenem File) | kreislauf_gebaeude | stub | -3.0 | STUB-File `Kreislauf-Gebaeude/STUB_J01_Kreislauf_Gebaeude.md` |
+| J01 | KREISLAUF-GEBÄUDE | kreislauf_gebaeude | band4-canonical | -3.0 | ✅ v1.5 STUB → band4-canonical: Vollkonzept Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format (Embodied-Carbon-Limit + Hempcrete + Hanfbast-Bewehrung + Hanffaser-Dämmung + Material-Pässe); SEC-J 0,93 (PR #13) |
 
 ### Domain K — Marine & Küste (4) · neu 2026-05-28
 
@@ -155,8 +155,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 | Wert | Anzahl | Anmerkung |
 |---|---:|---|
-| **n_band4_canonical** | 37 | A01-A06, B07-B10, B13, C11-C14, D15-D19, E19-E22, F23-F26, G27, H30-H32, I33, K01-K04 (v1.5: +D19 +K01-K04) |
-| **n_stub** | 2 | I34, J01 (v1.5: K01-K04 zu band4-canonical promoted) |
+| **n_band4_canonical** | 38 | A01-A06, B07-B10, B13, C11-C14, D15-D19, E19-E22, F23-F26, G27, H30-H32, I33, J01, K01-K04 (v1.5: +D19 +K01-K04 +J01) |
+| **n_stub** | 1 | I34 (v1.5: K01-K04 + J01 zu band4-canonical promoted) |
 | **n_yaml_only** | 5 | B11, B12, F22, G28, G29 (echte Hebel laut DEC_2026-05-09 Q1=(a)) |
 | **n_communities_integrated** | 5 | C-2026-001/003/004/007/008 |
 | **n_total_kanonisch** | **49** | Hebel-Katalog v1.5: +D19 (=48+1) |
@@ -210,6 +210,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 18. **PF-Batch-Audit Rest-Hebel I/J/K/B SEC-J berechnet (2026-05-29 mittags)** — 6. konvergenter externer Audit nach Gem-Knowledge-Update (2026-05-28 23:59). PS-U:STANDARD-Batch berechnet SEC-J für I33–I36, J01, K01–K04, B11–B13 (12 Hebel) mit den korrekten Repo-Definitionen. Verdict: **TRAGFÄHIG mit punktuellen Auflagen** — kein J<0,50-Veto; 2 neue Warnschwellen: **B11 J=0,78** (Industrielle H2-Transformation — Just-Transition-Auflage) und **B12 J=0,75** (Nachhaltige Biomasse — Tank-oder-Teller / FPIC-Auflage). I33 Kreislauf-Auto, J01 Kreislauf-Gebäude und K01 Mangroven erreichen SEC-J 0,93 (Spitzenwerte). Konsequenz: **individual_calculated wächst von 13 auf 25 Hebel**; Domain-Ø-J neu: I 0,913 · J 0,93 · K 0,913 · B 0,884 (Vollkalkulation Domain B). Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md`. Daten in `canon/data/impact_master.yaml` v2.4 `sec_j_scores`.
 
 19. **B11 Definitions-Korrektur — Hanf-Bio-Reduktionsmittel-Spur wiederhergestellt (PR #14, 2026-05-29 mittags)** — User-Hinweis nach PR #13: die ursprüngliche Provolutions-Planung für B11 enthielt eine Hanf-Bio-Reduktionsmittel-Spur als primären Pfad (Hanf-Biokohle/Pyrolyse als Koks-Ersatz in bestehenden Hochöfen — Drop-in). Diese ist bei der yaml-only-Definition und im PR #13-Audit verloren gegangen. **Industrie-real:** Char Technologies CleanFyre (>85% C-Gehalt, EBC-zertifiziert), Pilotprojekte ArcelorMittal Dofasco + thyssenkrupp 250.000 t/yr ab 2025; EU CBAM macht biogenen Kohlenstoff bis 2030 zwingend. **Methodische Folge:** Drop-in löst das Just-Transition-Problem (PR #13-Warnschwelle J=0,78 entfällt für Pfad A); J steigt erwartet auf ~0,90, SEC-J auf ~0,91. **Status:** B11 in `impact_master.yaml` v2.5 als `pending_re_audit: true` markiert mit `legacy_values_pr13` + `expected_corrected_values`; finale Werte beim nächsten PF-Lauf. Quellen: `studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md` + `studies/EXTERNAL_AUDIT_2026-05-28/B11_HANF_KORREKTUR_2026-05-29.md`. **Bonus:** J01 Kreislauf-Gebäude (STUB) hat ebenfalls Hanf-Stahl-Bauspur (Hanfbast-Bewehrung BasEcoCrete, Hempcrete 110 kg CO₂/m³ netto-negativ, Hanffaser-Dämmung) — gleiche Quelle liefert Best-Practice für J01-Promotion zu band4-canonical.
+
+20. **J01 Kreislauf-Gebäude Promotion STUB → band4-canonical (PR #15, 2026-05-29 abends)** — ✅ **RESOLVED**. Direkte Folge von PR #14 + PR #13 (J01 SEC-J 0,93 mit S 0,90 / E 0,92 / C 1,00 / J 0,85 bereits validiert). Vollkonzept Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format eingefügt zwischen Domain K (10b) und KAPITEL 11. **Hebel-Inhalte:** fünf modulare Bausteine — Embodied-Carbon-Limit + Passivhaus-Standard / Hempcrete (netto-negativ ~110 kg CO₂/m³) / Hanfbast-Bewehrung (BasEcoCrete-Pfad, Beton-CO₂-Reduktion ~64 %) / Hanffaser-Dämmung (U-Wert ~0,038 W/(m·K), -1,6 kg CO₂/kg) / Material-Pässe + Urban Mining. **Skalierungs-Daten** mit konkreten Lieferanten (IsoHemp, Thermo-Hanf, HempFlax, BasEcoCrete, Stora Enso/KLH) und Fallbeispielen (Marks & Spencer Distribution Centre, École Issy-les-Moulineaux, Mjøstårnet, HoHo Wien). **Regulatorischer Anker:** EU EPBD-Recast 2024 (Whole-Life-Carbon-Reporting ab 2030) und FR RE2020 (Embodied-Carbon-Limit gesetzlich seit 2022) als Pilotstaaten-Spur. Aggregate: n_band4_canonical 37 → 38; n_stub 2 → 1 (nur noch I34); §11.4 "J STUB Konstruktion" → "J band4-canonical Konstruktion v1.5"; Hebel im Kanon insgesamt unverändert 49.
 
 ---
 
@@ -288,6 +290,9 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.10 (2026-05-29 abends, Promotion):**
+- ✅ **J01 Kreislauf-Gebäude Promotion STUB → band4-canonical** (Drift-Item #20): Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format. Fünf modulare Bausteine inkl. Hempcrete, Hanfbast-Bewehrung (BasEcoCrete), Hanffaser-Dämmung, Embodied-Carbon-Limit und Material-Pässe. SEC-J 0,93 aus PR #13. Aggregate: n_band4_canonical 37 → 38; n_stub 2 → 1; §11.4 "J STUB Konstruktion" → "J band4-canonical Konstruktion v1.5". Hanf-Recherche aus PR #14 als Quelle für die hanfbasierten Bausteine in J01.
 
 **v1.9 (2026-05-29 mittags, korrigierend):**
 - ✅ **B11 Definitions-Korrektur** (Drift-Item #19): Hanf-Bio-Reduktionsmittel-Spur wiederhergestellt nach User-Hinweis. Industrie-Best-Practice dokumentiert (Char Tech, ArcelorMittal, thyssenkrupp). Erwartete SEC-J-Anhebung auf ~0,91; Warnschwelle entfällt für Pfad A.

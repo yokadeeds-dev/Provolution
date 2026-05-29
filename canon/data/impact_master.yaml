@@ -9,13 +9,21 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.5"
+  version: "2.6"
   last_updated: "2026-05-29"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_6_2026-05-29:
+      - "PR #15: J01 Kreislauf-Gebäude Promotion STUB → band4-canonical"
+      - "Vollkonzept in canon/de/04_Band4_Anwendungen_v4.2.md KAPITEL 10c (13-Sektionen-Format)"
+      - "Fünf modulare Bausteine: Embodied-Carbon-Limit + Hempcrete + Hanfbast-Bewehrung + Hanffaser-Dämmung + Material-Pässe/Urban-Mining"
+      - "SEC-J 0.93 (S 0.90, E 0.92, C 1.00, J 0.85) bleibt unverändert aus PR #13 — Promotion ist Status-Anhebung ohne Wert-Änderung"
+      - "Hanf-Bau-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md (gemeinsam mit PR #14 B11)"
+      - "Aggregate: n_band4_canonical 37 → 38; n_stub 2 → 1 (nur I34 verbleibt als STUB)"
+      - "Domain J §11.4 in Band 4 'STUB Konstruktion' → 'band4-canonical Konstruktion v1.5'"
     v2_5_2026-05-29:
       - "PR #14: B11 Definitions-Korrektur — Hanf-Bio-Reduktionsmittel-Spur war in PR #13 verloren gegangen"
       - "User-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md"
@@ -617,8 +625,8 @@ sec_j_scores:
     I35_aktive_geschwindigkeits_regulation: { s: 0.90, e: 0.95, c: 0.90, j: 0.82, sec_j: 0.90, note: "ISA Mode d — schützt vulnerabelste Verkehrsteilnehmer (J4); algorithmische Egalisierung im Straßenraum (J1/J3)" }
     I36_kreislauf_schwere_nfz:         { s: 0.92, e: 0.88, c: 0.90, j: 0.88, sec_j: 0.90, note: "Lkw/Bus/Reisebus — leistbarer ÖPNV-Ausbau (J1); Transitkorridor-Entlastung (J4)" }
 
-    # Domain J — Konstruktion (PR #13, 2026-05-29)
-    J01_kreislauf_gebaeude:            { s: 0.90, e: 0.92, c: 1.00, j: 0.85, sec_j: 0.93, note: "Urban Mining → leistbarer Wohnraum (J1/J3); Schutz vor toxischen Baustoffen (J4)" }
+    # Domain J — Konstruktion (PR #13 SEC-J, PR #15 band4-canonical 2026-05-29)
+    J01_kreislauf_gebaeude:            { s: 0.90, e: 0.92, c: 1.00, j: 0.85, sec_j: 0.93, status: "band4-canonical", band4_chapter: "10c", note: "Urban Mining → leistbarer Wohnraum (J1/J3); Schutz vor toxischen Baustoffen (J4); 5 modulare Bausteine: Embodied-Carbon-Limit + Hempcrete + Hanfbast-Bewehrung (BasEcoCrete) + Hanffaser-Dämmung + Material-Pässe" }
 
     # Domain K — Marine & Küste (PR #13, 2026-05-29)
     K01_mangroven:                     { s: 0.95, e: 0.90, c: 0.95, j: 0.92, sec_j: 0.93, note: "Küstenschutz für vulnerable Gemeinschaften Globaler Süden (J4); Fischerei-Einkommen (J3)" }
