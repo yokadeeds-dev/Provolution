@@ -2,6 +2,8 @@
 **Systematic Climate Transformation Framework**
 **Version 4.2 | January 2026**
 
+> ⚠️ **Snapshot (Jan 2026).** Some figures in this summary predate the current canon (e.g. n=30 applications across domains A–H, −58.0/−50.7 Gt). **Authoritative status & values: [`canon/STATUS.md`](../STATUS.md)** — currently **49 levers across 11 domains (A–K), 38 band4-canonical**, CO₂-hard mitigation potential **−58.6 Gt/yr** (screened potential, not a forecast).
+
 ---
 
 ## The Challenge
@@ -105,7 +107,7 @@ Payback:        2.4 years
 
 **Phase 1 (Q1-Q2):** Pilot with 3 applications (A01, C11, F23)  
 **Phase 2 (Q3-Q4):** Scale to 15 applications  
-**Phase 3 (Year 2):** Full deployment of 30 applications  
+**Phase 3 (Year 2):** Full deployment of the canonical lever set (currently 49 levers / 11 domains; see [`canon/STATUS.md`](../STATUS.md))  
 
 ---
 
