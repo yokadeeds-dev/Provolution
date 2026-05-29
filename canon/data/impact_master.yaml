@@ -9,13 +9,20 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.4"
+  version: "2.5"
   last_updated: "2026-05-29"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_5_2026-05-29:
+      - "PR #14: B11 Definitions-Korrektur — Hanf-Bio-Reduktionsmittel-Spur war in PR #13 verloren gegangen"
+      - "User-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md"
+      - "B11 in sec_j_scores.individual_calculated als 'pending_re_audit' markiert mit legacy_values_pr13 + expected_corrected_values"
+      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/B11_HANF_KORREKTUR_2026-05-29.md"
+      - "implementation_constraints.B11 vollständig umgeschrieben — Drop-in-Pfad als primär, H2 als Alternative"
+      - "Erwartete SEC-J nach Re-Audit: ~0.91 (statt 0.86), J ~0.90 (statt 0.78) — Drop-in eliminiert Just-Transition-Problem"
     v2_4_2026-05-29:
       - "PR #13: Batch-SEC-J-Berechnung Rest-Hebel I/J/K/B nach Gem-Knowledge-Update vom 2026-05-28 23:59"
       - "Individuell kalkulierte Hebel: 13 → 25 (+I33-I36 +J01 +K01-K04 +B11-B13)"
