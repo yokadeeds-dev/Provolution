@@ -10,13 +10,14 @@
 # mit quantifizierter CO2-Wirkung).
 
 meta:
-  version: "1.4"
-  last_updated: "2026-05-28"
+  version: "1.5"
+  last_updated: "2026-05-29"
   description: "Zentrale CO₂-Bilanz aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 - Gesamtbilanz"
   changelog_v1_2: "PF-Report-Adressierung (E4 Datenlage): A03-A06/E20/E21/F23 Tag-Drifts korrigiert; B13 -0.3 ergänzt; Domain K Marine & Küste mit 4 Stub-Hebeln K01-K04 angelegt (-1.5 Gt); Gesamt-Werte aktualisiert: reduktion_hart -58.0 → -59.8; B09/B10 inhaltliche Drift bleibt als offener Punkt"
   changelog_v1_3: "Drift-Resolutions 2026-05-28: (1) B09 wasserstoff -2.8 → materialfluss-steuerung -0.5 (band4-canonical Wert; H2 als separater Hebel-Kandidat zurückgestellt, partial-coverage durch B11 transformation -1.8 angedeutet); (2) B10 ccs -1.2 → abfall-zu-ressource -2.0 (band4-canonical Wert; CCS als separater Hebel-Kandidat zurückgestellt); (3) D19 Algen-Bioraffinerie unter D_food_land neu hinzugefügt (-0.3 Gt; Promotion Kategorie B → A, vollintegriert Band 4 v4.2); (4) K01-K04 STUB-Status → band4-canonical (Vollkonzepte in Band 4 v4.2 KAPITEL 10b); Domain B total: -16.1 → -14.6; Domain D total: -9.4 → -9.7; gesamt.reduktion_hart: -59.8 → -58.6"
   changelog_v1_4: "PS-U 2.0 SEC-J-Nachrüstung 2026-05-28 (User-PF-Sitzung): Architektonische Lücke geschlossen — alle in der Sitzung bewerteten Hebel haben jetzt J-Score + SEC-J. Datentechnisch sind die SEC-J-Werte in impact_master.yaml v2.2 unter sec_j_scores zentral abgelegt. Domain B, C, D individuell kalkuliert; Domain A, E, F, G, H batch-bewertet (Einzelhebel-Berechnung ausstehend). Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; B09 J=0,72 als Warnschwelle dokumentiert (Algorithmisches-Management-Risiko). Vollständiger Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+  changelog_v1_5: "J01 Kreislauf-Gebäude Promotion STUB → band4-canonical (PR #15, 2026-05-29 abends). Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format eingefügt. Domain J total -3.0 Gt unverändert; nur Status-Anhebung. Fünf modulare Bausteine: Embodied-Carbon-Limit + Hempcrete (netto-negativ ~110 kg CO₂/m³) + Hanfbast-Bewehrung (BasEcoCrete) + Hanffaser-Dämmung + Material-Pässe/Urban-Mining. SEC-J 0,93 aus PR #13. Hanf-Bau-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md. Aggregate gesamt-Reduktion unverändert (-58.6); n_band4_canonical 37 → 38; n_stub 2 → 1 (siehe HEBEL_KATALOG)."
 
 # Hinweis zur SEC-J-Integration (v1.4):
 # co2_master.yaml bleibt CO2-only-SSoT (Quantitäten in Gt CO₂eq).
@@ -227,11 +228,11 @@ domains:
 
   J_konstruktion:
     name: "Konstruktion"
-    total: -3.0  # Gt CO₂eq/Jahr (STUB-Schätzung; Gebäudesektor 38% globaler Emissionen)
-    beschreibung: "Systemische Bautransformation — Gebäude als Kohlenstoffspeicher (Hempcrete, CLT, Passivhaus)"
+    total: -3.0  # Gt CO₂eq/Jahr (band4-canonical Schätzung; Gebäudesektor 38% globaler Emissionen)
+    beschreibung: "Systemische Bautransformation — Gebäude als Kohlenstoffspeicher (Hempcrete, Hanfbast-Bewehrung, Hanffaser-Dämmung, CLT, Passivhaus)"
     apps:
-      J01_kreislauf_gebaeude: -3.0  # STUB: Neubauten + Kernsanierungen mit Bio-Materialien; SEC ~0.93
-    hinweis: "J01 ist STUB — CO₂-Schätzung konservativ (adressierbarer Anteil Neubauten/Kernsanierungen); Vollkonzept ausstehend (Kreislauf-Gebaeude/STUB_J01_Kreislauf_Gebaeude.md)"
+      J01_kreislauf_gebaeude: -3.0  # band4-canonical (PR #15, 2026-05-29): Embodied-Carbon-Limit + 4 Hanf-Bausteine + Material-Pässe; SEC-J 0.93
+    hinweis: "J01 v1.5 2026-05-29 STUB → band4-canonical: Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format. Fünf modulare Bausteine: Embodied-Carbon-Limit/Passivhaus + Hempcrete (netto-negativ ~110 kg CO₂/m³) + Hanfbast-Bewehrung (BasEcoCrete: Beton-CO₂ ~64 % runter) + Hanffaser-Dämmung (U-Wert ~0,038, -1,6 kg CO₂/kg) + Material-Pässe/Urban-Mining. CO₂-Wert -3.0 Gt unverändert (konservative Schätzung, alternative Schätzungen bis -5 Gt). Regulatorischer Anker: EU EPBD-Recast 2024 + FR RE2020. Hanf-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md (gemeinsame Quelle mit B11)."
 
   K_marine:
     name: "Marine & Küste"
