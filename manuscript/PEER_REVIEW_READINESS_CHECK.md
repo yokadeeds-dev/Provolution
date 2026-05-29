@@ -1,4 +1,4 @@
-# PEER REVIEW READINESS – Prüfbericht
+# INTERNAL — Peer-Review-Readiness-Snapshot (Selbst-Einschätzung 2026-01-22, überholte Werte) – Prüfbericht
 **Datum:** 2026-01-22
 **Status:** INTERNAL — Selbst-Einschätzung (2026-01-22), **kein** externes Peer Review.
 

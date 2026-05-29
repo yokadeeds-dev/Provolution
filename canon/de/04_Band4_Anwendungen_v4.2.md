@@ -2251,7 +2251,7 @@ Beide Anker zeigen: Die Idee, Autos radikal biobasiert zu denken, ist alt — si
 
 #### 13. OFFENE PUNKTE (Stand 2026-05-28)
 
-- YAML-Eintrag in `20_CANON/data/co2_master.yaml` ausstehend (analog zu B13)
+- YAML-Eintrag in `canon/data/co2_master.yaml` ausstehend (analog zu B13)
 - Lesefassungs-Kapitel Domain I (Mobilität) noch nicht geschrieben — Kreislauf-Auto als Hauptthema, Henry Ford und Dietzen als historische Anker
 - Quantifizierung präzisieren: globale CO₂-Wirkung (-1,0 Gt/yr ist konservative Schätzung; bei vollständiger Hanf-Karosserie-Skalierung deutlich höher denkbar)
 - Verbindung zu I34 Kreislauf-LNF konkretisieren (Schwester-Hebel mit gemeinsamer Kaskaden-Logik)

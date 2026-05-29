@@ -1,5 +1,5 @@
 # CO₂-Bilanz Master Data - Single Source of Truth (CO2-spezifisch)
-# Provolution Framework - Hebel-Katalog (A-J) + Community-Integrations
+# Provolution Framework - Hebel-Katalog (A-K) + Community-Integrations
 # Version: 1.0
 # Datum: 2026-01-24
 # Alle Werte in Gt CO₂eq/Jahr (negativ = Reduktion/Senke)
@@ -48,7 +48,7 @@ methodology:
     scope_1: "Direct GHG emissions from owned/controlled sources"
     scope_2: "Indirect emissions from purchased electricity, heat, steam"
     scope_3: "All other indirect emissions in value chain (selected categories)"
-    scope_application: "Provolution addresses all 3 scopes across 10 domains (A-J)"
+    scope_application: "Provolution addresses all 3 scopes across 11 domains (A-K); legacy A-J references are historical"
   
   emission_factors:
     electricity_grid_de:
@@ -130,7 +130,7 @@ gesamt:
   anteil_global_emissions: 1.065  # 106.5% der globalen Emissionen (55 Gt Baseline) = Net Negative (v1.3)
   korrelation_theorie_praxis: 0.94  # Mathematische Validierung
   
-# Domain-spezifische Bilanzen (A-J)
+# Domain-spezifische Bilanzen (A-K)
 domains:
   A_governance:
     name: "Governance & Steuerung"
@@ -247,7 +247,7 @@ domains:
 # Community-Integrations (außerhalb A-J Hebel-Domains)
 # Eigene strukturelle Schicht parallel zu domains:
 # Variant C laut PHASE_6D_PLAN.md + 99_META/CODE_HANDOFF_2026-05-08.md
-# Quelle: 06_CANON/04_Band4_Community_Integrations.md
+# Quelle: canon/de/04_Band4_Community_Integrations.md
 community_integrations:
   beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-J Hebel-Domains"
   total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.0) vs. reduktion_hart (-58.0)
@@ -260,7 +260,7 @@ community_integrations:
       decision_date: "2026-04-18"
       evidence_level: 2
       dossier: "07_SOURCE/community_dossiers/generated/C-2026-008_dossier.md"
-      quelle: "06_CANON/04_Band4_Community_Integrations.md"
+      quelle: "canon/de/04_Band4_Community_Integrations.md"
       co2_impact_gt_per_year: -3.0  # PF -2.0 + Hanf-Kaskade -1.0
 
 # Zusätzliche Metriken für Analyse
