@@ -8,6 +8,8 @@
 **Status:** Publication-Ready
 
 > ⚠️ **Note on figures:** This volume contains historical headline values (incl. **−50.7 Gt/year** as "100% of target"). The **current authoritative CO₂-hard value is −58.6 Gt/year** (`canon/data/co2_master.yaml` v1.5). For all valid figures and the value glossary, [`canon/STATUS.md`](../STATUS.md) is the authoritative source. Prose values here are reading-version, not the data source.
+>
+> ⚠️ **SEC-J weights updated (2026-05-29):** This volume was originally written (v3.1, 2026-04-27) with the **DEPRECATED v1.0 formula** `0.40·S + 0.25·E + 0.15·C + 0.20·J`. The authoritative formula since 2026-05-10 is **PS-U 2.0 STANDARD** `0.30·S + 0.25·E + 0.30·C + 0.15·J` (`canon/de/06_framework_extensions_v2.0_SECJ.md`). The formula and worked examples below have been migrated. **Per-lever SEC-J values are canonical only in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`** — tables in this volume are illustrative.
 
 ---
 
@@ -34,7 +36,7 @@ shows how it is concretely applied to climate transformation.
 |--------|---------------------|------------------------|
 | Level | Probatio Systemica | Provolution |
 | Character | Neutral, descriptive | Normative, goal-directed |
-| Weighting | α=β=γ=1/3 | S=0.40, E=0.25, C=0.15, J=0.20 |
+| Weighting | α=β=γ=1/3 | S=0.30, E=0.25, C=0.30, J=0.15 (PS-U 2.0 STANDARD) |
 | Goals | None | Tipping point compensation |
 | Context | Universal | Climate crisis |
 
@@ -57,23 +59,26 @@ shows how it is concretely applied to climate transformation.
 
 #### 1.4 Normative Adjustments
 
-**Why S=0.40 and J=0.20 (Sufficiency and Justice prioritized)?**
+**Why S=0.30 and C=0.30 co-highest, J via the veto rather than its weight?**
 
-The climate crisis is **time-critical** and **justice-bound**. Tipping points
-are approaching, while unjust measures generate societal resistance.
-Therefore **impact (S=0.40)** is weighted highest; **justice (J=0.20)**
-acts as J-Veto dimension with absolute blocking power: J < 0.50 → measure
-not admissible, independent of S/E/C.
+The climate crisis is **time-critical** and **justice-bound**. In PS-U 2.0 STANDARD,
+**impact (S=0.30)** and **consistency (C=0.30)** are weighted highest and equal: a measure must
+work sufficiently *and* must not sabotage the wider system. **Efficiency (E=0.25)** follows.
+**Justice (J=0.15)** carries the lowest composite weight — the key point: **J acts primarily
+through the hard veto, not through its weight.** J < 0.50 → measure not admissible, independent
+of S/E/C. Justice is therefore a **gate**, not a tunable trade-off; its low composite weight is
+not a downgrade but reflects the division of labour between weight (fine gradation) and veto (hard threshold).
 
 **Example:**
 Measure A: S=0.95, E=0.70, C=1.0, J=0.80 (progressive)
 Measure B: S=0.75, E=0.95, C=1.0, J=0.40 → **J-Veto** (regressive)
 
-Provolution (Volume 5): SEC-J_A = 0.40·0.95 + 0.25·0.70 + 0.15·1.0 + 0.20·0.80 = **0.87**
-Provolution (Volume 5): SEC-J_B = **null** (J-Veto: J < 0.50 → not admissible)
+Provolution (PS-U 2.0 STANDARD): SEC-J_A = 0.30·0.95 + 0.25·0.70 + 0.30·1.0 + 0.15·0.80 = **0.88**
+Provolution (PS-U 2.0 STANDARD): SEC-J_B = **null** (J-Veto: J < 0.50 → not admissible)
 
 **Transparency:** This value judgment is explicit and debatable.
-Spec: `06_CANON/SECJ_SPEC_v1.0.md`
+Spec: `canon/de/06_framework_extensions_v2.0_SECJ.md` (authoritative); value glossary `canon/STATUS.md`.
+For justice-focused audits a **JUSTICE** mode also exists (0.25·S + 0.15·E + 0.20·C + 0.40·J).
 
 ---
 
@@ -82,7 +87,7 @@ Spec: `06_CANON/SECJ_SPEC_v1.0.md`
 #### 2.1 Score Formula Detailed
 
 ```
-SEC-J-Score(M) = 0.40·S(M) + 0.25·E(M) + 0.15·C(M) + 0.20·J(M)
+SEC-J-Score(M) = 0.30·S(M) + 0.25·E(M) + 0.30·C(M) + 0.15·J(M)   (PS-U 2.0 STANDARD)
 
 J-Veto: If J(M) < 0.50 → SEC-J-Score(M) = null  (measure not admissible)
 
@@ -116,8 +121,8 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Distributive justice)
      J < 0.50 → J-Veto (progressive minimum requirement, independent of S/E/C)
 ```
 
-**Weights (SEC-J v1.0):** S=0.40, E=0.25, C=0.15, J=0.20
-**Spec:** `06_CANON/SECJ_SPEC_v1.0.md`
+**Weights (PS-U 2.0 STANDARD):** S=0.30, E=0.25, C=0.30, J=0.15  ·  *v1.0 (0.40/0.25/0.15/0.20) DEPRECATED since 2026-05-10*
+**Spec:** `canon/de/06_framework_extensions_v2.0_SECJ.md` (authoritative) · value glossary `canon/STATUS.md`
 
 **Parameters:**
 - **W(M):** Actual impact of measure M (Gt CO₂eq/year)
@@ -128,12 +133,14 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Distributive justice)
 - **cost_rate_benchmark:** Portfolio median of cost_rate — calibrated quarterly
   (see Section 2.4 Dynamic Adjustment)
   **Currently (Q1/2026): 26.0 €/t CO₂ (10y cumulative)** — Median lever D16 (CO₂ Sinks Soil).
-  Source: `20_CANON/data/impact_master.yaml → portfolio_benchmark.current`.
-  Calibration process: `20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`.
+  Source: `canon/data/impact_master.yaml → portfolio_benchmark.current`.
+  Calibration process: `canon/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`.
 
 #### 2.2 Calculation Examples
 
-**Example 1: B07 (Circular Economy) SEC-J = 0.92**
+> *Illustrative examples of the formula (PS-U 2.0 STANDARD). Input values are didactic; the **canonical per-lever SEC-J values** live in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md` (B07 = 0.93, C11 = 0.93) and may differ slightly due to refined inputs.*
+
+**Example 1: B07 (Circular Economy) — canonical SEC-J = 0.93**
 
 **Impact (S):**
 - CO₂ reduction: 23 Gt/year (actual)
@@ -158,41 +165,43 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Distributive justice)
 - J(B07) = (0.68 + 1) / 2 = **0.84** (no veto)
 
 **Total:**
-SEC-J(B07) = 0.40·0.95 + 0.25·0.90 + 0.15·1.0 + 0.20·0.84
-           = 0.380 + 0.225 + 0.150 + 0.168 = **0.923 ≈ 0.92**
+SEC-J(B07) = 0.30·0.95 + 0.25·0.90 + 0.30·1.0 + 0.15·0.84
+           = 0.285 + 0.225 + 0.300 + 0.126 = **0.936** (illustrative; canonical 0.93)
 
-**Example 2: C11 (Renewable Integration) SEC-J = 0.94**
+**Example 2: C11 (Renewable Integration) — canonical SEC-J = 0.93**
 
 - S = 0.95 (15 Gt CO₂/year, W_min = 12 Gt)
 - E = 0.92 (very resource-efficient)
 - C = 1.0 (no contradictions)
 - J = 0.90 (example value, equity_score = +0.80)
-- SEC-J = 0.40·0.95 + 0.25·0.92 + 0.15·1.0 + 0.20·0.90
-        = 0.380 + 0.230 + 0.150 + 0.180 = **0.940 ≈ 0.94**
+- SEC-J = 0.30·0.95 + 0.25·0.92 + 0.30·1.0 + 0.15·0.90
+        = 0.285 + 0.230 + 0.300 + 0.135 = **0.950** (illustrative; canonical 0.93)
 
-**Example 3: A01 (SEC Prioritization) SEC-J = 0.99**
+**Example 3: A01 (SEC Prioritization) — illustrative ≈ 0.99 (domain A is batch-rated in impact_master, mean 0.92)**
 
 - S = 1.0 (enables all other measures)
 - E = 0.95 (minimal resource consumption)
 - C = 1.0 (consistent by definition)
 - J = 1.0 (maximum justice: universal access)
-- SEC-J = 0.40·1.0 + 0.25·0.95 + 0.15·1.0 + 0.20·1.0
-        = 0.400 + 0.238 + 0.150 + 0.200 = **0.988 ≈ 0.99**
+- SEC-J = 0.30·1.0 + 0.25·0.95 + 0.30·1.0 + 0.15·1.0
+        = 0.300 + 0.238 + 0.300 + 0.150 = **0.988 ≈ 0.99**
 
 #### 2.3 Score Categories
 
 | Score Range | Category | Recommendation |
 |-------------|----------|----------------|
-| 0.90-1.00 | ⭐⭐⭐ Excellent | Immediate implementation |
-| 0.80-0.89 | ⭐⭐ Very good | Implementation recommended |
-| 0.70-0.79 | ⭐ Good | Implementation as resources allow |
-| 0.60-0.69 | ⚠️ Adequate | Improvement required |
-| <0.60 | ❌ Insufficient | Rejection or redesign |
+| 0.90-1.00 | PASSED (priority) | Immediate implementation |
+| 0.80-0.89 | PASSED (recommended) | Implementation recommended |
+| 0.70-0.79 | PARTIALLY PASSED | Implementation as resources allow |
+| 0.60-0.69 | PARTIALLY PASSED | Rework/redesign required |
+| <0.60 | FALSIFIED | Systemic rejection |
 
-**Provolution Status (n Levers — grows via SEC threshold):**
-- Average: **0.914** (Excellent)
-- Minimum: 0.88 (Very good)
-- Maximum: 0.99 (Excellent)
+> *PS-U convention: no evaluative adjectives or rating stars — the formal verdicts (PASSED/PARTIALLY PASSED/FALSIFIED) and numeric values speak for themselves.*
+
+**Provolution status (49 levers across 11 domains A–K, as of v1.5):**
+- Overall mean SEC-J: **0.90** (25 individually calculated + 5 domain batch; source `canon/data/impact_master.yaml`)
+- J-veto triggers: 0 · J warning thresholds (J<0.80): 4 (B09/B11/B12/C12)
+- Value glossary and authoritative count: `canon/STATUS.md`
 
 #### 2.4 Dynamic Adjustment
 
@@ -252,6 +261,8 @@ Remaining 24 levers
 - G27: Without monitoring → Flying blind
 
 #### 3.3 Priority Matrix
+
+> *The "SEC" column shows illustrative ranking values (3-axis scheme). **Authoritative per-lever SEC-J values: `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`.** This matrix conveys phase/dependency logic, not canonical scores.*
 
 | Rank | ID | Name | SEC | Dependencies | Phase |
 |------|----|-----------------------|------|-------------|-------|
@@ -955,7 +966,9 @@ Impact(M) = CO₂ potential / Max CO₂ potential
 
 ### APPENDIX A: SCORE CALCULATION TABLES
 
-**All canonical Levers with SEC-J Scores (table not yet extended with J/SEC-J columns — deferred sub-commit):**
+> ⚠️ **LEGACY TABLE (3-axis SEC, pre-SEC-J, as of v3.1).** This table uses the old three-axis SEC scheme (S/E/C → SEC) with rating stars and is **not** migrated to PS-U 2.0 SEC-J. The **authoritative per-lever SEC-J values live only in `canon/data/impact_master.yaml` and `canon/de/HEBEL_KATALOG_v1.0.md`** (49 levers across 11 domains A–K; J01/I34 status current there). Star labels (⭐) are the deprecated representation — PS-U convention uses formal verdicts (PASSED/PARTIALLY PASSED/FALSIFIED). Do not cite this table as a value source.
+
+**Legacy overview (3-axis SEC, historical — as of v3.1):**
 
 | ID | Name | S | E | C | SEC | Category |
 |----|---------------------------|------|------|------|------|-----------|  
@@ -1008,7 +1021,7 @@ Budget(M) = Base · SEC(M) · Complexity(M) · Impact(M)
 
 Parameters:
 - Base = Total Budget / Number of Measures
-- SEC-J(M) = 0.40·S + 0.25·E + 0.15·C + 0.20·J
+- SEC-J(M) = 0.30·S + 0.25·E + 0.30·C + 0.15·J  (PS-U 2.0 STANDARD; null if J-veto)
 - Complexity(M) ∈ [1.0, 3.0]
 - Impact(M) = CO₂_Potential(M) / Max_CO₂_Potential
 ```
