@@ -8,7 +8,7 @@
 
 ## ÜBERSICHT
 
-Band 4 dokumentiert **n kanonische Provolution-Hebel** (aktuell n = 30 in 8 Domänen A–H; Erweiterungen I, J werden als Extensions geführt). n wächst dynamisch via AUTO-INTEGRATE (siehe MASTER_INDEX).
+Band 4 dokumentiert **n kanonische Provolution-Hebel** (aktuell **49 Hebel im Kanon über 11 Domänen A–K**, davon **38 band4-canonical** mit Vollkonzept; Stand v1.5 2026-05-29). n wächst dynamisch via AUTO-INTEGRATE. Autoritative Zählung und Werte-Glossar: [`canon/STATUS.md`](../STATUS.md).
 
 **Kernaussage:** Die n kanonischen Hebel bilden ein vollständiges, konsistentes System zur systematischen Klimatransformation. Bei voller Implementation reduzieren sie CO₂-Emissionen um **-50.7 Gt/Jahr** (92% globaler Emissionen).
 

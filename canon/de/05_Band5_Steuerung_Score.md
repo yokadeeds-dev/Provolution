@@ -7,6 +7,8 @@
 **Datum:** 2026-04-27
 **Status:** Publication-Ready
 
+> ⚠️ **Hinweis zu Kennzahlen:** Dieser Band enthält historische Headline-Werte (u.a. **−50,7 Gt/Jahr** als „100 % von Ziel"). Der **aktuelle autoritative CO₂-hart-Wert ist −58,6 Gt/Jahr** (`canon/data/co2_master.yaml` v1.5). Für alle gültigen Kennzahlen und das Werte-Glossar gilt [`canon/STATUS.md`](../STATUS.md) als Quelle. Fließtext-Werte hier sind Lesefassung, nicht Wertequelle.
+
 ---
 
 ## TEIL I: GRUNDLAGEN
@@ -450,7 +452,7 @@ Impact(M) = CO₂-Potential / Max CO₂-Potential
 - M10 (Jahr 10): Kipppunkte kompensiert
 
 **KPIs Jahr 10:**
-- CO₂-Reduktion: 50.7 Gt/Jahr (100% von Ziel)
+- CO₂-Reduktion: 50.7 Gt/Jahr (100% von Ziel) <!-- HISTORISCH: aktueller autoritativer Wert −58,6 Gt/Jahr, siehe canon/STATUS.md §2 -->
 - SEC-Durchschnitt: ≥0.85 (stabil)
 - Kosten-Nutzen: Positiv (ROI >1.0)
 - Soziale Akzeptanz: >70%

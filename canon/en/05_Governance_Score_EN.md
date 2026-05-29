@@ -7,6 +7,8 @@
 **Date:** 2026-04-27 (EN sync 2026-05-09)
 **Status:** Publication-Ready
 
+> ⚠️ **Note on figures:** This volume contains historical headline values (incl. **−50.7 Gt/year** as "100% of target"). The **current authoritative CO₂-hard value is −58.6 Gt/year** (`canon/data/co2_master.yaml` v1.5). For all valid figures and the value glossary, [`canon/STATUS.md`](../STATUS.md) is the authoritative source. Prose values here are reading-version, not the data source.
+
 ---
 
 ## PART I: FOUNDATIONS
@@ -441,7 +443,7 @@ Impact(M) = CO₂ potential / Max CO₂ potential
 - M10 (Year 10): Tipping points compensated
 
 **KPIs Year 10:**
-- CO₂ reduction: 50.7 Gt/year (100% of target)
+- CO₂ reduction: 50.7 Gt/year (100% of target) <!-- HISTORICAL: current authoritative value −58.6 Gt/year, see canon/STATUS.md §2 -->
 - SEC average: ≥0.85 (stable)
 - Cost-benefit: Positive (ROI >1.0)
 - Social acceptance: >70%

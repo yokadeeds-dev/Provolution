@@ -2,6 +2,8 @@
 **Datum:** 2026-01-24  
 **Session:** Implementierung Single Source of Truth + Wissenschaftliche Methodik-Fundierung
 
+> ⚠️ **HISTORISCHER SESSION-REPORT (2026-01-24).** Beschreibt den damaligen Stand (co2_master v1.1, −50,7 Gt, 30 Anwendungen, Domains A–H, alter `20_CANON/`-Pfad). Akkurat als Verlaufs-Dokument, **nicht** als aktueller Stand. Aktuell: co2_master v1.5, −58,6 Gt, 49 Hebel / 11 Domänen — siehe [`canon/STATUS.md`](../STATUS.md).
+
 ---
 
 ## ✅ ERFOLGREICH ABGESCHLOSSEN

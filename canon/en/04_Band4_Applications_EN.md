@@ -8,7 +8,7 @@
 
 ## OVERVIEW
 
-Volume 4 documents **n canonical Provolution levers** (currently n = 30 across 8 domains A–H; extensions I, J are maintained as Extensions). n grows dynamically via AUTO-INTEGRATE (see MASTER_INDEX).
+Volume 4 documents **n canonical Provolution levers** (currently **49 levers across 11 domains A–K**, of which **38 are band4-canonical** with full concept; as of v1.5, 2026-05-29). n grows dynamically via AUTO-INTEGRATE. Authoritative count and value glossary: [`canon/STATUS.md`](../STATUS.md).
 
 **Core Statement:** The n canonical levers form a complete, consistent system for systematic climate transformation. At full implementation, they reduce CO₂ emissions by **-50.7 Gt/year** (92% of global emissions).
 
