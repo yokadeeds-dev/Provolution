@@ -1,6 +1,8 @@
 # PEER REVIEW READINESS – Prüfbericht
 **Datum:** 2026-01-22
-**Status:** ✅ BEREIT (mit Empfehlungen)
+**Status:** INTERNAL — Selbst-Einschätzung (2026-01-22), **kein** externes Peer Review.
+
+> **STATUS:** INTERNAL · Aktuelle Werte & Status: [`canon/STATUS.md`](../canon/STATUS.md). „BEREIT" bezeichnet eine interne Checkliste, nicht externe Begutachtung.
 
 ---
 
