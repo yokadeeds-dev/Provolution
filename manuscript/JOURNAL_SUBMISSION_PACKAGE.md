@@ -43,6 +43,8 @@
 
 ---
 
+> ⚠️ **Ab hier historisch (Nature-Snapshot 2026-01-23).** Der folgende Abschnitt enthält den überholten Submission-Stand: Ziel-Journal Nature Climate Change (revidiert → Earth System Governance), Vor-Kanon-Werte (n=30, −50,7 Gt, SEC ohne J). **Nicht für aktuelle Zitation/Einreichung verwenden** — autoritativ: [`canon/STATUS.md`](../canon/STATUS.md).
+
 ## 📄 DOCUMENT STRUCTURE FOR SUBMISSION
 
 ### Main Manuscript (Nature Climate Change Format)

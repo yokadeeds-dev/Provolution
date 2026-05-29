@@ -128,7 +128,7 @@ gesamt:
   vermeidung_weich: -28.5  # Vermiedene/verhinderte Emissionen (Schicht 2 Kaskaden in Bilanz-Studie)
   total_potenzial: -87.1  # Aktualisiert v1.3: -58.6 + -28.5 = -87.1
   anteil_global_emissions: 1.065  # 106.5% der globalen Emissionen (55 Gt Baseline) = Net Negative (v1.3)
-  korrelation_theorie_praxis: 0.94  # Mathematische Validierung
+  korrelation_theorie_praxis: 0.94  # Mathematische Validierung (intern, Theorie↔Praxis r=0,94; keine externe Begutachtung — vgl. methodology.validation_approach.internal)
   
 # Domain-spezifische Bilanzen (A-K)
 domains:
