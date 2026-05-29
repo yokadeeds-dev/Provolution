@@ -1,4 +1,4 @@
-# JOURNAL SUBMISSION PACKAGE: NATURE CLIMATE CHANGE
+# SUPERSEDED — Journal-Submission-Snapshot: Nature Climate Change (2026-01-23)
 
 **Project:** Probatio Systemica & Provolution  
 **Date:** 2026-01-23  

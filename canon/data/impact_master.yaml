@@ -4,7 +4,7 @@
 # Datum: 2026-01-24
 # Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
 #
-# Kanonische Hebel-Liste: 06_CANON/HEBEL_KATALOG_v1.0.md
+# Kanonische Hebel-Liste: canon/de/HEBEL_KATALOG_v1.0.md
 # Diese Datei ist operationale Multi-Impact-Schicht für Hebel
 # mit quantifizierten Werten.
 
@@ -67,7 +67,7 @@ meta:
       - "n=11 Impact-Apps eingerechnet, 19 Enabler-Apps separat klassifiziert"
       - "D16 (CO2-Senken Boden) stellt den Median-cost_rate"
       - "Outlier-Flags: B07, B09 (ultra-low plausibel), D18 (high plausibel)"
-      - "Runbook-Referenz: 20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md v1.0"
+      - "Runbook-Referenz: canon/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md v1.0"
     v2_0:
       - "Erweitert von CO2-only zu Multi-Impact Framework"
       - "GHG: CH4, N2O, F-Gase ergänzt"
@@ -87,16 +87,16 @@ meta:
 
 ghg_accounting:
   
-  # CO2-Bilanz (synchron mit co2_master.yaml v1.3, Stand 2026-05-28)
+  # CO2-Bilanz (synchron mit co2_master.yaml v1.5, Stand 2026-05-29)
   co2:
     gesamt:
-      reduktion_hart: -58.6  # Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 37 band4-canonical + 5 yaml-only + 5 community + 2 STUB
+      reduktion_hart: -58.6  # Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 38 band4-canonical + 5 yaml-only + 5 community + 1 STUB (nach J01-Promotion PR #15)
       vermeidung_weich: -28.5
       total_potenzial: -87.1  # v2.1: -58.6 + -28.5 = -87.1
       anteil_global_emissions: 1.065  # 106.5% = Net Negative (inkl. aktive Sequestration D16)
       korrelation_theorie_praxis: 0.94
 
-    # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.3
+    # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.5
     domains:
       A_governance: -8.2
       B_production: -14.6  # v2.1: -15.8 → -14.6 nach B09/B10-Drift-Resolution (wasserstoff/ccs → materialfluss-steuerung/abfall-zu-ressource)
@@ -187,7 +187,7 @@ ghg_accounting:
 # ============================================================================
 # Eigene strukturelle Schicht parallel zu A-J Domains
 # Variant C laut PHASE_6D_PLAN.md + 99_META/CODE_HANDOFF_2026-05-08.md
-# Quelle: 06_CANON/04_Band4_Community_Integrations.md
+# Quelle: canon/de/04_Band4_Community_Integrations.md
 
 community_integrations:
   beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-K Hebel-Domains"
@@ -201,7 +201,7 @@ community_integrations:
       decision_date: "2026-04-18"
       evidence_level: 2
       dossier: "07_SOURCE/community_dossiers/generated/C-2026-008_dossier.md"
-      quelle: "06_CANON/04_Band4_Community_Integrations.md"
+      quelle: "canon/de/04_Band4_Community_Integrations.md"
       co2_impact_gt_per_year: -3.0  # PF -2.0 + Hanf-Kaskade -1.0
 
 # ============================================================================
@@ -766,7 +766,7 @@ project_impact_schema:
   version: "0.1"
   description: "Standard-Template für jedes Provolution-Projekt"
   sec_j_migration: "sec_integration → secj_integration (SEC-J v1.0, 2026-04-27)"
-  secj_spec: "06_CANON/SECJ_SPEC_v1.0.md"
+  secj_spec: "canon/de/SECJ_SPEC_v1.0.md"
   
   required_fields:
     - project_id
@@ -783,7 +783,7 @@ project_impact_schema:
     - pathway_allocation
     - lock_in_risk
   
-  template_location: "20_CANON/templates/PROJECT_IMPACT_TEMPLATE.json"
+  template_location: "canon/templates/PROJECT_IMPACT_TEMPLATE.json"
 
 # ============================================================================
 # CHANGE LOG
@@ -817,7 +817,7 @@ changelog:
 # TEIL X: PORTFOLIO-BENCHMARK (E-II Formel, quartalsweise kalibriert)
 # ============================================================================
 # Referenz: Band 5 Kapitel 2.1 (E-II Portfolio-Normalisierung)
-# Runbook: 20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md
+# Runbook: canon/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md
 # Methodik:
 #   cost_rate(M) = R(M) / W(M)                   [EUR / t CO2eq, 10y kumuliert]
 #   cost_rate_benchmark = Median( cost_rate(M_i) ) über Impact-Apps
