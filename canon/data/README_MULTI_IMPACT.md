@@ -1,9 +1,12 @@
 # Multi-Impact Assessment Framework
-**Provolution - Single Source of Truth v2.0**
+**Provolution - Multi-Impact-Konzeptbeschreibung v2.0**
 
 Version: 2.0  
 Datum: 2026-01-24  
-Status: Production Ready
+Status: ⚠️ **SNAPSHOT 2026-01-24** — Konzept-/Dimensionsbeschreibung gültig; **eingebettete Kennzahlen und Pfade sind historisch.**
+
+> **Autoritative Werte & Status:** [`canon/STATUS.md`](../STATUS.md) + die SSoT-Dateien [`canon/data/impact_master.yaml`](impact_master.yaml) (v2.6) und [`canon/data/co2_master.yaml`](co2_master.yaml) (v1.5).
+> Diese Datei beschreibt das **v2.0-Multi-Impact-Konzept** (sechs Impact-Dimensionen) — die hier genannten Zahlen (z.B. −64,5 Gt all-GHG, 42M Jobs, 420 Mha) stammen vom Stand 2026-01-24, verweisen auf den alten `20_CANON/`-Pfad und sind **nicht** als aktuelle Werte zu zitieren. Insbesondere −64,5 Gt ist all-GHG und steht laut `STATUS.md` §2 auf `PENDING v2.2` (Overlap-Re-Computation).
 
 ---
 

@@ -1,12 +1,16 @@
 # Provolution
 
-> **A scientific framework for systemic assessment of climate transformation measures, applying the Probatio-Systemica methodology (SEC-J principle) across ten domains. A living document — current quantitative results are maintained in the CANON data files.**
+> **A scientific framework for systemic assessment of climate transformation measures, applying the Probatio-Systemica methodology (SEC-J principle) across eleven domains (A–K). A living document — current quantitative results are maintained in the CANON data files.**
+
+> 📍 **Aktueller Stand, Werte-Glossar & Peer-Review-Status:** [`canon/STATUS.md`](canon/STATUS.md) — die einzige autoritative Quelle für gültige Methode, Kennzahlen und Dokument-Status. Bei Zahlen-Konflikten gewinnen `STATUS.md` + `canon/data/*.yaml`.
+>
+> **Status:** Preprint / living repository, eingereicht bei *Earth System Governance*. **Noch nicht extern peer-reviewed.** Alle Reduktions-Totale sind gescreente Potenziale unter Annahmen — keine Prognosen.
 
 ---
 
 ## Übersicht
 
-**Provolution** ist die anwendungsbezogene Ebene eines wissenschaftlichen Frameworks zur Klimatransformation. Sie operationalisiert die zugrundeliegende Methodik **Probatio Systemica** auf das konkrete Problem der globalen Treibhausgas-Reduktion und bewertet einen Katalog von Hebeln über zehn Domänen (A–J) hinweg.
+**Provolution** ist die anwendungsbezogene Ebene eines wissenschaftlichen Frameworks zur Klimatransformation. Sie operationalisiert die zugrundeliegende Methodik **Probatio Systemica** auf das konkrete Problem der globalen Treibhausgas-Reduktion und bewertet einen Katalog von Hebeln über elf Domänen (A–K) hinweg.
 
 **Probatio Systemica** ist ein neutrales, mathematisch fundiertes Framework zur systemischen Verifikation komplexer Maßnahmen. Es formalisiert das **SEC-J-Prinzip** (Sufficient, Efficient, Consistent, Just) mit einer formalen Veto-Bedingung bei J < 0.50 und stellt eine modulare Familie von Prüfprotokollen (PS-U, PV, PD, PI, PN, PP, PT) bereit. Die methodische Grundlage ist kulturunabhängig und nicht klimaspezifisch.
 
@@ -18,7 +22,7 @@ Provolution ist explizit als *living document* konzipiert: methodische Justierun
 
 ## Zentrale Ergebnisse
 
-- Hebel über zehn Domänen (A–J) SEC-J-bewertet
+- Hebel über elf Domänen (A–K) SEC-J-bewertet
 - Multi-Impact Framework v2.0 über sechs Impact-Dimensionen
 - J-Veto bei J < 0.50 (Antifragility-begründet)
 - Methodisch konform mit GHG Protocol und IPCC AR6
