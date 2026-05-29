@@ -209,6 +209,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 18. **PF-Batch-Audit Rest-Hebel I/J/K/B SEC-J berechnet (2026-05-29 mittags)** — 6. konvergenter externer Audit nach Gem-Knowledge-Update (2026-05-28 23:59). PS-U:STANDARD-Batch berechnet SEC-J für I33–I36, J01, K01–K04, B11–B13 (12 Hebel) mit den korrekten Repo-Definitionen. Verdict: **TRAGFÄHIG mit punktuellen Auflagen** — kein J<0,50-Veto; 2 neue Warnschwellen: **B11 J=0,78** (Industrielle H2-Transformation — Just-Transition-Auflage) und **B12 J=0,75** (Nachhaltige Biomasse — Tank-oder-Teller / FPIC-Auflage). I33 Kreislauf-Auto, J01 Kreislauf-Gebäude und K01 Mangroven erreichen SEC-J 0,93 (Spitzenwerte). Konsequenz: **individual_calculated wächst von 13 auf 25 Hebel**; Domain-Ø-J neu: I 0,913 · J 0,93 · K 0,913 · B 0,884 (Vollkalkulation Domain B). Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md`. Daten in `canon/data/impact_master.yaml` v2.4 `sec_j_scores`.
 
+19. **B11 Definitions-Korrektur — Hanf-Bio-Reduktionsmittel-Spur wiederhergestellt (PR #14, 2026-05-29 mittags)** — User-Hinweis nach PR #13: die ursprüngliche Provolutions-Planung für B11 enthielt eine Hanf-Bio-Reduktionsmittel-Spur als primären Pfad (Hanf-Biokohle/Pyrolyse als Koks-Ersatz in bestehenden Hochöfen — Drop-in). Diese ist bei der yaml-only-Definition und im PR #13-Audit verloren gegangen. **Industrie-real:** Char Technologies CleanFyre (>85% C-Gehalt, EBC-zertifiziert), Pilotprojekte ArcelorMittal Dofasco + thyssenkrupp 250.000 t/yr ab 2025; EU CBAM macht biogenen Kohlenstoff bis 2030 zwingend. **Methodische Folge:** Drop-in löst das Just-Transition-Problem (PR #13-Warnschwelle J=0,78 entfällt für Pfad A); J steigt erwartet auf ~0,90, SEC-J auf ~0,91. **Status:** B11 in `impact_master.yaml` v2.5 als `pending_re_audit: true` markiert mit `legacy_values_pr13` + `expected_corrected_values`; finale Werte beim nächsten PF-Lauf. Quellen: `studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md` + `studies/EXTERNAL_AUDIT_2026-05-28/B11_HANF_KORREKTUR_2026-05-29.md`. **Bonus:** J01 Kreislauf-Gebäude (STUB) hat ebenfalls Hanf-Stahl-Bauspur (Hanfbast-Bewehrung BasEcoCrete, Hempcrete 110 kg CO₂/m³ netto-negativ, Hanffaser-Dämmung) — gleiche Quelle liefert Best-Practice für J01-Promotion zu band4-canonical.
+
 ---
 
 ## SEC-J-Master-Übersicht (PS-U 2.0)
@@ -286,6 +288,11 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.9 (2026-05-29 mittags, korrigierend):**
+- ✅ **B11 Definitions-Korrektur** (Drift-Item #19): Hanf-Bio-Reduktionsmittel-Spur wiederhergestellt nach User-Hinweis. Industrie-Best-Practice dokumentiert (Char Tech, ArcelorMittal, thyssenkrupp). Erwartete SEC-J-Anhebung auf ~0,91; Warnschwelle entfällt für Pfad A.
+- impact_master.yaml v2.4 → v2.5 mit B11 `pending_re_audit` + Korrektur-Begründung
+- Bonus-Befund: J01 Kreislauf-Gebäude STUB sollte Hanfbast-Bewehrung + Hempcrete + Hanffaser-Dämmung als konkrete Bausteine erhalten
 
 **v1.8 (2026-05-29 mittags):**
 - ✅ **PF-Batch-Audit Rest-Hebel I/J/K/B** (Drift-Item #18): 6. konvergenter externer Audit nach Gem-Knowledge-Update. SEC-J für 12 Hebel kalkuliert (I33–I36, J01, K01–K04, B11–B13).
