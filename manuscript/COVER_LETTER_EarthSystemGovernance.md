@@ -7,6 +7,8 @@ Probatio Systemica & Provolution: A Systematic, Quantified Framework for Climate
 **Submission type:** Original Research Article
 **Date:** 2026-04-19
 
+> **STATUS:** CURRENT — submitted cover letter (Earth System Governance, 2026-04-19). · **AUTHORITATIVE VALUES:** [`canon/STATUS.md`](../canon/STATUS.md) (co2_master v1.5 / impact_master v2.6). Figures herein (n≈40, −58.0 Gt, three-axis SEC) reflect the 2026-04-19 submission snapshot; current canonical values differ — see STATUS.md.
+
 ---
 
 Dear Editor-in-Chief,

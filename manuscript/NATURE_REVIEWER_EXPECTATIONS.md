@@ -1,6 +1,8 @@
 # Nature Climate Change - Peer Review Erwartungen
 **Basierend auf Journal Guidelines & typischen Reviewer-Kommentaren**
 
+> **STATUS:** INTERNAL — Vorbereitungs-Notizen. Das Nature-Climate-Change-Ziel wurde **abgelöst** (tatsächlich eingereicht bei Earth System Governance, 2026-04-19). Zählungen hier (30 Anwendungen, Domains A–H) sind Vor-Kanon-Stand. Aktuell & autoritativ: [`canon/STATUS.md`](../canon/STATUS.md).
+
 ---
 
 ## 1. SCIENTIFIC NOVELTY & SIGNIFICANCE

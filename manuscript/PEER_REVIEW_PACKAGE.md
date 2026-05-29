@@ -1,7 +1,9 @@
 # Peer-Review Package - Provolution Multi-Impact Framework
 **Version:** 2.0  
 **Date:** 2026-01-24  
-**Status:** Ready for Journal Submission
+**Status:** INTERNAL — self-assessed readiness checklist (2026-01-24), **not** an external validation, acceptance, or peer review.
+
+> **STATUS:** INTERNAL · **AUTHORITATIVE VALUES:** [`canon/STATUS.md`](../canon/STATUS.md) (co2_master v1.5 / impact_master v2.6). Phrases such as "ready", "11/11 gaps closed (100%)", "validated" denote **internal checklist items vs. self-identified gaps**, not external review. Embedded figures are a 2026-01-24 snapshot and are **not current**: −64.5 Gt is all-GHG and **PENDING v2.2** (overlap re-computation); 42M jobs / $420B / 30 applications / `20_CANON/` paths are pre-canon; the Nature Climate Change target was **superseded** (submitted to Earth System Governance, 2026-04-19).
 
 ---
 
@@ -171,7 +173,7 @@ validation:
 | **Baseline** | Methodology Review | ✅ CLOSED | H01 explicit BAU scenario |
 | **KI/Digital** | Methodology Review | ✅ CLOSED | Digitalization footprint 2.3 Mt |
 
-**TOTAL: 11/11 Gaps Closed (100%)**
+**TOTAL: 11/11 internal checklist items resolved (self-assessment vs. self-identified gaps — not external peer review)**
 
 ---
 
