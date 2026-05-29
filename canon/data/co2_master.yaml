@@ -4,10 +4,9 @@
 # Datum: 2026-01-24
 # Alle Werte in Gt CO₂eq/Jahr (negativ = Reduktion/Senke)
 #
-# Kanonische Hebel-Liste (alle 43 Hebel inkl. Stubs + Communities):
-#   06_CANON/HEBEL_KATALOG_v1.0.md
-# Diese YAML-Datei ist Subset davon (n=35 = 34 A-J + 1 Community
-# mit quantifizierter CO2-Wirkung).
+# Kanonische Hebel-Liste (aktuell 49 Hebel über 11 Domänen A–K inkl. Stubs + Communities):
+#   canon/de/HEBEL_KATALOG_v1.0.md · autoritative Zählung: canon/STATUS.md
+# Diese YAML-Datei ist das CO2-quantifizierte Subset davon.
 
 meta:
   version: "1.5"

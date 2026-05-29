@@ -3,11 +3,13 @@
 **Version:** 1.0 DRAFT  
 **Datum:** 2026-01-24
 
+> ⚠️ **SNAPSHOT 2026-01-24 (DRAFT).** Enthält historische Werte: **−50,7 Gt** (aktuell −58,6), **−64,5 Gt** all-GHG (laut `STATUS.md` §2 `PENDING v2.2`), **„30 Anwendungen"** (aktuell 49 Hebel / 11 Domänen / 38 band4-canonical). Autoritativ: [`canon/STATUS.md`](../STATUS.md) + `canon/data/*.yaml`. Nicht als aktuelle Werte zitieren.
+
 ---
 
 ## BAND 5 INTEGRATION - NEUE ABSCHNITTE
 
-### Kapitel 5.5: Gesamtbilanz aller 30 Anwendungen
+### Kapitel 5.5: Gesamtbilanz aller 30 Anwendungen <!-- HISTORISCH: aktuell 49 Hebel / 11 Domänen, siehe canon/STATUS.md §3 -->
 
 **Bestehend:** CO₂-Bilanz-Tabellen  
 **Neu hinzufügen:**
