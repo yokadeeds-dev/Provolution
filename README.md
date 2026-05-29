@@ -26,7 +26,7 @@ Provolution ist explizit als *living document* konzipiert: methodische Justierun
 - Hebel über elf Domänen (A–K) SEC-J-bewertet
 - Multi-Impact Framework v2.0 über sechs Impact-Dimensionen
 - J-Veto bei J < 0.50 (Antifragility-begründet)
-- Methodisch konform mit GHG Protocol und IPCC AR6
+- Methodisch ausgerichtet an GHG Protocol und IPCC AR6 (angewandt, nicht formal zertifiziert)
 
 Aktuelle quantitative Kennzahlen (Hebel-Anzahl, CO₂-Reduktionspotenzial, Domain-Aggregationen) sind versions-abhängig und werden in den CANON-Daten geführt: [`canon/data/co2_master.yaml`](canon/data/co2_master.yaml) und [`canon/data/impact_master.yaml`](canon/data/impact_master.yaml).
 
