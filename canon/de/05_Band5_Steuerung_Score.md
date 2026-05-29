@@ -8,6 +8,8 @@
 **Status:** Publication-Ready
 
 > ⚠️ **Hinweis zu Kennzahlen:** Dieser Band enthält historische Headline-Werte (u.a. **−50,7 Gt/Jahr** als „100 % von Ziel"). Der **aktuelle autoritative CO₂-hart-Wert ist −58,6 Gt/Jahr** (`canon/data/co2_master.yaml` v1.5). Für alle gültigen Kennzahlen und das Werte-Glossar gilt [`canon/STATUS.md`](../STATUS.md) als Quelle. Fließtext-Werte hier sind Lesefassung, nicht Wertequelle.
+>
+> ⚠️ **SEC-J-Gewichte aktualisiert (2026-05-29):** Dieser Band wurde ursprünglich (v3.1, 2026-04-27) mit der **DEPRECATED v1.0-Formel** `0,40·S + 0,25·E + 0,15·C + 0,20·J` verfasst. Autoritativ ist seit 2026-05-10 **PS-U 2.0 STANDARD** `0,30·S + 0,25·E + 0,30·C + 0,15·J` (`canon/de/06_framework_extensions_v2.0_SECJ.md`). Formel und Berechnungsbeispiele unten wurden darauf umgestellt. **Per-Hebel-SEC-J-Werte sind kanonisch ausschließlich in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`** — Tabellen in diesem Band sind illustrativ.
 
 ---
 
@@ -34,7 +36,7 @@ wie es konkret zur Klimatransformation angewandt wird.
 |--------|-------------------|-------------------|
 | Ebene | Probatio Systemica | Provolution |
 | Charakter | Neutral, deskriptiv | Normativ, zielgerichtet |
-| Gewichtung | α=β=γ=1/3 | S=0.40, E=0.25, C=0.15, J=0.20 |
+| Gewichtung | α=β=γ=1/3 | S=0.30, E=0.25, C=0.30, J=0.15 (PS-U 2.0 STANDARD) |
 | Ziele | Keine | Kipppunkt-Kompensation |
 | Kontext | Universal | Klimakrise |
 
@@ -57,23 +59,27 @@ wie es konkret zur Klimatransformation angewandt wird.
 
 #### 1.4 Normative Anpassungen
 
-**Warum S=0.40 und J=0.20 (Sufficiency und Justice priorisiert)?**
+**Warum S=0.30 und C=0.30 gleichrangig, J über das Veto statt über das Gewicht?**
 
-Die Klimakrise ist **zeitkritisch** und **gerechtigkeitspflichtig**. Kipppunkte nähern sich,
-während ungerechte Maßnahmen gesellschaftlichen Widerstand erzeugen.
-Daher wird **Wirksamkeit (S=0.40)** am höchsten gewichtet; **Gerechtigkeit (J=0.20)**
-erhält als J-Veto-Dimension absolute Sperrwirkung: J < 0.50 → Maßnahme nicht zulässig,
-unabhängig von S/E/C.
+Die Klimakrise ist **zeitkritisch** und **gerechtigkeitspflichtig**. In PS-U 2.0 STANDARD sind
+**Wirksamkeit (S=0.30)** und **Widerspruchsfreiheit (C=0.30)** gleichrangig am höchsten gewichtet:
+Eine Maßnahme muss hinreichend wirken *und* darf das Gesamtsystem nicht sabotieren. **Effizienz (E=0.25)**
+folgt. **Gerechtigkeit (J=0.15)** trägt im Komposit das geringste Gewicht — entscheidend ist hier:
+**J wirkt primär über das harte Veto, nicht über sein Gewicht.** J < 0.50 → Maßnahme nicht zulässig,
+unabhängig von S/E/C. Gerechtigkeit ist also ein **Tor (Gate)**, kein abwägbarer Trade-off; das geringe
+Komposit-Gewicht ist keine Abwertung, sondern Ausdruck der Arbeitsteilung zwischen Gewicht (Feinabstufung)
+und Veto (Sperrschwelle).
 
 **Beispiel:**
 Maßnahme A: S=0.95, E=0.70, C=1.0, J=0.80 (progressiv)
 Maßnahme B: S=0.75, E=0.95, C=1.0, J=0.40 → **J-Veto** (regressiv)
 
-Provolution (Band 5): SEC-J_A = 0.40·0.95 + 0.25·0.70 + 0.15·1.0 + 0.20·0.80 = **0.87**
-Provolution (Band 5): SEC-J_B = **null** (J-Veto: J < 0.50 → nicht zulässig)
+Provolution (PS-U 2.0 STANDARD): SEC-J_A = 0.30·0.95 + 0.25·0.70 + 0.30·1.0 + 0.15·0.80 = **0.88**
+Provolution (PS-U 2.0 STANDARD): SEC-J_B = **null** (J-Veto: J < 0.50 → nicht zulässig)
 
 **Transparenz:** Diese Wertentscheidung ist explizit und diskutierbar.
-Spec: `06_CANON/SECJ_SPEC_v1.0.md`
+Spec: `canon/de/06_framework_extensions_v2.0_SECJ.md` (autoritativ); Werte-Glossar `canon/STATUS.md`.
+Für J-fokussierte Audits existiert zusätzlich der Modus **JUSTICE** (0.25·S + 0.15·E + 0.20·C + 0.40·J).
 
 ---
 
@@ -82,7 +88,7 @@ Spec: `06_CANON/SECJ_SPEC_v1.0.md`
 #### 2.1 Score-Formel detailliert
 
 ```
-SEC-J-Score(M) = 0.40·S(M) + 0.25·E(M) + 0.15·C(M) + 0.20·J(M)
+SEC-J-Score(M) = 0.30·S(M) + 0.25·E(M) + 0.30·C(M) + 0.15·J(M)   (PS-U 2.0 STANDARD)
 
 J-Veto: Wenn J(M) < 0.50 → SEC-J-Score(M) = null  (Maßnahme nicht zulässig)
 
@@ -116,8 +122,8 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Verteilungsgerechtigkeit)
      J < 0.50 → J-Veto (progressive Mindestanforderung, unabhängig von S/E/C)
 ```
 
-**Gewichte (SEC-J v1.0):** S=0.40, E=0.25, C=0.15, J=0.20
-**Spec:** `06_CANON/SECJ_SPEC_v1.0.md`
+**Gewichte (PS-U 2.0 STANDARD):** S=0.30, E=0.25, C=0.30, J=0.15  ·  *v1.0 (0.40/0.25/0.15/0.20) DEPRECATED seit 2026-05-10*
+**Spec:** `canon/de/06_framework_extensions_v2.0_SECJ.md` (autoritativ) · Werte-Glossar `canon/STATUS.md`
 
 **Parameter:**
 - **W(M):** Tatsächliche Wirkung der Maßnahme M (Gt CO₂eq/Jahr)
@@ -128,12 +134,14 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Verteilungsgerechtigkeit)
 - **cost_rate_benchmark:** Portfolio-Median der cost_rate — kalibriert quartalsweise
   (siehe Kapitel 2.4 Dynamische Anpassung)
   **Aktuell (Q1/2026): 26,0 €/t CO₂ (10y kumuliert)** — Median-App D16 (CO₂-Senken Boden).
-  Quelle: `20_CANON/data/impact_master.yaml → portfolio_benchmark.current`.
-  Kalibrierungs-Prozess: `20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`.
+  Quelle: `canon/data/impact_master.yaml → portfolio_benchmark.current`.
+  Kalibrierungs-Prozess: `canon/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`.
 
 #### 2.2 Berechnungsbeispiele
 
-**Beispiel 1: B07 (Kreislaufwirtschaft) SEC-J = 0.92**
+> *Illustrative Beispiele zur Formel-Anwendung (PS-U 2.0 STANDARD). Die Eingabewerte sind didaktisch; die **kanonischen Per-Hebel-SEC-J-Werte** stehen in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md` (dort B07 = 0,93, C11 = 0,93) und können wegen verfeinerter Eingaben minimal abweichen.*
+
+**Beispiel 1: B07 (Kreislaufwirtschaft) — kanonisch SEC-J = 0,93**
 
 **Wirkung (S):**
 - CO₂-Reduktion: 23 Gt/Jahr (tatsächlich)
@@ -158,41 +166,43 @@ J(M) = ( equity_score(M) + 1 ) / 2           (Justice: Verteilungsgerechtigkeit)
 - J(B07) = (0.68 + 1) / 2 = **0.84** (kein Veto)
 
 **Gesamt:**
-SEC-J(B07) = 0.40·0.95 + 0.25·0.90 + 0.15·1.0 + 0.20·0.84
-           = 0.380 + 0.225 + 0.150 + 0.168 = **0.923 ≈ 0.92**
+SEC-J(B07) = 0.30·0.95 + 0.25·0.90 + 0.30·1.0 + 0.15·0.84
+           = 0.285 + 0.225 + 0.300 + 0.126 = **0.936** (illustrativ; kanonisch 0,93)
 
-**Beispiel 2: C11 (Erneuerbare Integration) SEC-J = 0.94**
+**Beispiel 2: C11 (Erneuerbare Integration) — kanonisch SEC-J = 0,93**
 
 - S = 0.95 (15 Gt CO₂/Jahr, W_min = 12 Gt)
 - E = 0.92 (sehr ressourceneffizient)
 - C = 1.0 (keine Widersprüche)
 - J = 0.90 (Beispielwert, equity_score = +0.80)
-- SEC-J = 0.40·0.95 + 0.25·0.92 + 0.15·1.0 + 0.20·0.90
-        = 0.380 + 0.230 + 0.150 + 0.180 = **0.940 ≈ 0.94**
+- SEC-J = 0.30·0.95 + 0.25·0.92 + 0.30·1.0 + 0.15·0.90
+        = 0.285 + 0.230 + 0.300 + 0.135 = **0.950** (illustrativ; kanonisch 0,93)
 
-**Beispiel 3: A01 (SEC-Priorisierung) SEC-J = 0.99**
+**Beispiel 3: A01 (SEC-Priorisierung) — illustrativ ≈ 0,99 (Domain A in impact_master batch-bewertet, Ø 0,92)**
 
 - S = 1.0 (ermöglicht alle anderen Maßnahmen)
 - E = 0.95 (minimaler Ressourcenverbrauch)
 - C = 1.0 (konsistent per Definition)
 - J = 1.0 (maximale Gerechtigkeit: universeller Zugang)
-- SEC-J = 0.40·1.0 + 0.25·0.95 + 0.15·1.0 + 0.20·1.0
-        = 0.400 + 0.238 + 0.150 + 0.200 = **0.988 ≈ 0.99**
+- SEC-J = 0.30·1.0 + 0.25·0.95 + 0.30·1.0 + 0.15·1.0
+        = 0.300 + 0.238 + 0.300 + 0.150 = **0.988 ≈ 0.99**
 
 #### 2.3 Score-Kategorien
 
 | Score-Bereich | Kategorie | Empfehlung |
 |--------------|-----------|------------|
-| 0.90-1.00 | ⭐⭐⭐ Exzellent | Sofortige Implementierung |
-| 0.80-0.89 | ⭐⭐ Sehr gut | Implementierung empfohlen |
-| 0.70-0.79 | ⭐ Gut | Implementierung nach Ressourcen |
-| 0.60-0.69 | ⚠️ Ausreichend | Verbesserung erforderlich |
-| <0.60 | ❌ Unzureichend | Ablehnung oder Neukonzeption |
+| 0.90-1.00 | BESTANDEN (prioritär) | Sofortige Implementierung |
+| 0.80-0.89 | BESTANDEN (empfohlen) | Implementierung empfohlen |
+| 0.70-0.79 | TEILBESTANDEN | Implementierung nach Ressourcenverfügbarkeit |
+| 0.60-0.69 | TEILBESTANDEN | Nachbesserung/Neukonzeption erforderlich |
+| <0.60 | FALSIFIZIERT | Systemische Ablehnung |
 
-**Provolution-Status (n Hebel — wächst via SEC-Schwelle):**
-- Durchschnitt: **0.914** (Exzellent)
-- Minimum: 0.88 (Sehr gut)
-- Maximum: 0.99 (Exzellent)
+> *PS-U-Konvention: keine wertenden Adjektive oder Bewertungs-Sterne — die formalen Verdicts (BESTANDEN/TEILBESTANDEN/FALSIFIZIERT) und Zahlenwerte sprechen für sich.*
+
+**Provolution-Status (49 Hebel über 11 Domänen A–K, Stand v1.5):**
+- Gesamt-Ø SEC-J: **0,90** (25 individuell kalkuliert + 5 Domain-Batch; Quelle `canon/data/impact_master.yaml`)
+- J-Veto-Auslösungen: 0 · J-Warnschwellen (J<0,80): 4 (B09/B11/B12/C12)
+- Werte-Glossar und autoritative Zählung: `canon/STATUS.md`
 
 #### 2.4 Dynamische Anpassung
 
@@ -261,7 +271,7 @@ Restliche Hebel
 | 1 | A01 | SEC-Priorisierung | — | — | - | 1 |
 | 2 | H30 | Finanzierung | — | — | A01 | 1 |
 | 3 | G27 | Monitoring | — | — | A01 | 1 |
-| 4 | B07 | Kreislaufwirtschaft | 0.84 | 0.92 | H30, G27 | 2 |
+| 4 | B07 | Kreislaufwirtschaft | 0.90 | 0.93 | H30, G27 | 2 |
 | 5 | C11 | Erneuerbare | — | — | H30, G27 | 2 |
 | 6 | D17 | Hanf-Ökosystem | — | — | H30, G27 | 2 |
 | 7 | B08 | Biopolymere | — | — | B07, D17 | 2 |
@@ -270,7 +280,7 @@ Restliche Hebel
 | 10 | D15 | Regenerative Landwirt. | — | — | - | 2 |
 | ... | ... | ... | ... | ... | ... | ... |
 
-*J = — bedeutet: Bewertung ausstehend (Band-4-Schritt). SEC-J setzt vollständige J-Bewertung voraus.*
+*J = — bedeutet: Einzelwert in dieser Matrix nicht ausgewiesen. **Autoritative Per-Hebel-SEC-J-Werte: `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`** (alle 25 individuell kalkulierten + 5 Domain-Batch). Diese Matrix zeigt nur die Phasen-/Abhängigkeits-Logik.*
 
 #### 3.4 Phasenmodell
 
@@ -968,7 +978,9 @@ Impact(M) = CO₂-Potential / Max CO₂-Potential
 
 ### ANHANG A: SCORE-BERECHNUNGS-TABELLEN
 
-**Alle kanonischen Hebel mit SEC-J-Scores (n aktuell: 35 — wächst via AUTO-INTEGRATE):**
+> ⚠️ **LEGACY-TABELLE (3-Achsen-SEC, Vor-SEC-J, Stand v3.1).** Diese Tabelle nutzt das alte dreiachsige SEC-Schema (S/E/C → SEC) mit Bewertungs-Sternen und ist **nicht** auf PS-U 2.0 SEC-J umgerechnet. Die **autoritativen Per-Hebel-SEC-J-Werte stehen ausschließlich in `canon/data/impact_master.yaml` und `canon/de/HEBEL_KATALOG_v1.0.md`** (49 Hebel über 11 Domänen A–K; J01/I34-Status dort aktuell). Stern-Labels (⭐) sind die deprecatete Darstellung — PS-U-Konvention nutzt formale Verdicts (BESTANDEN/TEILBESTANDEN/FALSIFIZIERT). Diese Tabelle nicht als Wertequelle zitieren.
+
+**Legacy-Übersicht (3-Achsen-SEC, historisch — n=35, Stand v3.1):**
 
 | ID | Name | S | E | C | J | SEC-J | Kategorie |
 |----|---------------------------|------|------|------|------|-------|-----------|
@@ -1023,7 +1035,7 @@ Budget(M) = Basis · SEC-J(M) · Complexity(M) · Impact(M)
 
 Parameter:
 - Basis = Total Budget / Anzahl Maßnahmen
-- SEC-J(M) = 0.40·S + 0.25·E + 0.15·C + 0.20·J  (null wenn J-Veto)
+- SEC-J(M) = 0.30·S + 0.25·E + 0.30·C + 0.15·J  (PS-U 2.0 STANDARD; null wenn J-Veto)
 - Complexity(M) ∈ [1.0, 3.0]
 - Impact(M) = CO₂_Potential(M) / Max_CO₂_Potential
 ```

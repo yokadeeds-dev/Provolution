@@ -21,6 +21,8 @@
 
 Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls überholt — siehe Corrigenda `canon/en/CORRIGENDUM_2026-04-27.md` + `CORRIGENDUM_2026-05-28.md`.
 
+**Entscheidung 2026-05-29 (User):** PS-U 2.0 STANDARD ist die kanonische Provolution-Gewichtung. Band 5 (`canon/de/05_Band5_*`, v3.1) trug noch die v1.0-Gewichte und wurde mit PR #18 auf STANDARD reconciled (Formel, Berechnungsbeispiele, Priorisierungs-Matrix; Legacy-3-Achsen-Tabellen als solche markiert). **J wirkt primär über das Veto (J<0,50), nicht über sein Komposit-Gewicht (0,15)** — geringes Gewicht ≠ Abwertung.
+
 ---
 
 ## 2. Werte-Glossar (Headline-Totale)
@@ -79,7 +81,8 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/de/06_framework_extensions_v2.0_SECJ.md` | ✅ CURRENT — autoritative SEC-J-Spec |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
-| `canon/de/05_Band5_*` / `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ enthält −50,7-Snapshots (DEPRECATED, siehe §2) |
+| `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
+| `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
 | `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ enthält Pre-SEC-J-Formel — nur mit Corrigenda-Annotation zitieren |
 | `manuscript/JOURNAL_SUBMISSION_PACKAGE.md` | ⚠️ Ziel-Journal revidiert (Nature → ESG) |
 
