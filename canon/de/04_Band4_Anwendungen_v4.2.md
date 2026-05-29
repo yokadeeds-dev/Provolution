@@ -10,7 +10,7 @@
 
 Band 4 dokumentiert **n kanonische Provolution-Hebel** (aktuell **49 Hebel im Kanon über 11 Domänen A–K**, davon **38 band4-canonical** mit Vollkonzept; Stand v1.5 2026-05-29). n wächst dynamisch via AUTO-INTEGRATE. Autoritative Zählung und Werte-Glossar: [`canon/STATUS.md`](../STATUS.md).
 
-**Kernaussage:** Die n kanonischen Hebel bilden ein vollständiges, konsistentes System zur systematischen Klimatransformation. Bei voller Implementation reduzieren sie CO₂-Emissionen um **-50.7 Gt/Jahr** (92% globaler Emissionen).
+**Kernaussage:** Die n kanonischen Hebel bilden ein vollständiges, konsistentes System zur systematischen Klimatransformation. Bei voller Implementation reduzieren sie CO₂-Emissionen um **-58.6 Gt/Jahr** (106,5% globaler Emissionen).
 
 **Basis:** Alle Hebel folgen dem **SEC-Prinzip** (Band 1) mit durchschnittlichem Score **0.895** (Exzellent).
 
@@ -2744,7 +2744,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 - B07, C11, D16 auf voller Kapazität
 - **Net-Zero bis 2040-2050 erreicht**
 
-**Impact:** -50.7 Gt CO₂/Jahr, System vollständig implementiert, Star Trek-Moment
+**Impact:** -58.6 Gt CO₂/Jahr, System vollständig implementiert, Star Trek-Moment
 
 ---
 
@@ -2774,7 +2774,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 5. B10 Abfall-Ressource - -2 Gt CO₂eq/Jahr
 6. B08 Biopolymere Hanf - -1.5 Gt/Jahr
 
-**Total CO₂-Impact:** -50.7 Gt/Jahr (92% globaler Emissionen)
+**Total CO₂-Impact:** -58.6 Gt/Jahr (106,5% globaler Emissionen)
 
 ---
 
@@ -2918,7 +2918,7 @@ Siehe `40_WORK/TEMPLATE_ANWENDUNG.md` für vollständiges Template und `40_WORK/
 ### Kernaussagen
 
 **1. Mathematischer Nachweis:**
-Provolution kann Klimakrise lösen. **-50.7 Gt CO₂/Jahr** bei voller Implementation = 92% globaler Emissionen.
+Provolution kann Klimakrise lösen. **-58.6 Gt CO₂/Jahr** bei voller Implementation = 106,5% globaler Emissionen.
 
 **2. System-Ansatz ist essentiell:**
 Einzelne Hebel reichen nicht. Die n kanonischen Hebel bilden ein vollständiges, konsistentes System.
