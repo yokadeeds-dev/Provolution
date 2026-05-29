@@ -676,7 +676,7 @@ Gefahrstoff-Detektion (Batterien, Chemikalien) mit menschlicher Bestätigung. Sc
 
 ### B13: LOKALE ON-DEMAND-FERTIGUNG
 
-**SEC-Score:** 0.84 | **Band:** 4 | **CO₂:** -0.2 bis -0.5 Gt/Jahr | **Integriert:** 2026-05-27 (aus Lesbare-Form-Erzählarbeit)
+**SEC-J-Score:** 0.91 | **Band:** 4 | **CO₂:** -0.2 bis -0.5 Gt/Jahr | **Integriert:** 2026-05-27 (aus Lesbare-Form-Erzählarbeit) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29)
 
 #### 1. DEFINITION
 Verlagerung industrieller Fertigung von zentralen Massenproduktions-Anlagen mit globalen Lieferketten zu **regionalen Cluster-Fabriken mit bedarfsgerechter (On-Demand-) Produktion**. Zentrale Komponenten: lokal verfügbares Bio-Filament (insbesondere aus Hanf-Cellulose, vgl. B08/D17), 3D-Druck als Hauptfertigungstechnologie, digitale Bestell- und Distributions-Plattformen.
@@ -2114,7 +2114,7 @@ Diplomatische Entscheidungen ausschließlich human. Nationale Souveränität str
 
 ### I33: KREISLAUF-AUTO
 
-**SEC-Score:** 0.95 | **Band:** 4 | **CO₂:** -1.0 Gt/Jahr (global; -36 Mt/Jahr für DE bei 49 Mio. PKW) | **Promoted:** 2026-05-28 (aus STUB → band4-canonical)
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -1.0 Gt/Jahr (global; -36 Mt/Jahr für DE bei 49 Mio. PKW) | **Promoted:** 2026-05-28 (aus STUB → band4-canonical) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29)
 
 #### 1. DEFINITION
 Dekonstruktion des Automobils von einer linearen Zerstörungsmaschine zu einem zirkulären Fortbewegungsmittel. Ein modulares System aus fünf Bausteinen, von denen jeder eigenständigen Wert hat und die in Kombination ökonomisch und systemisch optimal wirken — aber nicht physikalisch voneinander abhängen (Motorsport-Belege zeigen: Naturfaser-Composites funktionieren auch unter Extrembedingungen):
@@ -2294,7 +2294,7 @@ Ozeane sind die größte aktive CO₂-Senke des Erdsystems (~8–10 Gt CO₂/Jah
 
 ### K01: MANGROVEN-WIEDERHERSTELLUNG
 
-**SEC-Score:** 0.92 | **Band:** 4 | **CO₂:** -0,75 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,5 bis -1,0)
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -0,75 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,5 bis -1,0) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29)
 
 #### 1. DEFINITION
 Wiederherstellung und Schutz tropischer Mangrovenwälder als Küsten-Ökosysteme mit höchster CO₂-Bindungs- und Sediment-Speicher-Leistung pro Hektar. Mangroven binden 5–10 t CO₂/ha/yr in der Wachstumsphase und speichern darüber hinaus erhebliche Mengen in den anoxischen Küsten-Sedimenten über Jahrhunderte.
@@ -2335,7 +2335,7 @@ Wiederherstellung und Schutz tropischer Mangrovenwälder als Küsten-Ökosysteme
 
 ### K02: SEEGRAS-RESTAURATION
 
-**SEC-Score:** 0.87 | **Band:** 4 | **CO₂:** -0,35 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,2 bis -0,5)
+**SEC-J-Score:** 0.92 | **Band:** 4 | **CO₂:** -0,35 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,2 bis -0,5) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29)
 
 #### 1. DEFINITION
 Wiederherstellung von Seegrasflächen in temperaten und tropischen Küstenmeeren. Seegras (z.B. Zostera marina, Posidonia oceanica) bindet 2–3 t CO₂/ha/yr in lebender Biomasse und speichert erhebliche zusätzliche Mengen in den Sedimenten über Jahrtausende.
@@ -2375,7 +2375,7 @@ Wiederherstellung von Seegrasflächen in temperaten und tropischen Küstenmeeren
 
 ### K03: KELP-WÄLDER-WIEDERAUFBAU
 
-**SEC-Score:** 0.85 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3)
+**SEC-J-Score:** 0.90 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29; K03 Kelp)
 
 #### 1. DEFINITION
 Wiederherstellung temperater Kelp-Wälder (Macrocystis pyrifera, Laminaria sp., Ecklonia sp.) in Küstenmeeren. Kelp wächst sehr schnell (bis 50 cm/Tag in der Hauptwachstumsphase), bindet 1–2 t CO₂/ha/yr und exportiert große Mengen Detritus in die Tiefsee (biologische Pumpe).
@@ -2416,7 +2416,7 @@ Wiederherstellung temperater Kelp-Wälder (Macrocystis pyrifera, Laminaria sp., 
 
 ### K04: SALZMARSCHEN-SCHUTZ UND RESTORATION
 
-**SEC-Score:** 0.90 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3)
+**SEC-J-Score:** 0.90 | **Band:** 4 | **CO₂:** -0,20 Gt CO₂eq/Jahr (Mittelwert; Bandbreite -0,1 bis -0,3) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29; K04 Salzmarschen)
 
 #### 1. DEFINITION
 Schutz und Restoration von Salzmarschen — temperate und tropische Gezeiten-Lebensräume mit der höchsten CO₂-Bindungsrate pro Hektar aller Küstenökosysteme (6–8 t CO₂/ha/yr). Salzmarschen speichern Kohlenstoff in tiefen, anoxischen Torf-Sedimenten über Jahrtausende.
@@ -2608,10 +2608,10 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 | **Hebel gesamt (Band 4 band4-canonical)** | 37 (Stand 2026-05-28 v1.5: +D19 + K01–K04 promoviert; vorher 32) |
 | **Hebel im Kanon insgesamt** | 49 (Domain A–K + Communities; inkl. D19, K01–K04, I34 STUB, J01 STUB, yaml-only, community-integrated) |
 | **Domänen** | 11 (A–I band4-canonical, J STUB Konstruktion, K band4-canonical Marine & Küste v1.5) |
-| **Durchschnittlicher SEC-J-Score (PS-U 2.0)** | **0,91** (alle bewerteten Hebel; siehe SEC-J-Master-Übersicht in `canon/de/HEBEL_KATALOG_v1.0.md` v1.7) |
-| **Domain-Ø SEC-J (individuell kalkuliert)** | B 0,90 · C 0,90 · D 0,89 (auf Basis 13 PS-U 2.0 STANDARD-Berechnungen) |
+| **Durchschnittlicher SEC-J-Score (PS-U 2.0)** | **0,90** (25 individuell + 5 batch; siehe SEC-J-Master-Übersicht in `canon/de/HEBEL_KATALOG_v1.0.md` v1.8) |
+| **Domain-Ø SEC-J (individuell kalkuliert, PR #13)** | B 0,884 · C 0,90 · D 0,894 · **I 0,913** · **J 0,93** · **K 0,913** |
 | **Domain-Ø SEC-J (Batch-bewertet, PR #11 ✅ TRAGFÄHIG)** | A 0,92 · E 0,93 (E21 unter JUSTICE J=0,95) · F 0,90 · G 0,90 · H 0,90 |
-| **SEC-J Warnschwellen (J < 0,80)** | 2 Hebel: B09 J=0,72 (Algorithmisches-Management-Risiko) · C12 J=0,82 (Li/Co-Abbau) — Implementierungs-Auflagen in `impact_master.yaml` v2.3 `sec_j_scores.implementation_constraints` |
+| **SEC-J Warnschwellen (J < 0,80)** | **4 Hebel:** B09 J=0,72 (Algorithmisches-Management) · C12 J=0,82 (Li/Co-Abbau) · **B11 J=0,78** (H2-Just-Transition, PR #13) · **B12 J=0,75** (Tank-oder-Teller, PR #13) — Implementierungs-Auflagen in `impact_master.yaml` v2.4 `sec_j_scores.implementation_constraints` |
 | **J-Veto-Auslösungen (J < 0,50)** | 0 (keine) |
 | **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−58,6 Gt/Jahr** (`co2_master.yaml` v1.4, nach B09/B10-Drift-Resolution + D19-Promotion + K01–K04-Vollintegration; v1.2 hatte −59,8) |
 | **CO₂-Potential netto Szenario B (Erwartungswert, Monte-Carlo v1.5)** | **Median −43,2 Gt/yr [90 %-KI: −52,8, −34,6]** (N=10 000, `monte_carlo.py`) |

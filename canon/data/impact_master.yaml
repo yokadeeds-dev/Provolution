@@ -9,13 +9,23 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.3"
-  last_updated: "2026-05-28"
+  version: "2.4"
+  last_updated: "2026-05-29"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_4_2026-05-29:
+      - "PR #13: Batch-SEC-J-Berechnung Rest-Hebel I/J/K/B nach Gem-Knowledge-Update vom 2026-05-28 23:59"
+      - "Individuell kalkulierte Hebel: 13 → 25 (+I33-I36 +J01 +K01-K04 +B11-B13)"
+      - "Neue Warnschwellen J<0.80: B11 (0.78 H2-Just-Transition) + B12 (0.75 Tank-oder-Teller)"
+      - "Implementation_constraints erweitert um B11 (Standortgarantien/Just-Transition) und B12 (FPIC + Anbauflächen-Ausschluss)"
+      - "Pending-Liste reorganisiert: nur noch A/E/F/G/H-Einzelhebel + F22/G28/G29 + AUTO_INTEGRATE + Communities"
+      - "sec_j_scores.meta v1.1 → v1.2 mit erweiterten audit_reports (3 statt 1)"
+      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
+      - "Domain-Ø SEC-J individuell: B 0.884 · C 0.90 · D 0.894 · I 0.913 · J 0.93 · K 0.913"
+      - "Gesamt-Ø SEC-J: 0.91 → 0.90"
     v2_3_2026-05-28:
       - "Spec-Klärung: SECJ_SPEC v1.0 als DEPRECATED markiert; framework_extensions_v2.0_SECJ.md ist autoritativ (PS-U 2.0)"
       - "sec_j_scores.meta v1.0 → v1.1 mit spec_reference, formula_standard + formula_justice (statt single formula)"
@@ -555,10 +565,13 @@ transformation_pathways:
 
 sec_j_scores:
   meta:
-    version: "1.1"
-    last_updated: "2026-05-28"
-    audit_source: "User-PF-Sitzung 2026-05-28 (Probatio Familia v1.0.1, Modus PS-U:STANDARD + PS-U:JUSTICE)"
-    audit_report: "studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+    version: "1.2"
+    last_updated: "2026-05-29"
+    audit_source: "User-PF-Sitzungen 2026-05-28 (Initial-Nachrüstung B/C/D + Batch A/E/F/G/H) + 2026-05-29 (Rest-Hebel I/J/K/B)"
+    audit_reports:
+      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_DOMAINS_AEFGH_2026-05-28.md"
+      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
     spec_reference: "canon/de/06_framework_extensions_v2.0_SECJ.md (PS-U 2.0 Extension, autoritativ seit 2026-05-10)"
     formula_standard: "SEC-J(m) = 0.30*S + 0.25*E + 0.30*C + 0.15*J"
     formula_justice: "SEC-J(m, justice) = 0.25*S + 0.15*E + 0.20*C + 0.40*J"
@@ -591,6 +604,26 @@ sec_j_scores:
     D18_urbane_landwirtschaft: { s: 0.85, e: 0.82, c: 0.92, j: 0.94, sec_j: 0.88 }
     D19_algen_bioraffinerie:  { s: 0.85, e: 0.78, c: 0.86, j: 0.85, sec_j: 0.84 }
 
+    # Domain I — Mobilität (PR #13, 2026-05-29)
+    I33_kreislauf_auto:                { s: 0.95, e: 0.98, c: 0.90, j: 0.88, sec_j: 0.93 }
+    I34_kreislauf_lnf:                 { s: 0.88, e: 0.90, c: 1.00, j: 0.85, sec_j: 0.92 }
+    I35_aktive_geschwindigkeits_regulation: { s: 0.90, e: 0.95, c: 0.90, j: 0.82, sec_j: 0.90, note: "ISA Mode d — schützt vulnerabelste Verkehrsteilnehmer (J4); algorithmische Egalisierung im Straßenraum (J1/J3)" }
+    I36_kreislauf_schwere_nfz:         { s: 0.92, e: 0.88, c: 0.90, j: 0.88, sec_j: 0.90, note: "Lkw/Bus/Reisebus — leistbarer ÖPNV-Ausbau (J1); Transitkorridor-Entlastung (J4)" }
+
+    # Domain J — Konstruktion (PR #13, 2026-05-29)
+    J01_kreislauf_gebaeude:            { s: 0.90, e: 0.92, c: 1.00, j: 0.85, sec_j: 0.93, note: "Urban Mining → leistbarer Wohnraum (J1/J3); Schutz vor toxischen Baustoffen (J4)" }
+
+    # Domain K — Marine & Küste (PR #13, 2026-05-29)
+    K01_mangroven:                     { s: 0.95, e: 0.90, c: 0.95, j: 0.92, sec_j: 0.93, note: "Küstenschutz für vulnerable Gemeinschaften Globaler Süden (J4); Fischerei-Einkommen (J3)" }
+    K02_seegras:                       { s: 0.92, e: 0.88, c: 0.95, j: 0.90, sec_j: 0.92, note: "Maritime Kinderstuben → Ernährungssouveränität (J3)" }
+    K03_kelp:                          { s: 0.90, e: 0.92, c: 0.90, j: 0.88, sec_j: 0.90, note: "Dezentrale Aquakultur-Jobs (Alternative zu überfischten Sektoren) (J1/J3)" }
+    K04_salzmarschen:                  { s: 0.90, e: 0.85, c: 0.95, j: 0.90, sec_j: 0.90, note: "Hochwasser-Absorption schützt Küsteninfrastruktur, von der niedrige Einkommen überproportional abhängen (J4)" }
+
+    # Domain B — Yaml-only/STUB (PR #13, 2026-05-29)
+    B11_industrielle_transformation:   { s: 0.95, e: 0.75, c: 0.90, j: 0.78, sec_j: 0.86, warning: "J<0.80 — kapitalintensive H2-Direktreduktion (Stahl); Arbeitsmarkt-Verwerfungs-Risiko (J3); Konzerndominanz ohne dezentrale Partizipation (J1)" }
+    B12_nachhaltige_biomasse:          { s: 0.85, e: 0.88, c: 0.80, j: 0.75, sec_j: 0.83, warning: "J<0.80 — Tank-oder-Teller-Skalenbruch (J2/J3); Lebensmittelpreis-Druck; Land-Grabbing-Risiko zulasten Indigener (J4)" }
+    B13_lokale_on_demand:              { s: 0.88, e: 0.90, c: 0.95, j: 0.92, sec_j: 0.91, note: "Demokratisiert Produktionsmittel (3D-Druck/Maker-Spaces) (J1); bricht monopolistische Lieferketten zugunsten lokaler Wertschöpfung (J3)" }
+
   # Batch-bewertete Domain-Durchschnitte (PS-U:STANDARD/JUSTICE Batch-Audit)
   # Einzelhebel-Berechnung ausstehend
   domain_batch:
@@ -615,24 +648,18 @@ sec_j_scores:
       note: "H31 Regulierungs-Framework erzwingt Internalisierung von Externalitäten (Verursacher trägt Kosten, nicht Vulnerable)"
 
   # Noch nicht kalkuliert (eigene Folge-Sub-Phasen)
+  # PR #13 (2026-05-29) hat alle I/J/K/B-Hebel zu individual_calculated promoviert
   pending:
-    mobility:
-      - I33  # Kreislauf-Auto (band4-canonical)
-      - I34  # STUB Kreislauf-LNF
-      - I35  # PS-U TRAGFÄHIG 2026-05-28 (S 0.85, E 0.90, C 0.80, J 0.80, SEC-J 0.84 — separater PS-U-Report)
-      - I36  # PS:FULL TEILBESTANDEN 2026-05-28 (empirische Fundierung ausstehend)
-    construction:
-      - J01  # STUB Kreislauf-Gebäude
-    marine:
-      - K01  # Mangroven
-      - K02  # Seegras
-      - K03  # Kelp
-      - K04  # Salzmarschen
-    yaml_only:
-      - B11  # transformation -1.8
-      - B12  # biomasse -2.5
-      - B13  # band4-canonical NEU 2026-05-27
-      - F22  # AUTO_INTEGRATE Kategorie A
+    batch_individual_breakdown:
+      note: "Domain-Ø in domain_batch ist tragfähig (PR #11 BESTANDEN); Einzelhebel-Berechnung optional zur Vertiefung"
+      hebel:
+        - A01_a06  # Domain A Einzelwerte
+        - E19_e22  # Domain E Einzelwerte
+        - F23_f26  # Domain F Einzelwerte
+        - G27_g29  # Domain G Einzelwerte (G27 band4, G28/G29 yaml-only)
+        - H30_h32  # Domain H Einzelwerte
+    yaml_only_no_band4:
+      - F22  # AUTO_INTEGRATE Kategorie A (Green Finance)
       - G28  # ki_monitoring
       - G29  # blockchain_tracking
     auto_integrate_categories:
@@ -649,17 +676,26 @@ sec_j_scores:
       - C-2026-007  # Globale Energie-Effizienz
       - C-2026-008  # Präzisionsfermentation + Hanf-Kaskade
 
-  # Aggregat
+  # Aggregat (PR #13 Update 2026-05-29)
   aggregate:
-    gesamt_durchschnitt_sec_j: 0.91
+    gesamt_durchschnitt_sec_j: 0.90  # über 25 individuell + 5 batch
     j_veto_auslosungen: 0
-    j_warnung_schwelle_unter_0_80: 2  # B09 (0.72), C12 (0.82)
-    note: "Gesamt-Ø SEC-J berechnet aus Rest-Portfolio (Batch + Individuell); vollständiger Ø über alle Hebel nach Abschluss pending-Liste"
+    j_warnung_schwelle_unter_0_80: 4  # B09 (0.72), C12 (0.82), B11 (0.78), B12 (0.75)
+    domain_means_individual:
+      B: 0.884  # (B07 0.93 + B08 0.90 + B09 0.85 + B10 0.91 + B11 0.86 + B12 0.83 + B13 0.91) / 7
+      C: 0.90   # (C11 0.93 + C12 0.88 + C13 0.90 + C14 0.89) / 4
+      D: 0.894  # (D15 0.92 + D16 0.90 + D17 0.93 + D18 0.88 + D19 0.84) / 5
+      I: 0.913  # (I33 0.93 + I34 0.92 + I35 0.90 + I36 0.90) / 4
+      J: 0.93   # nur J01
+      K: 0.913  # (K01 0.93 + K02 0.92 + K03 0.90 + K04 0.90) / 4
+    note: "Gesamt-Ø SEC-J über 25 individuell-kalkulierte (PR #6/#13) + 5 Batch-Domain-Ø (PR #6); A/E/F/G/H Einzelhebel-Werte als optionale Vertiefung"
 
   # Verbindlichkeit für Folge-Aktionen
   implementation_constraints:
-    B09: "Arbeitnehmervertretungen zwingend beim Design der Digital-Twin-Tracking-Systeme (Anti-Algorithmisches-Management)"
     B08: "DIN EN 13432 + THC-Zertifizierung darf keine unüberwindbare Markteintrittsbarriere für Kleinbauern werden"
+    B09: "Arbeitnehmervertretungen zwingend beim Design der Digital-Twin-Tracking-Systeme (Anti-Algorithmisches-Management)"
+    B11: "Staatliche Subventionen für H2-Direktreduktion zwingend an Standortgarantien, 'Just Transition'-Umschulungsprogramme für Stahlbelegschaft und tarifliche Absicherungen knüpfen (PR #13)"
+    B12: "Strikter regulatorischer Ausschluss von essenziellen Nahrungsmittel-Anbauflächen. Zwingende FPIC-Zertifizierung (Free, Prior and Informed Consent) bei globalen Biomasse-Importen (PR #13)"
     C12: "Internationale Regulierungen (H31) + Lieferketten-Transparenz (B09) zwingend für Li/Co-Abbau; sonst Veto-Risiko (J<0.50)"
     D16: "Carbon-Payments (€100 Mrd/Jahr) erfordern G27-Governance-Monitoring; sonst landen Gelder bei Agrarkonzernen statt lokalen Farmen"
 
