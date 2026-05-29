@@ -5,6 +5,8 @@
 > 📍 **Aktueller Stand, Werte-Glossar & Peer-Review-Status:** [`canon/STATUS.md`](canon/STATUS.md) — die einzige autoritative Quelle für gültige Methode, Kennzahlen und Dokument-Status. Bei Zahlen-Konflikten gewinnen `STATUS.md` + `canon/data/*.yaml`.
 >
 > **Status:** Preprint / living repository, eingereicht bei *Earth System Governance*. **Noch nicht extern peer-reviewed.** Alle Reduktions-Totale sind gescreente Potenziale unter Annahmen — keine Prognosen.
+>
+> 🛡️ **Stärkste Einwände — offen benannt und beantwortet:** [`canon/LIMITATIONS.md`](canon/LIMITATIONS.md) (Limitations & Anticipated Critiques). Antifragil: das System besitzt seine Angriffsfläche, statt sie zu verstecken.
 
 ---
 
