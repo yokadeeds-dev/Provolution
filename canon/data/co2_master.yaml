@@ -121,7 +121,7 @@ methodology:
     internal: "SEC-Score correlation with CO₂ impact (r=0.94)"
     external: "Comparison with sectoral deep-dive studies (IEA, McKinsey, Project Drawdown)"
     sensitivity: "Key parameter variation ±20% changes total by <±15%"
-    plausibility: "Total -57.0 Gt/year = 104% of global emissions (55 Gt baseline) = Net Negative; physically consistent via active sequestration (D16 Boden-CO2-Senken -5 Gt)"
+    plausibility: "Total -58.6 Gt/year = 106.5% of global emissions (55 Gt baseline) = Net Negative; physically consistent via active sequestration (D16 Boden-CO2-Senken -5 Gt)"
 
 gesamt:
   reduktion_hart: -58.6  # Aktualisiert 2026-05-28 v1.3: -59.8 (v1.2) + B09/B10 Drift-Korrektur (+1.5; weniger Reduktion nach Tag-Drift-Auflösung) + D19 Promotion (-0.3) = -58.6
