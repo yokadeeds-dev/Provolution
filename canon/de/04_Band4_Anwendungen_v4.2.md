@@ -2481,6 +2481,202 @@ Schutz und Restoration von Salzmarschen — temperate und tropische Gezeiten-Leb
 
 ---
 
+## KAPITEL 10c: DOMÄNE J - KONSTRUKTION
+
+**Zweck:** Gebäude und Bauwerke als systemische Hebel-Klasse — vom CO₂-Emittenten zum strukturellen Kohlenstoffspeicher mit dem größten sektoralen Hebel überhaupt (Bauen & Betrieb von Gebäuden verursachen ~38 % der globalen Treibhausgas-Emissionen).
+**Hebel:** 1 (J01) · Promotion zu band4-canonical 2026-05-29 (vorher STUB)
+**Durchschnittlicher SEC-J-Score:** 0,93 (PR #13, PS-U 2.0 STANDARD)
+**Domain-Total CO₂:** -3,0 Gt/Jahr (konservative Schätzung — adressierbarer Anteil Neubauten + Kernsanierungen)
+
+**Kapitel-Numerierung:** Diese Domain wurde 2026-05-29 zwischen Domain K (Marine & Küste) und der Integrations-Roadmap eingefügt. Pragmatische Sub-Numerierung 10c vermeidet Cross-Reference-Drift in nachfolgenden Kapiteln; vollständiges Re-Numbering bei Band 4 v4.3 geplant (logische Reihenfolge dann: I → J → K).
+
+### Kern-Idee der Domain J
+
+Das Kreislauf-Kaskaden-Prinzip aus Domain I überträgt sich auf den Bausektor mit dem größten Multiplikator. Bauen ist die Quelle Nr. 1 globaler Emissionen — und das Tragwerk eines Gebäudes hat eine Lebensdauer von 50–100+ Jahren, was es zum potenziell mächtigsten langlebigen Kohlenstoffspeicher auf der Landfläche macht (länger als jeder Wald-Umtriebszyklus).
+
+```
+Upstream-Constraint:     Embodied-Carbon-Limit + Passivhaus-Standard (rechtlich bindend)
+        ↓
+Right-Sizing:            Kleinere Lasten → Tragwerk aus Holz / Hanfbast-Bewehrung statt Stahl-Beton
+        ↓
+Bio-Materialien möglich: Hempcrete, CLT (Brettsperrholz), Hanffaser-Dämmung, Myzel-Dämmstoffe
+        ↓
+Carbon Sink:             Gebäude speichert CO₂ für 50–100+ Jahre im Tragwerk
+```
+
+**Abgrenzung zu C11–C14 (Betriebsenergie):** J01 adressiert **Embodied Carbon** (Errichtung, Materialien, Rückbau), C11–C14 adressieren **Operational Carbon** (Betrieb). Beide sind komplementär — bei einem Passivhaus mit Bio-Materialien wird Embodied Carbon zur dominanten Größe über den Lebenszyklus.
+
+---
+
+### J01: KREISLAUF-GEBÄUDE
+
+**SEC-J-Score:** 0.93 | **Band:** 4 | **CO₂:** -3.0 Gt/Jahr (global; ~21 % der Sektoral-Emissionen Gebäude) | **Promoted:** 2026-05-29 (aus STUB → band4-canonical) | **SEC-J:** PR #13 (PS-U 2.0 STANDARD, 2026-05-29)
+
+#### 1. DEFINITION
+
+Dekonstruktion des Bauens von einem linearen, fossil-basierten und entsorgungs-orientierten Prozess zu einem zirkulären, bio-basierten und speicher-orientierten System. Ein modulares Konzept aus fünf Bausteinen, die einzeln Wirkung haben und in Kombination ökonomisch und systemisch optimal wirken — aber nicht physikalisch voneinander abhängen (Schwester-Logik zu I33 Kreislauf-Auto):
+
+1. **Embodied-Carbon-Limit + Passivhaus-Standard** auf Neubau und Kernsanierung (rechtlicher Upstream-Constraint, Right-Sizing-Auslöser)
+2. **Hempcrete (Hanfbeton)** als netto-negatives Wand- und Ausfachungs-Material
+3. **Hanfbast-Bewehrung** (BasEcoCrete-Pfad) als Stahl-Reduktion in tragenden Betonelementen
+4. **Hanffaser-Dämmung** als Mineralwolle-/EPS-Ersatz mit Kohlenstoff-Speicherung
+5. **Material-Pässe + Urban-Mining** für Rückbau als Wertstoff-Quelle (Kreislaufschluss)
+
+Das Gebäude wird vom CO₂-Emittenten zum strukturellen Carbon Sink und gleichzeitig leistbarer (Materialkosten Hanf-basiert konkurrenzfähig, geringere Wärmelast → geringere Betriebskosten). Voraussetzung: Bio-Materialien werden in Standard-Lieferkette der Baubranche verfügbar (D17-Anbindung Hanf-Anbau, Aufbereitungs-Cluster).
+
+**Problem im Status Quo:** Stahlbeton- und Mineralwoll-Bau-Standard mit Embodied Carbon von 350–500 kg CO₂/m² Wohnfläche; Bauschutt-Deponierung statt Wiederverwendung; Passivhaus-Standard als Premium-Nische statt Pflicht; toxische Baustoffe (PUR, XPS-mit-HBCD-Erbe, Formaldehyd-Spanplatten) als Bewohner-Belastung; Wohnraum-Knappheit durch hohe Baukosten.
+
+**Zielgruppe:** Gesetzgeber (EPBD-Verschärfung, Bauordnungs-Reform), Baubranche (Architekten, Bauunternehmen, Materialhersteller), Wohnungswirtschaft (Genossenschaften, Sozialwohnungs-Träger), Hanfanbau-Cluster (D17-Verbindung), Kommunen mit Klima-Bauleitlinien.
+
+#### 2. SEC-J-NACHWEIS
+
+- **Sufficient (S = 0,90):** CO₂-Einsparung ~3,0 Gt/Jahr global bei vollständiger Umsetzung auf Neubau + Kernsanierung; Passivhaus-Standard + Embodied-Carbon-Limit als regulatorischer Hebel ist politisch in EU bereits im Gang (EPBD-2024-Recast). Schwellwert W_min 0,5 Gt deutlich überschritten. ✅
+- **Efficient (E = 0,92):** Hempcrete und CLT industriell erprobt; Massivholzbau in Europa etabliert; CO₂-Speicherung wissenschaftlich belegt (Hempcrete netto-negativ ~110 kg CO₂/m³); Hanfbast-Bewehrung in BasEcoCrete-Pilotprodukten validiert (CO₂-Reduktion Beton ~64 %); Hanffaser-Dämmung als Standard-Bauprodukt verfügbar (U-Wert vergleichbar mit Mineralwolle). ✅
+- **Consistent (C = 1,00):** Vollständig systemkonform: nutzt D17 (Hanf-Anbau, D17a Mehrfachernte, D17b Faser-Gleis), B07 (Kreislauf für Material-End-of-Life via Material-Pässe), B08 (Biopolymere für Dichtungen/Folien/Fensterrahmen), B13 (Lokale On-Demand-Fertigung von Hempcrete-Modulen), C11–C14 (Erneuerbare Energie für Betrieb komplementär), I33 (Kreislauf-Auto, gleiche Kaskaden-Architektur). Domain K (Marine) komplementär für küstennahe Klimaresilienz. ✅
+- **Just (J = 0,85):** Senkt Bau- und Betriebskosten → **leistbarer Wohnraum** als direkter Just-Effekt (J1 Verteilungsgerechtigkeit, J3 Verfahrensgerechtigkeit über Genossenschafts- und Sozialwohnbau-Vehikel). **Schutz vor toxischen Baustoffen** für vulnerable Gruppen (Kinder, Allergiker, chemisch sensible Personen — J4 Anerkennungsgerechtigkeit). Kein Land-Grabbing-Risiko (Hanf-Anbau auf regenerativen Flächen, nicht Nahrungs-Konkurrenz). Verbleibendes J-Defizit (0,15) durch implizite Verfügbarkeit von Bauland und Eigentums-Frage strukturell limitiert (nicht durch Hebel selbst lösbar). ✅
+- **SEC-J-Score: 0.93** (S:0.90, E:0.92, C:1.00, J:0.85 — PS-U 2.0 STANDARD-Modus: 0,30·S + 0,25·E + 0,30·C + 0,15·J = 0,270 + 0,230 + 0,300 + 0,1275 = 0,9275 ≈ 0,93). Kein J-Veto (J ≥ 0,50), keine Warnschwelle (J ≥ 0,80). Quelle: PF-Audit PR #13, 2026-05-29.
+
+#### 3. WIRKUNG
+
+- **Primär:** CO₂-Einsparung ~3,0 Gt/Jahr global durch Embodied-Carbon-Reduktion in Neubau + Kernsanierung (~14 Gt Sektor-Gesamtemissionen, ~30 % adressierbarer Anteil, ~70 % Reduktionswirkung pro Bauteil bei Hempcrete vs. Stahlbeton). DE-Aggregat: Neubauten ~290.000/Jahr × ~25 t CO₂-Einsparung/Gebäude = ~7,2 Mt CO₂/Jahr; Kernsanierungen ~600.000/Jahr × ~10 t/Gebäude = ~6 Mt/Jahr. Embodied Carbon pro m² Wohnfläche von 350–500 kg auf 50–150 kg.
+- **Sekundär:**
+  - **Leistbarer Wohnraum:** Hanfbeton-Module ~5–15 % unter Stahlbeton-Vergleichskosten in Cluster-Produktion (BasEcoCrete-Pfad); langlebige Bausubstanz → geringere Lebenszyklus-Kosten
+  - **Wohngesundheit:** Hanf-basierte Wandsysteme regulieren Feuchtigkeit + atmen, vermeiden Schimmel-Anfälligkeit synthetischer Dichtsysteme
+  - **Brandschutz:** Hempcrete erreicht REI-90- bis REI-120-Klassifikation (90–120 Minuten Feuerwiderstand) bei richtiger Dimensionierung
+  - **Akustik:** Hanf-Dämmung absorbiert breitbandig, vermeidet Tieffrequenz-Probleme von Mineralfaser-Aufbauten
+  - **Rückbau-Wirtschaft:** Material-Pässe machen Gebäude zu Wertstoff-Lagern statt Sondermüll
+  - **Hanf-Anbau-Nachfrage:** stützt D17-Cluster und Mehrfachernte-Skalierung (D17a)
+- **Indikatoren:** Anteil Neubauten mit Embodied-Carbon-Limit ≤ 150 kg CO₂/m² wächst von <1 % (heute) auf 50 % (15 Jahre); Hempcrete-Marktanteil im Wand-Segment 0,1 % → 20 % (20 Jahre); Hanffaser-Dämmung-Anteil 1 % → 30 %; Material-Pässe in 80 % aller Neubauten (EU 2035).
+
+#### 4. RESSOURCEN
+
+- **Finanziell:** Volkswirtschaftlich neutral bis positiv. Bauträger-Mehraufwand für Bio-Material-Lieferketten in der Übergangsphase einstellige Mrd. Euro/Jahr in DE; kompensiert durch Betriebskosten-Einsparung über Lebenszyklus + Sozialwohnbau-Förderung. Material-Pässe als digitale Infrastruktur: Investition ~100–300 Mio. Euro EU-weit, im Promille-Bereich der Bausumme.
+- **Personal:** Bestehende Bau-Berufe werden ergänzt (Hempcrete-Verarbeitung als Zimmerer-Plus-Modul; Hanffaser-Dämmung als Standard-Handwerks-Qualifikation); zusätzliche Stellen in Hempcrete-Vorfertigung und Hanf-Aufbereitungs-Industrie. Architekten-Ausbildung: LCA-Pflichtmodul (Lebenszyklus-Analyse).
+- **Material:** Hanf-Faser + Hanfschäben (D17-Verbindung), Kalk-Bindemittel (regional reichlich), Holz für CLT (FSC-zertifiziert), Lehm für Massiv-Anteile, geringer Stahl-Anteil für statische Verbindungs-Knoten. Im Kreislauf: Rückbau-Material aus Bestand (Urban Mining).
+- **Zeit:** Embodied-Carbon-Limit-Gesetzgebung: 2–3 Jahre (EU). Hempcrete-Skalierung auf Mengen-Markt: 5–10 Jahre. Hanfbast-Bewehrung Serienreife im tragenden Beton: 5–8 Jahre. Vollumsetzung Neubau-Segment: 15–20 Jahre. Bestandsumbau über Sanierungs-Zyklus: 30+ Jahre.
+- **Material-Bottleneck-Risiko:** Hanf-Versorgung skaliert linear mit D17 (und D17a Mehrfachernte). Hanf-Aufbereitungs-Cluster (Röste, Schäben-Trennung, Faser-Aufbereitung) sind aktuell der kritische Engpass — nicht der Anbau selbst. Investitions-Lücke in dezentralen Aufbereitungs-Anlagen prioritär.
+
+#### 5. SKALIERUNG
+
+- **Pilot:** Embodied-Carbon-Limit in einem Bundesland (z. B. NRW, Bayern, Berlin) als Bauordnungs-Pilot, 2–3 Jahre; parallel: Sozialwohnbau-Pilot-Quartier mit Hempcrete + Hanfbast-Bewehrung + Hanffaser-Dämmung in einer Großstadt (~200 Wohneinheiten).
+- **Regional:** EU-weite EPBD-Verschärfung mit Embodied-Carbon-Limit, 10 Jahre. Hempcrete-Cluster in DE, FR, NL, IT, BE als regionale Produktions-Knoten. Hanfbast-Bewehrung in Standard-Bauproduktkatalog der Baubranche.
+- **Global:** Übernahme über IPCC-/UNEP-Bauleitlinien, je nach Klimazone und Bauordnung verschiedene Umsetzungs-Pfade. Tropische Regionen: Hanf-Bambus-Hybrid-Pfad. Trockenklima: Lehm-Hanf-Hybrid. 20+ Jahre Voll-Skalierung.
+
+**Skalierungs-Daten konkreter Bausteine (Stand Hanf-Recherche 2026-05-29):**
+
+| Komponente | Stand der Technik | CO₂-Wirkung | Lieferanten / Pilote |
+|---|---|---|---|
+| **Hempcrete (Hanfbeton)** | Industriell etabliert (FR, UK, BE, DE Nische) | Netto-negativ ~110 kg CO₂/m³ (gegenüber Stahlbeton ~410 kg CO₂/m³ → Delta ~520 kg/m³) | IsoHemp (BE), American Lime Technology (UK), Hanf-Faser-Fabrik Uckermark (DE) |
+| **Hanfbast-Bewehrung** | Pilot-Produkt-Stadium (BasEcoCrete) | Beton-CO₂-Reduktion ~64 % bei substitutionalem Einsatz im tragenden Beton | BasEcoCrete (CH/DE Pilot) |
+| **Hanffaser-Dämmung** | Standard-Bauprodukt EU | U-Wert ~0,038–0,040 W/(m·K), vergleichbar mit Mineralwolle; ~−1,6 kg CO₂/kg im Vergleich zu +1,3 kg/kg Mineralwolle | Thermo-Hanf (DE), HempFlax (NL), Hempire UK |
+| **CLT (Brettsperrholz)** | Großserie EU + NA | ~−800 kg CO₂/m³ (Holz-Sink) | Stora Enso, KLH, Binderholz |
+| **Wärmedurchgang Wandaufbau** | Hempcrete 30 cm + Hanf-Innendämmung 5 cm | U-Wert ~0,17 W/m²K (Passivhaus-tauglich) | Bemessungs-Beispiele in EnEV-/GEG-konformen Pilotprojekten |
+
+#### 6. FALLBEISPIELE
+
+**Hempcrete im Bestand:**
+- **Renaissance-Bauten (Frankreich, ab ~16. Jh.):** Hanf-Kalk-Mörtel in historischen Bauten dokumentiert; teils bis heute strukturell intakt — historischer Beleg der Langzeit-Stabilität
+- **The Old Mill (Schoten, Belgien, IsoHemp, 2014):** Erstes serien-vorgefertigtes Hempcrete-Block-Bauprojekt EU
+- **Marks & Spencer Distribution Centre (UK, 2014):** Größtes Hempcrete-Bauprojekt der UK damals — Hempcrete-Wandflächen ~40.000 m²
+- **École Maternelle Issy-les-Moulineaux (FR, 2019):** Öffentliches Kindergarten-Gebäude mit Hempcrete-Hülle (~600 m²)
+
+**CLT-Hochbau:**
+- **Mjøstårnet (Norwegen, 2019):** 18 Stockwerke / 85,4 m Holzhochhaus aus CLT — zeitweise höchster Holzbau der Welt
+- **HoHo Wien (Österreich, 2020):** 24 Stockwerke / 84 m Hybrid-Holzhochbau
+- **Sara Kulturhus (Schweden, 2021):** 20 Stockwerke / 75 m CLT-Hochhaus
+
+**Hanffaser-Dämmung in Großserie:**
+- **Thermo-Hanf (Hock Vertriebs GmbH, DE):** Standard-Produkt im Bau-Großhandel seit 2000er; in Tausenden Bauten verbaut
+- **HempFlax (NL):** EU-weite Belieferung von Hempcrete + Hanffaser-Dämmung an Bauträger
+
+**Hanfbast-Bewehrung (Pilot-Stadium):**
+- **BasEcoCrete (CH/DE Pilot, 2024):** Pilot-Produktion Hanfbast-Bewehrungsstäbe als Alternative zur Stahl-Bewehrung in nicht-hochbelasteten Betonelementen; Reduktion Beton-CO₂ ~64 % im Bauteil
+
+**Wohngesundheits-Belege:**
+- **Bauphysik-Studien Fraunhofer-IBP (Holzkirchen, DE):** Feuchteregulierungs- und Schadstoff-Bindungs-Verhalten von Hempcrete dokumentiert in Bauphysik-Journals (Klimagleichgewicht, geringere Schimmel-Anfälligkeit)
+
+**Politik-/Standard-Pfad:**
+- **EU EPBD-Recast 2024:** verpflichtende Whole-Life-Carbon-Reporting ab 2030 für alle Neubauten ≥1000 m² → schafft den regulatorischen Rahmen für Embodied-Carbon-Limit
+- **Frankreich RE 2020:** Embodied-Carbon-Limit (kgCO₂eq/m²) bereits gesetzlich verankert seit 2022 — Pilotstaat für die J01-Architektur
+
+#### 7. AGENTIC POTENZIAL
+
+**Automatisierbare Kernprozesse:**
+
+LCA-Pflicht-Berechnung pro Bauantrag (α₁=0,88): KI-basierte Embodied-Carbon-Kalkulation aus BIM-Modellen, automatischer Compliance-Check gegen Embodied-Carbon-Limit. Material-Pässe automatisch generieren (α₂=0,90): aus BIM + LCA + Lieferanten-Datenbank, machine-readable für späteren Rückbau und Urban Mining. Cluster-Auslastungs-Optimierung Hempcrete-Vorfertigung (α₃=0,84): Verteilung von Modul-Aufträgen über regionale Hempcrete-Cluster nach Auslastung, Anlieferungs-Logistik und Material-Verfügbarkeit. Sanierungs-Pfad-Empfehlungen (α₄=0,82): ML-basierte Empfehlung des optimalen Sanierungs-Pakets (Hanffaser-Dämmung + Bestands-Fassaden-Sanierung + Heizungs-Umbau) für gegebenen Bestands-Typ und Eigentümer-Budget.
+
+**SEC-J-Optimierung durch KI-Agenten:** S: präzisere Material-Mengen → ~3–5 % weniger Über-Dimensionierung. E: Hempcrete-Cluster-Auslastung von ~60 % auf ~85 % → bessere CO₂-/Energie-Bilanz pro Modul. C: Material-Pässe-Vereinheitlichung → besserer Kreislaufschluss bei späterem Rückbau. J: ML-empfohlene Sanierungs-Pfade reduzieren Komplexität für Eigentümer → senkt Schwelle für Sozialwohnbau-Träger.
+
+**SEC-J-Score-Impact:** Current 0,93 → Agentic 0,95 (+2,2 %)
+
+**Kritische Constraints:** Datenschutz (Gebäude-Eigentums-Daten, Energie-Verbrauchs-Profile als DSGVO-relevant); Material-Pässe-Standardisierung (EU-weit kompatibles Schema; ISO 22057 als Anker); statische Verantwortung bleibt bei Tragwerks-Planer (KI als Assistent, nicht Entscheider bei tragenden Elementen); Bias-Vermeidung bei Sanierungs-Pfad-Empfehlungen (keine sozial-räumliche Diskriminierung).
+
+#### 8. CROSS-REFERENZEN
+
+- **Synergien:** D17 (Hanf-Anbau als Rohstoff-Quelle, mit D17a Mehrfachernte und D17b Faser-Gleis), B07 (Kreislauf-Material für Rückbau und Urban Mining), B08 (Biopolymere für Dichtungen, Folien, Fensterrahmen), B11 (Industrielle Transformation — Hanf-Bio-Reduktionsmittel-Pfad für Rest-Stahl-Bedarf in tragenden Knoten), B13 (Lokale On-Demand-Fertigung von Hempcrete-Modulen), C11–C14 (Erneuerbare Energie als Betriebsenergie, komplementär zu Embodied Carbon), I33 (Kreislauf-Auto — gleiche Kaskaden-Architektur), K01 (Mangroven-Küstenschutz komplementär zu Bestands-Schutz in vulnerablen Küstenregionen)
+- **CANON:** Band 4 (Konstruktion als Domain J, neu integriert v1.5), Band 3 (System-Wandel), Band 5 (Steuerungs-Systeme)
+- **Quelle Lesbare-Form:** geplant in `12_LESBARE_FORM/`-Domain-J-Kapitel (noch nicht geschrieben)
+- **Recherche-Beleg:** STUB-File `applications/kreislauf/Gebaeude/STUB_J01_Kreislauf_Gebaeude.md`; Hanf-Bau-Recherche `studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md` (BasEcoCrete, Hempcrete, Hanffaser-Dämmung); PF-Batch-Audit Rest-Hebel `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md` (SEC-J 0,93); EU EPBD-Recast 2024, FR RE2020 als regulatorische Anker.
+
+#### 9. WARUM EIGENE DOMAIN J (nicht unter B oder D)
+
+- **Andere Akteure:** Baubranche, Architekten, Tragwerks-Planer, Baugenehmigungs-Behörden, EU-Gebäuderichtlinie (EPBD), Wohnungswirtschaft (Genossenschaften, Sozialträger)
+- **Andere Standards:** EN-Normen für Baukonstruktion (Eurocodes), Brandschutz-Klassifikation REI, U-Wert-Berechnung, LCA nach EN 15978
+- **Andere Metriken:** Embodied Carbon (kg CO₂eq/m² Bruttogrundfläche), U-Wert (W/m²K), Whole-Life-Carbon (kg CO₂eq/m²·a), Material-Pass-Compliance
+- **Systemische Eigendynamik:** Die Kaskade (Upstream-Constraint → Right-Sizing → Bio-Material → Carbon Sink) rechtfertigt eine eigene Domain analog zu I — beide Domains nutzen die gleiche architektonische Logik (I33/J01 als Schwester-Hebel), adressieren aber kategorial unterschiedliche Sektoren.
+
+#### 10. MODULARITÄT — BAUSTEINE ALS EINZELHEBEL
+
+Die fünf Bausteine sind **modular einführbar**, nicht physikalisch voneinander abhängig:
+
+- **Baustein 1 (Embodied-Carbon-Limit):** ~30–50 % Embodied-Carbon-Reduktion allein durch Verzicht auf Über-Dimensionierung in Stahl/Beton, unabhängig von Bio-Materialien
+- **Baustein 2 (Hempcrete):** netto-negative Bilanz pro m³ unabhängig von Bewehrungs- und Dämm-Pfad
+- **Baustein 3 (Hanfbast-Bewehrung):** unabhängig einsetzbar in nicht-hochbelasteten Betonelementen, parallel zu konventioneller Stahl-Bewehrung in tragenden Hauptknoten
+- **Baustein 4 (Hanffaser-Dämmung):** vollständig unabhängig — bereits heute Standard-Bauprodukt mit Bestands-Markt
+- **Baustein 5 (Material-Pässe + Urban Mining):** ausschließlich digital-organisatorische Schicht, kann auf jeden Bestand und Neubau aufsetzen — kein physikalischer Eingriff
+
+Die **Bündelung ist ökonomisch und systemisch optimal** (Synergien zwischen Bio-Material-Lieferkette, Tragwerks-Right-Sizing und Material-Pass-Logik), aber **nicht physikalisch zwingend**. Damit ist der Hebel modular einführbar — was die regulatorische und bauwirtschaftliche Hürde drastisch senkt.
+
+#### 11. HISTORISCHER ANKER
+
+**Hanf-Kalk-Mörtel in Renaissance-Frankreich (ab ~16. Jh.):** Hanf-Kalk-Mörtel in historischen Bauten Frankreichs nachgewiesen — strukturell intakt nach 400+ Jahren. Der Wirkstoff (Hanf + Kalk → Bio-Mineralisierung) ist seit Jahrhunderten bekannt und ist kein "Modethema".
+
+**CLT-Wiederentdeckung (Österreich, 1990er):** Massivholzbau als Tragwerks-Konzept wurde vom Ölzeitalter und der Stahlbeton-Standardisierung verdrängt, dann ab Mitte der 1990er in Österreich rekonstruiert (Brettsperrholz / KLH) — seitdem stetiges Wachstum.
+
+Beide Anker zeigen: Die Idee, bio-basiert und langlebig zu bauen, ist alt — sie wurde nur vom Beton-Stahl-Zeitalter überrollt. Die Provolution nimmt diese Spur wieder auf und denkt sie als systemischen Knotenpunkt einer regenerativen Bauwirtschaft zu Ende, mit Hanf als Multi-Use-Material im Zentrum.
+
+#### 12. WAS EXPLIZIT NICHT TEIL DES HEBELS IST
+
+**Hochhäuser > 8 Stockwerke:** im Tragwerks-Kern wird Stahl (oder Hybrid-CLT-Stahl) physikalisch notwendig — eigene App J02 (Hybrid-Hochbau) zukünftig denkbar; J01 fokussiert auf den Mengen-Markt Wohn- und Gewerbebau bis ~8 Stockwerke (Mjøstårnet/HoHo zeigen, dass die Grenze nach oben verschoben werden kann, aber Mehraufwand steigt überproportional).
+
+**Infrastruktur (Brücken, Tunnel, Großspann-Hallen):** andere Lasten und Normen — gehören in eine separate App-Klasse, nicht J01.
+
+**Betriebs-Energie:** bereits in C11–C14 adressiert (Erneuerbare, Dezentrale Versorgung, V2G). J01 adressiert ausschließlich Embodied Carbon.
+
+**Hanf-Biokraftstoff als Heizmaterial:** SEC-J FAILED analog zur I33-Argumentation (Hanf als struktureller C-Speicher höchstwertig; Verbrennen zerstört Speicherwert). Heiz-Energie kommt aus C-Domain (Wärmepumpe + Solar + Bioabfall-Vergasung in Hard-to-Abate-Nischen).
+
+#### 13. OFFENE PUNKTE (Stand 2026-05-29)
+
+- YAML-Eintrag in `canon/data/co2_master.yaml` aktualisiert (STUB-Hinweis entfernt, Domain-J als band4-canonical)
+- Lesefassungs-Kapitel Domain J (Konstruktion) noch nicht geschrieben — Kreislauf-Gebäude als Hauptthema, Hempcrete-Renaissance-Anker, BasEcoCrete-Pilot-Erzählung
+- Quantifizierung präzisieren: globale CO₂-Wirkung (-3,0 Gt/Jahr ist konservative Schätzung; bei vollständiger Bestands-Sanierungs-Skalierung deutlich höher denkbar; alternative Schätzungen reichen bis -5 Gt/Jahr)
+- J02 Hybrid-Hochbau (Hochhäuser > 8 Stockwerke) als eigene App-Klasse spezifizieren
+- Material-Pass-Standardisierung verbindlich definieren (ISO 22057 + EPBD-Anker)
+- Sozialwohnbau-Pilot in DE (mit kommunalem oder Genossenschafts-Träger) als konkrete Skalierungs-Spur definieren
+- Hanfbast-Bewehrung Statik-Zulassung (Eurocode-Erweiterung) als regulatorische Folge-Aufgabe — derzeit Pilot-Produkt-Stadium
+- Cross-Reference zu B11 (Hanf-Bio-Reduktionsmittel) konkretisieren: Tragwerks-Stahl-Reduktion in Hochbau-Knoten als gemeinsame Wertschöpfungs-Spur
+
+### Offene Punkte Domain J (Folge-Sub-Phasen)
+
+- Re-Numbering Kapitel-Nummerierung (Domain J als KAPITEL 11 in Band 4 v4.3, nachfolgende Kapitel umnummerieren — gemeinsam mit Domain-K-Re-Numbering)
+- J02 Hybrid-Hochbau (>8 Stockwerke) als eigene App-Klasse evaluieren
+- J03 Infrastruktur-Bauwerke (Brücken/Tunnel) als eigene Spur evaluieren
+- Material-Pass-Standardisierungs-Pfad festlegen
+- Sozialwohnbau-Pilot-Projekt (DE oder EU) konkret aufsetzen
+- Cross-Domain-Anknüpfung zu B11 (Hanf-Bio-Reduktionsmittel für Tragwerks-Stahl) konkretisieren
+
+---
+
 ## KAPITEL 11: INTEGRATION & SKALIERUNGS-ROADMAP
 
 ### 11.1 System-Architektur
@@ -2605,9 +2801,9 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 
 | Kategorie | Wert |
 |-----------|------|
-| **Hebel gesamt (Band 4 band4-canonical)** | 37 (Stand 2026-05-28 v1.5: +D19 + K01–K04 promoviert; vorher 32) |
-| **Hebel im Kanon insgesamt** | 49 (Domain A–K + Communities; inkl. D19, K01–K04, I34 STUB, J01 STUB, yaml-only, community-integrated) |
-| **Domänen** | 11 (A–I band4-canonical, J STUB Konstruktion, K band4-canonical Marine & Küste v1.5) |
+| **Hebel gesamt (Band 4 band4-canonical)** | 38 (Stand 2026-05-29 v1.5: +D19 + K01–K04 + J01 promoviert; vorher 32) |
+| **Hebel im Kanon insgesamt** | 49 (Domain A–K + Communities; inkl. D19, K01–K04, J01 band4-canonical, I34 STUB, yaml-only, community-integrated) |
+| **Domänen** | 11 (A–I band4-canonical, J band4-canonical Konstruktion v1.5, K band4-canonical Marine & Küste v1.5) |
 | **Durchschnittlicher SEC-J-Score (PS-U 2.0)** | **0,90** (25 individuell + 5 batch; siehe SEC-J-Master-Übersicht in `canon/de/HEBEL_KATALOG_v1.0.md` v1.8) |
 | **Domain-Ø SEC-J (individuell kalkuliert, PR #13)** | B 0,884 · C 0,90 · D 0,894 · **I 0,913** · **J 0,93** · **K 0,913** |
 | **Domain-Ø SEC-J (Batch-bewertet, PR #11 ✅ TRAGFÄHIG)** | A 0,92 · E 0,93 (E21 unter JUSTICE J=0,95) · F 0,90 · G 0,90 · H 0,90 |
