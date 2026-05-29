@@ -207,6 +207,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 17. **PF-Batch-Audit Domains A/E/F/G/H ✅ TRAGFÄHIG (2026-05-28 spät-Nacht)** — 5. konvergenter externer Audit der Sitzung. Bestätigt das Batch-Bündel der 19 Hebel aus Governance, Bildung/Soziales, Innovation, Monitoring und Meta-Framework mit allen 8 E-Ebenen ✅ (inkl. alle 4 kritischen). Wichtige methodische Bestätigung: (a) die heute Abend vollzogene Spec-Auflösung (Drift-Item #16) wird als "Musterbeispiel für E3" gewürdigt; (b) die Domain-Architektur als Enabler-Schicht ist systemisch unverzichtbar; (c) **die Batch-Bewertung (Domain-Ø-J statt Einzelhebel-J) ist methodisch konsistent** — Einzelhebel-J-Erweiterung künftiger Folge-Sub-Phasen wird durch die Tragfähigkeit der Batch-Bewertung **nicht** zur Pflicht, sondern zur sukzessiven Vertiefung. Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_DOMAINS_AEFGH_2026-05-28.md`.
 
+18. **PF-Batch-Audit Rest-Hebel I/J/K/B SEC-J berechnet (2026-05-29 mittags)** — 6. konvergenter externer Audit nach Gem-Knowledge-Update (2026-05-28 23:59). PS-U:STANDARD-Batch berechnet SEC-J für I33–I36, J01, K01–K04, B11–B13 (12 Hebel) mit den korrekten Repo-Definitionen. Verdict: **TRAGFÄHIG mit punktuellen Auflagen** — kein J<0,50-Veto; 2 neue Warnschwellen: **B11 J=0,78** (Industrielle H2-Transformation — Just-Transition-Auflage) und **B12 J=0,75** (Nachhaltige Biomasse — Tank-oder-Teller / FPIC-Auflage). I33 Kreislauf-Auto, J01 Kreislauf-Gebäude und K01 Mangroven erreichen SEC-J 0,93 (Spitzenwerte). Konsequenz: **individual_calculated wächst von 13 auf 25 Hebel**; Domain-Ø-J neu: I 0,913 · J 0,93 · K 0,913 · B 0,884 (Vollkalkulation Domain B). Audit-Bericht: `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md`. Daten in `canon/data/impact_master.yaml` v2.4 `sec_j_scores`.
+
 ---
 
 ## SEC-J-Master-Übersicht (PS-U 2.0)
@@ -239,9 +241,28 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 | **G** Monitoring | 0,90 | 0,90 | |
 | **H** Meta-Framework | 0,90 | 0,90 | H31 Internalisierung Externalitäten |
 
-**Gesamt-Ø SEC-J (Rest-Portfolio): 0,91** · **J-Veto-Auslösungen: 0** · **J-Warnschwellen <0,80: 2** (B09, C12)
+**Gesamt-Ø SEC-J: 0,90** (25 individuell + 5 batch) · **J-Veto-Auslösungen: 0** · **J-Warnschwellen <0,80: 4** (B09 J=0,72 · C12 J=0,82 · B11 J=0,78 · B12 J=0,75)
 
-**Pending (J-Berechnung ausstehend):** I33–I36, J01, K01–K04, B11, B12, B13, F22, F27, G25, G26, G30, H33, E23, C-2026-001/003/004/007/008. Sowie Einzelhebel-Werte innerhalb der Batch-bewerteten Domains A, E, F, G, H.
+### NEU PR #13: Domain I/J/K + Domain B vollständig (PS-U 2.0 STANDARD, 2026-05-29)
+
+| ID | S | E | C | J | SEC-J | Note |
+|---|:---:|:---:|:---:|:---:|:---:|---|
+| **I33** Kreislauf-Auto | 0,95 | 0,98 | 0,90 | 0,88 | **0,93** | TCO-Demokratisierung; Reparierbarkeit |
+| **I34** Kreislauf-LNF | 0,88 | 0,90 | 1,00 | 0,85 | **0,92** | Schutz Handwerk/Kleinflotten vor Entwertung |
+| **I35** Aktive Geschwindigkeits-Regulation | 0,90 | 0,95 | 0,90 | 0,82 | **0,90** | J4 vulnerable Verkehrsteilnehmer (Fußgänger/Radfahrer/Kinder) |
+| **I36** Kreislauf-Schwere-Nfz | 0,92 | 0,88 | 0,90 | 0,88 | **0,90** | Leistbarer ÖPNV-Ausbau für finanzschwache Kommunen |
+| **J01** Kreislauf-Gebäude | 0,90 | 0,92 | 1,00 | 0,85 | **0,93** | Urban Mining → leistbarer Wohnraum |
+| **K01** Mangroven | 0,95 | 0,90 | 0,95 | 0,92 | **0,93** | Küstenschutz Globaler Süden; Fischerei-Einkommen |
+| **K02** Seegras | 0,92 | 0,88 | 0,95 | 0,90 | **0,92** | Maritime Kinderstuben → Ernährungssouveränität |
+| **K03** Kelp | 0,90 | 0,92 | 0,90 | 0,88 | **0,90** | Dezentrale Aquakultur-Jobs |
+| **K04** Salzmarschen | 0,90 | 0,85 | 0,95 | 0,90 | **0,90** | Hochwasserschutz Küsteninfrastruktur |
+| **B11** Industrielle Transformation | 0,95 | 0,75 | 0,90 | **0,78** | **0,86** | ⚠️ Warnschwelle — Just-Transition-Auflage |
+| **B12** Nachhaltige Biomasse | 0,85 | 0,88 | 0,80 | **0,75** | **0,83** | ⚠️ Warnschwelle — FPIC + Anbauflächen-Ausschluss |
+| **B13** Lokale On-Demand-Fertigung | 0,88 | 0,90 | 0,95 | 0,92 | **0,91** | Demokratisiert Produktionsmittel |
+
+**Domain-Ø SEC-J (individuell):** B 0,884 (vollständig 7 Hebel) · C 0,90 · D 0,894 · I 0,913 · J 0,93 · K 0,913
+
+**Pending:** Einzelhebel-Werte innerhalb A/E/F/G/H (Batch tragfähig laut PR #11), F22/F27/G25/G26/G30/H33/E23 (AUTO_INTEGRATE Kategorien A/B), Communities C-2026-001/003/004/007/008
 
 **Formel STANDARD:** `SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J` (PS-U 2.0, für normale Maßnahmen-Audits)
 **Formel JUSTICE:** `SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J` (PS-U 2.0, für Gerechtigkeits-fokussierte Audits, z.B. E21)
@@ -265,6 +286,16 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.8 (2026-05-29 mittags):**
+- ✅ **PF-Batch-Audit Rest-Hebel I/J/K/B** (Drift-Item #18): 6. konvergenter externer Audit nach Gem-Knowledge-Update. SEC-J für 12 Hebel kalkuliert (I33–I36, J01, K01–K04, B11–B13).
+- impact_master.yaml v2.3 → v2.4: individual_calculated 13 → 25 Hebel
+- 2 neue Warnschwellen J<0.80: B11 (Just-Transition) + B12 (FPIC) mit Auflagen in implementation_constraints
+- HEBEL_KATALOG SEC-J-Master-Übersicht erweitert um Domain I/J/K + vervollständigte Domain B (jetzt alle 7 Hebel individuell)
+- Domain-Ø-J neu: I 0,913 · J 0,93 · K 0,913 · B 0,884 (volle 7 Hebel)
+- Gesamt-Ø SEC-J: 0,91 → 0,90 (durch 12 neue Werte, B11 0,86 + B12 0,83 ziehen leicht nach unten)
+- Pending-Liste reduziert auf A/E/F/G/H-Einzelhebel + AUTO_INTEGRATE-Kategorien + Communities
+- Band 4 Header für 6 voll-band4-canonical Hebel umgestellt (B13, I33, K01-K04)
 
 **v1.7 (2026-05-28, spät-Nacht):**
 - ✅ **Spec-Konflikt SECJ_SPEC v1.0 vs PS-U 2.0 aufgelöst** (Drift-Item #16): SECJ_SPEC_v1.0.md als DEPRECATED markiert; `06_framework_extensions_v2.0_SECJ.md` ist autoritativ
