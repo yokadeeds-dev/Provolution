@@ -223,7 +223,7 @@ C11 (Erneuerbare) - Batterie-Technologie verbessert sich
 **Frequenz:** Quartalsweise Review aller n kanonischen Hebel
 
 **Spezifischer Prozess Portfolio-Benchmark (E-II):**
-Die Kalibrierung des `cost_rate_benchmark` aus der E-II-Formel (Kapitel 2.1) ist ein eigenständiger quartalsweiser Prozess, dokumentiert in [`20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`](../20_CANON/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md). Der jeweils aktuelle Benchmark wird in `20_CANON/data/impact_master.yaml` unter `portfolio_benchmark.current` geführt.
+Die Kalibrierung des `cost_rate_benchmark` aus der E-II-Formel (Kapitel 2.1) ist ein eigenständiger quartalsweiser Prozess, dokumentiert in `canon/docs/RUNBOOK_PORTFOLIO_BENCHMARK.md`. Der jeweils aktuelle Benchmark wird in `canon/data/impact_master.yaml` unter `portfolio_benchmark.current` geführt.
 
 ---
 

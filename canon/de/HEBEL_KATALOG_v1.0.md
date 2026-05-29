@@ -11,7 +11,7 @@
 
 Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst die SET-Drift zwischen drei vorigen Quellen auf (Band 4 v4.2 = 30 Apps, YAML co2_master.yaml = 35 Einträge, MASTER_INDEX_ANWENDUNGEN.md = 40 Einträge in 17 IDs divergent).
 
-**Architektur-Entscheidung (Option c aus DEC_2026-05-09):** Hebel-Katalog ist die SSoT für `was IST ein Hebel`. Detail-Inhalte bleiben in Band 4 v4.2 (kanonische Beschreibungen) bzw. STUB-Files; CO2-Werte bleiben in `20_CANON/data/co2_master.yaml`. Der Katalog **referenziert** beide, **dupliziert nicht**.
+**Architektur-Entscheidung (Option c aus DEC_2026-05-09):** Hebel-Katalog ist die SSoT für `was IST ein Hebel`. Detail-Inhalte bleiben in Band 4 v4.2 (kanonische Beschreibungen) bzw. STUB-Files; CO2-Werte bleiben in `canon/data/co2_master.yaml`. Der Katalog **referenziert** beide, **dupliziert nicht**.
 
 ---
 
@@ -143,11 +143,11 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 | ID | Name (Registry) | Status | CO2 Gt/yr | Decision Date | Quelle |
 |---|---|---|---:|---|---|
-| C-2026-001 | Photovoltaik-basierte Wasserdesinfektion | community-integration | n/a | 2026-01-22 | `06_CANON/04_Band4_Community_Integrations.md` |
-| C-2026-003 | Dezentrale Regenwasser-Speicherung (Silos) | community-integration | n/a | 2026-01-22 | `06_CANON/04_Band4_Community_Integrations.md` |
-| C-2026-004 | Regenwasser-Speicherung mit Schwimmersystemen | community-integration | n/a | 2026-01-22 | `06_CANON/04_Band4_Community_Integrations.md` |
-| C-2026-007 | Globale Energie-Effizienz als Querschnittsprinzip | community-integration | 0.0 (overlap C11-C14) | 2026-04-18 | `06_CANON/04_Band4_Community_Integrations.md` |
-| C-2026-008 | Präzisionsfermentation + Hanf-Kaskade | community-integration | -3.0 | 2026-04-18 | `06_CANON/04_Band4_Community_Integrations.md` |
+| C-2026-001 | Photovoltaik-basierte Wasserdesinfektion | community-integration | n/a | 2026-01-22 | `canon/de/04_Band4_Community_Integrations.md` |
+| C-2026-003 | Dezentrale Regenwasser-Speicherung (Silos) | community-integration | n/a | 2026-01-22 | `canon/de/04_Band4_Community_Integrations.md` |
+| C-2026-004 | Regenwasser-Speicherung mit Schwimmersystemen | community-integration | n/a | 2026-01-22 | `canon/de/04_Band4_Community_Integrations.md` |
+| C-2026-007 | Globale Energie-Effizienz als Querschnittsprinzip | community-integration | 0.0 (overlap C11-C14) | 2026-04-18 | `canon/de/04_Band4_Community_Integrations.md` |
+| C-2026-008 | Präzisionsfermentation + Hanf-Kaskade | community-integration | -3.0 | 2026-04-18 | `canon/de/04_Band4_Community_Integrations.md` |
 
 ---
 
@@ -180,7 +180,7 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 6. **STUB-Hebel (I33, I34, J01)** — Aufnahme in Band 4 v4.3 als eigene Sub-Phase, basierend auf STUB-Files in `Kreislauf-Auto/`, `Kreislauf-LNF/`, `Kreislauf-Gebaeude/`.
 
-7. **B13 YAML-Eintrag ausstehend (neu 2026-05-27)** — `LOKALE ON-DEMAND-FERTIGUNG` ist in Band 4 v4.2 voll ausgeschrieben (band4-canonical), aber noch nicht in `20_CANON/data/co2_master.yaml` ergänzt. CO2-Wert: -0.2 bis -0.5 Gt/Jahr (Bandbreite, konservativ).
+7. **B13 YAML-Eintrag ausstehend (neu 2026-05-27)** — `LOKALE ON-DEMAND-FERTIGUNG` ist in Band 4 v4.2 voll ausgeschrieben (band4-canonical), aber noch nicht in `canon/data/co2_master.yaml` ergänzt. CO2-Wert: -0.2 bis -0.5 Gt/Jahr (Bandbreite, konservativ).
 
 8. **D17a Multiplikator-Aspekt (neu 2026-05-27)** — `Mehrfachernte` ist als Sektion 9 innerhalb des D17-Eintrags dokumentiert, nicht als eigener Hebel. Falls künftig als eigenständiger Slot benötigt, ID D17a reserviert. SEC-Implikation: positive S/E, bedingt C (Boden-Regenerations-Trade-off).
 
@@ -279,10 +279,10 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 
 ## Cross-References
 
-- **Band 4 v4.2 (Detail-Beschreibungen):** `06_CANON/04_Band4_Anwendungen_v4.2.md`
-- **YAML CO2 SSOT:** `20_CANON/data/co2_master.yaml`
+- **Band 4 v4.2 (Detail-Beschreibungen):** `canon/de/04_Band4_Anwendungen_v4.2.md`
+- **YAML CO2 SSOT:** `canon/data/co2_master.yaml`
 - **MASTER_INDEX (Übersichts-Tabelle):** `08_INDEX/MASTER_INDEX_ANWENDUNGEN.md` (Sync gegen diesen Katalog in Folge-Commit)
-- **Community-Beschreibungen:** `06_CANON/04_Band4_Community_Integrations.md`
+- **Community-Beschreibungen:** `canon/de/04_Band4_Community_Integrations.md`
 - **Community-Registry (CSV):** `08_INDEX/community_registry.csv`
 - **STUB-Files:** `Kreislauf-Auto/Konzept_Kreislauf-Auto.md`, `Kreislauf-LNF/STUB_I34_Kreislauf_LNF.md`, `Kreislauf-Gebaeude/STUB_J01_Kreislauf_Gebaeude.md`
 - **Decision-Doc:** `01_STRATEGIE/DECISIONS/DEC_2026-05-09_hebel_set_canonical.md`
