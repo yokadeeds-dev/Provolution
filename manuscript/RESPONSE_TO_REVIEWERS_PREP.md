@@ -31,8 +31,8 @@
 
 ## 5. „Falsifizierbarkeit — oder nur innere Konsistenz?"
 
-**Vorbereitete Antwort:** Eingeräumt: innere Konsistenz ist **nicht** dasselbe wie ein prädiktiver Test. Das J-Veto ist konkret operationalisiert (harte Sperrschwelle). Eine erste **retrospektive Out-of-sample-Probe** liegt jetzt vor (`studies/OUT_OF_SAMPLE_2026-05-30/`): die deutsche PKW-Maut wird auf dem Ex-ante-Stand mit SEC-J = 0,19 (J-Veto auf C+J) bewertet — genau die Bruchstelle, die der EuGH 2019 (Diskriminierung, Art. 18 AEUV) bestätigte; ein diskriminierungsfreier Kontrast besteht (0,78). Offen ausgewiesen: Hindsight-/Single-Rater-Risiko, N=2, retrospektive Anwendung (keine echte 2019-Prognose). Ein powered/verblindeter/prä-registrierter Test bleibt die nächste Stufe.
-**Status:** ✅ erste Probe (`studies/OUT_OF_SAMPLE_2026-05-30/`) · ⏳ powered/verblindet/prä-registriert offen · **Beleg:** LIMITATIONS #9, #13.
+**Vorbereitete Antwort:** Eingeräumt: innere Konsistenz ist **nicht** dasselbe wie ein prädiktiver Test. Das J-Veto ist konkret operationalisiert (harte Sperrschwelle). Eine erste **retrospektive Out-of-sample-Probe** liegt jetzt vor (`studies/OUT_OF_SAMPLE_2026-05-30/`, N=3, volle Skala): PKW-Maut SEC-J = 0,19 (J-Veto auf C+J → vom EuGH 2019 als diskriminierend gekippt, Art. 18 AEUV) vs. diskriminierungsfreies ASFINAG-System 0,84 (durabel) vs. Währungsreform 1948 als Positiv-Pol 0,94. SEC-J trennt scharf — Diskriminator C/J, nicht S/E; inkl. Inter-Fall-J-Konsistenz-Begründung (0,15-Veto vs. 0,85). Offen ausgewiesen: Hindsight-/Single-Rater-Risiko, N=3, retrospektive Anwendung, framework-neutrale Fälle ≠ Climate-Lever-Feldtest.
+**Status:** ✅ erste Probe (`studies/OUT_OF_SAMPLE_2026-05-30/`) · ⏳ powered/verblindet/prä-registriert + Climate-Lever-Feldtest offen · **Beleg:** LIMITATIONS #9, #13.
 
 ## 6. „Abgrenzung zu MCDA / IAM / Robust Decision Making?"
 
@@ -66,7 +66,7 @@
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
 1. ~~**§8.2 YAML-Domain-Zuordnungs-Bereinigung**~~ ✅ **erledigt 2026-05-30** — Befund: Tag-Drift war in `co2_master` v1.3 (2026-05-28) bereits bereinigt, nur Doku stale; nachgezogen (HEBEL_KATALOG v1.12). Double-Counting/Overlap bereits auf Domain-Total-Ebene sauber. Rest: F23/F24-Wert-Ownership (total-neutral) — #4
 2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4 ⏳
-3. **Out-of-sample-Test** — ✅ **erste Probe 2026-05-30** (`studies/OUT_OF_SAMPLE_2026-05-30/`, PKW-Maut-Konkordanz, N=2 Proof-of-Concept); ⏳ powered/verblindet/prä-registriert offen — #5
+3. **Out-of-sample-Test** — ✅ **erste Probe 2026-05-30** (`studies/OUT_OF_SAMPLE_2026-05-30/`, N=3, Skala 0,19–0,94: PKW-Maut ↔ ASFINAG ↔ Währungsreform); ⏳ powered/verblindet/prä-registriert offen — #5
 4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
 5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
