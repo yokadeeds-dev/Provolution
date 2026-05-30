@@ -83,7 +83,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/METHOD_POSITIONING.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Einordnung ggü. MCDA/IAM/RDM (LIMITATIONS #14) |
 | `canon/LEVER_SELECTION.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Hebel-Aufnahme-/Ausschluss-Kriterien (LIMITATIONS #15) |
 | `studies/SENSITIVITY_2026-05-30/` | ✅ CURRENT — Gewichts-Sensitivitätsanalyse (reproduzierbar, seed=42); adressiert LIMITATIONS #5/#12 |
-| `studies/OUT_OF_SAMPLE_2026-05-30/` | ✅ CURRENT (Proof-of-Concept, N=2) — retrospektive Out-of-sample-Konkordanz (PKW-Maut ↔ Kontrast); adressiert LIMITATIONS #13 |
+| `studies/OUT_OF_SAMPLE_2026-05-30/` | ✅ CURRENT (Proof-of-Concept, N=3, Skala 0,19–0,94) — retrospektive Out-of-sample-Konkordanz (PKW-Maut ↔ ASFINAG ↔ Währungsreform 1948); adressiert LIMITATIONS #13 |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
