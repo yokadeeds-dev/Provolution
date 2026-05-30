@@ -28,7 +28,7 @@ meta:
       - "PR #14: B11 Definitions-Korrektur — Hanf-Bio-Reduktionsmittel-Spur war in PR #13 verloren gegangen"
       - "User-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md"
       - "B11 in sec_j_scores.individual_calculated als 'pending_re_audit' markiert mit legacy_values_pr13 + expected_corrected_values"
-      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/B11_HANF_KORREKTUR_2026-05-29.md"
+      - "Audit-Bericht: studies/AI_AUDIT_2026-05-28/B11_HANF_KORREKTUR_2026-05-29.md"
       - "implementation_constraints.B11 vollständig umgeschrieben — Drop-in-Pfad als primär, H2 als Alternative"
       - "Erwartete SEC-J nach Re-Audit: ~0.91 (statt 0.86), J ~0.90 (statt 0.78) — Drop-in eliminiert Just-Transition-Problem"
     v2_4_2026-05-29:
@@ -38,7 +38,7 @@ meta:
       - "Implementation_constraints erweitert um B11 (Standortgarantien/Just-Transition) und B12 (FPIC + Anbauflächen-Ausschluss)"
       - "Pending-Liste reorganisiert: nur noch A/E/F/G/H-Einzelhebel + F22/G28/G29 + AUTO_INTEGRATE + Communities"
       - "sec_j_scores.meta v1.1 → v1.2 mit erweiterten audit_reports (3 statt 1)"
-      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
+      - "Audit-Bericht: studies/AI_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
       - "Domain-Ø SEC-J individuell: B 0.884 · C 0.90 · D 0.894 · I 0.913 · J 0.93 · K 0.913"
       - "Gesamt-Ø SEC-J: 0.91 → 0.90"
     v2_3_2026-05-28:
@@ -53,7 +53,7 @@ meta:
       - "Pending: I33-I36, J01, K01-K04, B11/B12/B13, F22/F27/G25/G26/G30/H33/E23, C-2026-*"
       - "Gesamt-Ø SEC-J = 0.91; kein J<0.50-Veto; B09 J=0.72 + C12 J=0.82 als Warnschwellen mit Implementierungs-Auflagen"
       - "Audit-Quelle: User-PF-Sitzung 2026-05-28 (PS-U:STANDARD + PS-U:JUSTICE in Gemini)"
-      - "Audit-Bericht: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+      - "Audit-Bericht: studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
     v2_1_2026-05-28:
       - "Sync mit co2_master.yaml v1.3 (PR #4 vom 2026-05-28): reduktion_hart -58.0 → -58.6"
       - "B09/B10 Drift-Resolution: Domain B total -15.8 → -14.6"
@@ -569,7 +569,7 @@ transformation_pathways:
 # ============================================================================
 # TEIL 6.5: SEC-J SCORES (PS-U 2.0 SEC-J Nachrüstung 2026-05-28)
 # ============================================================================
-# Quelle: studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md
+# Quelle: studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md
 # Methodik: canon/de/06_framework_extensions_v2.0_SECJ.md (autoritativ seit 2026-05-10)
 # Formel STANDARD: SEC-J(m) = 0,30·S + 0,25·E + 0,30·C + 0,15·J
 # Formel JUSTICE:  SEC-J(m, justice) = 0,25·S + 0,15·E + 0,20·C + 0,40·J
@@ -584,9 +584,9 @@ sec_j_scores:
     last_updated: "2026-05-29"
     audit_source: "User-PF-Sitzungen 2026-05-28 (Initial-Nachrüstung B/C/D + Batch A/E/F/G/H) + 2026-05-29 (Rest-Hebel I/J/K/B)"
     audit_reports:
-      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
-      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_DOMAINS_AEFGH_2026-05-28.md"
-      - "studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
+      - "studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
+      - "studies/AI_AUDIT_2026-05-28/PF_BATCH_DOMAINS_AEFGH_2026-05-28.md"
+      - "studies/AI_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md"
     spec_reference: "canon/de/06_framework_extensions_v2.0_SECJ.md (PS-U 2.0 Extension, autoritativ seit 2026-05-10)"
     formula_standard: "SEC-J(m) = 0.30*S + 0.25*E + 0.30*C + 0.15*J"
     formula_justice: "SEC-J(m, justice) = 0.25*S + 0.15*E + 0.20*C + 0.40*J"

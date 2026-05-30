@@ -2616,7 +2616,7 @@ LCA-Pflicht-Berechnung pro Bauantrag (α₁=0,88): KI-basierte Embodied-Carbon-K
 - **Synergien:** D17 (Hanf-Anbau als Rohstoff-Quelle, mit D17a Mehrfachernte und D17b Faser-Gleis), B07 (Kreislauf-Material für Rückbau und Urban Mining), B08 (Biopolymere für Dichtungen, Folien, Fensterrahmen), B11 (Industrielle Transformation — Hanf-Bio-Reduktionsmittel-Pfad für Rest-Stahl-Bedarf in tragenden Knoten), B13 (Lokale On-Demand-Fertigung von Hempcrete-Modulen), C11–C14 (Erneuerbare Energie als Betriebsenergie, komplementär zu Embodied Carbon), I33 (Kreislauf-Auto — gleiche Kaskaden-Architektur), K01 (Mangroven-Küstenschutz komplementär zu Bestands-Schutz in vulnerablen Küstenregionen)
 - **CANON:** Band 4 (Konstruktion als Domain J, neu integriert v1.5), Band 3 (System-Wandel), Band 5 (Steuerungs-Systeme)
 - **Quelle Lesbare-Form:** geplant in `12_LESBARE_FORM/`-Domain-J-Kapitel (noch nicht geschrieben)
-- **Recherche-Beleg:** STUB-File `applications/kreislauf/Gebaeude/STUB_J01_Kreislauf_Gebaeude.md`; Hanf-Bau-Recherche `studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md` (BasEcoCrete, Hempcrete, Hanffaser-Dämmung); PF-Batch-Audit Rest-Hebel `studies/EXTERNAL_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md` (SEC-J 0,93); EU EPBD-Recast 2024, FR RE2020 als regulatorische Anker.
+- **Recherche-Beleg:** STUB-File `applications/kreislauf/Gebaeude/STUB_J01_Kreislauf_Gebaeude.md`; Hanf-Bau-Recherche `studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md` (BasEcoCrete, Hempcrete, Hanffaser-Dämmung); PF-Batch-Audit Rest-Hebel `studies/AI_AUDIT_2026-05-28/PF_BATCH_RESTHEBEL_SEC-J_2026-05-29.md` (SEC-J 0,93); EU EPBD-Recast 2024, FR RE2020 als regulatorische Anker.
 
 #### 9. WARUM EIGENE DOMAIN J (nicht unter B oder D)
 
