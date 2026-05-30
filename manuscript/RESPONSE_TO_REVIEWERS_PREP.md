@@ -16,8 +16,8 @@
 
 ## 2. „Begründen Sie die SEC-J-Gewichte. Sensitivitätsanalyse?"
 
-**Vorbereitete Antwort:** Die Gewichte (0,30·S + 0,25·E + 0,30·C + 0,15·J) sind eine **explizite, dokumentierte und diskutierbare Wertentscheidung** (`framework_extensions_v2.0_SECJ.md`), kein verstecktes Axiom. Entscheidend: **J wirkt primär über das harte Veto (J<0,50 → SEC-J=null), nicht über sein Komposit-Gewicht.** Für gerechtigkeits-primäre Maßnahmen existiert der JUSTICE-Modus (J=0,40). Grobe Robustheit ist belegt (±20 % Parametervariation → <±15 % Gesamtwert); eine vollständige Sensitivitätsanalyse über plausible Gewichtungsbereiche (+ Abgleich AHP/SMART) folgt als Anhang.
-**Status:** ✅ dokumentiert · 📋 Sensitivitäts-Anhang · **Beleg:** LIMITATIONS #5, #12.
+**Vorbereitete Antwort:** Die Gewichte (0,30·S + 0,25·E + 0,30·C + 0,15·J) sind eine **explizite, dokumentierte und diskutierbare Wertentscheidung** (`framework_extensions_v2.0_SECJ.md`), kein verstecktes Axiom — und sie sind **nicht ergebnistreibend**: die Gewichts-Sensitivitätsanalyse (`studies/SENSITIVITY_2026-05-30/`, 20.000 Monte-Carlo-Gewichtsvektoren, seed=42) zeigt, dass in der plausiblen Nachbarschaft (±0,10) der Ø SEC-J um < 0,5 Prozentpunkte schwankt, **kein** Verdict wechselt und das Ranking stabil bleibt (Spearman ρ ≥ 0,94). Entscheidend: **J wirkt primär über das harte Veto (J<0,50 → SEC-J=null), nicht über sein Komposit-Gewicht** — quantitativ bestätigt: min(J)=0,72 → 0 Vetos unter *jeder* Gewichtung. Die vier gewichtssensiblen Hebel sind exakt die bereits geflaggten Grenzfälle (B09/B11/B12/D19). Für gerechtigkeits-primäre Maßnahmen existiert der JUSTICE-Modus (J=0,40).
+**Status:** ✅ Sensitivitätsanalyse durchgeführt (`studies/SENSITIVITY_2026-05-30/`) · 📋 AHP/SMART-Elicitation-Abgleich + Input-Sensitivität (≠ Gewichts-S.) offen · **Beleg:** LIMITATIONS #5, #12.
 
 ## 3. „Wo ist die Justice-Dimension? Das Manuskript sagt ‚under development'."
 
