@@ -86,6 +86,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
 | `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ enthält Pre-SEC-J-Formel — nur mit Corrigenda-Annotation zitieren |
 | `manuscript/JOURNAL_SUBMISSION_PACKAGE.md` | ⚠️ Ziel-Journal revidiert (Nature → ESG) |
+| `manuscript/RESPONSE_TO_REVIEWERS_PREP.md` | 🛠️ INTERN — Vorbereitungs-Doku (nicht Teil der Einreichung); konsolidiert wahrscheinliche Reviewer-Einwände + Antworten |
 
 ---
 
