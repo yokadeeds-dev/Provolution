@@ -83,7 +83,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/METHOD_POSITIONING.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Einordnung ggü. MCDA/IAM/RDM (LIMITATIONS #14) |
 | `canon/LEVER_SELECTION.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Hebel-Aufnahme-/Ausschluss-Kriterien (LIMITATIONS #15) |
 | `studies/SENSITIVITY_2026-05-30/` | ✅ CURRENT — Gewichts-Sensitivitätsanalyse (reproduzierbar, seed=42); adressiert LIMITATIONS #5/#12 |
-| `studies/OUT_OF_SAMPLE_2026-05-30/` | ✅ CURRENT (Proof-of-Concept, N=3, Skala 0,19–0,94) — retrospektive Out-of-sample-Konkordanz (PKW-Maut ↔ ASFINAG ↔ Währungsreform 1948); adressiert LIMITATIONS #13 |
+| `studies/OUT_OF_SAMPLE_2026-05-30/` | ✅ CURRENT (Proof-of-Concept, N=6, Skala 0,085–0,94) — retrospektive Out-of-sample-Konkordanz + Failure-Mode-Lokalisierung (Großer Sprung · PKW-Maut · Open-House-Masken · ASFINAG · Apollo · Währungsreform); adressiert LIMITATIONS #13 |
 | `studies/CONSISTENCY_MATRIX_2026-05-30/` | ✅ CURRENT (Erst-Entwurf) — 44×44 Hebel-Konsistenz-/Konflikt-Matrix (121 Kanten, C-Achse auditierbar); adressiert LIMITATIONS #16 |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
