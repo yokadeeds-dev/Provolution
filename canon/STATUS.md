@@ -80,6 +80,8 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/de/04_Band4_Anwendungen_v4.2.md` | ✅ CURRENT — Anwendungs-Kanon |
 | `canon/de/HEBEL_KATALOG_v1.0.md` (v1.10) | ✅ CURRENT — Hebel-Index |
 | `canon/de/06_framework_extensions_v2.0_SECJ.md` | ✅ CURRENT — autoritative SEC-J-Spec |
+| `canon/METHOD_POSITIONING.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Einordnung ggü. MCDA/IAM/RDM (LIMITATIONS #14) |
+| `canon/LEVER_SELECTION.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Hebel-Aufnahme-/Ausschluss-Kriterien (LIMITATIONS #15) |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
