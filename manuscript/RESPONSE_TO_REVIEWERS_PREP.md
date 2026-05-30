@@ -31,8 +31,8 @@
 
 ## 5. „Falsifizierbarkeit — oder nur innere Konsistenz?"
 
-**Vorbereitete Antwort:** Eingeräumt: innere Konsistenz ist **nicht** dasselbe wie ein prädiktiver Test. Das J-Veto ist konkret operationalisiert (harte Sperrschwelle), aber ein echter **Out-of-sample-Vorhersagetest** (sagt SEC-J reale Erfolge/Misserfolge vorher? scheitert ein hoch bewerteter Hebel im Feld?) ist noch nicht definiert. Das ist offen benannt und als nächste Falsifizierungs-Stufe priorisiert.
-**Status:** ⏳ offen · **Beleg:** LIMITATIONS #9, #13.
+**Vorbereitete Antwort:** Eingeräumt: innere Konsistenz ist **nicht** dasselbe wie ein prädiktiver Test. Das J-Veto ist konkret operationalisiert (harte Sperrschwelle). Eine erste **retrospektive Out-of-sample-Probe** liegt jetzt vor (`studies/OUT_OF_SAMPLE_2026-05-30/`): die deutsche PKW-Maut wird auf dem Ex-ante-Stand mit SEC-J = 0,19 (J-Veto auf C+J) bewertet — genau die Bruchstelle, die der EuGH 2019 (Diskriminierung, Art. 18 AEUV) bestätigte; ein diskriminierungsfreier Kontrast besteht (0,78). Offen ausgewiesen: Hindsight-/Single-Rater-Risiko, N=2, retrospektive Anwendung (keine echte 2019-Prognose). Ein powered/verblindeter/prä-registrierter Test bleibt die nächste Stufe.
+**Status:** ✅ erste Probe (`studies/OUT_OF_SAMPLE_2026-05-30/`) · ⏳ powered/verblindet/prä-registriert offen · **Beleg:** LIMITATIONS #9, #13.
 
 ## 6. „Abgrenzung zu MCDA / IAM / Robust Decision Making?"
 
@@ -66,8 +66,8 @@
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
 1. ~~**§8.2 YAML-Domain-Zuordnungs-Bereinigung**~~ ✅ **erledigt 2026-05-30** — Befund: Tag-Drift war in `co2_master` v1.3 (2026-05-28) bereits bereinigt, nur Doku stale; nachgezogen (HEBEL_KATALOG v1.12). Double-Counting/Overlap bereits auf Domain-Total-Ebene sauber. Rest: F23/F24-Wert-Ownership (total-neutral) — #4
 2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4 ⏳
-3. **Out-of-sample-Test definieren** — #5 ⏳
+3. **Out-of-sample-Test** — ✅ **erste Probe 2026-05-30** (`studies/OUT_OF_SAMPLE_2026-05-30/`, PKW-Maut-Konkordanz, N=2 Proof-of-Concept); ⏳ powered/verblindet/prä-registriert offen — #5
 4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
 5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
-Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`) und §8.2 (Item 1 — war stale-Doku, kein offener Daten-Punkt). **Verbleibende review-ready-Gates:** die datengetriebenen ⏳-Punkte **2–3** — Sankey + 49×49-Konflikt-Matrix (Q1/Q4) und Out-of-sample-Test (Q5).
+Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`), §8.2 (Item 1 — war stale-Doku) und der Out-of-sample-Test (Item 3, Q5 — erste Probe `studies/OUT_OF_SAMPLE_2026-05-30/`; powered/verblindet bleibt offen). **Verbleibendes großes review-ready-Gate:** nur noch Item **2** — Sankey + 49×49-Konflikt-Matrix (Q1/Q4).
