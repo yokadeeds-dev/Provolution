@@ -23,6 +23,8 @@ Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls �
 
 **Entscheidung 2026-05-29 (User):** PS-U 2.0 STANDARD ist die kanonische Provolution-Gewichtung. Band 5 (`canon/de/05_Band5_*`, v3.1) trug noch die v1.0-Gewichte und wurde mit PR #18 auf STANDARD reconciled (Formel, Berechnungsbeispiele, Priorisierungs-Matrix; Legacy-3-Achsen-Tabellen als solche markiert). **J wirkt primär über das Veto (J<0,50), nicht über sein Komposit-Gewicht (0,15)** — geringes Gewicht ≠ Abwertung.
 
+**J-Veto-Geltung (Klarstellung 2026-05-30, User):** Im **operativen Betrieb** gilt der J<0,50-Veto **universell** (beide Modi) — das ist die Provolution-**Anwendungsregel** (Band 1 `J_min = 0,50` + Antifragilitäts-Prinzip), gelegt über die generische PS-U-Engine. Die Engine-Defaults in `06_framework_extensions_v2.0_SECJ.md` §3 (STANDARD: nur weiche J<0,40-Flag) und §4 (JUSTICE: J<0,50-Hard-Stop) beschreiben die **Engine-Ebene**; die operative Provolution-Regel ist strenger und veto-t bei J<0,50 **immer**. Ein **Entwicklungs-/Debug-Modus** kann die Prüfung trotz Veto fortlaufen lassen (Inspektion/Entwicklung), erzeugt aber **nie** kanonische/operative Verdikte. Damit ist die scheinbare STANDARD-vs-JUSTICE-Spannung aufgelöst: Engine-Default ≠ operative Anwendungsregel.
+
 ---
 
 ## 2. Werte-Glossar (Headline-Totale)

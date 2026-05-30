@@ -57,6 +57,8 @@ J < 0,40   →  Flag SOZIALE INKONSISTENZ (Pflicht-Hinweis + Empfehlung)   *** N
 
 **Begründung der neuen J-Flag:** in PS-U 1.x fehlte die J-Veto-Flag, was Maßnahmen mit niedrigem J-Score einen unsichtbaren Pass gab, solange S/E/C hoch waren. Die SOZIALE-INKONSISTENZ-Flag schließt diese Lücke.
 
+> **Operativ-Hinweis (Provolution-Anwendung, 2026-05-30):** Die obige STANDARD-Flag-Logik (J<0,40) ist der **generische Engine-Default**. In **operativen Provolution-Audits** gilt zusätzlich der harte **J<0,50-Veto universell** (Anwendungsregel: Band 1 `J_min = 0,50` + `ANTIFRAGILITY_PRINCIPLE.md`; siehe `canon/STATUS.md` §1). Ein **Entwicklungs-/Debug-Modus** darf die Prüfung trotz Veto fortsetzen (Inspektion), erzeugt aber **keine** kanonischen Verdikte.
+
 ### Verdict-Schwellen *(unverändert gegenüber 1.x)*
 
 | Score | Verdict | Plain |
