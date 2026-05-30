@@ -86,6 +86,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `studies/OUT_OF_SAMPLE_2026-05-30/` | ✅ CURRENT (Proof-of-Concept, N=6, Skala 0,085–0,94) — retrospektive Out-of-sample-Konkordanz + Failure-Mode-Lokalisierung (Großer Sprung · PKW-Maut · Open-House-Masken · ASFINAG · Apollo · Währungsreform); adressiert LIMITATIONS #13 |
 | `studies/CONSISTENCY_MATRIX_2026-05-30/` | ✅ CURRENT (Erst-Entwurf) — 44×44 Hebel-Konsistenz-/Konflikt-Matrix (121 Kanten, C-Achse auditierbar); adressiert LIMITATIONS #16 |
 | `studies/CARBON_FLOW_2026-05-30/` | ✅ CURRENT — Carbon-Flow-Sankey (Brutto −87,1/−58,6 → Netto-Median −43,2, Overlaps bereinigt); adressiert LIMITATIONS #2/#16, Q4 |
+| `studies/PV_DEMO_2026-05-30/` | ✅ CURRENT (Methodik-Demo) — PV-Claim-Detektion + Modul-Routing (Blüm, Weidel); Behauptungs-Ebene, ≠ Maßnahmen-OoS |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
