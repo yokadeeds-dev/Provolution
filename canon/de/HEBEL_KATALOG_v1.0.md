@@ -291,6 +291,11 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 
 ## Versions-History
 
+**v1.11 (2026-05-30, Konsistenz):**
+- ✅ **Band-4-SEC-NACHWEIS ↔ impact_master synchronisiert** für die 6 band4-canonical Hebel, die noch veraltete 3-Achsen-`SEC-Score:`-Zeilen trugen: **B13, I33, K01, K02, K03, K04**. Alte Zeile → kanonische `SEC-J-Score:`-Zeile mit den autoritativen PS-U-2.0-Werten (PR #13); fehlende `Just:`-Bullets ergänzt (Inhalt aus vorhandener Wirkungs-/Cross-Ref-Substanz, nichts erfunden). I33: deprecatete Formel `0,5·S+0,3·E+0,2·C` und Wert 0,95 entfernt → SEC-J **0,93** (SSoT-konform; Header trug bereits 0,93).
+- Probatio Consistentia CHECK 4: Band-4-Tupel 14 → **20**; only-in-YAML 11 → **5**. Die verbleibenden 5 (**B11, B12** yaml-only; **I34** stub; **I35, I36** AUTO_INTEGRATE) sind **erwartet nur-in-YAML** — sie haben (noch) keine Band-4-Sektion; Band-4-Aufnahme = v4.3-Task (Drift-Items #4, #6). Kein offener Sync-Bedarf.
+- Adressiert Drift-Item #15 (Band-4-§2-SEC-NACHWEIS-Updates) für die band4-canonical-Teilmenge.
+
 **v1.10 (2026-05-29 abends, Promotion):**
 - ✅ **J01 Kreislauf-Gebäude Promotion STUB → band4-canonical** (Drift-Item #20): Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format. Fünf modulare Bausteine inkl. Hempcrete, Hanfbast-Bewehrung (BasEcoCrete), Hanffaser-Dämmung, Embodied-Carbon-Limit und Material-Pässe. SEC-J 0,93 aus PR #13. Aggregate: n_band4_canonical 37 → 38; n_stub 2 → 1; §11.4 "J STUB Konstruktion" → "J band4-canonical Konstruktion v1.5". Hanf-Recherche aus PR #14 als Quelle für die hanfbasierten Bausteine in J01.
 
