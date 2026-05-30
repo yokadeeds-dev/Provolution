@@ -27,7 +27,7 @@
 ## 4. „−58,6 Gt = Überclaiming. Double-Counting-Audit?"
 
 **Vorbereitete Antwort:** −58,6 Gt ist ein **gescreentes Potenzial, keine Prognose**. Der realistische Netto-Erwartungswert ist der Monte-Carlo-Median **−43,2 Gt/Jahr** [90 %-KI −52,8…−34,6], im 50 %-Umsetzungs-Stresstest **−14,9 Gt/Jahr**. Per-Domain-Overlap ist bereinigt (z. B. B07 schluckt B08–B12: −32 → ~−16 Gt). **Offen:** Sankey-Visualisierung der Carbon-Flows, Inter-Domain-Rückkopplung, abschließende YAML-Domain-Zuordnungs-Bereinigung. Beide Werte werden in README/STATUS gleichrangig kommuniziert.
-**Status:** ✅ MC-Median + Per-Domain-Overlap + YAML-Tag-Zuordnung + Konflikt-Matrix-Erst-Entwurf (2026-05-30) · ⏳ Sankey + Inter-Domain-Rückkopplung · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
+**Status:** ✅ MC-Median + Per-Domain-Overlap + YAML-Tag-Zuordnung + Konflikt-Matrix-Erst-Entwurf + **Sankey** (2026-05-30, `studies/CARBON_FLOW_2026-05-30/`) · ⏳ Inter-Domain-Rückkopplung + systematische Konflikt-Elicitation · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
 
 ## 5. „Falsifizierbarkeit — oder nur innere Konsistenz?"
 
@@ -65,9 +65,9 @@
 
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
 1. ~~**§8.2 YAML-Domain-Zuordnungs-Bereinigung**~~ ✅ **erledigt 2026-05-30** — Befund: Tag-Drift war in `co2_master` v1.3 (2026-05-28) bereits bereinigt, nur Doku stale; nachgezogen (HEBEL_KATALOG v1.12). Double-Counting/Overlap bereits auf Domain-Total-Ebene sauber. Rest: F23/F24-Wert-Ownership (total-neutral) — #4
-2. **49×49-Konflikt-Matrix** ✅ **Erst-Entwurf 2026-05-30** (`studies/CONSISTENCY_MATRIX_2026-05-30/`, 44×44, C-Achse auditierbar); ⏳ **Sankey** + systematische Konflikt-Elicitation — #1, #4
+2. **49×49-Konflikt-Matrix** ✅ Erst-Entwurf (`studies/CONSISTENCY_MATRIX_2026-05-30/`) + **Carbon-Flow-Sankey** ✅ (`studies/CARBON_FLOW_2026-05-30/`); ⏳ systematische Konflikt-Elicitation + Inter-Domain-Rückkopplung — #1, #4
 3. **Out-of-sample-Test** — ✅ **Probe 2026-05-30** (`studies/OUT_OF_SAMPLE_2026-05-30/`, **N=6, Skala 0,085–0,94** + Failure-Mode-Lokalisierung: Großer Sprung · PKW-Maut · Open-House-Masken · ASFINAG · Apollo · Währungsreform); ⏳ powered/verblindet/prä-registriert offen — #5
 4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
 5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
-Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`), §8.2 (Item 1 — war stale-Doku) und der Out-of-sample-Test (Item 3, Q5 — erste Probe `studies/OUT_OF_SAMPLE_2026-05-30/`; powered/verblindet bleibt offen). **Verbleibend:** von Item 2 ist die 49×49-Matrix als Erst-Entwurf erledigt — offen nur noch die **Sankey-Visualisierung** + die systematische Paar-für-Paar-Konflikt-Elicitation (Q1/Q4).
+Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`), §8.2 (Item 1 — war stale-Doku) und der Out-of-sample-Test (Item 3, Q5 — erste Probe `studies/OUT_OF_SAMPLE_2026-05-30/`; powered/verblindet bleibt offen). **Verbleibend:** Item 2 ist als Erst-Entwurf erledigt (49×49-Matrix ✅ + Carbon-Flow-Sankey ✅). Offen nur noch *vertiefende, datengetriebene* Arbeit — systematische Paar-für-Paar-Konflikt-Elicitation + Inter-Domain-Rückkopplung (Q1/Q4) + powered/verblindeter Out-of-sample-Test (Q5). **Kein Doku-Gate mehr offen** — alle vier Reviewer-Punkte 1–4 haben jetzt belegte Artefakte im Repo.
