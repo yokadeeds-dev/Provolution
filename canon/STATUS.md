@@ -19,7 +19,7 @@
 | J-Warnschwelle | `J < 0.80` (kein Veto, dokumentierte Implementierungs-Auflage) | `warning_threshold` |
 | **DEPRECATED** | SECJ_SPEC v1.0 (alte Formel `0.40·S + 0.25·E + 0.15·C + 0.20·J`) | `canon/de/SECJ_SPEC_v1.0.md` (Deprecation-Header) |
 
-Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls überholt — siehe Corrigenda `canon/en/CORRIGENDUM_2026-04-27.md` + `CORRIGENDUM_2026-05-28.md`.
+Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls überholt — siehe Corrigenda `canon/en/CORRIGENDUM_2026-04-27.md` + `CORRIGENDUM_2026-05-28.md` (Formel). Zahlen/Struktur-Drift des Submitted-Snapshots (n 40→49, 10→11 Domänen, SEC 0.914→SEC-J Ø 0.90, −58.0→−58.6) ist dokumentiert in `canon/en/CORRIGENDUM_2026-05-30.md`.
 
 **Entscheidung 2026-05-29 (User):** PS-U 2.0 STANDARD ist die kanonische Provolution-Gewichtung. Band 5 (`canon/de/05_Band5_*`, v3.1) trug noch die v1.0-Gewichte und wurde mit PR #18 auf STANDARD reconciled (Formel, Berechnungsbeispiele, Priorisierungs-Matrix; Legacy-3-Achsen-Tabellen als solche markiert). **J wirkt primär über das Veto (J<0,50), nicht über sein Komposit-Gewicht (0,15)** — geringes Gewicht ≠ Abwertung.
 
@@ -91,7 +91,8 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
 | `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
-| `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ enthält Pre-SEC-J-Formel — nur mit Corrigenda-Annotation zitieren |
+| `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ Submitted-Snapshot — nur mit Corrigenda zitieren: Formel (`CORRIGENDUM_2026-04-27`+`2026-05-28`) + Zahlen/Struktur (`CORRIGENDUM_2026-05-30`) |
+| `canon/en/CORRIGENDUM_2026-05-30.md` | ✅ CURRENT — Zahlen/Struktur-Corrigendum (n/Domänen/SEC-J-Ø/CO₂-Headline; v0.1 → v1.5) |
 | `manuscript/JOURNAL_SUBMISSION_PACKAGE.md` | ⚠️ Ziel-Journal revidiert (Nature → ESG) |
 | `manuscript/RESPONSE_TO_REVIEWERS_PREP.md` | 🛠️ INTERN — Vorbereitungs-Doku (nicht Teil der Einreichung); konsolidiert wahrscheinliche Reviewer-Einwände + Antworten |
 
