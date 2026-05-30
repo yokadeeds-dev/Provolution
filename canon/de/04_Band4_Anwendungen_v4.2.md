@@ -689,7 +689,8 @@ Verlagerung industrieller Fertigung von zentralen Massenproduktions-Anlagen mit 
 - **Sufficient:** Adressiert ~5–15% der globalen Container-Sektor-Emissionen plus Material-/Energie-Verschwendung durch Überproduktion. CO₂-Einsparung -0.2 bis -0.5 Gt/Jahr (konservativ). W_min 0.15 Gt ✅
 - **Efficient:** Cluster-Investition €1–10 Mio. (vs. €100M+ für klassische Mass-Production-Anlage). Bedarfsgerechte Auslastung statt Überproduktion → ROI 5–8 Jahre ✅
 - **Consistent:** Vollständig systemkonform: nutzt B08 (Biopolymere als Material), B07 (Kreislauf als Logistik-Prinzip), D17 (Hanf als Faserquelle), G27 (MRV für Bedarfssteuerung) ✅
-- **SEC-Score: 0.84** (S:0.83, E:0.80, C:0.90)
+- **Just:** Demokratisiert Produktionsmittel — regionale Cluster-Fertigung und On-Demand-Ersatzteile verlagern Wertschöpfung (~€100 Mrd/Jahr) in die Fläche, stärken Reparierbarkeit und Resilienz gegen globale Lieferketten-Asymmetrien ✅
+- **SEC-J-Score: 0.91** (S:0.88, E:0.90, C:0.95, J:0.92 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** Container-Transport-CO₂ -12 bis -36 Mt/Jahr (5–15% Substitution Standardware), Material-Verschwendung -30% durch On-Demand-Fertigung, Lagerhaltungs-Energie -50%
@@ -2136,7 +2137,7 @@ Das Fahrzeug wird vom CO₂-Emittenten zum strukturellen Kohlenstoffspeicher (Ca
 - **Efficient:** Hardware-Drossel auf 130 km/h spart ~300 kg Fahrzeugmasse pro Auto durch Wegfall von Über-Engineering (Hochleistungsbremsen, Schwerlastreifen, versteifte Crash-Strukturen, überdimensionierte Kühlung); Bio-Composite-Karosserie nochmal ~150 kg. Gesamtreduktion ca. 450 kg. Tempolimit-Effekt (UBA 2024): 6,6–6,7 Mt CO₂/Jahr DE durch geringeren Kraftstoffverbrauch, Routenwahl- und Nachfrageeffekte. ✅
 - **Consistent:** Vollständig systemkonform: nutzt B07 (Kreislauf), B08 (Biopolymere), B13 (lokale On-Demand-Fertigung für Ersatzteile), C11–C14 (Erneuerbare Energie für BEV-Antrieb), D17 (Hanf-Anbau mit D17a Mehrfachernte + D17b Faser-Gleis), Komplement zu J01 (Kreislauf-Gebäude, gleiche Kaskaden-Logik) ✅
 - **Just:** Lasten tragen primär Premium-Industrie und Top-Einkommen — durch Vmax-Drosselung verlieren sie das implizite Privileg, Verkehrsregeln technisch übertreten zu können. Nutzen (Lärm-, Feinstaub-, Unfallreduktion, günstige Mobilität durch längere Batterie-Lebensdauer und kleinere Fahrzeuge) fließt Mehrheit und vulnerablen Gruppen zu ✅
-- **SEC-Score: 0.95** (S:0.95 | E:0.95 | C:0.90 | J:0.87). Berechnung 0,5·S + 0,3·E + 0,2·C = 0,940; bei stark positiver J-Bewertung gerundet auf 0,95.
+- **SEC-J-Score: 0.93** (S:0.95, E:0.98, C:0.90, J:0.88 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Einsparung ~1,0 Gt/Jahr global. DE-Aggregat (49 Mio. PKW): Tempolimit-Effekt 6,7 Mt + Betriebs-Einsparung durch Massenreduktion ~22 Mt + Produktions-Vorteil durch Hanf-Sink statt Stahl ~7 Mt (bei 2,8 Mio. Neuzulassungen). Fahrzeugmasse -450 kg im Schnitt.
@@ -2307,7 +2308,8 @@ Wiederherstellung und Schutz tropischer Mangrovenwälder als Küsten-Ökosysteme
 - **Sufficient:** Wiederherstellungs-Potenzial ~7–10 Mio ha über 30 Jahre realistisch (50% der historischen Verluste), W_min hoch ✅
 - **Efficient:** Pflanz-Kosten €500–2000/ha (sehr niedrig im Vergleich zu technischen CO₂-Senken), Ko-Benefits (Küstenschutz, Fischzucht) zahlen sich finanziell aus, ROI < 5 Jahre ✅
 - **Consistent:** Komplementär zu D15 (regenerative Praktiken, weniger Pestizid-Eintrag in Mangrovenzonen), D17 (Hanf-Faser-Alternative zu Mangrovenholz-Nutzung), K02/K04 (Verbund-Restoration ganzer Küstenabschnitte) ✅
-- **SEC-Score: 0.92** (S:0.93, E:0.90, C:0.93)
+- **Just:** Schützt vulnerable tropische Küstengemeinden (Wellenenergie-Dämpfung -50–66%) und sichert Fischerei-Einkommen via Silvofishery; Nutzen fließt überwiegend dem Globalen Süden zu ✅
+- **SEC-J-Score: 0.93** (S:0.95, E:0.90, C:0.95, J:0.92 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Bindung -0,75 Gt/Jahr global bei 7–10 Mio ha Restoration über 30 Jahre
@@ -2348,7 +2350,8 @@ Wiederherstellung von Seegrasflächen in temperaten und tropischen Küstenmeeren
 - **Sufficient:** Wiederherstellungs-Potenzial bei ~10 Mio ha realistisch (33% der historischen Verluste), Sediment-C-Speicher mehrfach höher als lebende Biomasse ✅
 - **Efficient:** Pflanzung sehr arbeitsintensiv (€5000–15000/ha bei manueller Pflanzung); neuere Saatgut-/Sprossen-Methoden günstiger; Ko-Benefits (Wasserklarheit, Fischerei-Restoration) zahlen sich aus ✅
 - **Consistent:** Komplementär zu D15 (weniger Pestizid-Eintrag), K01/K04 (Verbund-Restoration), J01 (kein Hafen-Ausbau über Seegrasflächen), C13 (Smart-Grid reduziert Hafenflächen-Bedarf für fossile Logistik) ✅
-- **SEC-Score: 0.87** (S:0.88, E:0.80, C:0.93)
+- **Just:** Restauriert maritime Kinderstuben (+100% Fischbestand) und stärkt Ernährungssouveränität und Existenzen der Küstenfischerei ✅
+- **SEC-J-Score: 0.92** (S:0.92, E:0.88, C:0.95, J:0.90 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Bindung -0,35 Gt/Jahr bei 10 Mio ha Restoration
@@ -2388,7 +2391,8 @@ Wiederherstellung temperater Kelp-Wälder (Macrocystis pyrifera, Laminaria sp., 
 - **Sufficient:** Wiederherstellungs-Potenzial bei ~5–8 Mio ha realistisch (50% der historischen Verluste), zusätzlich Tiefsee-C-Export ✅
 - **Efficient:** Seeigel-Ernte als Kombinations-Hebel (Restoration + Lebensmittel-Co-Produkt Uni-Roe), Aquakultur-Synergie mit GreenWave-Modell; Pflanzung mittel-teuer (€3000–8000/ha) ✅
 - **Consistent:** Komplementär zu K01/K02/K04 (Verbund-Restoration temperate Küsten), D17 (Naturfaser-Quelle erweitert um Algen-Faser), B07 (Kelp als Biokunststoff-Vorstufe), I33 (Kelp-Bio-Verbund als Karosserie-Material erforscht) ✅
-- **SEC-Score: 0.85** (S:0.85, E:0.82, C:0.88)
+- **Just:** Schafft dezentrale Aquakultur-Einkommen (GreenWave-Modell, Seeigel- und Kelp-Co-Produkte) für Küstengemeinden statt industrieller Konzentration ✅
+- **SEC-J-Score: 0.90** (S:0.90, E:0.92, C:0.90, J:0.88 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** CO₂-Bindung -0,20 Gt/Jahr bei 5–8 Mio ha Restoration + Tiefsee-C-Export
@@ -2429,7 +2433,8 @@ Schutz und Restoration von Salzmarschen — temperate und tropische Gezeiten-Leb
 - **Sufficient:** Schutz-Hebel hoch effizient (höchste t-CO₂/ha aller Küstenökosysteme); Restoration-Potenzial begrenzt durch Gesamtfläche, aber Schutz existierender Bestände hat sofortige Wirkung ✅
 - **Efficient:** Schutz-Kosten gering (Ausweisung Schutzgebiete, kein Hafen-Ausbau in Salzmarschen-Zonen) — quasi negative Kosten durch vermiedene Investitionen; Restoration mittel-teuer (€2000–5000/ha) ✅
 - **Consistent:** Komplementär zu K01/K02/K03 (Verbund-Restoration), J01 (Bauverbot in Salzmarschen-Zonen analog zur Klimaschutz-Auflage für Neubau), D15 (regenerative LW reduziert Sediment-Eintrag durch Bodenerhalt) ✅
-- **SEC-Score: 0.90** (S:0.85, E:0.92, C:0.93)
+- **Just:** Hochwasser- und Sturmflutschutz für Küsteninfrastruktur plus Stickstoff-Filterung; Managed Realignment verteilt Anpassungslasten gerecht statt Deich-Wettrüsten ✅
+- **SEC-J-Score: 0.90** (S:0.90, E:0.85, C:0.95, J:0.90 — PS-U 2.0 STANDARD, PF-Audit PR #13, 2026-05-29)
 
 #### 3. WIRKUNG
 - **Primär:** Schutz-CO₂-Erhalt -0,15 Gt/Jahr (vermiedener Sediment-C-Verlust durch Eindeichungs-/Bauverzicht) + Restoration -0,05 Gt/Jahr neu
