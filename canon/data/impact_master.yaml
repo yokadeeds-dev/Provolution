@@ -430,7 +430,7 @@ energy_system:
     
     net_rebound_factor: 0.50  # 50% Rebound gesamt
     adjusted_impact: -32.3  # Gt CO₂eq/Jahr (von -64.5)
-    hinweis: "Konservative Schätzung bereits in -50.7 Hauptwert teilweise integriert"
+    hinweis: "Konservative Schätzung bereits in -58.6 Hauptwert teilweise integriert"
 
 # ============================================================================
 # TEIL 5: GOVERNANCE & COMPLIANCE

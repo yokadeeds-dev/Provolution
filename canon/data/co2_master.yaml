@@ -265,7 +265,7 @@ community_integrations:
 
 # Zusätzliche Metriken für Analyse
 metrics:
-  durchschnitt_sec_score: 0.914
+  durchschnitt_sec_score: 0.90  # SEC-J Ø (PS-U 2.0 STANDARD, 25 individuell + 5 Batch; autoritativ STATUS.md §3); alter 3-Achsen-SEC-Ø war 0.914 (historisch). Key-Name aus Kompat-Gründen beibehalten (gelesen von _tools/build_impact_references.py → {{SEC_SCORE_AVG}})
   anzahl_anwendungen: 36  # v1.3 2026-05-28: +D19 (Promotion zu band4-canonical); n wächst dynamisch via AUTO-INTEGRATE (SEC ≥ 0.82)
   anzahl_domains: 10
   hoechste_einzelanwendung: 
