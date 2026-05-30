@@ -208,6 +208,8 @@ PP prüft ob ein Argument die eigenen Regeln einhält.
 > PP bewertet ob die philosophische Begründung dahinter konsistent ist.
 > PT bewertet ob sich die Wahrheitslage über Zeit verändert hat."
 
+**Routing nach Objekt-Typ — häufiger Mismatch:** Eine *Behauptung* gehört in **PV**, nicht in PS-U (Verführung: alles durch das Flaggschiff SEC-J jagen). Worked example + Entscheidungshilfe: [`studies/PV_DEMO_2026-05-30/`](../../studies/PV_DEMO_2026-05-30/PV_DEMO.md) (Blüm: PS-U-Lesart 0,33 vs. PV-korrekt FALSE via Logik-Veto).
+
 ---
 
 ## 9. CANON-DATEISTRUKTUR
