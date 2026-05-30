@@ -78,6 +78,20 @@ Dies ist **kein** Versuch, die Komplexität für ein breites Publikum zu glätte
 
 ---
 
+## Offene Punkte (wissenschaftliche Vertiefung — noch nicht geschlossen)
+
+Die folgenden Lücken sind durch adversariale Review-Pässe (siehe `studies/AI_AUDIT_2026-05-28/`) bestätigt und **noch nicht geschlossen**. Ihr Schließen ist echte wissenschaftliche Arbeit (Analyse, Vergleichstabelle, prädiktive Tests), kein Dokument-Edit — hier offen benannt, bevor ein Reviewer sie findet.
+
+12. **Gewichts-Sensitivitätsanalyse (ausstehend).** Eine systematische Variation der SEC-J-Gewichte über plausible Bereiche — plus Abgleich mit etablierten MCDA-Verfahren (AHP, SMART) — als Manuskript-Anhang fehlt noch. Bis dahin gilt §5: dokumentierte Wertentscheidung, J wirkt über das Veto. Bekannt ist nur die grobe Robustheit (±20 % Parametervariation → <±15 % Gesamtwert, `co2_master.yaml`), nicht die volle Gewichts-Sensitivität.
+
+13. **Out-of-sample-Falsifizierung (ausstehend).** Innere Konsistenz (§9) ist nicht dasselbe wie ein prädiktiver Test. Ein echter Falsifizierungs-Test — sagt SEC-J reale Maßnahmen-Erfolge bzw. -Misserfolge vorher? scheitert ein hoch bewerteter Hebel im Feld? — ist noch nicht definiert. Das ist die härtere Stufe und bleibt offen.
+
+14. **Einordnung in MCDA / IAM / RDM (ausstehend).** Eine tabellarische Abgrenzung gegenüber AHP/ELECTRE/PROMETHEE, Integrated Assessment Models (DICE/FUND/PAGE) und Robust Decision Making (Lempert et al.) fehlt noch. Ohne sie bleibt die Frage „was ist neu gegenüber 30 Jahren MCDA?" unbeantwortet — wird für die Reviewer-Antwort vorbereitet.
+
+15. **Auswahlbegründung der Hebel (ausstehend).** Warum genau diese 49 (nicht 39 oder 59)? Welche wurden bewusst ausgeschlossen (z. B. Kernkraft, BECCS/DAC, großskaliges Geoengineering) und nach welchem Kriterium? Die Selektions-Logik ist noch nicht systematisch dokumentiert; bis dahin ist die Hebel-Menge diskretionär begründet, nicht deduktiv.
+
+---
+
 ## Wie mit neuen Kritiken umgehen
 
 Neue, hier nicht gelistete Einwände sind **willkommen** — als Issue, Fork oder Korrespondenz. Berechtigte Punkte werden eingeräumt und verortet (Spurensuche: prüfen, was stimmt, ändern); methodisch-belegte Aussagen werden präzisiert, aber nicht für ein breites Publikum weichgespült, wenn das gute Strukturen zerstören würde. Maßstab ist *unbelegt vs. methodisch-belegt*, nicht *klingt-stark*.

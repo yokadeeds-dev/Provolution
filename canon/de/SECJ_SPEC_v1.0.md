@@ -21,7 +21,7 @@ Plus: J<0,40 → Flag **SOZIALE INKONSISTENZ** (Pflicht-Hinweis + Empfehlung) al
 
 **Konsequenzen für SEC-J-Werte im Repo:**
 - Alle SEC-J-Berechnungen in `canon/data/impact_master.yaml` v2.2 (PR #6) und `canon/de/04_Band4_Anwendungen_v4.2.md` (PR #7) verwenden korrekt die PS-U 2.0 STANDARD-Formel
-- Der externe PF-Report-Bestätigung der v1.0-Formel (`studies/EXTERNAL_AUDIT_2026-05-28/CHATGPT_AUSSENLESER_2026-05-28.md` u.a.) bezog sich auf die FORMALE Korrektheit der v1.0-Definition, nicht auf die Aktualität gegenüber v2.0
+- Der externe PF-Report-Bestätigung der v1.0-Formel (`studies/AI_AUDIT_2026-05-28/CHATGPT_AUSSENLESER_2026-05-28.md` u.a.) bezog sich auf die FORMALE Korrektheit der v1.0-Definition, nicht auf die Aktualität gegenüber v2.0
 
 ---
 

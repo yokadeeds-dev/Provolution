@@ -68,8 +68,8 @@ Wenn künftig **einzelne Hebel** (z.B. H30 Finanzierung im Detail, E21 unter PS-
 - **Konvergente externe Audits** (5 Stück, alle 2026-05-28):
   - `studies/CO2_BILANZ_2026-05-28/PF_REPORT_v1.0.1_2026-05-28.md` (PF Bilanz)
   - `studies/AUTO_INTEGRATE_AUDIT_2026-05-28/PF_REPORT_v1.0.1_2026-05-28.md` (PF AUTO-INTEGRATE)
-  - `studies/EXTERNAL_AUDIT_2026-05-28/CHATGPT_AUSSENLESER_2026-05-28.md` (ChatGPT)
-  - `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md` (PF SEC-J-Nachrüstung der Domains B/C/D)
+  - `studies/AI_AUDIT_2026-05-28/CHATGPT_AUSSENLESER_2026-05-28.md` (ChatGPT)
+  - `studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md` (PF SEC-J-Nachrüstung der Domains B/C/D)
   - **diese Datei** (PF Batch-Domains A/E/F/G/H + Spec-Auflösung)
 - **Spec-Auflösung:** PR [#8](https://github.com/yokadeeds-dev/Provolution/pull/8) (`canon/de/SECJ_SPEC_v1.0.md` DEPRECATED, `06_framework_extensions_v2.0_SECJ.md` autoritativ)
 - **SEC-J-Daten-SSoT:** `canon/data/impact_master.yaml` v2.3 `sec_j_scores`
