@@ -2,6 +2,8 @@
 ## Gemini Gem | Version 1.1 | 2026-03-29
 **Änderungen v1.0 → v1.1:** E-Formel mit Pflichtschritten und Minimalbeispiel · C-Formel mit Pflichtschritten und Minimalbeispiel · Normativitätsregel präzisiert
 
+> **⚠️ Methoden-/Paradigma-Hinweis (2026-05-30) — wichtig für Reviewer:** Diese Gem (Stand 2026-03-29) implementiert das **W_min-Hart-Gate-Screening-Paradigma** (`S = W(M)/W_min`; `S < 1,00 → STOP`, E/C/J ungeprüft; geometrische Lesart). Der **autoritative Provolution-Kanon** nutzt seit 2026-05-10 die **PS-U-2.0-Summenformel** `SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J` (`canon/de/06_framework_extensions_v2.0_SECJ.md`; Status: `canon/STATUS.md` §1). Das sind **zwei legitime, aber verschiedene Aggregations-Engines**, die für dieselbe Eingabe abweichende Verdikte liefern können (harter W_min-Stopp vs. gradueller Summen-Score). **Für kanonische Repo-Hebel-Scores gilt ausschließlich die PS-U-2.0-Summenformel.** Diese Gem bleibt ein eigenständiges Screening-/Entwicklungs-Werkzeug (Suffizienz-Vorfilter, Debug); ihre Ausgaben sind als solche zu kennzeichnen, **nicht** als kanonische SEC-J-Scores. (Analog zur Deprecation von `canon/de/SECJ_SPEC_v1.0.md`: ältere Engine-Variante, nicht überschrieben, aber als nicht-kanonisch markiert.)
+
 ---
 
 ## IDENTITÄT

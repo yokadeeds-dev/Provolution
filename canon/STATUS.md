@@ -90,6 +90,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `studies/CARBON_FLOW_2026-05-30/` | ✅ CURRENT — Carbon-Flow-Sankey (Brutto −87,1/−58,6 → Netto-Median −43,2, Overlaps bereinigt); adressiert LIMITATIONS #2/#16, Q4 |
 | `studies/PV_DEMO_2026-05-30/` | ✅ CURRENT (Methodik-Demo) — PV-Claim-Detektion + Modul-Routing (Blüm, Weidel); Behauptungs-Ebene, ≠ Maßnahmen-OoS |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
+| `manuscript/peer_reviews/GEM_SYSTEM_PROMPT_PS_Universal_v1.1.md` | ⚠️ NICHT-KANONISCHES PARADIGMA — W_min-Hart-Gate-Screening-Gem (2026-03-29); Repo-Kanon nutzt PS-U-2.0-**Summenformel**. Paradigma-Hinweis im Header gesetzt; eigenständiges Screening-/Debug-Werkzeug, **keine** kanonischen SEC-J-Scores. *(Drift vom `spec_consistency_audit.py` derzeit nicht erfasst — Paradigma-Check ist offener Linter-Punkt.)* |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
 | `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
