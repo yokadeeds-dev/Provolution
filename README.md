@@ -26,7 +26,7 @@ Provolution ist explizit als *living document* konzipiert: methodische Justierun
 
 ## Zentrale Ergebnisse
 
-- **Stand-Snapshot:** 49 Hebel über 11 Domänen (A–K), davon 38 band4-canonical · CO₂-hart −58,6 Gt/Jahr (gescreentes Potenzial, keine Prognose) — autoritativ: [`canon/STATUS.md`](canon/STATUS.md)
+- **Stand-Snapshot:** 49 Hebel über 11 Domänen (A–K), davon 38 band4-canonical · CO₂-Reduktion: **−43,2 Gt/Jahr** realistischer Netto-Erwartungswert (Monte-Carlo-Median, Szenario B) · **−58,6 Gt/Jahr** gescreentes Potenzial-Ceiling — beides *keine* Prognose; Werte-Glossar autoritativ in [`canon/STATUS.md`](canon/STATUS.md) §2
 - Hebel über elf Domänen (A–K) SEC-J-bewertet
 - Multi-Impact Framework v2.0 über sechs Impact-Dimensionen
 - J-Veto bei J < 0.50 (Antifragility-begründet)
