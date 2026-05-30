@@ -34,10 +34,10 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 |---|---|---|---|---:|---|
 | A01 | SEC-PRIORISIERUNG | sec_priorisierung | band4-canonical | -2.0 | konsistent |
 | A02 | ENTSCHEIDUNGSKARTE | entscheidungskarte | band4-canonical | -1.5 | konsistent |
-| A03 | RISIKOABSCHÄTZUNG | transparenz | band4-canonical | -1.8 | ⚠️ YAML-Tag-Drift (`transparenz` ≠ Band 4 Name) |
-| A04 | SZENARIEN-VERGLEICH | partizipation | band4-canonical | -1.2 | ⚠️ YAML-Tag-Drift |
-| A05 | PILOTPROJEKT-FRAMEWORK | konfliktloesung | band4-canonical | -0.9 | ⚠️ YAML-Tag-Drift |
-| A06 | SKALIERUNGS-PROTOKOLL | kompetenz | band4-canonical | -0.8 | ⚠️ YAML-Tag-Drift |
+| A03 | RISIKOABSCHÄTZUNG | risikoabschaetzung | band4-canonical | -1.8 | ✅ konsistent (Tag-Drift resolved, co2_master v1.3 2026-05-28) |
+| A04 | SZENARIEN-VERGLEICH | szenarien_vergleich | band4-canonical | -1.2 | ✅ konsistent (Tag-Drift resolved) |
+| A05 | PILOTPROJEKT-FRAMEWORK | pilotprojekt_framework | band4-canonical | -0.9 | ✅ konsistent (Tag-Drift resolved) |
+| A06 | SKALIERUNGS-PROTOKOLL | skalierungs_protokoll | band4-canonical | -0.8 | ✅ konsistent (Tag-Drift resolved) |
 
 ### Domain B — Material/Produktion (7)
 
@@ -75,8 +75,8 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
 | E19 | BEWUSSTSEINSBILDUNG | sec_literacy | band4-canonical | -0.8 | YAML-Tag mild abweichend |
-| E20 | PARTIZIPATION | klima_bildung | band4-canonical | -0.6 | ⚠️ YAML-Tag-Drift |
-| E21 | GERECHTIGKEITS-MECHANISMEN | erfahrungslernen | band4-canonical | -0.4 | ⚠️ YAML-Tag-Drift |
+| E20 | PARTIZIPATION | partizipation | band4-canonical | -0.6 | ✅ konsistent (Tag-Drift resolved, co2_master v1.3) |
+| E21 | GERECHTIGKEITS-MECHANISMEN | gerechtigkeits_mechanismen | band4-canonical | -0.4 | ✅ konsistent (Tag-Drift resolved) |
 | E22 | KULTUR-TRANSFORMATION | (nicht in YAML) | band4-canonical | n/a | YAML hat E22 nicht; CO2-Wirkung nicht quantifiziert |
 
 ### Domain F — Technologie & Innovation (5)
@@ -84,7 +84,7 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | ID | Band 4 v4.2 Name | YAML Tag | Status | CO2 Gt/yr | Drift-Note |
 |---|---|---|---|---:|---|
 | F22 | — | open_innovation | yaml-only | -1.2 | nicht in Band 4; YAML seit Commit 6bc312e |
-| F23 | FORSCHUNGS-PRIORISIERUNG | tech_transfer | band4-canonical | -0.9 | ⚠️ YAML-Tag-Drift (`tech_transfer` ≠ Band 4 Name) |
+| F23 | FORSCHUNGS-PRIORISIERUNG | forschungs_priorisierung | band4-canonical | -0.9 | ✅ Tag resolved (co2_master v1.3); ⏳ Wert-Ownership F23/F24 — User-Verifikation offen (total-neutral) |
 | F24 | TECH-TRANSFER | (nicht in YAML) | band4-canonical | n/a | YAML hat F24 nicht; CO2-Wirkung nicht quantifiziert |
 | F25 | OPEN-SOURCE-INFRASTRUKTUR | (nicht in YAML) | band4-canonical | n/a | YAML hat F25 nicht; CO2-Wirkung nicht quantifiziert |
 | F26 | INNOVATION-BESCHLEUNIGUNG | (nicht in YAML) | band4-canonical | n/a | YAML hat F26 nicht; CO2-Wirkung nicht quantifiziert |
@@ -168,11 +168,11 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 
 ## Bekannte Drifts (Phase 6E nach Phase-6D-Abschluss)
 
-1. **A03-A06 YAML-Tag-Drift** — Tags `transparenz/partizipation/konfliktloesung/kompetenz` widersprechen Band 4 Namen (Risikoabschätzung/Szenarien-Vergleich/Pilotprojekt-Framework/Skalierungs-Protokoll). Mögliche Erklärung: YAML wurde vor Band 4 v4.2 Konsolidierung erstellt. Auflösung: YAML-Tags umbenennen, CO2-Werte verifizieren.
+1. **A03-A06 YAML-Tag-Drift** — ✅ **RESOLVED v1.3 2026-05-28** (in HEBEL_KATALOG v1.12 2026-05-30 nachgezogen): Tags `transparenz/partizipation/konfliktloesung/kompetenz` → `risikoabschaetzung/szenarien_vergleich/pilotprojekt_framework/skalierungs_protokoll` (Band-4-konform) in `co2_master.yaml`. CO₂-Werte + Domain-A-Total (−8.2) unverändert — Tag-Rename ist total-neutral.
 
 2. **B09/B10 inhaltliche Drift** — ✅ **RESOLVED v1.5 2026-05-28**. Auflösung: YAML auf band4-canonical-Inhalte korrigiert (B09 = materialfluss_steuerung -0.5; B10 = abfall_zu_ressource -2.0). Vormals zugeordnete Wasserstoff (-2.8) und CCS (-1.2) zurückgestellt als separate zukünftige Hebel-Kandidaten — H2 partial in B11_transformation -1.8 abgedeckt (enthält H2-Direktreduktion), CCS bekommt eigenen Slot bei späterer Promotion. Netto-Effekt auf Bilanz: +1.5 Gt (weniger Reduktion) → reduktion_hart -59.8 → -58.6 (kombiniert mit D19 -0.3).
 
-3. **E20/E21/F23 YAML-Tag-Drift** — analog A03-A06.
+3. **E20/E21/F23 YAML-Tag-Drift** — ✅ **RESOLVED v1.3 2026-05-28** (Doku v1.12 2026-05-30): E20 `klima_bildung`→`partizipation`, E21 `erfahrungslernen`→`gerechtigkeits_mechanismen`, F23 `tech_transfer`→`forschungs_priorisierung` in `co2_master.yaml`, total-neutral. **Rest-Vorbehalt F23:** ob der −0.9-Wert F23 (FORSCHUNGS-PRIORISIERUNG, band4-canonical, quantifiziert) oder F24 (TECH-TRANSFER, band4-canonical, unquantifiziert) zuzuordnen ist — Default konservativ F23; User-Verifikation offen, Domain-F-Total (−2.1) in jedem Fall unverändert.
 
 4. **YAML-only Hebel (B11, B12, F22, G28, G29)** — Aufnahme in Band 4 v4.3 als eigene Sub-Phase. Inhaltliche Beschreibungen (Detail-Texte) zu schreiben.
 
@@ -290,6 +290,11 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.12 (2026-05-30, Konsistenz/Doku):**
+- ✅ **YAML-Tag-Drift-Dokumentation nachgezogen** (Drift-Items #1/#3): die Tag-Renames waren in `co2_master.yaml` bereits v1.3 (2026-05-28) vollzogen (A03–A06, E20, E21, F23 → Band-4-konforme Tags), aber HEBEL_KATALOG (Tag-Spalten + Drift-Items) und Bilanz-§8.2 trugen weiter „⚠️ YAML-Tag-Drift". Tag-Spalten Domain A/E/F + Drift-Items #1/#3 auf RESOLVED gebracht. **Total-neutral** (Domain-Totals A −8.2 / E −1.8 / F −2.1 unverändert; reduktion_hart −58.6 unberührt).
+- **Einziger Rest:** F23/F24 Wert-Ownership (−0.9) — Default konservativ F23 (quantifizierter band4-canonical Hebel; F24 unquantifiziert); User-Verifikation offen, total-neutral.
+- Bilanz-Studie §8.2 + LIMITATIONS #16 + RESPONSE_TO_REVIEWERS_PREP entsprechend reconciled (Befund: §8.2-„Bereinigung steht aus" war stale gegen den echten Datenstand).
 
 **v1.11 (2026-05-30, Konsistenz):**
 - ✅ **Band-4-SEC-NACHWEIS ↔ impact_master synchronisiert** für die 6 band4-canonical Hebel, die noch veraltete 3-Achsen-`SEC-Score:`-Zeilen trugen: **B13, I33, K01, K02, K03, K04**. Alte Zeile → kanonische `SEC-J-Score:`-Zeile mit den autoritativen PS-U-2.0-Werten (PR #13); fehlende `Just:`-Bullets ergänzt (Inhalt aus vorhandener Wirkungs-/Cross-Ref-Substanz, nichts erfunden). I33: deprecatete Formel `0,5·S+0,3·E+0,2·C` und Wert 0,95 entfernt → SEC-J **0,93** (SSoT-konform; Header trug bereits 0,93).
