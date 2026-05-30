@@ -375,7 +375,7 @@ Realismus-Check gegen anerkannte Klima-Szenarien (qualitativ, weil aktuelle Deta
 - **Spillover-Effekte zu Adaptation-Hebeln** (z. B. neuer Hebel G26 Resiliente Städte in AUTO_INTEGRATE Kategorie A) noch nicht integriert
 
 ### 8.2 Methodische Schwächen
-- **Drift in YAML** (B09/B10 inhaltliche Drift, A03–A06/E20/E21/F23 Tag-Drift): die CO₂-Werte sind möglicherweise zu anderen Hebeln zugeordnet als zu den dokumentierten — Bereinigung steht aus
+- **Drift in YAML** (B09/B10 inhaltliche Drift, A03–A06/E20/E21/F23 Tag-Drift): die CO₂-Werte sind möglicherweise zu anderen Hebeln zugeordnet als zu den dokumentierten — Bereinigung steht aus *(✅ Update 2026-05-30: bereinigt — B09/B10 inhaltlich v1.3 2026-05-28; A03–A06/E20/E21/F23 Tag-Renames in co2_master v1.3, Doku-Nachzug HEBEL_KATALOG v1.12; alle total-neutral. Einziger Rest: F23/F24-Wert-Ownership −0,9, total-neutral, User-Verifikation offen.)*
 - **Monte-Carlo-Unsicherheit** des YAML (±25 % Aggregat) wurde nicht propagiert durch die Szenario-Rechnung
 - **Schicht 3** ist hochgradig modellabhängig — vor allem Wald-Folgewirkung und Verhaltens-Multiplikator
 - **Kein Peer-Review** dieser Bilanz; sie ist intern-wissenschaftlich, nicht extern validiert
