@@ -36,13 +36,13 @@
 
 ## 6. „Abgrenzung zu MCDA / IAM / Robust Decision Making?"
 
-**Vorbereitete Antwort:** Eine tabellarische Einordnung gegenüber AHP/ELECTRE/PROMETHEE (MCDA), DICE/FUND/PAGE (IAM) und Lempert et al. (RDM) wird als Supplement vorbereitet. Kern-Differenzierung, die zu prüfen ist: das **J-Veto als lexikographische Sperrschwelle** (nicht additiv kompensierbar — anders als gewichtete MCDA-Summen) und **Cross-Domain-Konsistenz als First-Class-Kriterium** statt nachgelagerter Prüfung.
-**Status:** 📋 Vergleichstabelle in Revision · **Beleg:** LIMITATIONS #14.
+**Vorbereitete Antwort:** Die tabellarische Einordnung gegenüber AHP/ELECTRE/PROMETHEE (MCDA), DICE/FUND/PAGE (IAM) und Lempert et al. (RDM) liegt als Supplement vor: `canon/METHOD_POSITIONING.md`. Kern-Differenzierung — **ohne Neuheits-Alleinanspruch** (ELECTRE und lexikografische Verfahren kennen Veto-Schwellen): nicht die Existenz eines Vetos, sondern die **Kombination** ist neu — fixe universelle Gewichte (statt elicitierter Präferenzen), **eine** normativ verankerte Gerechtigkeits-Sperrschwelle (J-Veto aus dem Antifragilitäts-Prinzip, nicht paarweises Outranking), **Cross-Domain-Konsistenz als gescorte First-Class-Achse** und Screening statt Optimierung (komplementär zu IAM).
+**Status:** ✅ Entwurf vorhanden (`canon/METHOD_POSITIONING.md`) · 📋 volle Gewichts-Sensitivität + EN-Übertragung offen · **Beleg:** LIMITATIONS #14.
 
 ## 7. „Warum genau diese 49 Hebel? Was wurde ausgeschlossen?"
 
-**Vorbereitete Antwort:** Die Selektions-Logik (Aufnahme- und Ausschluss-Kriterien) ist noch nicht systematisch dokumentiert — bis dahin ist die Hebel-Menge diskretionär begründet. Bewusst (noch) nicht im Portfolio: u. a. Kernkraft, BECCS/DAC, großskaliges Geoengineering; die Begründung (Kriterium: technisch/systemisch realisierbar + SEC-J-tragfähig + keine ungelösten Just-/Konsistenz-Konflikte) wird nachgeliefert.
-**Status:** ⏳ offen · **Beleg:** LIMITATIONS #15.
+**Vorbereitete Antwort:** Die Selektions-Logik (Aufnahme-Kriterien K1–K5, Ausschluss-Begründungen) ist jetzt dokumentiert: `canon/LEVER_SELECTION.md`. Kern: K1 (technisch/systemisch realisierbar, Großserien-Reife *kein* Kriterium) öffnet das Feld; K2/K3 (SEC-J-tragfähig + kein J-Veto + keine ungelösten Just-/Konsistenz-Konflikte) filtern. Bewusst zurückgestellt: Kernkraft, BECCS/DAC, SRM-Geoengineering — kriteriengeleitet begründet (E/J/C), als challenge-bare Wertung markiert; Biokraftstoffe (Antrieb) sind im Kanon bereits explizit ausgeschlossen (Band 4 I33 §12). Die Menge ist offen/erweiterbar (AUTO-INTEGRATE-Pipeline).
+**Status:** ✅ Entwurf vorhanden (`canon/LEVER_SELECTION.md`) · ⏳ systematisches PS-U-Scoring der Ausschlüsse + deduktive Herleitung offen · **Beleg:** LIMITATIONS #15.
 
 ## 8. „Einzelautor, interne KI-Audits — Qualitätssicherung?"
 
@@ -64,10 +64,10 @@
 ## Priorisierung vor Corrigendum-Versand (kritischer Pfad)
 
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
-1. **§8.2 YAML-Domain-Zuordnungs-Bereinigung** (Double-Counting endgültig sauber) — #4
-2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4
-3. **Out-of-sample-Test definieren** — #5
-4. **MCDA/IAM/RDM-Vergleichstabelle** (📋, schreibbar ohne neue Daten) — #6
-5. **Hebel-Selektions-Logik dokumentieren** (📋, schreibbar) — #7
+1. **§8.2 YAML-Domain-Zuordnungs-Bereinigung** (Double-Counting endgültig sauber) — #4 ⏳
+2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4 ⏳
+3. **Out-of-sample-Test definieren** — #5 ⏳
+4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
+5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
-Die 📋-Punkte (4, 5, 6, 10) sind ohne neue Daten erstellbar; die ⏳-Punkte (1, 5, 7) brauchen echte Analyse-Arbeit.
+Die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10) sind erledigt; die verbleibenden review-ready-Gates sind die datengetriebenen ⏳-Punkte 1–3 (Q1, Q4, Q5) — echte Analyse-Arbeit.

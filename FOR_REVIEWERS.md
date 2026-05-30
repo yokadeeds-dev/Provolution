@@ -22,6 +22,8 @@ Dies ist ein **Fach-/Reviewer-Repository**, keine populäre Einführung. Die Dic
 
 **Tiefer (optional):** SEC-J-Spec [`canon/de/06_framework_extensions_v2.0_SECJ.md`](canon/de/06_framework_extensions_v2.0_SECJ.md) · Hebel-Index [`canon/de/HEBEL_KATALOG_v1.0.md`](canon/de/HEBEL_KATALOG_v1.0.md) · Anwendungs-Kanon [`canon/de/04_Band4_Anwendungen_v4.2.md`](canon/de/04_Band4_Anwendungen_v4.2.md) · Steuerung/Score [`canon/de/05_Band5_Steuerung_Score.md`](canon/de/05_Band5_Steuerung_Score.md).
 
+**Reviewer-Supplemente (Methodik-Einordnung & Selektion):** [`canon/METHOD_POSITIONING.md`](canon/METHOD_POSITIONING.md) (Abgrenzung ggü. MCDA/IAM/RDM) · [`canon/LEVER_SELECTION.md`](canon/LEVER_SELECTION.md) (Hebel-Aufnahme-/Ausschluss-Kriterien).
+
 ---
 
 ## Wichtige Lesehinweise
