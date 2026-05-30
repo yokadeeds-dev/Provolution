@@ -11,8 +11,8 @@
 
 ## 1. „Operationalisieren Sie die Konsistenz-Relation (⊥)."
 
-**Vorbereitete Antwort:** Die Consistency-Achse ist nicht binär-undefiniert. Die kontinuierliche Form ist `C = 1 − (K+U)/I_ges` (Konflikte K, unerfüllte Abhängigkeiten U über alle Interaktionen I_ges; Band 5 §2). Die binäre 0/1-Variante ist als **konservative Screening-Vereinfachung** markiert. Die reproduzierbare Bestimmung von K/U pro Hebel — als auditierbare **Hebel-zu-Hebel-Konflikt-Matrix (49×49)** mit operationalen Kriterien (Ressourcen-Konkurrenz, gegenläufige Anreize, Rebound-Typ) — wird als Supplement nachgereicht.
-**Status:** ✅ Formel vorhanden · 📋 49×49-Matrix als Supplement · **Beleg:** LIMITATIONS #6, #16.
+**Vorbereitete Antwort:** Die Consistency-Achse ist nicht binär-undefiniert. Die kontinuierliche Form ist `C = 1 − (K+U)/I_ges` (Konflikte K, unerfüllte Abhängigkeiten U über alle Interaktionen I_ges; Band 5 §2). Die binäre 0/1-Variante ist als **konservative Screening-Vereinfachung** markiert. Die reproduzierbare Bestimmung von K/U pro Hebel — als auditierbare **Hebel-zu-Hebel-Konflikt-Matrix (44×44)** — liegt als **Erst-Entwurf** vor (`studies/CONSISTENCY_MATRIX_2026-05-30/`, 121 dokumentierte Kanten, jede quellen-rückführbar; nur B12 mit niedrigem C\*=0,50 = der Warnschwellen-Hebel). Operationale Kriterien (Ressourcen-Konkurrenz, gegenläufige Anreize, Rebound) + systematische Paar-für-Paar-Elicitation der restlichen Konflikte folgen.
+**Status:** ✅ Formel vorhanden · ✅ 44×44-Matrix-Erst-Entwurf (`studies/CONSISTENCY_MATRIX_2026-05-30/`) · 📋 systematische Konflikt-Elicitation offen · **Beleg:** LIMITATIONS #6, #16.
 
 ## 2. „Begründen Sie die SEC-J-Gewichte. Sensitivitätsanalyse?"
 
@@ -27,7 +27,7 @@
 ## 4. „−58,6 Gt = Überclaiming. Double-Counting-Audit?"
 
 **Vorbereitete Antwort:** −58,6 Gt ist ein **gescreentes Potenzial, keine Prognose**. Der realistische Netto-Erwartungswert ist der Monte-Carlo-Median **−43,2 Gt/Jahr** [90 %-KI −52,8…−34,6], im 50 %-Umsetzungs-Stresstest **−14,9 Gt/Jahr**. Per-Domain-Overlap ist bereinigt (z. B. B07 schluckt B08–B12: −32 → ~−16 Gt). **Offen:** Sankey-Visualisierung der Carbon-Flows, Inter-Domain-Rückkopplung, abschließende YAML-Domain-Zuordnungs-Bereinigung. Beide Werte werden in README/STATUS gleichrangig kommuniziert.
-**Status:** ✅ MC-Median + Per-Domain-Overlap + YAML-Tag-Zuordnung (2026-05-30) · ⏳ Sankey/Inter-Domain-Rückkopplung · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
+**Status:** ✅ MC-Median + Per-Domain-Overlap + YAML-Tag-Zuordnung + Konflikt-Matrix-Erst-Entwurf (2026-05-30) · ⏳ Sankey + Inter-Domain-Rückkopplung · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
 
 ## 5. „Falsifizierbarkeit — oder nur innere Konsistenz?"
 
@@ -65,9 +65,9 @@
 
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
 1. ~~**§8.2 YAML-Domain-Zuordnungs-Bereinigung**~~ ✅ **erledigt 2026-05-30** — Befund: Tag-Drift war in `co2_master` v1.3 (2026-05-28) bereits bereinigt, nur Doku stale; nachgezogen (HEBEL_KATALOG v1.12). Double-Counting/Overlap bereits auf Domain-Total-Ebene sauber. Rest: F23/F24-Wert-Ownership (total-neutral) — #4
-2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4 ⏳
+2. **49×49-Konflikt-Matrix** ✅ **Erst-Entwurf 2026-05-30** (`studies/CONSISTENCY_MATRIX_2026-05-30/`, 44×44, C-Achse auditierbar); ⏳ **Sankey** + systematische Konflikt-Elicitation — #1, #4
 3. **Out-of-sample-Test** — ✅ **erste Probe 2026-05-30** (`studies/OUT_OF_SAMPLE_2026-05-30/`, N=3, Skala 0,19–0,94: PKW-Maut ↔ ASFINAG ↔ Währungsreform); ⏳ powered/verblindet/prä-registriert offen — #5
 4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
 5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
-Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`), §8.2 (Item 1 — war stale-Doku) und der Out-of-sample-Test (Item 3, Q5 — erste Probe `studies/OUT_OF_SAMPLE_2026-05-30/`; powered/verblindet bleibt offen). **Verbleibendes großes review-ready-Gate:** nur noch Item **2** — Sankey + 49×49-Konflikt-Matrix (Q1/Q4).
+Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`), §8.2 (Item 1 — war stale-Doku) und der Out-of-sample-Test (Item 3, Q5 — erste Probe `studies/OUT_OF_SAMPLE_2026-05-30/`; powered/verblindet bleibt offen). **Verbleibend:** von Item 2 ist die 49×49-Matrix als Erst-Entwurf erledigt — offen nur noch die **Sankey-Visualisierung** + die systematische Paar-für-Paar-Konflikt-Elicitation (Q1/Q4).
