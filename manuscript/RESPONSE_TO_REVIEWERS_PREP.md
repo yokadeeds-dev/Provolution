@@ -27,7 +27,7 @@
 ## 4. „−58,6 Gt = Überclaiming. Double-Counting-Audit?"
 
 **Vorbereitete Antwort:** −58,6 Gt ist ein **gescreentes Potenzial, keine Prognose**. Der realistische Netto-Erwartungswert ist der Monte-Carlo-Median **−43,2 Gt/Jahr** [90 %-KI −52,8…−34,6], im 50 %-Umsetzungs-Stresstest **−14,9 Gt/Jahr**. Per-Domain-Overlap ist bereinigt (z. B. B07 schluckt B08–B12: −32 → ~−16 Gt). **Offen:** Sankey-Visualisierung der Carbon-Flows, Inter-Domain-Rückkopplung, abschließende YAML-Domain-Zuordnungs-Bereinigung. Beide Werte werden in README/STATUS gleichrangig kommuniziert.
-**Status:** ✅ MC-Median + Per-Domain-Overlap · ⏳ Sankey/Inter-Domain/YAML-Bereinigung · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
+**Status:** ✅ MC-Median + Per-Domain-Overlap + YAML-Tag-Zuordnung (2026-05-30) · ⏳ Sankey/Inter-Domain-Rückkopplung · **Beleg:** STATUS.md §2, LIMITATIONS #2, #16.
 
 ## 5. „Falsifizierbarkeit — oder nur innere Konsistenz?"
 
@@ -64,10 +64,10 @@
 ## Priorisierung vor Corrigendum-Versand (kritischer Pfad)
 
 Die mit ⏳ markierten Punkte sind die echten review-ready-Gates (wissenschaftliche Arbeit, keine Doku-Edits):
-1. **§8.2 YAML-Domain-Zuordnungs-Bereinigung** (Double-Counting endgültig sauber) — #4 ⏳
+1. ~~**§8.2 YAML-Domain-Zuordnungs-Bereinigung**~~ ✅ **erledigt 2026-05-30** — Befund: Tag-Drift war in `co2_master` v1.3 (2026-05-28) bereits bereinigt, nur Doku stale; nachgezogen (HEBEL_KATALOG v1.12). Double-Counting/Overlap bereits auf Domain-Total-Ebene sauber. Rest: F23/F24-Wert-Ownership (total-neutral) — #4
 2. **Sankey + 49×49-Konflikt-Matrix** (materialisiert Konsistenz auditierbar) — #1, #4 ⏳
 3. **Out-of-sample-Test definieren** — #5 ⏳
 4. ~~**MCDA/IAM/RDM-Vergleichstabelle**~~ ✅ **erledigt 2026-05-30** → `canon/METHOD_POSITIONING.md` — #6
 5. ~~**Hebel-Selektions-Logik dokumentieren**~~ ✅ **erledigt 2026-05-30** → `canon/LEVER_SELECTION.md` — #7
 
-Die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10) sind erledigt; die verbleibenden review-ready-Gates sind die datengetriebenen ⏳-Punkte 1–3 (Q1, Q4, Q5) — echte Analyse-Arbeit.
+Erledigt: die doku-schreibbaren 📋-Punkte (Q6, Q7, Q10), die Gewichts-Sensitivität (Q2, `studies/SENSITIVITY_2026-05-30/`) und §8.2 (Item 1 — war stale-Doku, kein offener Daten-Punkt). **Verbleibende review-ready-Gates:** die datengetriebenen ⏳-Punkte **2–3** — Sankey + 49×49-Konflikt-Matrix (Q1/Q4) und Out-of-sample-Test (Q5).
