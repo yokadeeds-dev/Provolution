@@ -83,5 +83,5 @@ The **J-veto** (J < 0.50 → SEC-J = null) is preserved in both modes as an abso
 - Current authoritative spec: `canon/de/06_framework_extensions_v2.0_SECJ.md` (PS-U 2.0 Extension)
 - Predecessor corrigendum: `canon/en/CORRIGENDUM_2026-04-27.md`
 - Deprecated v1.0: `canon/de/SECJ_SPEC_v1.0.md` (with DEPRECATED header)
-- Audit trail: `studies/EXTERNAL_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`
+- Audit trail: `studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md`
 - Tool that detected the residual pre-v1.0 formula in manuscripts: `_tools/spec_consistency_audit.py`
