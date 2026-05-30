@@ -90,6 +90,8 @@ Die folgenden Lücken sind durch adversariale Review-Pässe (siehe `studies/AI_A
 
 15. **Auswahlbegründung der Hebel (ausstehend).** Warum genau diese 49 (nicht 39 oder 59)? Welche wurden bewusst ausgeschlossen (z. B. Kernkraft, BECCS/DAC, großskaliges Geoengineering) und nach welchem Kriterium? Die Selektions-Logik ist noch nicht systematisch dokumentiert; bis dahin ist die Hebel-Menge diskretionär begründet, nicht deduktiv.
 
+16. **Double-Counting-Audit & Inter-Domain-Korrektur (teilweise offen).** Per-Domain-Overlap *ist* bereinigt (z. B. B07 Kreislauf „schluckt" B08–B12: −32 → ~−16 Gt), und der realistische Netto-Median (−43,2 Gt, Monte-Carlo) ist dokumentiert. Offen bleiben: eine **Sankey-Visualisierung** der Carbon-Flows, eine **Hebel-zu-Hebel-Konflikt-Matrix** (materialisiert die ⊥-Relation auditierbar), die **Inter-Domain-Rückkopplung** (dekarbonisiert die C-Domäne den Strom, ändert sich die B-Domänen-Materialvorkette — bisher nicht modelliert) und die **abschließende YAML-Domain-Zuordnungs-Bereinigung** (in Band 4 §8.2 selbst als ausstehend vermerkt). Lesart bis dahin: **−43,2 Gt = realistischer Netto-Wert, −58,6 Gt = gescreentes Potenzial-Ceiling** (beide in STATUS.md §2 getrennt geführt) — bei der Kommunikation gleichrangig nennen, nicht das Ceiling allein.
+
 ---
 
 ## Wie mit neuen Kritiken umgehen
