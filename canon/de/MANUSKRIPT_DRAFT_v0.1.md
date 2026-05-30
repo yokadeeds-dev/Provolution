@@ -2,6 +2,8 @@
 
 **Entwurf v0.1 — 2026-04-18**
 
+> **Hinweis:** Eingefrorener Einreichungs-Snapshot (2026-04-18). Autoritative Methodik & Werte: [`canon/STATUS.md`](../STATUS.md). Drei Corrigenda gelten — **Formel:** [`CORRIGENDUM_2026-04-27`](../en/CORRIGENDUM_2026-04-27.md) + [`CORRIGENDUM_2026-05-28`](../en/CORRIGENDUM_2026-05-28.md) (PS-U 2.0); **Werte/Struktur:** [`CORRIGENDUM_2026-05-30`](../en/CORRIGENDUM_2026-05-30.md) (Ø SEC-J 0,90 · −58,6 Gt gescreentes Potenzial / −43,2 Gt realistischer Netto-Median · 49 Hebel / 11 Domänen A–K). Bei Zahlenkonflikt gilt STATUS.md.
+
 ---
 
 **Autor:**
