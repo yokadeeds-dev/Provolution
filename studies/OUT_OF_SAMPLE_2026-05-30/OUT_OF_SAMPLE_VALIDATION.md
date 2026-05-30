@@ -1,6 +1,6 @@
 # Out-of-sample-Validierung SEC-J — retrospektive Konkordanz-Probe
 
-**Stand:** 2026-05-30 · **Charakter:** Reviewer-Supplement / Proof-of-Concept (N=6, Skala 0,085–0,94) · **Companion zu:** [`canon/STATUS.md`](../../canon/STATUS.md), [`canon/LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13
+**Stand:** 2026-05-30 · **Charakter:** Reviewer-Supplement / Proof-of-Concept (N=7, Skala 0,085–0,94) · **Companion zu:** [`canon/STATUS.md`](../../canon/STATUS.md), [`canon/LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13
 
 Antwort auf den Reviewer-Einwand „Innere Konsistenz ≠ prädiktiver Test — wo ist die Out-of-sample-Falsifizierung?" ([`LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13). Geprüft: *Markieren SEC-J — v. a. C (Konsistenz) und S (Systemica) — reale Erfolge/Fehlschläge, **unabhängig** von medialem Getöse und politischem Wunschdenken zum jeweiligen Zeitpunkt? Und lokalisiert das Framework, **wo** eine Maßnahme bricht?*
 
@@ -104,15 +104,28 @@ Quelle der Scores: PS-U-Audits Yoka (Maut/Währungsreform/Großer Sprung/Apollo/
 
 **Verdict:** 🟢 Referenz-Modell. **Realer Ausgang:** „Wirtschaftswunder"-Grundstein.
 
+### 2g · Dortmund: Pfand-Bußgeld (Ordnungsamt) — „Legalität ohne Verhältnismäßigkeit"
+
+**m:** Bußgeld gegen das Abstellen von Pfandflaschen (Spende an Pfandsammler) neben öffentlichen Containern, eingestuft als illegale Müllablagerung; bewusste Verweigerung des Ermessens-/Geringfügigkeits-Spielraums. **Ex-ante:** Abfallrecht + Verfahrenslage. *(Score-Vorschlag dieses Audits; kleinerer Stakes als die übrigen Fälle — illustrative Muster-Variante, Datum citation-pending.)*
+
+| S | E | C | J | SEC-J |
+|---:|---:|---:|---:|---:|
+| 0,45 | 0,40 | 0,55 | 0,35 | **0,45** |
+
+- **C 0,55:** formal nach Buchstaben des Abfallrechts konsistent — aber rechtlich **contestabel** (Zweckschenkung/Sachwert ≠ Abfall) und in Spannung zum eigenen Eingeständnis „lobenswert". **J 0,35:** Ermessen trotz anerkannt guter Absicht verweigert → Verhältnismäßigkeits-Bruch (Flag SOZIALE INKONSISTENZ). **E/S:** „Nachahmung → Vermüllung" behauptet, nicht belegt; Flaschen ordentlich abgestellt, klarer Sachwert.
+
+**Verdict:** DEFIZITÄR (kein Veto). **Realer Ausgang:** Rechtsexperten-Kritik als unverhältnismäßig/rechtlich fragwürdig („Realer Irrsinn"). **Neues Muster:** *formal-legal, aber unverhältnismäßig* — eine J(Verhältnismäßigkeit)-Schwäche bei defensibler C, die weder Open-House (hohes J, S/E/C-Bruch) noch PKW-Maut (J-Veto) so zeigen.
+
 ---
 
-## 3. Ergebnis — volle Skala (N=6)
+## 3. Ergebnis — volle Skala (N=7)
 
 | Fall | S | E | C | J | SEC-J | Verdict | Realer Ausgang | Konkordanz |
 |---|---:|---:|---:|---:|---:|---|---|:---:|
 | Großer Sprung 1958 | 0,05 | 0,10 | 0,05 | 0,20 | **0,085** | Katastrophe | Hungersnot ~15–45 Mio. Tote | ✅ |
 | PKW-Maut 2019 | 0,20 | 0,30 | 0,10 | 0,15 | **0,19** | NICHT TRAGFÄHIG + Veto | EuGH gekippt | ✅ |
 | Open-House-Masken 2020 | 0,35 | 0,25 | 0,20 | 0,80 | **0,35** | instabil (kein Veto) | Mrd.-Klagen, OLG | ✅ |
+| Dortmund Pfand-Bußgeld | 0,45 | 0,40 | 0,55 | 0,35 | **0,45** | DEFIZITÄR (kein Veto) | Rechtsexperten-Kritik (unverhältnismäßig) | ✅ |
 | ASFINAG | 0,80 | 0,85 | 0,90 | 0,80 | **0,84** | BESTANDEN | durabel | ✅ |
 | Apollo 1961–69 | 0,95 | 0,90 | 0,95 | 0,80 | **0,92** | maximal stabil | Mondlandung 1969 | ✅ |
 | Währungsreform 1948 | 0,95 | 0,95 | 0,95 | 0,85 | **0,94** | Referenz | Wirtschaftswunder | ✅ |
@@ -130,6 +143,7 @@ SEC-J liefert nicht nur einen Score, sondern **diagnostiziert die gebrochene Ach
 | Großer Sprung | S+E+C+J (alle) | totaler Systemkollaps | humanitäre Katastrophe (Hungersnot) |
 | PKW-Maut | **C+J** | rechtlich/legitimatorische Kassation | EuGH-Urteil (Diskriminierung) |
 | Open-House-Masken | **S+E+C** (J intakt) | operativ/vertraglich, Ziel gedeckt | Mrd.-Klagen, aber Notlage-legitimiert |
+| Dortmund Pfand-Bußgeld | **J** (Verhältnismäßigkeit), C defensibel | legal, aber unverhältnismäßig (Ermessens-Fehler) | Rechtsexperten-Kritik, „Realer Irrsinn" |
 
 **Der Schlüssel-Kontrast PKW-Maut vs. Open-House:** Beide scheitern — aber an **verschiedenen** Achsen. Die Maut bricht auf **J** (Diskriminierung) → **Veto** → juristischer Tod. Open-House hält **J=0,80** (legitimes Notlage-Ziel) und bricht auf **S/E/C** → **kein** Veto, aber operativer/vertraglicher Kollaps. **Hohes J rettet die Maßnahme nicht** — und das Framework attribuiert den Bruch korrekt auf die Ausführungs-Achsen. Genau diese **achsen-genaue Diagnose** unterscheidet SEC-J von einem reinen Skalar-Ranking.
 
