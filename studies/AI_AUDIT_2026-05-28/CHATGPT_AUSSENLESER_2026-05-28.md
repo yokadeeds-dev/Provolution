@@ -1,10 +1,12 @@
-# Externes Außenleser-Audit — ChatGPT-Sichtung Provolution-Repo
+# KI-Außenleser-Pass (ChatGPT) — Selbst-Kritik, KEIN externes Peer Review
+
+> ⚠️ **Provenance-Disclaimer:** Dieses Dokument ist der Output einer **ChatGPT-„Außenleser-Simulation"** (generisches LLM), das das öffentliche Repo gelesen hat. Es ist **kein externes Peer Review durch eine:n menschliche:n Wissenschaftler:in** und **kein unabhängiges Audit**. Es ist ein **KI-assistierter Selbst-Kritik-Pass** (Devil's Advocate), um mögliche Reviewer-Einwände vorab sichtbar zu machen. Alle Befunde stehen unter dem Vorbehalt menschlicher Verifikation. Einordnung: [`_README.md`](_README.md) · `canon/STATUS.md` §4 · `canon/LIMITATIONS.md`.
 
 **Datum:** 2026-05-28
-**Auditor:** ChatGPT (OpenAI) im Provolutions-Bereich des Users — externe Sichtung des öffentlichen Repos `yokadeeds-dev/Provolution` über GitHub-Einsicht
-**Audit-Modus:** "Außenleser-Simulation" als kritischer aber fairer wissenschaftlicher Gutachter ohne Vorgeschichte
-**Audit-Methode:** zwei Iterationen — vor und nach Merge von PR #4 (v1.5 CO₂-Bilanz Drift-Resolution)
-**Verdict 2. Iteration:** Provolution ist jetzt kanonisiertes, versioniertes, methodisch operationalisiertes Framework. Hauptangriffsfläche verschoben von "Chaos" zu "Zahlenangreifbarkeit" — methodischer Fortschritt.
+**Quelle:** ChatGPT (OpenAI), „Außenleser-Simulation" über GitHub-Einsicht — generisches LLM, **kein** Fach-Gutachter
+**Charakter:** KI-assistierter Selbst-Kritik-Pass — **nicht extern, nicht unabhängig**
+**Methode:** zwei Iterationen — vor und nach Merge von PR #4 (v1.5 CO₂-Bilanz Drift-Resolution)
+**Beobachtung 2. Iteration (KI-Pass, nicht autoritativ):** Provolution ist jetzt kanonisiertes, versioniertes, methodisch operationalisiertes Framework. Hauptangriffsfläche verschoben von "Chaos" zu "Zahlenangreifbarkeit" — methodischer Fortschritt.
 
 ---
 
