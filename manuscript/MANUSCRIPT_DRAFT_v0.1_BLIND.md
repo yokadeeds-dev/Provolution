@@ -2,7 +2,7 @@
 
 **Draft v0.1 — 2026-04-18**
 
-> **STATUS:** SUBMITTED SNAPSHOT (Draft v0.1, blind version, 2026-04-18). · **AUTHORITATIVE VALUES:** [`canon/STATUS.md`](../canon/STATUS.md). · **CITE only together with the corrigenda** ([`CORRIGENDUM_2026-04-27`](../canon/en/CORRIGENDUM_2026-04-27.md) + [`CORRIGENDUM_2026-05-28`](../canon/en/CORRIGENDUM_2026-05-28.md)) — abstract still states n=40, −58.0 Gt and the pre-SEC-J formula (0.5·S+0.3·E+0.2·C). Current: 49 levers / 11 domains, SEC-J per PS-U 2.0.
+> **STATUS:** SUBMITTED SNAPSHOT (Draft v0.1, blind version, 2026-04-18). · **AUTHORITATIVE VALUES:** [`canon/STATUS.md`](../canon/STATUS.md). · **CITE only together with the corrigenda** ([`CORRIGENDUM_2026-04-27`](../canon/en/CORRIGENDUM_2026-04-27.md) + [`CORRIGENDUM_2026-05-28`](../canon/en/CORRIGENDUM_2026-05-28.md) [formula], [`CORRIGENDUM_2026-05-30`](../canon/en/CORRIGENDUM_2026-05-30.md) [figures & counts]) — abstract still states n=40, −58.0 Gt and the pre-SEC-J formula (0.5·S+0.3·E+0.2·C). Current: 49 levers / 11 domains, SEC-J Ø 0.90 per PS-U 2.0; −58.6 Gt screened potential / −43.2 Gt realistic net (MC median).
 
 ---
 
