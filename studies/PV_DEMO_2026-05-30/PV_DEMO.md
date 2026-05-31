@@ -97,4 +97,4 @@ Den AfD-Fall *auszusparen* wäre die eigentliche Selektivität; ihn mit **dersel
 
 ---
 
-*Companion: [`canon/de/00_PS_Familie_Uebersicht.md`](../../canon/de/00_PS_Familie_Uebersicht.md) · [`canon/de/07_Probatio_Veritatis_v2.0.md`](../../canon/de/07_Probatio_Veritatis_v2.0.md) · [`canon/de/13_Probatio_Narrativa_v1.0.md`](../../canon/de/13_Probatio_Narrativa_v1.0.md) · [`studies/OUT_OF_SAMPLE_2026-05-30/`](../OUT_OF_SAMPLE_2026-05-30/OUT_OF_SAMPLE_VALIDATION.md) (Maßnahmen-Ebene).*
+*Companion: [`canon/de/00_PS_Familie_Uebersicht.md`](../../canon/de/00_PS_Familie_Uebersicht.md) · [`canon/de/07_Probatio_Veritatis_v2.0.md`](../../canon/de/07_Probatio_Veritatis_v2.0.md) · [`canon/de/13_Probatio_Narrativa_v1.0.md`](../../canon/de/13_Probatio_Narrativa_v1.0.md) · [`studies/ILLUSTRATIVE_CASES_2026-05-30/`](../ILLUSTRATIVE_CASES_2026-05-30/ILLUSTRATIVE_CASES_REPORT.md) (Maßnahmen-Ebene).*
