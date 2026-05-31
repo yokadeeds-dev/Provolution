@@ -1,10 +1,18 @@
-# Out-of-sample-Validierung SEC-J — retrospektive Konkordanz-Probe
+# Illustrative Fall-Demonstrationen SEC-J — retrospektive Konkordanz-Probe (Proof-of-Concept)
 
-**Stand:** 2026-05-30 · **Charakter:** Reviewer-Supplement / Proof-of-Concept (N=7, Skala 0,085–0,94) · **Companion zu:** [`canon/STATUS.md`](../../canon/STATUS.md), [`canon/LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13
+**Stand:** 2026-05-30 · **Charakter:** Reviewer-Supplement / **Proof-of-Concept, KEINE Validierungsstudie** (N=7, Skala 0,085–0,94) · **Companion zu:** [`canon/STATUS.md`](../../canon/STATUS.md), [`canon/LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13
+
+> **⚠️ Scope-Disclaimer — zuerst lesen.** Dies ist eine **illustrative Proof-of-Concept-Demonstration**, **keine** Validierungsstudie im methodischen Sinn:
+> - **Nicht verblindet** — die Fälle wurden vom Framework-Autor *mit* Kenntnis des historischen Ausgangs bewertet (Hindsight-/Confirmation-Risiko).
+> - **N=7 ist statistisch nicht powered** für prädiktive Validitäts-Aussagen.
+> - **Fälle reichen über Klima hinaus** (z. B. Apollo, Währungsreform) — sie zeigen *interpretative Portierbarkeit* der Logik, **nicht** klimaspezifische Vorhersagegüte.
+> - **Keine unabhängige Rater-Prüfung**; ein Score (ASFINAG) ist eine Autoren-Schätzung.
+>
+> Die durchgehende Konkordanz über diese sieben Fälle wird als **strukturelle Übereinstimmung** des Frameworks mit dokumentierten Ausgängen berichtet — **nicht** als Beleg prädiktiver Validität. Eine methodisch saubere Out-of-sample-Validierung (verblindet, unabhängige Rater, prä-registriert, klimaspezifisch) ist als künftige Arbeit in §7 skizziert.
 
 Antwort auf den Reviewer-Einwand „Innere Konsistenz ≠ prädiktiver Test — wo ist die Out-of-sample-Falsifizierung?" ([`LIMITATIONS.md`](../../canon/LIMITATIONS.md) #13). Geprüft: *Markieren SEC-J — v. a. C (Konsistenz) und S (Systemica) — reale Erfolge/Fehlschläge, **unabhängig** von medialem Getöse und politischem Wunschdenken zum jeweiligen Zeitpunkt? Und lokalisiert das Framework, **wo** eine Maßnahme bricht?*
 
-> **Note for external readers (EN):** Retrospective out-of-sample concordance probe across the full SEC-J range (catastrophe → reference), N=6, scored on each measure's *ex-ante* information set. Proof-of-concept, **not** a powered validation; scored by the framework author with outcome knowledge — see §6 Limitations. No claim of error-free prediction.
+> **Note for external readers (EN):** Retrospective concordance probe across the full SEC-J range (catastrophe → reference), N=7, scored on each measure's *ex-ante* information set. **Proof-of-concept, NOT a validation study:** non-blind scoring with outcome knowledge, N=7 unpowered, cases span beyond climate (interpretive portability, not climate-specific predictive accuracy). The 100 % concordance is reported as *structural consistency* with documented outcomes — **not** predictive validity. See the scope disclaimer above and §6 Limitations.
 
 ---
 
@@ -12,8 +20,8 @@ Antwort auf den Reviewer-Einwand „Innere Konsistenz ≠ prädiktiver Test — 
 
 **Out-of-sample-Logik:** Bewertung auf dem Informationsstand *vor* dem bekannten Ausgang, dann Abgleich mit dem dokumentierten Ausgang. Falsifiziert wäre der Claim, wenn SEC-J einen real gescheiterten Fall hoch bzw. einen real durablen/erfolgreichen Fall als Kollaps bewertete — **oder** wenn die Fehler-Achse nicht zur Art des realen Scheiterns passte.
 
-**Zwei Validierungs-Aussagen:**
-1. **Skalen-/Diskriminanz-Validität:** Trennt SEC-J Erfolg von Kollaps über die volle Skala? (§3)
+**Zwei Demonstrations-Aussagen:**
+1. **Skalen-/Diskriminanz-Verhalten:** Trennt SEC-J Erfolg von Kollaps über die volle Skala? (§3)
 2. **Failure-Mode-Lokalisierung:** Sagt die *gebrochene Achse* die *Art* des Scheiterns voraus? (§4)
 
 **Scope (ehrlich):** framework-neutrale Governance-/Großprojekt-Fälle — testen die **allgemeine** SEC-J-Logik (PS-U ist nicht climate-gebunden, `06_framework_extensions_v2.0_SECJ.md §1`), **nicht** die climate-spezifischen Hebel-Scores. **Formel:** `SEC-J = 0,30·S + 0,25·E + 0,30·C + 0,15·J`; Veto bei J<0,50.
@@ -130,7 +138,7 @@ Quelle der Scores: PS-U-Audits Yoka (Maut/Währungsreform/Großer Sprung/Apollo/
 | Apollo 1961–69 | 0,95 | 0,90 | 0,95 | 0,80 | **0,92** | maximal stabil | Mondlandung 1969 | ✅ |
 | Währungsreform 1948 | 0,95 | 0,95 | 0,95 | 0,85 | **0,94** | Referenz | Wirtschaftswunder | ✅ |
 
-Über sechs Fälle, vier Jahrzehnte und drei Kontinente trennt SEC-J Kollaps von Erfolg **monoton** und konkordant zum dokumentierten Ausgang — unabhängig vom damaligen medialen/politischen Getöse.
+Über sieben Fälle, vier Jahrzehnte und drei Kontinente trennt SEC-J Kollaps von Erfolg **monoton** und konkordant zum dokumentierten Ausgang — unabhängig vom damaligen medialen/politischen Getöse. *(Konkordanz = strukturelle Übereinstimmung, nicht prädiktive Validität — siehe Scope-Disclaimer.)*
 
 ---
 
@@ -166,18 +174,26 @@ Die J-Achse trennt also sauber **diskriminierend-by-design / Rechtsbruch** (Veto
 **Kein Beweis fehlerfreier Vorhersage.**
 1. **Hindsight / Confirmation-Risiko:** Bewertung durch den Framework-Autor mit Outcome-Wissen; Gold-Standard = verblindete, unabhängige Rater ohne Ausgangs-Kenntnis.
 2. **Anachronismus:** SEC-J-Formel erst 2026-05 kanonisiert → **retrospektive Anwendung**, keine real abgegebene Prognose.
-3. **N=6, Single-Rater:** Proof-of-Concept, statistisch nicht powered; ein Score (ASFINAG) ist eigene Schätzung.
+3. **N=7, Single-Rater:** Proof-of-Concept, statistisch nicht powered; ein Score (ASFINAG) ist eigene Schätzung.
 4. **Framework-neutrale Fälle ≠ Climate-Lever-Feldtest:** geprüft ist die allgemeine S/E/C/J-Logik, nicht die climate-spezifischen Hebel.
 5. **Empirische Ausgangs-Aussagen** (EuGH C-591/17; Open-House-Preis/Klagesummen; Großer-Sprung-Opferzahlen; Apollo-/Währungsreform-Daten) — als gut dokumentierter Allgemeinstand geführt, **formale Zitate ausstehend** vor externer Verwendung.
 
 ---
 
-## 7. Was als Nächstes
+## 7. Validierungs-Roadmap (künftige Arbeit)
 
-- **N weiter erhöhen** (jeder dokumentierte Extremfall härtet #13): Klima-/Governance-Fälle balanciert.
-- **Verblindung + Präregistrierung** künftiger Maßnahmen (stärkste Falsifizierungs-Stufe).
-- **Climate-Lever-Feldvalidierung** (domänenspezifisch, der härtere offene Test).
-- **Quellen-Zitate** für alle empirischen Ausgangs-Aussagen.
+Ein methodisch sauberer **prädiktiver Validitäts-Test** für SEC-J — explizit außerhalb dieses Proof-of-Concept — erfordert:
+
+1. **Sample:** ≥ 30 dokumentierte **Klima**-Interventionen mit messbarem Ausgang (Vermeidung domänenfremder Fälle wie Apollo/Währungsreform).
+2. **Scoring-Protokoll:** ≥ 3 **unabhängige, verblindete** Rater (ohne Outcome-Kenntnis); Inter-Rater-Reliabilität via Krippendorff-α (Ziel ≥ 0,70).
+3. **Test-Design:** **prä-registriertes** Protokoll; bei retrospektiven Fällen Bewertung strikt auf von Dritten verifizierte Ex-ante-Informationsstände beschränkt.
+4. **Metriken:** Spearman-ρ (SEC-J ↔ Outcome-Rang) · ROC-AUC für Erfolg/Misserfolg (mit expliziten Cutoffs) · Kalibrierungs-Plot der J-Veto-Schwelle.
+5. **Domänen-Restriktion:** ausschließlich Klima-/Transformations-Fälle.
+6. **Ressourcen:** unabhängige Rater-Rekrutierung (externe Mittel / institutionelle Anbindung).
+
+Geschätztes Ausführungsfenster: Q3–Q4 2026, vorbehaltlich der obigen Punkte. Bis dahin steht diese Datei ausdrücklich als **illustrative Demonstration**, nicht als Validierung.
+
+**Zusätzlich laufend:** N der Demonstrations-Fälle erhöhen (jeder dokumentierte Fall härtet LIMITATIONS #13) · Quellen-Zitate für alle empirischen Ausgangs-Aussagen.
 
 ---
 
