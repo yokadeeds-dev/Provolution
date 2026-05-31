@@ -56,6 +56,19 @@ The submitted agentic-integration figures (average **+8.7% SEC improvement**, α
 
 ---
 
+## Supplementary methodological studies (added since submission)
+
+Four openly auditable supplements have been published in `studies/` since the 2026-04-19 submission. They support reviewer evaluation of methodological robustness and are **not** part of the frozen manuscript body:
+
+- **`studies/SENSITIVITY_2026-05-30/`** — weight-sensitivity analysis (20,000 Monte-Carlo weight vectors, seed=42): in the plausible neighbourhood (±0.10) mean SEC-J shifts < 0.5 pp, no verdict flips, ranking stable (Spearman ρ ≥ 0.94); the J-veto is weight-invariant (min J = 0.72 → 0 vetoes).
+- **`studies/CARBON_FLOW_2026-05-30/`** — Sankey decomposition gross −87.1 → screened −58.6 → realistic net −43.2 Gt/yr, with explicit domain-level double-counting controls.
+- **`studies/CONSISTENCY_MATRIX_2026-05-30/`** — first-draft 44×44 lever-interaction matrix (121 source-traceable edges) operationalizing the consistency (⊥) relation; systematic conflict elicitation is flagged as future work.
+- **`studies/ILLUSTRATIVE_CASES_2026-05-30/`** — **illustrative proof-of-concept, explicitly NOT a validation study:** retrospective concordance probe over N=7 historical decision cases (non-blind, unpowered, some cases beyond climate). Reported as *structural* consistency with documented outcomes, **not** predictive validity; a powered/blinded validation roadmap is included in the report.
+
+These are reported with their stated limitations; none is claimed as external peer review or predictive validation.
+
+---
+
 ## Action
 
 - Filed in `canon/en/` alongside the two formula corrigenda (2026-04-27, 2026-05-28).
