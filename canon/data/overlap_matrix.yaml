@@ -1,0 +1,107 @@
+# Overlap-Matrix — maschinenlesbare Doppelzählungs-Bereinigung
+# Provolution Framework · Version 1.0 · Datum 2026-10-14
+# Alle Werte in Gt CO₂eq/Jahr als positive Beträge (Overlap = abgezogene Menge)
+#
+# Zweck: Macht die bisher nur als Fließtext dokumentierte Doppelzählungs-Bereinigung
+# prüfbar (externes YAML-Review 2026-10-14, Vorschlag 3). Geprüft durch
+# _tools/spec_consistency_audit.py Check 11.
+#
+# Grundsatz: KEINE erfundenen Paar-Koeffizienten. Die Quellen dokumentieren die
+# Bereinigung auf GRUPPEN-Ebene (welcher Hebel welche absorbiert). Wo ein Paar-Wert
+# nicht belegt ist, steht pair_coefficients: not_sourced.
+# Entscheidung: canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md
+
+meta:
+  version: "1.0"
+  last_updated: "2026-10-14"
+  basis_co2: "canon/data/co2_master.yaml v1.6"
+  basis_gases: "canon/data/impact_master.yaml v2.7 (GWP100 IPCC AR6)"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEIL 1: Hebel ↔ Hebel innerhalb der CO₂-Schicht (Domains B, C, D)
+# Regel: overlap = Summe(members, brutto) − net;  Domain-total = net + Summe(additive)
+# ─────────────────────────────────────────────────────────────────────────────
+lever_overlaps:
+  B_production:
+    group: [B07_kreislaufwirtschaft, B08_bio_polymere, B09_materialfluss_steuerung, B10_abfall_zu_ressource, B11_transformation, B12_biomasse]
+    absorber: B07_kreislaufwirtschaft
+    gross_sum: 31.3
+    net: 14.3
+    overlap: 17.0
+    additive: [B13_lokale_on_demand_fertigung]  # nach der Gruppen-Bereinigung ergänzt (2026-05-28), konservativ additiv
+    rule: "B07 Kreislaufwirtschaft schluckt B08–B12; B07-Brutto (−23) enthält Material- und Abfallströme, die B08–B12 einzeln ausweisen"
+    source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2 (Tabelle Schicht 1); co2_master.yaml methodology.double_counting_prevention"
+    pair_coefficients: not_sourced
+    history: "v1.3 (2026-05-28): B09 −2.8 → −0.5 und B10 −1.2 → −2.0 wurden additiv auf das Gruppen-Netto angerechnet (−16.1 → −14.6); Overlap-Betrag blieb dadurch 17.0"
+
+  C_energy:
+    group: [C11_erneuerbare, C12_speicher, C13_smart_grid, C14_dezentral]
+    absorber: C11_erneuerbare
+    gross_sum: 20.1
+    net: 12.3
+    overlap: 7.8
+    additive: []
+    rule: "C11 Erneuerbare schluckt C12–C14 teilweise; Speicher, Smart Grid und Dezentralisierung sind Voraussetzungen der EE-Penetration, keine zusätzliche Erzeugung"
+    source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2; co2_master.yaml C_energy.hinweis"
+    pair_coefficients: not_sourced
+    related: "Community C-2026-007 (Energie-Effizienz als Querschnittsprinzip) mit 0.0 Gt geführt wegen Overlap C11–C14 (HEBEL_KATALOG)"
+
+  D_food_land:
+    group: [D15_regen_landwirtschaft, D16_co2_senken_boden]
+    absorber: D15_regen_landwirtschaft
+    gross_sum: 9.0
+    net: 5.0
+    overlap: 4.0
+    additive: [D17_hanf_oekosystem, D18_ernaehrung, D19_algen_bioraffinerie]
+    rule: "Boden-Senken (D16) sind primär Mechanismus der Regenerativen Landwirtschaft (D15); D17a/D17b sind Multiplikatoren innerhalb D17 (kein eigener Wert)"
+    source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2"
+    pair_coefficients: {D15_regen_landwirtschaft__D16_co2_senken_boden: 4.0}  # Gruppe = genau ein Paar → Koeffizient belegt
+    history: "D19 (−0.3) am 2026-05-28 additiv ergänzt (−9.4 → −9.7)"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEIL 2: CO₂eq-Schicht ↔ CH₄/N₂O/F-Gas-Schicht (für den all-GHG-Punktwert)
+# Pro Gas-Quelle: welcher Anteil steckt bereits in einem CO₂-Schicht-Wert?
+# all-GHG = co2 + Σ(gas_total − overlap_with_co2_layer)
+# ─────────────────────────────────────────────────────────────────────────────
+gas_layer_overlaps:
+  ch4_B_production:
+    gas_total: 2.70
+    overlap_with_co2_layer: 2.0
+    co2_lever: B10_abfall_zu_ressource
+    evidence: "belegt"
+    rationale: "Band 4 v4.2 B10: 'CO₂: -2 Gt CO₂eq/Jahr' und 'Sekundär: … Methan -2 Gt CO₂eq/Jahr' — der B10-Wert der CO₂-Schicht IST die vermiedene Deponie-Methanmenge. Rest 0.70 (B12 vermiedene Deponierung) zusätzlich"
+  ch4_C_energy:
+    gas_total: 1.60
+    overlap_with_co2_layer: 0.0
+    co2_lever: C11_erneuerbare
+    evidence: "belegt"
+    rationale: "Band 4 C11: 'CO₂-Reduktion 15 Gt/Jahr' aus Verbrennung im Stromsektor; vorgelagerte Erdgas-Leckagen (flüchtiges CH₄) sind darin nicht enthalten"
+  ch4_D_food_land:
+    gas_total: 3.09
+    overlap_with_co2_layer: 1.6
+    co2_lever: D18_ernaehrung
+    evidence: "Annahme (konservativ)"
+    rationale: "Die CH₄-Quelle 'Ernährungswandel (D18): reduzierte Tierhaltung' kann im CO₂-Schicht-Wert D18_ernaehrung (−1.6 Gt CO₂eq) bereits enthalten sein; Herleitung von −1.6 ist nicht dokumentiert → volle Überlappung angenommen (verkleinert den Punktwert). Achtung Tag-Drift: Band 4 führt D18 als 'Urbane Landwirtschaft' (Transport −50 Mt), co2_master als 'ernaehrung' (−1.6). D15 (Gülle) ist reine CO₂-Sequestrierung → zusätzlich"
+  n2o_D_food_land:
+    gas_total: 4.94
+    overlap_with_co2_layer: 0.0
+    co2_lever: D15_regen_landwirtschaft
+    evidence: "belegt"
+    rationale: "Band 4 D15: 'CO₂-Sequestrierung 4 Gt/Jahr' (Boden-Kohlenstoff); N₂O aus Mineraldünger-Reduktion ist nicht enthalten. Dünger-Vorketten (CO₂ aus Haber-Bosch) liegen in Schicht 2 §3.6, nicht in Schicht 1"
+  n2o_B_production:
+    gas_total: 0.82
+    overlap_with_co2_layer: 0.0
+    co2_lever: null
+    evidence: "belegt"
+    rationale: "Industrielle N₂O-Katalysatoren (Salpeter-/Adipinsäure) — kein CO₂-Schicht-Hebel deckt Prozess-N₂O ab"
+  f_gases:
+    gas_total: 0.70
+    overlap_with_co2_layer: 0.0
+    co2_lever: null
+    evidence: "belegt"
+    rationale: "Kältemittel (Wärmepumpen) und SF₆-Ersatz — kein CO₂-Schicht-Hebel deckt F-Gase ab"
+
+  summary:
+    overlap_total: 3.6       # 2.0 + 1.6
+    overlap_belegt: 2.0
+    overlap_angenommen: 1.6

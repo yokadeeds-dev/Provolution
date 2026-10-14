@@ -58,7 +58,8 @@ KLIMA_VERSCHL_OPTIMIST = 0.5
 
 
 def simulate_szenario(impl_mean, rebound_mean, s2_mean, s3_mean,
-                      engpaesse_mean, klima_verschl_mean, n=10000):
+                      engpaesse_mean, klima_verschl_mean, n=10000,
+                      rebound_base_share=1.0):
     """Monte-Carlo-Simulation eines Szenarios.
 
     Parameter:
@@ -69,6 +70,9 @@ def simulate_szenario(impl_mean, rebound_mean, s2_mean, s3_mean,
         engpaesse_mean: erwartete Material-Engpässe (Gt, positiv = Verlust)
         klima_verschl_mean: erwartete klimatische Verschlechterung (Gt, positiv)
         n: Anzahl Iterationen
+        rebound_base_share: Anteil von Schicht 1, auf den Rebound wirkt (1.0 = Headline-
+            Methodik; < 1.0 = Senken-Variante, siehe SENKEN-SENSITIVITÄT unten).
+            Ändert keine Zufallsziehungen → gleiche Draws, nur der Rebound-Term variiert.
     """
     # Implementations-Rate: Normalverteilung um Mean, ±5%
     impl = np.clip(np.random.normal(impl_mean, 0.05, n), 0, 1)
@@ -86,7 +90,7 @@ def simulate_szenario(impl_mean, rebound_mean, s2_mean, s3_mean,
 
     # Rebound: ±3%, Skalierung auf S1+S2
     rebound = np.clip(np.random.normal(rebound_mean, 0.03, n), 0, 0.5)
-    verluste_rebound = -(s1 + s2) * rebound  # positiv (Verlust)
+    verluste_rebound = -(s1 * rebound_base_share + s2) * rebound  # positiv (Verlust)
 
     # Material-Engpässe: ±0.5 Gt um mean
     verluste_engpaesse = np.random.normal(engpaesse_mean, 0.5, n)
@@ -201,3 +205,51 @@ for name, r in results.items():
 print()
 print(f"PF-Report E4-Adressierung: Monte-Carlo-Propagation auf 3 Hauptszenarien + Stresstest ✓")
 print(f"PF-Report E7-Adressierung: Stresstest 50%-Umsetzung als 4. Szenario ✓")
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SENKEN-SENSITIVITÄT (2026-10-14, DEC_2026-10-14_overlap_matrix_ghg_point)
+# Senken (Boden D15∪D16 netto, Blue Carbon K01–K04) haben keinen Effizienz-Rebound.
+# Headline bleibt die konservative Methodik (Rebound auf ganze Schicht 1); diese
+# Variante quantifiziert den Effekt. Senken-Netto aus den YAML-SSoT-Dateien, nicht hartkodiert.
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _sink_net_gt():
+    import os
+    import yaml
+    data = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "canon", "data")
+    with open(os.path.join(data, "co2_master.yaml"), encoding="utf-8") as f:
+        co2 = yaml.safe_load(f)
+    with open(os.path.join(data, "overlap_matrix.yaml"), encoding="utf-8") as f:
+        ovl = yaml.safe_load(f)
+    soil = ovl["lever_overlaps"]["D_food_land"]["net"]       # D15∪D16 nach Overlap-Bereinigung
+    marine = abs(co2["domains"]["K_marine"]["total"])        # K01–K04
+    return soil + marine
+
+
+SINK_NET = _sink_net_gt()
+SINK_SHARE = SINK_NET / abs(S1_BRUTTO_MEAN)
+
+np.random.seed(42)  # identische Draws wie oben → nur der Rebound-Term unterscheidet sich
+results_sink = {}
+for name, params in szenarios.items():
+    r = simulate_szenario(
+        params["impl"], params["rebound"],
+        params["s2"], params["s3"],
+        params["engpaesse"], params["klima"],
+        rebound_base_share=1.0 - SINK_SHARE,
+    )
+    results_sink[name] = float(np.percentile(r["netto"], 50))
+
+print()
+print("=" * 78)
+print("SENKEN-SENSITIVITÄT · Rebound ohne Senken (Boden D15∪D16 + Blue Carbon K)")
+print("=" * 78)
+print(f"Senken-Netto: {SINK_NET:.1f} Gt = {SINK_SHARE:.1%} von Schicht 1 (aus co2_master + overlap_matrix)")
+print(f"{'Szenario':<48} {'Headline':>10} {'ohne Senken':>12} {'Δ':>7}")
+print("─" * 78)
+for name in szenarios:
+    h, v = results[name]["p50"], results_sink[name]
+    print(f"{name:<48} {h:+10.1f} {v:+12.1f} {v - h:+7.1f}")
+print()
+print("Headline-Werte bleiben die konservative Methodik (Rebound auf ganze Schicht 1).")
