@@ -1,0 +1,47 @@
+==============================================================================
+INPUT-SENSITIVITÄT · Szenario B (Median, Gt/yr) · seed 42 · N = 10000
+==============================================================================
+Basis: CO₂ netto -42.19 · all-GHG netto -51.21
+Schicht 1 = -57.05 = Σ Hebel × Overlap-Faktor (geprüft)
+
+TOP 15 · CO₂-Netto (Swing = |Δ oben − Δ unten|)
+  Szenario-Parameter  Umsetzungsrate                     Swing  9.16   (+3.06 … -6.09)
+  Szenario-Parameter  Schicht 3 Folgewirkungen           Swing  7.32   (+3.62 … -3.70)
+  Szenario-Parameter  Rebound-Rate                       Swing  5.67   (+2.37 … -3.30)
+  Overlap             Overlap B_production               Swing  5.41   (-2.70 … +2.72)
+  Hebel               B07_kreislaufwirtschaft            Swing  3.34   (+1.67 … -1.66)
+  Szenario-Parameter  Schicht 2 Kaskaden                 Swing  3.11   (+1.84 … -1.27)
+  Hebel               C11_erneuerbare                    Swing  2.92   (+1.46 … -1.46)
+  Overlap             Overlap C_energy                   Swing  2.48   (-1.24 … +1.24)
+  Szenario-Parameter  Material-Engpässe                  Swing  2.00   (+1.00 … -1.00)
+  Szenario-Parameter  Klima-Verschlechterung             Swing  1.50   (+0.50 … -1.00)
+  Overlap             Overlap D_food_land                Swing  1.27   (-0.64 … +0.63)
+  Hebel               J01_kreislauf_gebaeude             Swing  0.95   (+0.48 … -0.48)
+  Hebel               C-2026-008                         Swing  0.95   (+0.48 … -0.48)
+  Hebel               D17_hanf_oekosystem                Swing  0.89   (+0.45 … -0.45)
+  Hebel               D16_co2_senken_boden               Swing  0.89   (+0.44 … -0.44)
+
+TOP 10 · all-GHG-Netto
+  Szenario-Parameter  Umsetzungsrate                     Swing 11.01
+  Szenario-Parameter  Schicht 3 Folgewirkungen           Swing  7.35
+  Szenario-Parameter  Rebound-Rate                       Swing  5.65
+  Overlap             Overlap B_production               Swing  5.38
+  Hebel               B07_kreislaufwirtschaft            Swing  3.31
+  Szenario-Parameter  Schicht 2 Kaskaden                 Swing  3.05
+  Hebel               C11_erneuerbare                    Swing  2.90
+  Gasmenge            CH₄-Menge                          Swing  2.75
+  Overlap             Overlap C_energy                   Swing  2.47
+  Gasmenge            N₂O-Menge                          Swing  2.27
+
+Varianz-Zerlegung Schicht 1 (Eingangsunsicherheit der Hebel-Werte):
+  B07_kreislaufwirtschaft             42.6 %
+  C11_erneuerbare                     32.5 %
+  J01_kreislauf_gebaeude               3.5 %
+  C-2026-008                           3.5 %
+  D17_hanf_oekosystem                  3.0 %
+  D16_co2_senken_boden                 3.0 %
+  D15_regen_landwirtschaft             1.9 %
+  A01_sec_priorisierung                1.5 %
+  Top 3 zusammen: 78.5 %
+
+Implizite Streuung von Schicht 1 aus Hebel-Bandbreiten (unabhängig): σ = 1.64 Gt = 2.9 % · monte_carlo.py nimmt pauschal 10 % an
