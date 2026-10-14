@@ -1,0 +1,5 @@
+scenario,L1 direct,L2 cascades,L3 follow-on,Rebound,Bottlenecks,Climate,sum_check
+S · stress test 50%,117.0,3.9,4.2,-28.4,2.3,0.9,100.0
+A · conservative,104.9,2.9,3.6,-13.2,1.3,0.5,100.0
+B · expected value,86.5,5.4,13.8,-6.7,0.7,0.3,100.0
+C · optimistic,67.4,6.4,25.5,0.0,0.5,0.2,100.0
