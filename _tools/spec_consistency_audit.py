@@ -1,7 +1,7 @@
 """
 Provolution Repo Spec-Consistency Audit Tool
 ==============================================
-"Probatio Consistentia" v0.4 · 2026-10-14 (v0.1: 2026-05-28)
+"Probatio Consistentia" v0.5 · 2026-10-14 (v0.1: 2026-05-28)
 
 Scannt das Provolution clean-Public-Repo nach **stillen Inkonsistenzen** —
 Konflikten zwischen Dateien, die durch Diff-orientierte Reviews (PR-Audits,
@@ -35,10 +35,12 @@ Checks:
      all-GHG-Monte-Carlo-Werte = ghg_percentiles.csv
  12. Input-Sensitivität (studies/INPUT_SENSITIVITY_*): Ergebnis-CSVs decken genau die Hebel
      aus co2_master.yaml ab, Varianzanteile summieren auf 100 %
+ 13. SEC-J-Unabhängigkeitstest (studies/SECJ_INDEPENDENT_TEST_*): Fallmappen frei von
+     Autoren-Bewertungen (Leak-Prüfung), jede Testfall-Mappe hat einen versiegelten Autoren-Score
 
 Verwendung:
     python _tools/spec_consistency_audit.py          # alle Checks, Exit = Summe aller Befunde
-    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-12;
+    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-13;
                                                      # heuristische Checks 1/3/4 nur als Hinweis
 
 Exit-Code: 0 wenn keine (blockierenden) Konflikte, sonst Anzahl Befunde (max. 127).
@@ -630,11 +632,41 @@ def check_input_sensitivity(repo: Path, co2) -> int:
     return issues
 
 
+
+# Muster aus build_case_packets.py (LEAK): Score- und Bewertungsspuren der Autoren
+SECJ_LEAK = re.compile(r"SEC-|NACHWEIS|AGENTIC|\bS:\s*0[.,]\d|\bJ:\s*0[.,]\d|Score|✅|PS-U|Probatio|\bPR #", re.I)
+
+
+def check_secj_test_packets(repo: Path) -> int:
+    banner("CHECK 13: SEC-J-Unabhängigkeitstest — Fallmappen verblindet")
+    import csv
+    issues = 0
+    studies = sorted((repo / "studies").glob("SECJ_INDEPENDENT_TEST_*"))
+    if not studies:
+        print("  ℹ️  Keine Studie vorhanden.")
+        return 0
+    d = studies[-1]
+    packets = sorted((d / "case_packets").glob("*.md"))
+    for pth in packets:
+        body = pth.read_text(encoding="utf-8").split(chr(10), 3)[-1]  # Kopf + Hinweis-Zitat überspringen
+        m = SECJ_LEAK.search(body)
+        if m:
+            issues += _fail(f"{d.name}/case_packets/{pth.name}: Autoren-Bewertung sichtbar („{m.group(0)}“)")
+    with open(d / "author_scores.csv", encoding="utf-8") as f:
+        sealed = {r["code"] for r in csv.DictReader(f)}
+    test_codes = {p.stem for p in packets if p.stem.startswith("F")}
+    if sealed != test_codes:
+        issues += _fail(f"{d.name}: Testfälle {sorted(test_codes)} ≠ versiegelte Autoren-Scores {sorted(sealed)}")
+    if issues == 0:
+        print(f"  ✅ {d.name}: {len(packets)} Fallmappen ohne Autoren-Bewertungen; {len(sealed)} Testfälle versiegelt")
+    return issues
+
+
 def main() -> int:
     print()
     print("═" * 78)
     print("  PROVOLUTION REPO SPEC-CONSISTENCY AUDIT")
-    print("  'Probatio Consistentia' v0.4 · 2026-10-14")
+    print("  'Probatio Consistentia' v0.5 · 2026-10-14")
     print("═" * 78)
     print(f"  Repo-Root: {REPO_ROOT}")
 
@@ -655,6 +687,7 @@ def main() -> int:
     total += check_sources(REPO_ROOT, co2, imp)
     total += check_overlap_matrix(co2, imp, _load_overlap(REPO_ROOT))
     total += check_input_sensitivity(REPO_ROOT, co2)
+    total += check_secj_test_packets(REPO_ROOT)
 
     if ci:
         if advisory:

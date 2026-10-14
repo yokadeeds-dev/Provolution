@@ -1,0 +1,15 @@
+code,rolle,domain,titel
+T01,training,K,Mangroven-Wiederherstellung
+T02,training,K,Salzmarschen-Schutz Und Restoration
+F01,test,D,Urbane Landwirtschaft
+F02,test,B,Abfall-Zu-Ressource
+F03,test,K,Kelp-Wälder-Wiederaufbau
+F04,test,B,Materialfluss-Steuerung
+F05,test,B,Biopolymere (Hanf)
+F06,test,C,Smart Grids
+F07,test,D,Hanf-Anbau (Nutzpflanze)
+F08,test,C,Dezentrale Versorgung
+F09,test,D,Co₂-Senken (Boden)
+F10,test,K,Seegras-Restauration
+F11,test,I,Kreislauf-Auto
+F12,test,J,Kreislauf-Gebäude
