@@ -1,6 +1,7 @@
 # DEC 2026-10-14 — all-GHG-Total: Spanne statt Punktwert
 
 **Status:** ✅ entschieden (User, Empfehlung A) · **Datum:** 2026-10-14
+**Fortgeschrieben:** 2026-10-14 durch [`DEC_2026-10-14_overlap_matrix_ghg_point.md`](DEC_2026-10-14_overlap_matrix_ghg_point.md): quellenweise Zuordnung erledigt → Punktwert −68,85 (CURRENT); die Spanne bleibt als Grenzfälle erhalten.
 **Anlass:** Externes YAML-Review (2026-10-14), Befund „GHG-Gesamtwert noch nicht konsistent (PENDING)“
 **Betroffen:** `canon/data/impact_master.yaml` v2.7 (`ghg_accounting.ghg_total`, `uncertainty_overall.ghg_total`), `canon/STATUS.md` §2, `_tools/spec_consistency_audit.py` Check 8
 
