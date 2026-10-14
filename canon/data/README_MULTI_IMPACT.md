@@ -163,7 +163,7 @@ rebound:
   economy_wide: 0.10
   
   net_factor: 0.50  # 50% Rebound gesamt
-  adjusted_impact: -32.3 Gt CO₂eq/Jahr
+  adjusted_impact: -32.3 Gt CO₂eq/Jahr  # DEPRECATED 2026-10-14, siehe canon/decisions/DEC_2026-10-14_rebound_single_source.md
 ```
 
 ---

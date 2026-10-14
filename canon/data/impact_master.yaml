@@ -21,7 +21,7 @@ meta:
       - "Umstellung auf IPCC AR6 WG1 Table 7.15: CH4 fossil 29.8, CH4 biogen/non-fossil 27.0, N2O 273"
       - "CO2eq-Werte deterministisch umgerechnet (Wert × GWP_AR6/GWP_AR5), Annahme: v2.0-Werte basierten auf GWP 28 bzw. 265. CH4: B (Abfall, biogen) -2.8 → -2.70; D (Landwirtschaft, biogen) -3.2 → -3.09; C (Erdgas-Leckagen, fossil) -1.5 → -1.60; gesamt -7.5 → -7.38. N2O: D -4.8 → -4.94; B -0.8 → -0.82; gesamt -5.6 → -5.77. Unsicherheitsbänder proportional skaliert"
       - "ghg_total.total -64.5 bleibt PENDING (Overlap-Re-Computation steht weiterhin aus); naive Summe jetzt -72.45. Neues Feld total_status macht den Status maschinenlesbar"
-      - "energy_system.rebound_effects.adjusted_impact als abgeleitet von PENDING-Wert markiert (Methodik-Klärung Rebound vs. GHG-Total ist eigene Entscheidung)"
+      - "Rebound Single Source (DEC_2026-10-14_rebound_single_source, User-Entscheidung A): net_rebound_factor 0.50 + adjusted_impact -32.3 entfernt; Rebound nur noch in Monte-Carlo (Schicht 4). Komponenten 25/15/10 % bleiben als Literatur-Belege; reporting vor/nach Rebound explizit (-58.6 / -43.2 / -14.9)"
       - "C-2026-008: hash PENDING → SHA-256 der Quelldatei; toter Dossier-Pfad durch source_ref ersetzt"
       - "Keine Änderung an CO2-Werten, SEC-J-Scores oder Domain-Totals"
     v2_6_2026-05-29:
@@ -445,10 +445,23 @@ energy_system:
         estimated_magnitude: 0.10  # 10%
         mitigation: "Degrowth-kompatible Governance"
     
-    net_rebound_factor: 0.50  # 50% Rebound gesamt
-    adjusted_impact: -32.3  # Gt CO₂eq/Jahr (von -64.5) — ABGELEITET VON PENDING-WERT ghg_total.total; Methodik Rebound vs. GHG-Total offen (siehe hinweis)
-    adjusted_impact_status: "PENDING"  # folgt ghg_total.total_status
-    hinweis: "Konservative Schätzung bereits in -58.6 Hauptwert teilweise integriert"
+    # v2.7 (DEC_2026-10-14_rebound_single_source): Rebound wird NUR in der Monte-Carlo-Bilanz
+    # (studies/CO2_BILANZ_2026-05-28/monte_carlo.py, Schicht 4) gerechnet. Die drei Komponenten
+    # oben sind Literatur-Belege für die Bandbreite, KEIN eigener Abzugsfaktor.
+    literature_sum_upper_bound: 0.50  # Summe 25+15+10 % = theoretische Obergrenze; NICHT anwenden (läge über dem eigenen Stresstest 30 %; Senken/Suffizienz haben keinen Rebound)
+    single_source: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"
+    monte_carlo_rebound_rates:  # mean je Szenario, ±3 % Normalverteilung, angewendet auf Schicht 1+2
+      A_konservativ: 0.20
+      B_erwartungswert: 0.15
+      C_optimistisch: 0.08
+      S_stresstest: 0.30
+    reporting:
+      vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
+      nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
+      nach_rebound_median_S: -14.9  # Stresstest
+    ghg_total_rebound: null  # all-GHG nach Rebound erst nach Overlap-Re-Computation von ghg_total.total, dann über dieselbe Monte-Carlo-Logik (kein eigener Faktor)
+    # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf PENDING-Wert -64.5,
+    # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
 # ============================================================================
 # TEIL 5: GOVERNANCE & COMPLIANCE
