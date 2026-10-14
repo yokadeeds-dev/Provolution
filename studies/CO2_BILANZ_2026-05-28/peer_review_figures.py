@@ -116,7 +116,7 @@ plt.rcParams.update({
     "figure.dpi": 300,
 })
 
-SRC_NOTE = "Quelle: monte_carlo.py · co2_master.yaml v1.3 + Bilanz-Studie §6 (v1.5) · n=10 000 · seed=42"
+SRC_NOTE = "Quelle: monte_carlo.py · co2_master.yaml v1.7 + Bilanz-Studie §6 · n=10 000 · seed=42"
 
 
 def _src_footer(fig):
@@ -198,6 +198,7 @@ def figure2_sensitivity():
 def figure3_waterfall():
     fig, axes = plt.subplots(2, 2, figsize=(13, 9), sharey=True)
     axes = axes.ravel()
+    lows = []
     for ax, name in zip(axes, ORDER):
         means = {c: np.mean(SIM[name][c]) for c in COMPONENTS}
         net = np.median(SIM[name]["netto"])
@@ -215,6 +216,7 @@ def figure3_waterfall():
                 ax.plot([i + 0.35, i + 0.65], [running + val, running + val],
                         color="grey", lw=0.7, ls="--", alpha=0.6)
             running += val
+            lows.append(running)
         # Netto-Balken
         ax.bar(len(seq), running, color="black", edgecolor="black",
                linewidth=1.0, width=0.7, alpha=0.85)
@@ -227,6 +229,8 @@ def figure3_waterfall():
                            rotation=40, ha="right", fontsize=8)
         ax.set_title(SHORT[name], fontweight="bold",
                      color=SCEN_COLOR[name], fontsize=11)
+    # gemeinsame y-Achse explizit: tiefster Zwischenstand aller Panels (vorher schnitt Panel C ab)
+    axes[0].set_ylim(min(lows) * 1.08, 2)
     for ax in axes[::2]:
         ax.set_ylabel("Gt CO₂eq/yr", fontweight="bold")
     fig.suptitle("F3 · Schicht-Herleitung der Netto-CO₂-Bilanz (Mittelwerte je Schicht)",

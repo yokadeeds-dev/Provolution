@@ -7,7 +7,7 @@
 **Date:** 2026-04-27 (EN sync 2026-05-09)
 **Status:** Publication-Ready
 
-> ⚠️ **Note on figures:** This volume contains historical headline values (incl. **−50.7 Gt/year** as "100% of target"). The **current authoritative CO₂-hard value is −58.6 Gt/year** (`canon/data/co2_master.yaml` v1.5). For all valid figures and the value glossary, [`canon/STATUS.md`](../STATUS.md) is the authoritative source. Prose values here are reading-version, not the data source.
+> ⚠️ **Note on figures:** This volume contains historical headline values (incl. **−50.7 Gt/year** as "100% of target"). The **current authoritative CO₂-hard value is −57.05 Gt/year** (`canon/data/co2_master.yaml` v1.7). For all valid figures and the value glossary, [`canon/STATUS.md`](../STATUS.md) is the authoritative source. Prose values here are reading-version, not the data source.
 >
 > ⚠️ **SEC-J weights updated (2026-05-29):** This volume was originally written (v3.1, 2026-04-27) with the **DEPRECATED v1.0 formula** `0.40·S + 0.25·E + 0.15·C + 0.20·J`. The authoritative formula since 2026-05-10 is **PS-U 2.0 STANDARD** `0.30·S + 0.25·E + 0.30·C + 0.15·J` (`canon/de/06_framework_extensions_v2.0_SECJ.md`). The formula and worked examples below have been migrated. **Per-lever SEC-J values are canonical only in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`** — tables in this volume are illustrative.
 
@@ -454,7 +454,7 @@ Impact(M) = CO₂ potential / Max CO₂ potential
 - M10 (Year 10): Tipping points compensated
 
 **KPIs Year 10:**
-- CO₂ reduction: 50.7 Gt/year (100% of target) <!-- HISTORICAL: current authoritative value −58.6 Gt/year, see canon/STATUS.md §2 -->
+- CO₂ reduction: 50.7 Gt/year (100% of target) <!-- HISTORICAL: current authoritative value −57.05 Gt/year, see canon/STATUS.md §2 -->
 - SEC average: ≥0.85 (stable)
 - Cost-benefit: Positive (ROI >1.0)
 - Social acceptance: >70%

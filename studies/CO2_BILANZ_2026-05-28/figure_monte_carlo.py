@@ -158,7 +158,7 @@ ax.legend(handles=legend_elements, loc="lower right", fontsize=9, frameon=True,
 
 ax.text(
     0.01, 0.01,
-    "Quelle: monte_carlo.py · co2_master.yaml v1.3 + Bilanz-Studie §6 (v1.5)",
+    "Quelle: monte_carlo.py · co2_master.yaml v1.7 + Bilanz-Studie §6",
     transform=ax.transAxes, fontsize=7.5, color="#666666", ha="left", va="bottom",
 )
 

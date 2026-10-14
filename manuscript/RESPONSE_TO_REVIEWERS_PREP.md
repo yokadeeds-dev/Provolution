@@ -5,6 +5,8 @@
 
 > **Hinweis:** Die *finale* Response-to-Reviewers an ESG ist auf **Englisch** zu verfassen. Dies ist die deutsche Arbeitsfassung der Argumente; bei den Reviews adaptieren/übersetzen.
 
+> **Zahlen-Hinweis (2026-10-14):** Werte in diesem Arbeitsdokument sind teils Stand v1.5 (−58,6 / −43,2 / −14,9). Für Antworten gelten die v2.3-Werte aus [`canon/STATUS.md`](../canon/STATUS.md) §2 (−57,05 / −42,2 / −14,3; alle Treibhausgase −68,90 brutto, −51,2 netto) — siehe [`canon/en/CORRIGENDUM_2026-10-14.md`](../canon/en/CORRIGENDUM_2026-10-14.md).
+
 **Status-Legende:** ✅ adressiert (im Repo belegt) · ⏳ offen, geplant (echte wissenschaftliche Arbeit) · 📋 wird in der Revision/Corrigendum geliefert
 
 ---

@@ -1,5 +1,5 @@
 scenario,mean,std,p5,p25,p50_median,p75,p95,pct_baseline,status
-S · stress test 50%,-14.97,3.27,-20.52,-17.12,-14.86,-12.72,-9.80,27.0,partial reduction
-A · conservative,-31.45,4.53,-39.12,-34.40,-31.30,-28.35,-24.23,56.9,partial reduction
-B · expected value,-43.34,5.53,-52.81,-46.98,-43.17,-39.52,-34.62,78.5,climate-positive path
-C · optimistic,-61.30,6.99,-73.10,-65.91,-61.12,-56.43,-50.18,111.1,net-zero reached
+S · stress test 50%,-14.43,3.19,-19.84,-16.53,-14.32,-12.22,-9.38,26.0,partial reduction
+A · conservative,-30.58,4.42,-38.07,-33.46,-30.44,-27.56,-23.55,55.3,partial reduction
+B · expected value,-42.36,5.41,-51.62,-45.91,-42.19,-38.61,-33.80,76.7,climate-positive path
+C · optimistic,-60.09,6.87,-71.69,-64.62,-59.90,-55.32,-49.17,108.9,net-zero reached

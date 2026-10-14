@@ -1,17 +1,17 @@
 # Provolution CO₂-Bilanz — Abbildungslegenden (submission-ready)
 
 Monte-Carlo-Unsicherheitsstudie, n = 10 000 Iterationen pro Szenario, seed = 42.
-Datengrundlage: `co2_master.yaml` v1.3 + Bilanz-Studie §6 (v1.5).
+Datengrundlage: `co2_master.yaml` v1.7 (Schicht 1 = −57,05 Gt, live gelesen) + Bilanz-Studie §6. Stand 2026-10-14 (D18-Drift-Resolution).
 Globale Baseline: IPCC AR6 (2023) = 55,0 Gt CO₂eq/yr.
 
 Szenarien:
 
 | Kürzel | Szenario | impl | rebound | Median (Gt CO₂eq/yr) | 90 % KI | % Baseline |
 |---|---|---|---|---|---|---|
-| **S** | Stresstest 50 %-Umsetzung | 50 % | 30 % | −14,9 | [−20,5; −9,8] | 27,0 % |
-| **A** | konservativ-realistisch | 70 % | 20 % | −31,3 | [−39,1; −24,2] | 56,9 % |
-| **B** | mittel-realistisch (Erwartungswert) | 75 % | 15 % | −43,2 | [−52,8; −34,6] | 78,5 % |
-| **C** | optimistisch-realistisch | 85 % | 8 % | −61,1 | [−73,1; −50,2] | 111,1 % |
+| **S** | Stresstest 50 %-Umsetzung | 50 % | 30 % | −14,3 | [−19,8; −9,4] | 26,0 % |
+| **A** | konservativ-realistisch | 70 % | 20 % | −30,4 | [−38,1; −23,5] | 55,3 % |
+| **B** | mittel-realistisch (Erwartungswert) | 75 % | 15 % | −42,2 | [−51,6; −33,8] | 76,7 % |
+| **C** | optimistisch-realistisch | 85 % | 8 % | −59,9 | [−71,7; −49,2] | 108,9 % |
 
 Negative Werte = Netto-Reduktion. Alle Kennzahlen sind reproduzierbar aus
 `monte_carlo.py` (Single Source of Truth); die Figuren-Skripte importieren das
@@ -29,7 +29,7 @@ die vier Szenarien S/A/B/C. Pro Szenario überlagert: Median (weißer Punkt),
 (−55 Gt CO₂eq/yr = vollständige Kompensation der globalen Baseline). Median-
 Beschriftungen geben den prozentualen Anteil an der Baseline an. Nur Szenario C
 (optimistisch-realistisch) überschreitet im Median die Net-Zero-Schwelle
-(111 % Baseline); Szenario B liegt mit 78 % auf dem Klima-positiv-Pfad.
+(109 % Baseline); Szenario B liegt mit 77 % auf dem Klima-positiv-Pfad.
 
 ## Figure 2 — Sensitivitätsanalyse
 **Datei:** `Figure2_Sensitivity.png` / `.svg` · Daten: `variance_contributions.csv`
@@ -39,7 +39,7 @@ getrennt nach Szenario. Berechnet als First-Order-Kovarianz-Zerlegung
 Var(netto) = Σᵢ Cov(Xᵢ, netto), gültig, weil die Netto-Bilanz die exakte Summe
 ihrer Komponenten ist; die Anteile summieren sich pro Szenario auf 100 %
 (`sum_check`-Spalte). Schicht 1 (direkte Hebelwirkung, gekoppelt an die
-Umsetzungsrate) dominiert die Unsicherheit in allen Szenarien (67–117 %). Der
+Umsetzungsrate) dominiert die Unsicherheit in allen Szenarien (66–117 %). Der
 **negative** Rebound-Beitrag (−28 % bis 0 %) ist kein Artefakt: Rebound ist
 antikorreliert zur Netto-Reduktion und **dämpft** daher die Varianz; sein Betrag
 sinkt von Szenario S (hohe Rebound-Rate) zu C (niedrige Rate). Material-Engpässe
@@ -71,14 +71,14 @@ Tabelle gibt die Zielerreichungs-Wahrscheinlichkeiten an:
 | Szenario | P(klima-positiv) | P(Net-Zero) |
 |---|---|---|
 | S · Stresstest 50 % | 0,0 % | 0,0 % |
-| A · konservativ | 35,5 % | 0,0 % |
-| B · Erwartungswert | 97,5 % | 2,4 % |
-| C · optimistisch | 100,0 % | 81,4 % |
+| A · konservativ | 28,1 % | 0,0 % |
+| B · Erwartungswert | 96,3 % | 1,4 % |
+| C · optimistisch | 100,0 % | 76,8 % |
 
 Diese Übersetzung der Verteilung in Entscheidungs-Wahrscheinlichkeiten adressiert
 direkt die Frage der Robustheit: Selbst im Erwartungswert-Szenario B ist der
-Klima-positiv-Pfad mit 97,5 % nahezu sicher, während vollständiges Net-Zero erst
-unter optimistischen Annahmen (C: 81,4 %) wahrscheinlich wird.
+Klima-positiv-Pfad mit 96,3 % nahezu sicher, während vollständiges Net-Zero erst
+unter optimistischen Annahmen (C: 76,8 %) wahrscheinlich wird.
 
 ## Figure 5 — Konvergenzdiagnose
 **Datei:** `Figure5_Convergence.png` / `.svg`
