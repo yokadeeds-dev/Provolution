@@ -25,5 +25,8 @@ abstract: |
   Provolution applies this framework to climate transformation, with the
   Multi-Impact Assessment Framework v2.0 as operational measurement layer
   covering 6 dimensions (GHG, Environmental, Social, Energy, Governance,
-  Pathways). Quantified impact: -58.0 Gt CO₂eq/year across 40 canonical
-  levers plus community-integrated submissions, spanning 10 domains.
+  Pathways). Screened technical/systemic potential (not a forecast):
+  -58.6 Gt CO₂/year (direct, CO₂-only) across 49 levers in 11 domains
+  (A-K) including community-integrated submissions; realistic net
+  expectation -43.2 Gt/year (Monte-Carlo median). Authoritative values:
+  canon/STATUS.md and canon/data/*.yaml.
