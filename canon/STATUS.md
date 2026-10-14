@@ -104,7 +104,8 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 
 ## 6. Drift-Kontrolle
 
-- **Probatio Consistentia v0.1** (`_tools/spec_consistency_audit.py`) prüft Cross-File-Konsistenz (SEC-J-Formel-Varianten, reduktion_hart-Sync, DEPRECATED-Marker, Band 4 ↔ YAML). Vor Releases laufen lassen.
+- **Probatio Consistentia v0.2** (`_tools/spec_consistency_audit.py`) prüft Cross-File-Konsistenz (SEC-J-Formel-Varianten, reduktion_hart-Sync, DEPRECATED-Marker, Band 4 ↔ YAML) und seit 2026-10-14 YAML-geparst: CO₂-Aggregate, abgeleitete Zähler, co2 ↔ impact-Sync, GWP100 = IPCC AR6, SEC-J-Formel/Veto/Warnschwelle, Quellpfade + SHA-256.
+- **CI:** `.github/workflows/data-consistency.yml` führt `spec_consistency_audit.py --ci` bei jedem Push auf `main` und jedem PR aus. Blockierend sind die deterministischen Daten-Checks (2, 5–10); die heuristischen Checks 1/3/4 erscheinen nur als Hinweis.
 - Diese STATUS-Datei ist bei jeder Headline-Wert- oder Methoden-Änderung **mit-zupflegen** (Anti-Drift-Konvention).
 
 ---
