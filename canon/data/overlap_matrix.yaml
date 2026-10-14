@@ -31,7 +31,7 @@ lever_overlaps:
     additive: [B13_lokale_on_demand_fertigung]  # nach der Gruppen-Bereinigung ergänzt (2026-05-28), konservativ additiv
     rule: "B07 Kreislaufwirtschaft schluckt B08–B12; B07-Brutto (−23) enthält Material- und Abfallströme, die B08–B12 einzeln ausweisen"
     source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2 (Tabelle Schicht 1); co2_master.yaml methodology.double_counting_prevention"
-    pair_coefficients: not_sourced
+    pair_coefficients: not_sourced  # Recherche 2026-10-14: Band 4 B07 nennt B08–B10 nur als 'kompatibel', ohne Mengenaufteilung; Archiv/Historie ohne Paar-Werte
     history: "v1.3 (2026-05-28): B09 −2.8 → −0.5 und B10 −1.2 → −2.0 wurden additiv auf das Gruppen-Netto angerechnet (−16.1 → −14.6); Overlap-Betrag blieb dadurch 17.0"
 
   C_energy:
@@ -43,7 +43,7 @@ lever_overlaps:
     additive: []
     rule: "C11 Erneuerbare schluckt C12–C14 teilweise; Speicher, Smart Grid und Dezentralisierung sind Voraussetzungen der EE-Penetration, keine zusätzliche Erzeugung"
     source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2; co2_master.yaml C_energy.hinweis"
-    pair_coefficients: not_sourced
+    pair_coefficients: not_sourced  # Recherche 2026-10-14: Band 4 C11–C14 nur 'kompatibel mit', ohne Mengenaufteilung
     related: "Community C-2026-007 (Energie-Effizienz als Querschnittsprinzip) mit 0.0 Gt geführt wegen Overlap C11–C14 (HEBEL_KATALOG)"
 
   D_food_land:
@@ -81,7 +81,7 @@ gas_layer_overlaps:
     overlap_with_co2_layer: 1.6
     co2_lever: D18_ernaehrung
     evidence: "Annahme (konservativ)"
-    rationale: "Die CH₄-Quelle 'Ernährungswandel (D18): reduzierte Tierhaltung' kann im CO₂-Schicht-Wert D18_ernaehrung (−1.6 Gt CO₂eq) bereits enthalten sein; Herleitung von −1.6 ist nicht dokumentiert → volle Überlappung angenommen (verkleinert den Punktwert). Achtung Tag-Drift: Band 4 führt D18 als 'Urbane Landwirtschaft' (Transport −50 Mt), co2_master als 'ernaehrung' (−1.6). D15 (Gülle) ist reine CO₂-Sequestrierung → zusätzlich"
+    rationale: "Die CH₄-Quelle 'Ernährungswandel (D18): reduzierte Tierhaltung' kann im CO₂-Schicht-Wert D18_ernaehrung (−1.6 Gt CO₂eq) bereits enthalten sein; Herleitung von −1.6 ist nicht dokumentiert → volle Überlappung angenommen (verkleinert den Punktwert). Achtung Tag-Drift: Band 4 führt D18 als 'Urbane Landwirtschaft' (Transport −50 Mt), co2_master als 'ernaehrung' (−1.6). Recherche 2026-10-14: −1.6 hat keine Herleitung (erstmals in co2_master v1.1 am 2026-01-24, Commit 6bc312e; nicht in Band 4/5, nicht im ChatGPT-Archiv) → Klärung offen (User-Entscheidung). D15 (Gülle) ist reine CO₂-Sequestrierung → zusätzlich"
   n2o_D_food_land:
     gas_total: 4.94
     overlap_with_co2_layer: 0.0
