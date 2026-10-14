@@ -32,7 +32,7 @@ The submitted manuscript (Draft v0.1, 2026-04-18) reports an application count, 
 
 - **−58.0 Gt/yr** → SUPERSEDED by −58.6 (post drift-resolution).
 - **−50.7 Gt/yr** ("100% of target" snapshot) → DEPRECATED.
-- **−64.5 Gt/yr** (all-GHG; CO₂+CH₄+N₂O+F-gases) → PENDING v2.2 (overlap re-computation outstanding); **do not cite as final**.
+- **−64.5 Gt/yr** (all-GHG; CO₂+CH₄+N₂O+F-gases) → PENDING v2.2 (overlap re-computation outstanding); **do not cite as final**. *(Update 2026-10-14: superseded — −64.5 was never overlap-adjusted but the naive sum on the v2.0 CO₂ basis (−50.7−7.5−5.6−0.7). Replaced by the range **−58.6 … −72.45 Gt CO₂eq/yr** (full vs. no overlap between the CO₂eq layer and the CH₄/N₂O layer; GWP100 IPCC AR6). See `canon/decisions/DEC_2026-10-14_ghg_total_range.md`.)*
 
 ---
 

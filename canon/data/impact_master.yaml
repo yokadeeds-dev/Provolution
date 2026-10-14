@@ -20,7 +20,7 @@ meta:
       - "Datenhygiene nach externem YAML-Review: GWP100-Faktoren waren AR5 (CH4 28, N2O 265), obwohl als 'IPCC AR6' gekennzeichnet"
       - "Umstellung auf IPCC AR6 WG1 Table 7.15: CH4 fossil 29.8, CH4 biogen/non-fossil 27.0, N2O 273"
       - "CO2eq-Werte deterministisch umgerechnet (Wert × GWP_AR6/GWP_AR5), Annahme: v2.0-Werte basierten auf GWP 28 bzw. 265. CH4: B (Abfall, biogen) -2.8 → -2.70; D (Landwirtschaft, biogen) -3.2 → -3.09; C (Erdgas-Leckagen, fossil) -1.5 → -1.60; gesamt -7.5 → -7.38. N2O: D -4.8 → -4.94; B -0.8 → -0.82; gesamt -5.6 → -5.77. Unsicherheitsbänder proportional skaliert"
-      - "ghg_total.total -64.5 bleibt PENDING (Overlap-Re-Computation steht weiterhin aus); naive Summe jetzt -72.45. Neues Feld total_status macht den Status maschinenlesbar"
+      - "ghg_total (DEC_2026-10-14_ghg_total_range, User-Entscheidung A): -64.5 war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7-7.5-5.6-0.7). Ersetzt durch Spanne -58.6 (volle Überlappung) … -72.45 (keine Überlappung); total = null, total_status = RANGE; pauschales CI [-81.2,-48.6] und uncertainty_overall.ghg_total-Punktwerte entfernt"
       - "Rebound Single Source (DEC_2026-10-14_rebound_single_source, User-Entscheidung A): net_rebound_factor 0.50 + adjusted_impact -32.3 entfernt; Rebound nur noch in Monte-Carlo (Schicht 4). Komponenten 25/15/10 % bleiben als Literatur-Belege; reporting vor/nach Rebound explizit (-58.6 / -43.2 / -14.9)"
       - "C-2026-008: hash PENDING → SHA-256 der Quelldatei; toter Dossier-Pfad durch source_ref ersetzt"
       - "Keine Änderung an CO2-Werten, SEC-J-Scores oder Domain-Totals"
@@ -193,10 +193,16 @@ ghg_accounting:
     ch4_co2eq: -7.38  # v2.7 AR6
     n2o_co2eq: -5.77  # v2.7 AR6
     f_gases_co2eq: -0.7
-    total: -64.5  # Gt CO₂eq/Jahr — PENDING: Overlap-Bereinigung noch auf v2.0-Basis gerechnet; naive Summe jetzt -72.45 (-58.6+-7.38+-5.77+-0.7, v2.7 AR6); Overlap-Re-Computation ausstehend. Nicht als final zitieren (canon/STATUS.md §2)
-    total_status: "PENDING"  # maschinenlesbar; erst nach Overlap-Re-Computation auf "CURRENT" setzen
-    unsicherheit: [-81.2, -48.6]  # 95% CI
-    note: "ghg_total.total Overlap-Bereinigung in v2.0 mit alten CO2-Werten gerechnet; vollständiges Re-Computation in v2.2 vorgesehen. Der ChatGPT-Audit-Befund (2026-05-28) zur Differenz CO2 vs total ist methodisch erklärbar durch Overlap-Korrektur (CO2-Maßnahmen reduzieren auch CH4/N2O), nicht durch Rechenfehler."
+    # v2.7 (DEC_2026-10-14_ghg_total_range): Spanne statt Punktwert.
+    # Die CO2-Schicht nutzt CO2eq-Faktoren; ob CH4/N2O-Wirkungen darin schon enthalten sind,
+    # ist pro Quelle nicht dokumentiert → Überlappung zwischen 0 % und 100 % möglich.
+    total: null  # kein Punktwert, solange die Überlappung CO2eq-Schicht ↔ CH4/N2O-Schicht nicht pro Quelle zugeordnet ist
+    total_status: "RANGE"  # RANGE | CURRENT (CURRENT erst mit quellenweiser Zuordnung + Punktwert)
+    range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten
+    range_upper_no_overlap: -72.45    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
+    unsicherheit: null  # vorher [-81.2, -48.6] = -64.5 ±25 % (pauschal, keine eigene Simulation); entfällt mit dem Punktwert
+    deprecated_total: -64.5  # NICHT ZITIEREN: war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7 + -7.5 + -5.6 + -0.7 = -64.5, Commit 1b683b2, 2026-01-24). Der spätere Kommentar 'enthält Overlap-Bereinigung' (2026-05-28) war unzutreffend.
+    note: "Engere Spanne erfordert die Zuordnung jeder CH4/N2O-Quelle (B10/B12 Deponie, C Erdgas-Leckagen, D15/D18 Landwirtschaft/Ernährung, D Düngung) zu 'in CO2eq-Schicht enthalten' bzw. 'zusätzlich'. Größte Unsicherheit: Domäne D."
 
 # ============================================================================
 # TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
@@ -459,8 +465,8 @@ energy_system:
       vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
       nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
       nach_rebound_median_S: -14.9  # Stresstest
-    ghg_total_rebound: null  # all-GHG nach Rebound erst nach Overlap-Re-Computation von ghg_total.total, dann über dieselbe Monte-Carlo-Logik (kein eigener Faktor)
-    # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf PENDING-Wert -64.5,
+    ghg_total_rebound: null  # all-GHG nach Rebound erst, wenn ghg_total einen Punktwert hat (total_status CURRENT), dann über dieselbe Monte-Carlo-Logik (kein eigener Faktor)
+    # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf nie bereinigten Wert -64.5,
     # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
 # ============================================================================
@@ -760,11 +766,9 @@ validation:
   
   uncertainty_overall:
     method: "Monte Carlo Simulation (10,000 iterations)"
-    ghg_total:
-      mean: -64.5  # Gt CO₂eq/Jahr
-      p05: -81.2
-      p95: -48.6
-      relative: "±25%"
+    ghg_total:  # v2.7: mean -64.5 / p05 -81.2 / p95 -48.6 entfernt — war pauschal ±25 % um einen nie bereinigten Wert, keine Simulation (DEC_2026-10-14_ghg_total_range)
+      range: [-72.45, -58.6]  # Überlappungs-Spanne, siehe ghg_accounting.ghg_total
+      co2_only_monte_carlo: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"  # einzige echte Simulation (CO2-Schicht)
     
     environmental:
       water: "±18%"
@@ -782,7 +786,7 @@ validation:
       - source: "IEA Net Zero 2050"
         alignment: "95% overlap in key technologies"
       - source: "Project Drawdown"
-        comparison: "Our -64.5 Gt vs. their -58 Gt (higher due to systemic integration)"
+        comparison: "Unser CO2-Potenzial -58.6 Gt (all-GHG Spanne -58.6 … -72.45) vs. deren -58 Gt; v2.7: vorher '-64.5', nie bereinigt"
   
   peer_review_status:
     methodology: "Ready for submission"

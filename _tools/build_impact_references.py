@@ -62,7 +62,9 @@ PLACEHOLDERS = {
     # === MULTI-IMPACT (aus impact_master.yaml) ===
     
     # GHG Extended
-    '{{GHG_TOTAL}}': ('impact', 'ghg_accounting.ghg_total.total'),
+    # 2026-10-14: ghg_total.total = null (Spanne statt Punktwert, DEC_2026-10-14_ghg_total_range)
+    '{{GHG_TOTAL_RANGE_LOW}}': ('impact', 'ghg_accounting.ghg_total.range_lower_full_overlap'),
+    '{{GHG_TOTAL_RANGE_HIGH}}': ('impact', 'ghg_accounting.ghg_total.range_upper_no_overlap'),
     '{{GHG_CH4}}': ('impact', 'ghg_accounting.methane_ch4.gesamt'),
     '{{GHG_N2O}}': ('impact', 'ghg_accounting.nitrous_oxide_n2o.gesamt'),
     '{{GHG_F_GASES}}': ('impact', 'ghg_accounting.f_gases.gesamt'),
