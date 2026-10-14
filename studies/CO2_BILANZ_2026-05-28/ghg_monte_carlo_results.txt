@@ -1,0 +1,24 @@
+==============================================================================
+PROVOLUTION ALL-GHG-BILANZ · MONTE-CARLO (CO₂ + CH₄ + N₂O + F-Gase)
+==============================================================================
+N=10000 je Szenario · seed=42 · CO₂-Schicht = monte_carlo.py (identische Draws)
+Gas-Punktwerte (AR6): CH₄ -7.38 · N₂O -5.77 · F-Gase -0.7 Gt CO₂eq/yr; Overlap lt. overlap_matrix.yaml
+
+Szenario                                          CO₂ Median  GHG Median         GHG 90% KI
+──────────────────────────────────────────────────────────────────────────────
+A · konservativ-realistisch                            -31.3       -39.2     [-47.2, -32.0]
+B · mittel-realistisch (Erwartungswert)                -43.2       -51.6     [-61.4, -43.0]
+C · optimistisch-realistisch                           -61.1       -70.7     [-82.9, -59.6]
+S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)       -14.9       -20.5     [-26.3, -15.2]
+
+Sensitivität · Rebound auch auf Gas-Schicht:
+  A · konservativ-realistisch                    GHG-Median -37.6 (Δ +1.6)
+  B · mittel-realistisch (Erwartungswert)        GHG-Median -50.4 (Δ +1.3)
+  C · optimistisch-realistisch                   GHG-Median -69.9 (Δ +0.8)
+  S · Stresstest 50%-Umsetzung (PF-E7-Adressierung) GHG-Median -18.8 (Δ +1.7)
+
+Anteil an globaler Baseline (55.0 Gt CO₂eq/yr), GHG-Median:
+  A · konservativ-realistisch                     71.3 %
+  B · mittel-realistisch (Erwartungswert)         93.8 %
+  C · optimistisch-realistisch                   128.5 %
+  S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)  37.3 %
