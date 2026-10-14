@@ -2,6 +2,7 @@
 
 **Status:** ✅ entschieden (User) · **Datum:** 2026-10-14
 **Fortschritt:** Paket 1 ✅ 2026-10-14 → [`studies/INPUT_SENSITIVITY_2026-10-14/`](../../studies/INPUT_SENSITIVITY_2026-10-14/INPUT_SENSITIVITY_REPORT.md). Folge für Paket 3: Schicht 3 + Overlap B zuerst; für Paket 4: Umsetzungsraten, B07, C11.
+**Fortschritt:** Paket 2 ⏳ geplant 2026-10-14 → [`studies/SECJ_INDEPENDENT_TEST_2026-10-14/PROTOCOL.md`](../../studies/SECJ_INDEPENDENT_TEST_2026-10-14/PROTOCOL.md); offen: Arm B, Rekrutierung, Entschädigung, Vorab-Registrierung (Autor).
 **Ausgangsstand:** Release [v2.3 „Methodology preview (data consistency)“](https://github.com/yokadeeds-dev/Provolution/releases/tag/v2.3). Die internen Konsistenz- und Datenhygiene-Probleme sind geschlossen, die verbleibenden `not_sourced`-Overlaps (B07↔B08–B12, C11↔C12–C14) sind als Limitation dokumentiert.
 
 ## Release-Benennung (Klarstellung)
