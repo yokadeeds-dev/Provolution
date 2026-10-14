@@ -91,6 +91,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `canon/METHOD_POSITIONING.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Einordnung ggü. MCDA/IAM/RDM (LIMITATIONS #14) |
 | `canon/LEVER_SELECTION.md` | ✅ CURRENT (Entwurf) — Reviewer-Supplement: Hebel-Aufnahme-/Ausschluss-Kriterien (LIMITATIONS #15) |
 | `studies/SENSITIVITY_2026-05-30/` | ✅ CURRENT — Gewichts-Sensitivitätsanalyse (reproduzierbar, seed=42); adressiert LIMITATIONS #5/#12 |
+| `studies/INPUT_SENSITIVITY_2026-10-14/` | ✅ CURRENT — Input-Sensitivität pro Hebel (Tornado + Varianz-Zerlegung, seed 42, identische Draws wie Headline): Treiber Umsetzungsrate > Schicht 3 > Rebound > Overlap B > B07 > C11; B07+C11 = 75 % der Hebel-Unsicherheit. Roadmap Paket 1 |
 | `studies/ILLUSTRATIVE_CASES_2026-05-30/` | ✅ CURRENT (**Proof-of-Concept, KEINE Validierung**; N=7, Skala 0,085–0,94) — illustrative retrospektive Konkordanz-Probe + Failure-Mode-Lokalisierung (Großer Sprung · PKW-Maut · Open-House-Masken · ASFINAG · Apollo · Währungsreform); nicht verblindet/nicht powered, Validierungs-Roadmap im Report §7; adressiert LIMITATIONS #13 |
 | `studies/CONSISTENCY_MATRIX_2026-05-30/` | ✅ CURRENT (Erst-Entwurf) — 44×44 Hebel-Konsistenz-/Konflikt-Matrix (121 Kanten, C-Achse auditierbar); adressiert LIMITATIONS #16 |
 | `studies/CARBON_FLOW_2026-05-30/` | ✅ CURRENT — Carbon-Flow-Sankey (Brutto −85,55/−57,05 → Netto-Median −42,2, Overlaps bereinigt; aktualisiert 2026-10-14); adressiert LIMITATIONS #2/#16, Q4 |
