@@ -28,7 +28,7 @@ Alle kanonischen Dokumente von Probatio Systemica und Provolution.
 | 03_Band3_Scientific_Core.md | Mathematische Formalisierung |
 | 00_Architektur_MMM_PS_Beziehung.md | MMM/PS-Architektur |
 
-## Provolution (Klimaanwendung, n = 40 dynamisch, −58,0 Gt/Jahr)
+## Provolution (Klimaanwendung, n = 49 dynamisch, −57,05 Gt/Jahr Potenzial · netto −42,2)
 
 **n wächst via AUTO-INTEGRATE — Aufnahmekriterium: SEC_total ≥ 0.82. Keine Obergrenze.**
 
