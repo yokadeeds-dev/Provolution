@@ -67,7 +67,7 @@ Diese Datei ist die **konsolidierte Hebel-Liste** für Provolution. Sie löst di
 | D15 | REGENERATIVE LANDWIRTSCHAFT | regen_landwirtschaft | band4-canonical | -4.0 | konsistent |
 | D16 | CO₂-SENKEN (BODEN) | co2_senken_boden | band4-canonical | -5.0 | konsistent |
 | D17 | HANF-ANBAU (NUTZPFLANZE) | hanf_oekosystem | band4-canonical | -2.8 | konsistent |
-| D18 | URBANE LANDWIRTSCHAFT | ernaehrung | band4-canonical | -1.6 | konsistent |
+| D18 | URBANE LANDWIRTSCHAFT | urbane_landwirtschaft | band4-canonical | -0.05 | konsistent (v1.13: Tag `ernaehrung` −1.6 → band4-canonical) |
 | D19 | ALGEN-BIORAFFINERIE | algen_bioraffinerie | band4-canonical | -0.3 | ✅ NEU v1.5 2026-05-28: Promotion Kategorie B → A (SEC 0.83 > 0.82); vollintegriert Band 4 v4.2 §5 D-Domain; D-bleibt-Entscheidung (kategoriell anders als K: Bioreaktor vs Ökosystem-Restoration) |
 
 ### Domain E — Bildung & Bewusstsein (4)
@@ -161,8 +161,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 | **n_communities_integrated** | 5 | C-2026-001/003/004/007/008 |
 | **n_total_kanonisch** | **49** | Hebel-Katalog v1.5: +D19 (=48+1) |
 | **n_domains** | **11** | A–K (Domain K voll-integriert 2026-05-28 v1.5) |
-| **n_yaml_quantified** | 36 | YAML SSOT (v1.3: 35+1 mit D19) — **Subset** des Katalogs |
-| CO2-Reduktion (YAML, hart) | -58.6 Gt/yr | v1.3 nach B09/B10-Drift-Resolution + D19-Promotion (vorher v1.2 -59.8) |
+| **n_yaml_quantified** | 41 | YAML SSOT (40 apps + 1 community; abgeleitet, CI-geprüft seit 2026-10-14) — **Subset** des Katalogs |
+| CO2-Reduktion (YAML, hart) | -57.05 Gt/yr | v1.7 nach D18-Drift-Resolution (vorher v1.3 -58.6; v1.2 -59.8) |
 
 ---
 
@@ -171,6 +171,8 @@ Plus verwandter Hebel **D19 Algen-Bioraffinerie** (AUTO_INTEGRATE Kategorie B Ka
 1. **A03-A06 YAML-Tag-Drift** — ✅ **RESOLVED v1.3 2026-05-28** (in HEBEL_KATALOG v1.12 2026-05-30 nachgezogen): Tags `transparenz/partizipation/konfliktloesung/kompetenz` → `risikoabschaetzung/szenarien_vergleich/pilotprojekt_framework/skalierungs_protokoll` (Band-4-konform) in `co2_master.yaml`. CO₂-Werte + Domain-A-Total (−8.2) unverändert — Tag-Rename ist total-neutral.
 
 2. **B09/B10 inhaltliche Drift** — ✅ **RESOLVED v1.5 2026-05-28**. Auflösung: YAML auf band4-canonical-Inhalte korrigiert (B09 = materialfluss_steuerung -0.5; B10 = abfall_zu_ressource -2.0). Vormals zugeordnete Wasserstoff (-2.8) und CCS (-1.2) zurückgestellt als separate zukünftige Hebel-Kandidaten — H2 partial in B11_transformation -1.8 abgedeckt (enthält H2-Direktreduktion), CCS bekommt eigenen Slot bei späterer Promotion. Netto-Effekt auf Bilanz: +1.5 Gt (weniger Reduktion) → reduktion_hart -59.8 → -58.6 (kombiniert mit D19 -0.3).
+
+4. **D18 Tag- und Wert-Drift** — ✅ **RESOLVED co2_master v1.7 2026-10-14** (`canon/decisions/DEC_2026-10-14_d18_band4_canonical.md`): YAML führte `D18_ernaehrung −1.6` ohne jede Herleitung (erstmals v1.1, nicht in Band 4/5, nicht im ChatGPT-Archiv); Band 4 v4.2 D18 = URBANE LANDWIRTSCHAFT, Transport-CO₂ −50 Mt/Jahr. Korrektur auf band4-canonical −0.05 (Präzedenz B09/B10). Domain D −9.7 → −8.15; reduktion_hart −58.6 → −57.05. Der Ernährungs-/Tierhaltungs-Effekt steht in der CH₄-Schicht (`impact_master.yaml`), all-GHG daher praktisch unverändert.
 
 3. **E20/E21/F23 YAML-Tag-Drift** — ✅ **RESOLVED v1.3 2026-05-28** (Doku v1.12 2026-05-30): E20 `klima_bildung`→`partizipation`, E21 `erfahrungslernen`→`gerechtigkeits_mechanismen`, F23 `tech_transfer`→`forschungs_priorisierung` in `co2_master.yaml`, total-neutral. **Rest-Vorbehalt F23:** ob der −0.9-Wert F23 (FORSCHUNGS-PRIORISIERUNG, band4-canonical, quantifiziert) oder F24 (TECH-TRANSFER, band4-canonical, unquantifiziert) zuzuordnen ist — Default konservativ F23; User-Verifikation offen, Domain-F-Total (−2.1) in jedem Fall unverändert.
 
@@ -290,6 +292,10 @@ Batch-bewertete Domain-Durchschnitte (Einzelhebel-Berechnung ausstehend):
 ---
 
 ## Versions-History
+
+**v1.13 (2026-10-14, D18-Drift-Resolution):**
+- D18-Zeile: Tag `ernaehrung` → `urbane_landwirtschaft`, YAML-Wert −1.6 → −0.05 (band4-canonical); Drift-Item #4 ergänzt.
+- Aggregate: reduktion_hart −58.6 → −57.05; n_yaml_quantified 36 → 41 (abgeleitet). Hebel-Anzahl (49) unverändert.
 
 **v1.12 (2026-05-30, Konsistenz/Doku):**
 - ✅ **YAML-Tag-Drift-Dokumentation nachgezogen** (Drift-Items #1/#3): die Tag-Renames waren in `co2_master.yaml` bereits v1.3 (2026-05-28) vollzogen (A03–A06, E20, E21, F23 → Band-4-konforme Tags), aber HEBEL_KATALOG (Tag-Spalten + Drift-Items) und Bilanz-§8.2 trugen weiter „⚠️ YAML-Tag-Drift". Tag-Spalten Domain A/E/F + Drift-Items #1/#3 auf RESOLVED gebracht. **Total-neutral** (Domain-Totals A −8.2 / E −1.8 / F −2.1 unverändert; reduktion_hart −58.6 unberührt).

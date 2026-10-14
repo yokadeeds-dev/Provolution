@@ -1,6 +1,7 @@
 # DEC 2026-10-14: all-GHG-Monte-Carlo, Recherche D18 und Paar-Koeffizienten
 
 **Status:** ✅ von Claude nach Repo-Konvention entschieden, User-Bestätigung über den PR-Merge; D18 → offene User-Entscheidung · **Datum:** 2026-10-14
+**Fortgeschrieben:** 2026-10-14 durch [`DEC_2026-10-14_d18_band4_canonical.md`](DEC_2026-10-14_d18_band4_canonical.md): D18 auf band4-canonical (−0,05) korrigiert → Zahlen hier sind Vor-Korrektur-Stand (aktuell: CO₂ −57,05 / netto B −42,2; all-GHG −68,90 / netto B −51,2; D18-Annahme in der Overlap-Matrix entfallen).
 **Auftrag:** User 2026-10-14 „dann gehen wir die offenen Punkte an“ (offene Punkte aus #50)
 **Betroffen:** neu `studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py` (+ `ghg_monte_carlo_results.txt`, `ghg_percentiles.csv`) · `canon/data/impact_master.yaml` v2.9 · `canon/data/overlap_matrix.yaml` (Recherche-Vermerke) · `_tools/spec_consistency_audit.py` v0.3 · `canon/STATUS.md` §2
 

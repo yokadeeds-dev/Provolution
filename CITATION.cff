@@ -5,7 +5,7 @@ authors:
     given-names: "Yoka Tobias"
     orcid: "0009-0006-2349-9002"
 title: "Probatio Systemica & Provolution: A Multi-Impact Framework for Climate Transformation"
-version: 2.2
+version: 2.3
 date-released: 2026-10-14
 url: "https://provolution.org"
 repository-code: "https://github.com/yokadeeds-dev/Provolution"
@@ -26,7 +26,8 @@ abstract: |
   Multi-Impact Assessment Framework v2.0 as operational measurement layer
   covering 6 dimensions (GHG, Environmental, Social, Energy, Governance,
   Pathways). Screened technical/systemic potential (not a forecast):
-  -58.6 Gt CO₂/year (direct, CO₂-only) across 49 levers in 11 domains
+  -57.05 Gt CO₂/year (direct, CO₂ layer) across 49 levers in 11 domains
   (A-K) including community-integrated submissions; realistic net
-  expectation -43.2 Gt/year (Monte-Carlo median). Authoritative values:
+  expectation -42.2 Gt CO₂/year and -51.2 Gt CO₂eq/year for all
+  greenhouse gases (Monte-Carlo medians). Authoritative values:
   canon/STATUS.md and canon/data/*.yaml.

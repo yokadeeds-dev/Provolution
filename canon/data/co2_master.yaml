@@ -1,6 +1,6 @@
 # CO₂-Bilanz Master Data - Single Source of Truth (CO2-spezifisch)
 # Provolution Framework - Hebel-Katalog (A-K) + Community-Integrations
-# Version: 1.6 (Erstanlage 1.0 am 2026-01-24)
+# Version: 1.7 (Erstanlage 1.0 am 2026-01-24)
 # Datum: 2026-10-14
 # Alle Werte in Gt CO₂eq/Jahr (negativ = Reduktion/Senke)
 #
@@ -9,7 +9,7 @@
 # Diese YAML-Datei ist das CO2-quantifizierte Subset davon.
 
 meta:
-  version: "1.6"
+  version: "1.7"
   last_updated: "2026-10-14"
   description: "Zentrale CO₂-Bilanz aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 - Gesamtbilanz"
@@ -17,6 +17,7 @@ meta:
   changelog_v1_3: "Drift-Resolutions 2026-05-28: (1) B09 wasserstoff -2.8 → materialfluss-steuerung -0.5 (band4-canonical Wert; H2 als separater Hebel-Kandidat zurückgestellt, partial-coverage durch B11 transformation -1.8 angedeutet); (2) B10 ccs -1.2 → abfall-zu-ressource -2.0 (band4-canonical Wert; CCS als separater Hebel-Kandidat zurückgestellt); (3) D19 Algen-Bioraffinerie unter D_food_land neu hinzugefügt (-0.3 Gt; Promotion Kategorie B → A, vollintegriert Band 4 v4.2); (4) K01-K04 STUB-Status → band4-canonical (Vollkonzepte in Band 4 v4.2 KAPITEL 10b); Domain B total: -16.1 → -14.6; Domain D total: -9.4 → -9.7; gesamt.reduktion_hart: -59.8 → -58.6"
   changelog_v1_4: "PS-U 2.0 SEC-J-Nachrüstung 2026-05-28 (User-PF-Sitzung): Architektonische Lücke geschlossen — alle in der Sitzung bewerteten Hebel haben jetzt J-Score + SEC-J. Datentechnisch sind die SEC-J-Werte in impact_master.yaml v2.2 unter sec_j_scores zentral abgelegt. Domain B, C, D individuell kalkuliert; Domain A, E, F, G, H batch-bewertet (Einzelhebel-Berechnung ausstehend). Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; B09 J=0,72 als Warnschwelle dokumentiert (Algorithmisches-Management-Risiko). Vollständiger Audit-Bericht: studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
   changelog_v1_5: "J01 Kreislauf-Gebäude Promotion STUB → band4-canonical (PR #15, 2026-05-29 abends). Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format eingefügt. Domain J total -3.0 Gt unverändert; nur Status-Anhebung. Fünf modulare Bausteine: Embodied-Carbon-Limit + Hempcrete (netto-negativ ~110 kg CO₂/m³) + Hanfbast-Bewehrung (BasEcoCrete) + Hanffaser-Dämmung + Material-Pässe/Urban-Mining. SEC-J 0,93 aus PR #13. Hanf-Bau-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md. Aggregate gesamt-Reduktion unverändert (-58.6); n_band4_canonical 37 → 38; n_stub 2 → 1 (siehe HEBEL_KATALOG)."
+  changelog_v1_7: "D18-Drift-Resolution 2026-10-14 (DEC_2026-10-14_d18_band4_canonical, User-Entscheidung A; Präzedenz B09/B10 v1.3): D18_ernaehrung -1.6 → D18_urbane_landwirtschaft -0.05 (band4-canonical: Band 4 v4.2 D18 = URBANE LANDWIRTSCHAFT, Transport-CO₂ -50 Mt/Jahr). Der Wert -1.6 hatte keine Herleitung (erstmals v1.1, Commit 6bc312e; nicht in Band 4/5, nicht im ChatGPT-Archiv). Domain D total -9.7 → -8.15; reduktion_hart -58.6 → -57.05; total_potenzial -87.1 → -85.55; anteil_global_emissions 1.065 → 1.037. all-GHG-Brutto praktisch unverändert (-68.85 → -68.90), weil der Ernährungs-/Tierhaltungseffekt in der CH4-Schicht steht."
   changelog_v1_6: "Datenhygiene 2026-10-14 (externes YAML-Review): keine CO₂-Wert-Änderung. metrics.anzahl_anwendungen 36 → 41 und anzahl_domains 10 → 11 (jetzt aus der YAML-Struktur abgeleitet und per _tools/spec_consistency_audit.py geprüft; 41 = CO₂-quantifiziertes Subset, Kanon-Gesamtzahl 49 laut canon/STATUS.md §3); veraltete Kommentarwerte korrigiert (B-Domain -15.8 → -14.6, Domain-Summe -55.0/-58.0 → -55.6/-58.6); C-2026-008 hash PENDING → SHA-256 der Quelldatei, toter Dossier-Pfad (nie generiert) durch source_ref ersetzt."
 
 # Hinweis zur SEC-J-Integration (v1.4):
@@ -122,13 +123,13 @@ methodology:
     internal: "SEC-Score correlation with CO₂ impact (r=0.94)"
     external: "Comparison with sectoral deep-dive studies (IEA, McKinsey, Project Drawdown)"
     sensitivity: "Key parameter variation ±20% changes total by <±15%"
-    plausibility: "Total -58.6 Gt/year = 106.5% of global emissions (55 Gt baseline) = Net Negative; physically consistent via active sequestration (D16 Boden-CO2-Senken -5 Gt)"
+    plausibility: "Total -57.05 Gt/year = 103.7% of global emissions (55 Gt baseline) = Net Negative (screened potential, not a forecast); physically consistent via active sequestration (D16 Boden-CO2-Senken -5 Gt)"
 
 gesamt:
-  reduktion_hart: -58.6  # Aktualisiert 2026-05-28 v1.3: -59.8 (v1.2) + B09/B10 Drift-Korrektur (+1.5; weniger Reduktion nach Tag-Drift-Auflösung) + D19 Promotion (-0.3) = -58.6
+  reduktion_hart: -57.05  # v1.7 2026-10-14: -58.6 + D18-Drift-Resolution (+1.55) = -57.05. Historie: v1.3 -59.8 + B09/B10 (+1.5) + D19 (-0.3) = -58.6
   vermeidung_weich: -28.5  # Vermiedene/verhinderte Emissionen (Schicht 2 Kaskaden in Bilanz-Studie)
-  total_potenzial: -87.1  # Aktualisiert v1.3: -58.6 + -28.5 = -87.1
-  anteil_global_emissions: 1.065  # 106.5% der globalen Emissionen (55 Gt Baseline) = Net Negative (v1.3)
+  total_potenzial: -85.55  # v1.7: -57.05 + -28.5 = -85.55 (v1.3: -87.1)
+  anteil_global_emissions: 1.037  # v1.7: 103.7% der globalen Emissionen (55 Gt Baseline); v1.3: 1.065
   korrelation_theorie_praxis: 0.94  # Mathematische Validierung (intern, Theorie↔Praxis r=0,94; keine externe Begutachtung — vgl. methodology.validation_approach.internal)
   
 # Domain-spezifische Bilanzen (A-K)
@@ -172,13 +173,13 @@ domains:
       
   D_food_land:
     name: "Ernährung & Landnutzung"
-    total: -9.7  # v1.3 2026-05-28: -9.4 + D19 -0.3 = -9.7
+    total: -8.15  # v1.7 2026-10-14: -9.7 - (-1.6) + (-0.05) = -8.15 (D18-Drift-Resolution); v1.3: -9.4 + D19 -0.3 = -9.7
     beschreibung: "Regenerative Landwirtschaft, CO₂-Senken, Ernährungswandel, industrielle Bio-Produktion"
     apps:
       D15_regen_landwirtschaft: -4.0
       D16_co2_senken_boden: -5.0  # + 200 Gt kumulativ über 50 Jahre
       D17_hanf_oekosystem: -2.8
-      D18_ernaehrung: -1.6
+      D18_urbane_landwirtschaft: -0.05  # v1.7: band4-canonical (Band 4 v4.2 D18: Transport-CO₂ -50 Mt/Jahr); vorher Tag 'ernaehrung' -1.6 ohne Herleitung
       D19_algen_bioraffinerie: -0.3  # v1.3 2026-05-28: Promotion Kategorie B → A (SEC 0.83 > 0.82 Schwelle); industrielle PBR-CO₂-Fixierung aus Industrie-Abgasen + Eiweiß-Produktion. Vollkonzept Band 4 v4.2 §5 D-Domain. Domain-Entscheidung D-bleibt: kategoriell anders als K (Bioreaktor vs Ökosystem-Restoration). Bandbreite -0.3 bis -0.5; konservativ -0.3.
     hinweis: "D16 kumulatives Potenzial nicht in Jahreswert enthalten; D19 neu v1.3 als 5. Hebel der D-Domain"
       
@@ -251,7 +252,7 @@ domains:
 # Quelle: canon/de/04_Band4_Community_Integrations.md
 community_integrations:
   beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-J Hebel-Domains"
-  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.6) vs. reduktion_hart (-58.6)
+  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-54.05) vs. reduktion_hart (-57.05)
   integrations:
     C-2026-008:
       id: "C-2026-008"

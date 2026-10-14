@@ -10,7 +10,7 @@
 
 Band 4 dokumentiert **n kanonische Provolution-Hebel** (aktuell **49 Hebel im Kanon über 11 Domänen A–K**, davon **38 band4-canonical** mit Vollkonzept; Stand v1.5 2026-05-29). n wächst dynamisch via AUTO-INTEGRATE. Autoritative Zählung und Werte-Glossar: [`canon/STATUS.md`](../STATUS.md).
 
-**Kernaussage:** Die n kanonischen Hebel bilden ein vollständiges, konsistentes System zur systematischen Klimatransformation. Bei voller Implementation reduzieren sie CO₂-Emissionen um **-58.6 Gt/Jahr** (106,5% globaler Emissionen).
+**Kernaussage:** Die n kanonischen Hebel bilden ein vollständiges, konsistentes System zur systematischen Klimatransformation. Bei voller Implementation reduzieren sie CO₂-Emissionen um **-57.05 Gt/Jahr** (103,7% globaler Emissionen; gescreentes Potenzial, keine Prognose — realistischer Netto-Median −42,2 Gt/Jahr, siehe canon/STATUS.md §2).
 
 **Basis:** Alle Hebel folgen dem **SEC-Prinzip** (Band 1) mit durchschnittlichem Score **0.895** (Exzellent).
 
@@ -2749,7 +2749,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 - B07, C11, D16 auf voller Kapazität
 - **Net-Zero bis 2040-2050 erreicht**
 
-**Impact:** -58.6 Gt CO₂/Jahr, System vollständig implementiert, Star Trek-Moment
+**Impact:** -57.05 Gt CO₂/Jahr (Potenzial), System vollständig implementiert, Star Trek-Moment
 
 ---
 
@@ -2779,7 +2779,7 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 5. B10 Abfall-Ressource - -2 Gt CO₂eq/Jahr
 6. B08 Biopolymere Hanf - -1.5 Gt/Jahr
 
-**Total CO₂-Impact:** -58.6 Gt/Jahr (106,5% globaler Emissionen)
+**Total CO₂-Impact:** -57.05 Gt/Jahr (103,7% globaler Emissionen; Potenzial, keine Prognose)
 
 ---
 
@@ -2814,9 +2814,10 @@ Die n kanonischen Hebel bilden ein **vernetztes System** mit drei Ebenen:
 | **Domain-Ø SEC-J (Batch-bewertet, PR #11 ✅ TRAGFÄHIG)** | A 0,92 · E 0,93 (E21 unter JUSTICE J=0,95) · F 0,90 · G 0,90 · H 0,90 |
 | **SEC-J Warnschwellen (J < 0,80)** | **4 Hebel:** B09 J=0,72 (Algorithmisches-Management) · C12 J=0,82 (Li/Co-Abbau) · **B11 J=0,78** (H2-Just-Transition, PR #13) · **B12 J=0,75** (Tank-oder-Teller, PR #13) — Implementierungs-Auflagen in `impact_master.yaml` v2.4 `sec_j_scores.implementation_constraints` |
 | **J-Veto-Auslösungen (J < 0,50)** | 0 (keine) |
-| **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−58,6 Gt/Jahr** (`co2_master.yaml` v1.4, nach B09/B10-Drift-Resolution + D19-Promotion + K01–K04-Vollintegration; v1.2 hatte −59,8) |
-| **CO₂-Potential netto Szenario B (Erwartungswert, Monte-Carlo v1.5)** | **Median −43,2 Gt/yr [90 %-KI: −52,8, −34,6]** (N=10 000, `monte_carlo.py`) |
-| **CO₂-Potential netto Szenario S (50 %-Stresstest, PF-E7)** | Median −14,9 Gt/yr [90 %-KI: −20,5, −9,8] |
+| **CO₂-Potential Schicht 1 (direkt, Domain A–K + Communities)** | **−57,05 Gt/Jahr** (`co2_master.yaml` v1.7, nach D18-Drift-Resolution 2026-10-14; v1.4: −58,6; v1.2: −59,8) |
+| **CO₂-Potential netto Szenario B (Erwartungswert, Monte-Carlo)** | **Median −42,2 Gt/yr [90 %-KI: −51,6, −33,8]** (N=10 000, `monte_carlo.py`) |
+| **alle Treibhausgase netto Szenario B** | **Median −51,2 Gt CO₂eq/yr [90 %-KI: −60,9, −42,7]** (`ghg_monte_carlo.py`) |
+| **CO₂-Potential netto Szenario S (50 %-Stresstest, PF-E7)** | Median −14,3 Gt/yr [90 %-KI: −19,8, −9,4] |
 | **Finanzierung verfügbar** | €4.5 Billion/Jahr |
 | **Innovation-Beschleunigung** | -50% Time-to-Market |
 | **Fallbeispiele** | 200+ (inkl. Motorsport-Pilote I33; Pilot-Projekt-Register K01–K04 in KAPITEL 10b dokumentiert) |
@@ -2923,7 +2924,7 @@ Siehe `40_WORK/TEMPLATE_ANWENDUNG.md` für vollständiges Template und `40_WORK/
 ### Kernaussagen
 
 **1. Mathematischer Nachweis:**
-Provolution kann Klimakrise lösen. **-58.6 Gt CO₂/Jahr** bei voller Implementation = 106,5% globaler Emissionen.
+Provolution kann Klimakrise lösen. **-57.05 Gt CO₂/Jahr** Potenzial bei voller Implementation = 103,7% globaler Emissionen (realistischer Netto-Median −42,2 Gt CO₂ bzw. −51,2 Gt CO₂eq für alle Treibhausgase).
 
 **2. System-Ansatz ist essentiell:**
 Einzelne Hebel reichen nicht. Die n kanonischen Hebel bilden ein vollständiges, konsistentes System.

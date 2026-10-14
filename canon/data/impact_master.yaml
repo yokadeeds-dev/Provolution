@@ -1,6 +1,6 @@
 # Impact Master Data - Single Source of Truth (Multi-Impact)
 # Provolution Framework - Multi-Dimensional Impact Assessment
-# Version: 2.9 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
+# Version: 2.10 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
 # Datum: 2026-10-14 (Erstanlage 2026-01-24)
 # Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
 #
@@ -9,13 +9,18 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.9"
+  version: "2.10"
   last_updated: "2026-10-14"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_10_2026-10-14:
+      - "D18-Drift-Resolution (DEC_2026-10-14_d18_band4_canonical, User-Entscheidung A): Sync mit co2_master v1.7 — reduktion_hart -58.6 → -57.05, total_potenzial -87.1 → -85.55, anteil 1.065 → 1.037, D_food_land -9.7 → -8.15"
+      - "ghg_total: co2 -57.05; naive Summe -70.90; CH4-D-Overlap mit D18 entfällt (overlap_matrix v1.1) → total -68.90 (= total_evidence_only, keine Annahme mehr); Spanne -57.05 … -70.90"
+      - "Monte-Carlo neu (CO2 aus YAML gelesen): CO2 B -42.2 [-51.6 … -33.8], S -14.3; all-GHG B -51.2 [-60.9 … -42.7], A -38.9, C -70.2, S -20.4"
+      - "Wasser-Schicht: Bezeichnung 'D18 Ernährungswandel' → 'Ernährungswandel (kein eigener Hebel)'; Wert unverändert"
     v2_9_2026-10-14:
       - "all-GHG-Monte-Carlo (DEC_2026-10-14_ghg_monte_carlo): neues Skript studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py; CO2-Schicht identisch zur Headline (assert), Gas-Schicht aus Unsicherheitsbändern + overlap_matrix"
       - "ghg_total.monte_carlo_net: B Median -51.6 [90 % KI -61.4 … -43.0], A -39.2, C -70.7, S -20.5; rebound_effects.ghg_total_rebound null → -51.6"
@@ -105,10 +110,10 @@ ghg_accounting:
   # CO2-Bilanz (synchron mit co2_master.yaml v1.6, Stand 2026-10-14; CO2-Werte unverändert seit v1.5)
   co2:
     gesamt:
-      reduktion_hart: -58.6  # Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 38 band4-canonical + 5 yaml-only + 5 community + 1 STUB (nach J01-Promotion PR #15)
+      reduktion_hart: -57.05  # v2.10 (D18-Drift-Resolution, vorher -58.6). Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 38 band4-canonical + 5 yaml-only + 5 community + 1 STUB (nach J01-Promotion PR #15)
       vermeidung_weich: -28.5
-      total_potenzial: -87.1  # v2.1: -58.6 + -28.5 = -87.1
-      anteil_global_emissions: 1.065  # 106.5% = Net Negative (inkl. aktive Sequestration D16)
+      total_potenzial: -85.55  # v2.10: -57.05 + -28.5 (v2.1: -87.1)
+      anteil_global_emissions: 1.037  # v2.10: 103.7% (v2.1: 1.065)
       korrelation_theorie_praxis: 0.94
 
     # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.6
@@ -116,7 +121,7 @@ ghg_accounting:
       A_governance: -8.2
       B_production: -14.6  # v2.1: -15.8 → -14.6 nach B09/B10-Drift-Resolution (wasserstoff/ccs → materialfluss-steuerung/abfall-zu-ressource)
       C_energy: -12.3
-      D_food_land: -9.7   # v2.1: -9.4 → -9.7 nach D19 Algen-Bioraffinerie Promotion
+      D_food_land: -8.15  # v2.10: -9.7 → -8.15 (D18 band4-canonical); v2.1: -9.4 → -9.7 (D19)
       E_education: -1.8
       F_technology: -2.1
       G_monitoring: -0.6
@@ -146,7 +151,7 @@ ghg_accounting:
         gwp_basis: non_fossil
         hauptquellen:
           - "Regenerative Landwirtschaft (D15): Verbesserte Gülle-Bewirtschaftung"
-          - "Ernährungswandel (D18): Reduzierte Tierhaltung"
+          - "Ernährungswandel (kein eigener Hebel; Tag vorher fälschlich D18): Reduzierte Tierhaltung"
 
       C_energy:
         total: -1.60  # Gt CO₂eq/Jahr; fossil (29.8); v2.7: -1.5 × 29.8/28
@@ -196,29 +201,29 @@ ghg_accounting:
   
   # Gesamt-GHG-Bilanz (ALLE Treibhausgase)
   ghg_total:
-    co2: -58.6  # v2.1: -57.0 → -58.6 (sync mit gesamt.reduktion_hart)
+    co2: -57.05  # v2.10 sync mit gesamt.reduktion_hart (vorher -58.6)
     ch4_co2eq: -7.38  # v2.7 AR6
     n2o_co2eq: -5.77  # v2.7 AR6
     f_gases_co2eq: -0.7
     # v2.8 (DEC_2026-10-14_overlap_matrix_ghg_point): Punktwert aus quellenweiser Zuordnung
     # (canon/data/overlap_matrix.yaml gas_layer_overlaps): total = naive Summe + Σ overlap_with_co2_layer.
-    total: -68.85  # Gt CO₂eq/Jahr = -72.45 + 3.6 (B10-Deponie-CH4 2.0 belegt + D18-Ernährung-CH4 1.6 angenommen); konservativ
+    total: -68.90  # Gt CO₂eq/Jahr = naive -70.90 + belegter Overlap 2.0 (B10-Deponie-CH4); v2.10 ohne Annahmen (v2.8: -68.85 mit D18-Annahme)
     total_status: "CURRENT"
-    total_evidence_only: -70.45  # nur belegte Überlappung (2.0); Differenz 1.6 = Annahme D18 (Tag-Drift, Herleitung undokumentiert)
+    total_evidence_only: -68.90  # = total (seit v2.10 keine angenommenen Overlaps mehr)
     monte_carlo_net:  # v2.9: all-GHG nach Umsetzung, Verlusten und Rebound (CO2-Schicht) — studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py, seed 42
       source: "studies/CO2_BILANZ_2026-05-28/ghg_percentiles.csv"
-      A_median: -39.2
-      B_median: -51.6   # Erwartungswert; 90 % KI siehe B_ci90
-      B_ci90: [-61.4, -43.0]
-      C_median: -70.7
-      S_median: -20.5
-      B_median_rebound_on_gases: -50.4  # Sensitivität: Rebound auch auf Gas-Schicht
+      A_median: -38.9
+      B_median: -51.2   # Erwartungswert; 90 % KI siehe B_ci90
+      B_ci90: [-60.9, -42.7]
+      C_median: -70.2
+      S_median: -20.4
+      B_median_rebound_on_gases: -49.9  # Sensitivität: Rebound auch auf Gas-Schicht
     overlap_source: "canon/data/overlap_matrix.yaml"
-    range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten (Grenzfall)
-    range_upper_no_overlap: -72.45    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
+    range_lower_full_overlap: -57.05  # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten (Grenzfall)
+    range_upper_no_overlap: -70.90    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
     unsicherheit: null  # keine eigene all-GHG-Simulation; Monte-Carlo existiert nur für die CO2-Schicht (vorher pauschal [-81.2, -48.6])
     deprecated_total: -64.5  # NICHT ZITIEREN: war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7 + -7.5 + -5.6 + -0.7 = -64.5, Commit 1b683b2, 2026-01-24). Der spätere Kommentar 'enthält Overlap-Bereinigung' (2026-05-28) war unzutreffend.
-    note: "Zuordnung pro Quelle in overlap_matrix.yaml: B10 (Band 4: CO2-Wert = Deponie-Methan) belegt; C11/D15/D16 reines CO2 (Verbrennung/Sequestrierung) → Gase zusätzlich; D18 konservativ als voll überlappend angenommen. Brutto-Potenzial vor Umsetzung/Rebound — keine Prognose."
+    note: "Zuordnung pro Quelle in overlap_matrix.yaml: B10 (Band 4: CO2-Wert = Deponie-Methan) belegt; C11/D15/D16 reines CO2 (Verbrennung/Sequestrierung) → Gase zusätzlich; D18 seit v2.10 band4-canonical (Urbane Landwirtschaft) → Tierhaltungs-CH4 voll zusätzlich. Brutto-Potenzial vor Umsetzung/Rebound — keine Prognose."
 
 # ============================================================================
 # TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
@@ -229,7 +234,7 @@ ghg_accounting:
 
 community_integrations:
   beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-K Hebel-Domains"
-  total: -3.0  # Gt CO₂eq/Jahr v2.1 — erklärt Differenz Domain-Summe (-55.6 mit Domain K) vs. reduktion_hart (-58.6)
+  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-54.05) vs. reduktion_hart (-57.05)
   integrations:
     C-2026-008:
       id: "C-2026-008"
@@ -260,7 +265,7 @@ environmental:
           - name: "D15 Regenerative Landwirtschaft"
             impact: -420
             mechanism: "Verbesserte Wasserretention im Boden"
-          - name: "D18 Ernährungswandel"
+          - name: "Ernährungswandel (kein eigener Hebel; Bezeichnung vorher fälschlich D18)"
             impact: -380
             mechanism: "Reduzierte Fleischproduktion (wasserintensiv)"
           - name: "D17 Hanf-Ökosystem"
@@ -478,10 +483,10 @@ energy_system:
       C_optimistisch: 0.08
       S_stresstest: 0.30
     reporting:
-      vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
-      nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
-      nach_rebound_median_S: -14.9  # Stresstest
-    ghg_total_rebound: -51.6  # v2.9: all-GHG nach Rebound = Monte-Carlo Szenario B Median (ghg_monte_carlo.py, gleiche Logik wie CO2, kein eigener Faktor); Rebound nur auf CO2-Schicht, siehe ghg_total.monte_carlo_net
+      vor_rebound: -57.05  # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
+      nach_rebound_median_B: -42.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
+      nach_rebound_median_S: -14.3  # Stresstest
+    ghg_total_rebound: -51.2  # v2.9: all-GHG nach Rebound = Monte-Carlo Szenario B Median (ghg_monte_carlo.py, gleiche Logik wie CO2, kein eigener Faktor); Rebound nur auf CO2-Schicht, siehe ghg_total.monte_carlo_net
     # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf nie bereinigten Wert -64.5,
     # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
@@ -783,9 +788,9 @@ validation:
   uncertainty_overall:
     method: "Monte Carlo Simulation (10,000 iterations)"
     ghg_total:  # v2.7: mean -64.5 / p05 -81.2 / p95 -48.6 entfernt — war pauschal ±25 % um einen nie bereinigten Wert, keine Simulation (DEC_2026-10-14_ghg_total_range)
-      point: -68.85  # Brutto, quellenweise Zuordnung (overlap_matrix.yaml)
-      monte_carlo_B: [-61.4, -51.6, -43.0]  # p5, Median, p95 netto (ghg_monte_carlo.py)
-      range: [-72.45, -58.6]  # Grenzfälle keine/volle Überlappung
+      point: -68.90  # Brutto, quellenweise Zuordnung (overlap_matrix.yaml)
+      monte_carlo_B: [-60.9, -51.2, -42.7]  # p5, Median, p95 netto (ghg_monte_carlo.py)
+      range: [-70.90, -57.05]  # Grenzfälle keine/volle Überlappung
       co2_only_monte_carlo: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"  # einzige echte Simulation (CO2-Schicht)
     
     environmental:
@@ -804,7 +809,7 @@ validation:
       - source: "IEA Net Zero 2050"
         alignment: "95% overlap in key technologies"
       - source: "Project Drawdown"
-        comparison: "Unser CO2-Potenzial -58.6 Gt (all-GHG -68.85, Spanne -58.6 … -72.45) vs. deren -58 Gt; vorher '-64.5', nie bereinigt"
+        comparison: "Unser CO2-Potenzial -57.05 Gt (all-GHG -68.90, Spanne -57.05 … -70.90) vs. deren -58 Gt; vorher '-64.5', nie bereinigt"
   
   peer_review_status:
     methodology: "Ready for submission"

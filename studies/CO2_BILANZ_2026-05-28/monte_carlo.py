@@ -23,11 +23,20 @@ np.random.seed(42)
 # EINGANGS-VERTEILUNGEN
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Schicht 1: Direkte Hebel-Wirkung (Brutto, nach Domain-K-Integration + D19-Promotion + B09/B10-Drift-Resolution)
-# Quelle: co2_master.yaml v1.3 gesamt.reduktion_hart
-# v1.3 Änderungen gegenüber v1.2: B09/B10 Drift-Resolution (+1.5 weniger Reduktion);
-# D19 Algen-Bioraffinerie Promotion (-0.3 mehr Reduktion); Netto -1.2 weniger Reduktion
-S1_BRUTTO_MEAN = -58.6  # Gt CO2eq/yr (v1.3, Domain A-K + Communities inkl. D19)
+# Schicht 1: Direkte Hebel-Wirkung (Brutto, Domain A-K + Communities)
+# Quelle: co2_master.yaml gesamt.reduktion_hart — seit 2026-10-14 direkt aus der YAML gelesen
+# (vorher hartkodiert -58.6; v1.7 D18-Drift-Resolution → -57.05). Anti-Drift: keine Kopie mehr.
+
+
+def _co2_master():
+    import os
+    import yaml
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "canon", "data", "co2_master.yaml")
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+S1_BRUTTO_MEAN = float(_co2_master()["gesamt"]["reduktion_hart"])  # Gt CO2eq/yr
 S1_BRUTTO_UNCERTAINTY = 0.10  # ±10% Methodik-Unsicherheit (YAML validation_approach)
 
 # Schicht 2: Kaskaden (Vermeidung Material-Vorketten, Klimaanlagen etc.)
@@ -146,7 +155,7 @@ print("PROVOLUTION CO2-BILANZ · MONTE-CARLO-SIMULATION")
 print("=" * 78)
 print(f"N=10000 Iterationen pro Szenario · seed=42")
 print(f"Brutto Schicht 1: {S1_BRUTTO_MEAN} ±{abs(S1_BRUTTO_MEAN*S1_BRUTTO_UNCERTAINTY):.1f} Gt CO2eq/yr")
-print(f"Quelle: co2_master.yaml v1.3 + Bilanz-Studie §6 (v1.5 update)")
+print(f"Quelle: co2_master.yaml (gesamt.reduktion_hart, live gelesen) + Bilanz-Studie §6")
 print()
 
 results = {}

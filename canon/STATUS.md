@@ -1,6 +1,6 @@
 # Provolution — Autoritativer Status & Werte-Glossar
 
-**Stand:** 2026-10-14 (Datenhygiene; Werte-Snapshot 2026-05-29) · **Charakter:** eingefrorener Status-Snapshot (living document)
+**Stand:** 2026-10-14 (v2.3: Datenhygiene + D18-Drift-Resolution) · **Charakter:** eingefrorener Status-Snapshot (living document)
 **Zweck:** Eine einzige autoritative Quelle dafür, *welche* Methode, *welche* Kennzahlen und *welche* Dokumente aktuell gültig sind — und welche historisch/überholt sind.
 
 > **Note for external readers (EN):** This file is the single authoritative status snapshot. Headline totals appearing elsewhere in this repository may be historical. Whenever a number conflicts, **this file and the CANON data files (`canon/data/*.yaml`) take precedence.** All mitigation totals are *screened technical/systemic potential under stated assumptions* — **not forecasts** and **not immediately realizable annual reductions.**
@@ -19,7 +19,7 @@
 | J-Warnschwelle | `J < 0.80` (kein Veto, dokumentierte Implementierungs-Auflage) | `warning_threshold` |
 | **DEPRECATED** | SECJ_SPEC v1.0 (alte Formel `0.40·S + 0.25·E + 0.15·C + 0.20·J`) | `canon/de/SECJ_SPEC_v1.0.md` (Deprecation-Header) |
 
-Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls überholt — siehe Corrigenda `canon/en/CORRIGENDUM_2026-04-27.md` + `CORRIGENDUM_2026-05-28.md` (Formel). Zahlen/Struktur-Drift des Submitted-Snapshots (n 40→49, 10→11 Domänen, SEC 0.914→SEC-J Ø 0.90, −58.0→−58.6) ist dokumentiert in `canon/en/CORRIGENDUM_2026-05-30.md`.
+Pre-v1.0-Manuskript-Formel (`0.5·S + 0.3·E + 0.1·C + 0.1·J`) ist ebenfalls überholt — siehe Corrigenda `canon/en/CORRIGENDUM_2026-04-27.md` + `CORRIGENDUM_2026-05-28.md` (Formel). Zahlen/Struktur-Drift des Submitted-Snapshots (n 40→49, 10→11 Domänen, SEC 0.914→SEC-J Ø 0.90, −58.0→−58.6) ist dokumentiert in `canon/en/CORRIGENDUM_2026-05-30.md`; die D18-Drift-Resolution (−58.6→−57.05, Netto −43.2→−42.2) in `canon/en/CORRIGENDUM_2026-10-14.md`.
 
 **Entscheidung 2026-05-29 (User):** PS-U 2.0 STANDARD ist die kanonische Provolution-Gewichtung. Band 5 (`canon/de/05_Band5_*`, v3.1) trug noch die v1.0-Gewichte und wurde mit PR #18 auf STANDARD reconciled (Formel, Berechnungsbeispiele, Priorisierungs-Matrix; Legacy-3-Achsen-Tabellen als solche markiert). **J wirkt primär über das Veto (J<0,50), nicht über sein Komposit-Gewicht (0,15)** — geringes Gewicht ≠ Abwertung.
 
@@ -33,19 +33,21 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 
 | Wert | Bedeutung | Status | Quelle |
 |---:|---|---|---|
-| **−58,6 Gt/a** | CO₂-only, Schicht 1 (direkt, „reduktion_hart") | ✅ **CURRENT** | `canon/data/co2_master.yaml` v1.6 `gesamt.reduktion_hart` (Wert unverändert seit v1.5) |
-| **−87,1 Gt/a** | CO₂-Gesamtpotenzial (hart −58,6 + weich/vermieden −28,5) | ✅ **CURRENT** | co2_master.yaml `gesamt.total_potenzial` |
-| **1,065 (106,5 %)** | Anteil an globaler Baseline (55 Gt) → netto-negativ möglich | ✅ **CURRENT** | co2_master.yaml `gesamt.anteil_global_emissions` |
-| **−68,85 Gt/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase, GWP100 AR6), Brutto-Potenzial nach quellenweiser Overlap-Zuordnung (konservativ; nur belegte Overlaps: −70,45). Grenzfälle: −58,6 (volle) … −72,45 (keine Überlappung) | ✅ **CURRENT** — keine eigene all-GHG-Simulation; realistischer Netto-Wert nur für CO₂ (−43,2) | `canon/data/impact_master.yaml` `ghg_total` · `canon/data/overlap_matrix.yaml` · `canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md` |
+| **−57,05 Gt/a** | CO₂-Schicht 1 (direkt, „reduktion_hart“), gescreentes Brutto-Potenzial vor Rebound | ✅ **CURRENT** (v1.7, 2026-10-14) | `canon/data/co2_master.yaml` v1.7 `gesamt.reduktion_hart` |
+| **−85,55 Gt/a** | CO₂-Gesamtpotenzial (hart −57,05 + weich/vermieden −28,5) | ✅ **CURRENT** | co2_master.yaml `gesamt.total_potenzial` |
+| **1,037 (103,7 %)** | Anteil an globaler Baseline (55 Gt) → netto-negativ möglich (Potenzial, keine Prognose) | ✅ **CURRENT** | co2_master.yaml `gesamt.anteil_global_emissions` |
+| **−42,2 Gt/a** | Realistischer **CO₂-Netto-Erwartungswert** (Monte-Carlo Szenario B, Median) [90 %-KI −51,6…−33,8] | ✅ **CURRENT** (realistische Lesart) | `studies/CO2_BILANZ_2026-05-28/monte_carlo.py` |
+| **−14,3 Gt/a** | CO₂-Netto bei **50 %-Umsetzungs-Stresstest** (Szenario S, Median) [−19,8…−9,4] | ✅ **CURRENT** (konservativ) | ebd. |
+| **−68,90 Gt CO₂eq/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase, GWP100 AR6), Brutto-Potenzial nach quellenweiser Overlap-Zuordnung (nur belegte Overlaps). Grenzfälle: −57,05 (volle) … −70,90 (keine Überlappung) | ✅ **CURRENT** | `canon/data/impact_master.yaml` `ghg_total` · `canon/data/overlap_matrix.yaml` |
+| **−51,2 Gt CO₂eq/a** | **all-GHG netto** (nach Umsetzung, Verlusten, Rebound) — Monte-Carlo Szenario B, Median [90 %-KI −60,9…−42,7]; ≈ 93 % der 55-Gt-Baseline (die Baseline ist all-GHG → passender Vergleich) | ✅ **CURRENT** | `studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py` · `canon/decisions/DEC_2026-10-14_ghg_monte_carlo.md` |
+| ~~−58,6 / −87,1 / 1,065 / −43,2 / −14,9~~ | Werte vor der D18-Drift-Resolution (D18 trug −1,6 ohne Herleitung; Band 4: Urbane Landwirtschaft −0,05) | ❌ **SUPERSEDED** 2026-10-14 (Release v2.2 und älter) | `canon/decisions/DEC_2026-10-14_d18_band4_canonical.md` · `canon/en/CORRIGENDUM_2026-10-14.md` |
+| ~~−68,85 / −51,6~~ | all-GHG-Werte vor der D18-Drift-Resolution | ❌ **SUPERSEDED** 2026-10-14 | ebd. |
 | ~~−64,5 Gt/a~~ | Früher als „all-GHG, Overlap-bereinigt“ geführt | ❌ **DEPRECATED** 2026-10-14 — war nie bereinigt, sondern die naive Summe auf CO₂-Basis v2.0 (−50,7−7,5−5,6−0,7) | `canon/decisions/DEC_2026-10-14_ghg_total_range.md` |
-| **−51,6 Gt CO₂eq/a** | **all-GHG netto** (CO₂+CH₄+N₂O+F-Gase nach Umsetzung, Verlusten, Rebound) — Monte-Carlo Szenario B, Median [90 %-KI −61,4…−43,0]; ≈ 94 % der 55-Gt-Baseline (die Baseline ist all-GHG → dies ist der passende Vergleich) | ✅ **CURRENT** | `studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py` · `canon/decisions/DEC_2026-10-14_ghg_monte_carlo.md` |
-| **−43,2 Gt/a** | Realistischer **Netto-Erwartungswert** (Monte-Carlo Szenario B, Median) [90 %-KI −52,8…−34,6] | ✅ **CURRENT** (realistische Lesart) | Bilanz-Studie v1.5 `monte_carlo.py` |
-| **−14,9 Gt/a** | Netto bei **50 %-Umsetzungs-Stresstest** (Szenario S, Median) [−20,5…−9,8] | ✅ **CURRENT** (konservativ) | Bilanz-Studie v1.5 |
-| ~~−50,7 Gt/a~~ | Älterer „100 % von Ziel"-Snapshot | ❌ **DEPRECATED-SNAPSHOT** — abgelöst durch −58,6 | historische Stände in `canon/de/05_Band5_*`, `canon/docs/BAND5_INTEGRATION_H01.md` |
-| ~~−58,0 Gt/a~~ | Vor-Drift-Resolution-Wert | ❌ **SUPERSEDED** — abgelöst durch −58,6 | alte README/GitHub-Description-Stände |
-| ~~−32,3 Gt/a~~ | „Rebound-adjustiert“ (Pauschal-Rebound 50 % auf das nie bereinigte −64,5) | ❌ **DEPRECATED** 2026-10-14 — Rebound nur noch in Monte-Carlo (vor Rebound −58,6 · nach Rebound −43,2) | `canon/decisions/DEC_2026-10-14_rebound_single_source.md` |
+| ~~−50,7 Gt/a~~ | Älterer „100 % von Ziel“-Snapshot | ❌ **DEPRECATED-SNAPSHOT** | historische Stände in `canon/de/05_Band5_*`, `canon/docs/BAND5_INTEGRATION_H01.md` |
+| ~~−58,0 Gt/a~~ | Vor-Drift-Resolution-Wert (B09/B10, 2026-05-28) | ❌ **SUPERSEDED** | alte README/GitHub-Description-Stände |
+| ~~−32,3 Gt/a~~ | „Rebound-adjustiert“ (Pauschal-Rebound 50 % auf das nie bereinigte −64,5) | ❌ **DEPRECATED** 2026-10-14 — Rebound nur noch in Monte-Carlo | `canon/decisions/DEC_2026-10-14_rebound_single_source.md` |
 
-**Defensive Lesart aller Potenzial-Werte:** Es sind *gescreente technisch/systemische Potenziale unter definierten Annahmen* — keine Prognosen, keine sofort realisierbaren Jahres-Reduktionen. Sie enthalten Overlaps, Constraints und Unsicherheitsbänder. Die realistischen Netto-Größen sind die Monte-Carlo-Mediane (−43,2 Szenario B / −14,9 Stresstest S).
+**Defensive Lesart aller Potenzial-Werte:** Es sind *gescreente technisch/systemische Potenziale unter definierten Annahmen* — keine Prognosen, keine sofort realisierbaren Jahres-Reduktionen. Sie enthalten Overlaps, Constraints und Unsicherheitsbänder. Die realistischen Netto-Größen sind die Monte-Carlo-Mediane (CO₂: −42,2 Szenario B / −14,3 Stresstest S; all-GHG: −51,2 Szenario B).
 
 ---
 
@@ -80,9 +82,9 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 
 | Dokument | Status |
 |---|---|
-| `canon/data/co2_master.yaml` v1.6 | ✅ CURRENT — CO₂-SSoT (v1.6 = Datenhygiene, keine CO₂-Wert-Änderung) |
-| `canon/data/overlap_matrix.yaml` v1.0 | ✅ CURRENT — maschinenlesbare Doppelzählungs-Bereinigung (Hebel-Gruppen B/C/D + CO₂eq-↔-Gas-Schicht); geprüft durch Check 11 |
-| `canon/data/impact_master.yaml` v2.9 | ✅ CURRENT — Multi-Impact-SSoT (inkl. SEC-J-Scores); v2.7: GWP100 auf IPCC AR6 korrigiert (CH₄ −7,38 · N₂O −5,77 Gt CO₂eq/a) |
+| `canon/data/co2_master.yaml` v1.7 | ✅ CURRENT — CO₂-SSoT (v1.7 = D18-Drift-Resolution, −58,6 → −57,05) |
+| `canon/data/overlap_matrix.yaml` v1.1 | ✅ CURRENT — maschinenlesbare Doppelzählungs-Bereinigung (Hebel-Gruppen B/C/D + CO₂eq-↔-Gas-Schicht); geprüft durch Check 11 |
+| `canon/data/impact_master.yaml` v2.10 | ✅ CURRENT — Multi-Impact-SSoT (inkl. SEC-J-Scores); v2.7: GWP100 auf IPCC AR6 korrigiert (CH₄ −7,38 · N₂O −5,77 Gt CO₂eq/a) |
 | `canon/de/04_Band4_Anwendungen_v4.2.md` | ✅ CURRENT — Anwendungs-Kanon |
 | `canon/de/HEBEL_KATALOG_v1.0.md` (v1.10) | ✅ CURRENT — Hebel-Index |
 | `canon/de/06_framework_extensions_v2.0_SECJ.md` | ✅ CURRENT — autoritative SEC-J-Spec |
@@ -91,15 +93,16 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `studies/SENSITIVITY_2026-05-30/` | ✅ CURRENT — Gewichts-Sensitivitätsanalyse (reproduzierbar, seed=42); adressiert LIMITATIONS #5/#12 |
 | `studies/ILLUSTRATIVE_CASES_2026-05-30/` | ✅ CURRENT (**Proof-of-Concept, KEINE Validierung**; N=7, Skala 0,085–0,94) — illustrative retrospektive Konkordanz-Probe + Failure-Mode-Lokalisierung (Großer Sprung · PKW-Maut · Open-House-Masken · ASFINAG · Apollo · Währungsreform); nicht verblindet/nicht powered, Validierungs-Roadmap im Report §7; adressiert LIMITATIONS #13 |
 | `studies/CONSISTENCY_MATRIX_2026-05-30/` | ✅ CURRENT (Erst-Entwurf) — 44×44 Hebel-Konsistenz-/Konflikt-Matrix (121 Kanten, C-Achse auditierbar); adressiert LIMITATIONS #16 |
-| `studies/CARBON_FLOW_2026-05-30/` | ✅ CURRENT — Carbon-Flow-Sankey (Brutto −87,1/−58,6 → Netto-Median −43,2, Overlaps bereinigt); adressiert LIMITATIONS #2/#16, Q4 |
+| `studies/CARBON_FLOW_2026-05-30/` | ✅ CURRENT — Carbon-Flow-Sankey (Brutto −85,55/−57,05 → Netto-Median −42,2, Overlaps bereinigt; aktualisiert 2026-10-14); adressiert LIMITATIONS #2/#16, Q4 |
 | `studies/PV_DEMO_2026-05-30/` | ✅ CURRENT (Methodik-Demo) — PV-Claim-Detektion + Modul-Routing (Blüm, Weidel); Behauptungs-Ebene, ≠ Maßnahmen-OoS |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `manuscript/peer_reviews/GEM_SYSTEM_PROMPT_PS_Universal_v1.1.md` | ⚠️ NICHT-KANONISCHES PARADIGMA — W_min-Hart-Gate-Screening-Gem (2026-03-29); Repo-Kanon nutzt PS-U-2.0-**Summenformel**. Paradigma-Hinweis im Header gesetzt; eigenständiges Screening-/Debug-Werkzeug, **keine** kanonischen SEC-J-Scores. *(Drift vom `spec_consistency_audit.py` derzeit nicht erfasst — Paradigma-Check ist offener Linter-Punkt.)* |
 | `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 ist DEPRECATED (siehe §2) |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
 | `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
-| `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ Submitted-Snapshot — nur mit Corrigenda zitieren: Formel (`CORRIGENDUM_2026-04-27`+`2026-05-28`) + Zahlen/Struktur (`CORRIGENDUM_2026-05-30`) |
-| `canon/en/CORRIGENDUM_2026-05-30.md` | ✅ CURRENT — Zahlen/Struktur-Corrigendum (n/Domänen/SEC-J-Ø/CO₂-Headline; v0.1 → v1.5) |
+| `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ Submitted-Snapshot — nur mit Corrigenda zitieren: Formel (`CORRIGENDUM_2026-04-27`+`2026-05-28`) + Zahlen/Struktur (`CORRIGENDUM_2026-05-30` → `CORRIGENDUM_2026-10-14`) |
+| `canon/en/CORRIGENDUM_2026-05-30.md` | ✅ gültig für v0.1 → v1.5 (n/Domänen/SEC-J-Ø); CO₂-Zahlen fortgeschrieben durch 2026-10-14 |
+| `canon/en/CORRIGENDUM_2026-10-14.md` | ✅ CURRENT — v1.5 → v2.3: D18-Drift-Resolution (−58,6 → −57,05; netto −43,2 → −42,2), GWP100 AR6, all-GHG-Werte |
 | `manuscript/JOURNAL_SUBMISSION_PACKAGE.md` | ⚠️ Ziel-Journal revidiert (Nature → ESG) |
 | `manuscript/RESPONSE_TO_REVIEWERS_PREP.md` | 🛠️ INTERN — Vorbereitungs-Doku (nicht Teil der Einreichung); konsolidiert wahrscheinliche Reviewer-Einwände + Antworten |
 

@@ -4,7 +4,7 @@
 **Status:** For Peer Review Integration  
 **Datum:** 2026-01-24
 
-> ⚠️ **SNAPSHOT 2026-01-24.** Die Methodik (Scopes, GHG-Protokoll, Unsicherheitsbänder) ist gültig; die Mengen-Angaben („30 Anwendungen", A–H, −50,7 Gt) sind historisch. Aktuell: 49 Hebel / 11 Domänen / −58,6 Gt CO₂-hart — siehe [`canon/STATUS.md`](../STATUS.md).
+> ⚠️ **SNAPSHOT 2026-01-24.** Die Methodik (Scopes, GHG-Protokoll, Unsicherheitsbänder) ist gültig; die Mengen-Angaben („30 Anwendungen", A–H, −50,7 Gt) sind historisch. Aktuell: 49 Hebel / 11 Domänen / −57,05 Gt CO₂-hart (v1.7) — siehe [`canon/STATUS.md`](../STATUS.md).
 
 ---
 

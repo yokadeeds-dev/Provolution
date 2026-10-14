@@ -29,7 +29,7 @@ Dies ist ein **Fach-/Reviewer-Repository**, keine populäre Einführung. Die Dic
 ## Wichtige Lesehinweise
 
 - **Werte nur aus STATUS.md + `canon/data/*.yaml`.** Fließtext-Bände sind Lesefassung, nicht Wertequelle. Als DEPRECATED/SNAPSHOT/SUPERSEDED markierte Stände nicht zitieren.
-- **Reduktions-Totale = gescreente Potenziale**, keine Prognosen. Realistische Netto-Größen: Monte-Carlo-Mediane −43,2 Gt/Jahr (Szenario B) bzw. −14,9 Gt/Jahr (50 %-Stresstest).
+- **Reduktions-Totale = gescreente Potenziale**, keine Prognosen. Realistische Netto-Größen: Monte-Carlo-Mediane −42,2 Gt CO₂/Jahr (Szenario B) bzw. −14,3 Gt/Jahr (50 %-Stresstest); alle Treibhausgase −51,2 Gt CO₂eq/Jahr (Szenario B). Stand v2.3 (2026-10-14).
 - **Status:** Preprint, eingereicht bei Earth System Governance, **nicht extern peer-reviewed**. Interne „Probatio-Familia"-Audits sind selbst-administriert, kein unabhängiges Review.
 - **Drift-Kontrolle:** `_tools/spec_consistency_audit.py` (Probatio Consistentia) prüft Cross-File-Konsistenz.
 

@@ -1,7 +1,7 @@
 # CO₂-Bilanz · Figuren- und Reproduktionspaket
 
 Peer-Review-Begleitmaterial zur Monte-Carlo-Unsicherheitsstudie der Provolution-
-CO₂-Bilanz (Stand v1.5, 2026-05-28).
+CO₂-Bilanz (Stand 2026-10-14: co2_master v1.7, Schicht 1 = −57,05 Gt live aus der YAML gelesen; Erstfassung v1.5 2026-05-28).
 
 ## Inhalt
 
@@ -35,7 +35,7 @@ Abhängigkeiten: `numpy`, `matplotlib`, `pyyaml` (getestet np 2.4.4 / mpl 3.10.8
 
 ## all-GHG-Monte-Carlo (2026-10-14)
 
-`ghg_monte_carlo.py` erweitert die CO₂-Simulation um CH₄, N₂O und F-Gase (Mengen aus `impact_master.yaml`, Overlaps aus `overlap_matrix.yaml`). Die CO₂-Schicht reproduziert die Headline exakt (assert). Ergebnis: `ghg_monte_carlo_results.txt`, `ghg_percentiles.csv`. Szenario B: **−51,6 Gt CO₂eq/a** [90 % KI −61,4 … −43,0]. Begründung der Verteilungsannahmen: `canon/decisions/DEC_2026-10-14_ghg_monte_carlo.md`.
+`ghg_monte_carlo.py` erweitert die CO₂-Simulation um CH₄, N₂O und F-Gase (Mengen aus `impact_master.yaml`, Overlaps aus `overlap_matrix.yaml`). Die CO₂-Schicht reproduziert die Headline exakt (assert). Ergebnis: `ghg_monte_carlo_results.txt`, `ghg_percentiles.csv`. Szenario B: **−51,2 Gt CO₂eq/a** [90 % KI −60,9 … −42,7]. Begründung der Verteilungsannahmen: `canon/decisions/DEC_2026-10-14_ghg_monte_carlo.md`.
 
 ```bash
 python ghg_monte_carlo.py > ghg_monte_carlo_results.txt
@@ -43,7 +43,7 @@ python ghg_monte_carlo.py > ghg_monte_carlo_results.txt
 
 ## Senken-Sensitivität (2026-10-14)
 
-`monte_carlo.py` rechnet zusätzlich eine Variante, in der Rebound nicht auf Senken wirkt (Boden D15∪D16 netto 5,0 + Blue Carbon K 1,5 = 6,5 Gt = 11,1 % von Schicht 1, aus den YAML-Dateien gelesen). Gleiche Zufallsziehungen, nur der Rebound-Term unterscheidet sich. Effekt auf den Median: A −0,9 · **B −0,7 (−43,2 → −43,9)** · C −0,4 · S −1,0 Gt. Die Headline-Werte bleiben bei der konservativen Methodik (Rebound auf ganze Schicht 1); siehe `canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md`. Figuren und CSV-Tabellen sind davon unberührt (byte-identisch reproduziert).
+`monte_carlo.py` rechnet zusätzlich eine Variante, in der Rebound nicht auf Senken wirkt (Boden D15∪D16 netto 5,0 + Blue Carbon K 1,5 = 6,5 Gt = 11,4 % von Schicht 1, aus den YAML-Dateien gelesen). Gleiche Zufallsziehungen, nur der Rebound-Term unterscheidet sich. Effekt auf den Median: A −0,9 · **B −0,7 (−42,2 → −42,9)** · C −0,4 · S −1,0 Gt. Die Headline-Werte bleiben bei der konservativen Methodik (Rebound auf ganze Schicht 1); siehe `canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md`. Figuren und CSV-Tabellen sind davon unberührt.
 
 ## Anti-Drift-Garantie
 

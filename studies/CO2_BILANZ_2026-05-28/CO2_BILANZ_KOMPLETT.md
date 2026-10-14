@@ -6,6 +6,8 @@
 **Status:** intern-wissenschaftlich, externe Methodik-Prüfung PF v1.0.1 TEILBESTANDEN, nicht peer-reviewed
 **Zweck:** ehrliche Gesamtbilanz aller Provolution-Hebel inkl. Effekte 2./3. Ordnung, mit klar dokumentierten Annahmen, Unsicherheiten und Quellen.
 
+> ⚠️ **Update 2026-10-14 (v2.3): Zahlen in diesem Dokument sind Stand v1.5.** Nach der D18-Drift-Resolution (`canon/decisions/DEC_2026-10-14_d18_band4_canonical.md`) gilt: Schicht 1 **−57,05** (statt −58,6) · Netto-Median Szenario B **−42,2 [−51,6 … −33,8]** (statt −43,2) · A −30,4 · C −59,9 · Stresstest S **−14,3** (statt −14,9) · alle Treibhausgase netto B **−51,2 Gt CO₂eq**. Methodik, Szenario-Parameter und Schichten 2–4 sind unverändert. Aktuelle Zahlen: `monte_carlo_results.txt`, `ghg_monte_carlo_results.txt`, `canon/STATUS.md` §2.
+
 **v1.5 Anlass:** User-Entscheidungen 2026-05-28 zu drei nach v1.4 offenen Drift-Punkten umgesetzt: (1) B09/B10 YAML-Tag-Drift aufgelöst (wasserstoff/ccs → materialfluss-steuerung/abfall-zu-ressource mit band4-konformen Werten); (2) D19 Algen-Bioraffinerie Kategorie B → A promoviert, in D-Domain belassen; (3) K01–K04 Vollkonzepte stub → band4-canonical (KAPITEL 10b in Band 4 v4.2). Netto-Effekt: gesamt.reduktion_hart −59,8 → −58,6 Gt (B09/B10 +1,5; D19 −0,3). Monte-Carlo neu gerechnet mit angepasstem S1_BRUTTO_MEAN.
 
 ---

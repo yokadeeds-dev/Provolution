@@ -1,6 +1,7 @@
 # DEC 2026-10-14: Overlap-Matrix, all-GHG-Punktwert, Rebound ohne Senken
 
 **Status:** ✅ von Claude nach Repo-Konvention entschieden, User-Bestätigung über den PR-Merge · **Datum:** 2026-10-14
+**Fortgeschrieben:** 2026-10-14 durch [`DEC_2026-10-14_d18_band4_canonical.md`](DEC_2026-10-14_d18_band4_canonical.md): D18 auf band4-canonical (−0,05) korrigiert → Zahlen hier sind Vor-Korrektur-Stand (aktuell: CO₂ −57,05 / netto B −42,2; all-GHG −68,90 / netto B −51,2; D18-Annahme in der Overlap-Matrix entfallen).
 **Auftrag:** User 2026-10-14 „das erledigen, was noch offen ist“ (offene Punkte aus PR #48 / Release v2.2)
 **Betroffen:** neu `canon/data/overlap_matrix.yaml` v1.0 · `canon/data/impact_master.yaml` v2.8 · `studies/CO2_BILANZ_2026-05-28/monte_carlo.py` · `_tools/spec_consistency_audit.py` Check 11 · `canon/STATUS.md` §2/§5 · `canon/LIMITATIONS.md` #16
 
