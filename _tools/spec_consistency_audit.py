@@ -1,7 +1,7 @@
 """
 Provolution Repo Spec-Consistency Audit Tool
 ==============================================
-"Probatio Consistentia" v0.3 · 2026-10-14 (v0.1: 2026-05-28)
+"Probatio Consistentia" v0.4 · 2026-10-14 (v0.1: 2026-05-28)
 
 Scannt das Provolution clean-Public-Repo nach **stillen Inkonsistenzen** —
 Konflikten zwischen Dateien, die durch Diff-orientierte Reviews (PR-Audits,
@@ -33,10 +33,12 @@ Checks:
  11. Overlap-Matrix (canon/data/overlap_matrix.yaml): Gruppen-Arithmetik B/C/D,
      Gas-Schicht-Zuordnung, all-GHG-Punktwert = naive Summe + Σ Overlap,
      all-GHG-Monte-Carlo-Werte = ghg_percentiles.csv
+ 12. Input-Sensitivität (studies/INPUT_SENSITIVITY_*): Ergebnis-CSVs decken genau die Hebel
+     aus co2_master.yaml ab, Varianzanteile summieren auf 100 %
 
 Verwendung:
     python _tools/spec_consistency_audit.py          # alle Checks, Exit = Summe aller Befunde
-    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-11;
+    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-12;
                                                      # heuristische Checks 1/3/4 nur als Hinweis
 
 Exit-Code: 0 wenn keine (blockierenden) Konflikte, sonst Anzahl Befunde (max. 127).
@@ -601,11 +603,38 @@ def check_overlap_matrix(co2, imp, ovl) -> int:
     return issues
 
 
+def check_input_sensitivity(repo: Path, co2) -> int:
+    banner("CHECK 12: Input-Sensitivität — Abdeckung aller Hebel")
+    import csv
+    issues = 0
+    studies = sorted((repo / "studies").glob("INPUT_SENSITIVITY_*"))
+    if not studies:
+        print("  ℹ️  Keine Input-Sensitivitäts-Studie vorhanden.")
+        return 0
+    d = studies[-1]
+    expected = {k for dom in co2["domains"].values() for k in (dom.get("apps") or {})}
+    expected |= set(co2["community_integrations"]["integrations"])
+    with open(d / "variance_levers.csv", encoding="utf-8") as f:
+        var = {r["hebel"]: float(r["varianz_anteil_pct"]) for r in csv.DictReader(f)}
+    with open(d / "tornado_co2_ghg.csv", encoding="utf-8") as f:
+        torn = {r["eingang"] for r in csv.DictReader(f) if r["kategorie"] == "Hebel"}
+    for label, got in (("variance_levers.csv", set(var)), ("tornado_co2_ghg.csv", torn)):
+        if got != expected:
+            issues += _fail(f"{d.name}/{label}: Hebel-Set weicht ab (fehlt {sorted(expected - got)}, "
+                            f"zu viel {sorted(got - expected)}) → input_sensitivity.py neu ausführen")
+    if not _close(sum(var.values()), 100.0, 0.1):
+        issues += _fail(f"{d.name}/variance_levers.csv: Anteile summieren auf {sum(var.values()):.2f} %")
+    if issues == 0:
+        top = max(var, key=var.get)
+        print(f"  ✅ {d.name}: alle {len(expected)} Hebel abgedeckt; größter Varianzanteil {top} ({var[top]:.1f} %)")
+    return issues
+
+
 def main() -> int:
     print()
     print("═" * 78)
     print("  PROVOLUTION REPO SPEC-CONSISTENCY AUDIT")
-    print("  'Probatio Consistentia' v0.3 · 2026-10-14")
+    print("  'Probatio Consistentia' v0.4 · 2026-10-14")
     print("═" * 78)
     print(f"  Repo-Root: {REPO_ROOT}")
 
@@ -625,6 +654,7 @@ def main() -> int:
     total += check_secj(imp)
     total += check_sources(REPO_ROOT, co2, imp)
     total += check_overlap_matrix(co2, imp, _load_overlap(REPO_ROOT))
+    total += check_input_sensitivity(REPO_ROOT, co2)
 
     if ci:
         if advisory:
