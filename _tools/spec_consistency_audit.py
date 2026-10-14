@@ -30,10 +30,12 @@ Checks:
   8. GHG: GWP100 = IPCC AR6, Gas-Summen, ghg_total-Komponenten + Spanne (RANGE/CURRENT), Rebound-Kette
   9. SEC-J: STANDARD-Formel, J-Veto, J-Warnschwelle mit Auflage
  10. Quellen: Repo-Pfade existieren, Hashes im SHA-256-Format
+ 11. Overlap-Matrix (canon/data/overlap_matrix.yaml): Gruppen-Arithmetik B/C/D,
+     Gas-Schicht-Zuordnung, all-GHG-Punktwert = naive Summe + Σ Overlap
 
 Verwendung:
     python _tools/spec_consistency_audit.py          # alle Checks, Exit = Summe aller Befunde
-    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-10;
+    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-11;
                                                      # heuristische Checks 1/3/4 nur als Hinweis
 
 Exit-Code: 0 wenn keine (blockierenden) Konflikte, sonst Anzahl Befunde (max. 127).
@@ -297,6 +299,12 @@ def _load_yamls(repo: Path):
     return co2, imp
 
 
+def _load_overlap(repo: Path):
+    import yaml
+    with open(repo / "canon" / "data" / "overlap_matrix.yaml", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
 def _close(a, b, tol=TOL):
     return a is not None and b is not None and abs(float(a) - float(b)) <= tol
 
@@ -499,6 +507,81 @@ def check_sources(repo: Path, co2, imp) -> int:
     return issues
 
 
+# Gas-Quelle in overlap_matrix.yaml → (Gas-Block in impact_master, Domain oder None = gesamt)
+GAS_SOURCES = {
+    "ch4_B_production": ("methane_ch4", "B_production"),
+    "ch4_C_energy": ("methane_ch4", "C_energy"),
+    "ch4_D_food_land": ("methane_ch4", "D_food_land"),
+    "n2o_D_food_land": ("nitrous_oxide_n2o", "D_food_land"),
+    "n2o_B_production": ("nitrous_oxide_n2o", "B_production"),
+    "f_gases": ("f_gases", None),
+}
+
+
+def check_overlap_matrix(co2, imp, ovl) -> int:
+    banner("CHECK 11: Overlap-Matrix — Hebel-Gruppen + Gas-Schicht + all-GHG-Punktwert")
+    issues = 0
+    # Teil 1: Hebel ↔ Hebel
+    for dkey, g in ovl["lever_overlaps"].items():
+        apps = (co2["domains"].get(dkey) or {}).get("apps") or {}
+        missing = [m for m in g["group"] + g["additive"] if m not in apps]
+        if missing:
+            issues += _fail(f"{dkey}: unbekannte Hebel {missing}")
+            continue
+        if set(g["group"]) | set(g["additive"]) != set(apps):
+            issues += _fail(f"{dkey}: group + additive decken nicht alle apps ab")
+        gross = sum(abs(apps[m]) for m in g["group"])
+        if not _close(gross, g["gross_sum"], 0.01):
+            issues += _fail(f"{dkey}: gross_sum {g['gross_sum']} ≠ Summe group {gross:.2f}")
+        if not _close(g["gross_sum"] - g["overlap"], g["net"], 0.01):
+            issues += _fail(f"{dkey}: gross_sum − overlap ≠ net")
+        domain_total = abs(co2["domains"][dkey]["total"])
+        if not _close(g["net"] + sum(abs(apps[m]) for m in g["additive"]), domain_total, 0.01):
+            issues += _fail(f"{dkey}: net + additive ≠ Domain-total {domain_total}")
+        pc = g["pair_coefficients"]
+        if pc != "not_sourced" and (not isinstance(pc, dict) or not _close(sum(pc.values()), g["overlap"], 0.01)):
+            issues += _fail(f"{dkey}: pair_coefficients weder 'not_sourced' noch Summe = overlap")
+    # Teil 2: CO₂eq-Schicht ↔ Gas-Schicht
+    ga = imp["ghg_accounting"]
+    gl = ovl["gas_layer_overlaps"]
+    tot = belegt = 0.0
+    for skey, (gas, dom) in GAS_SOURCES.items():
+        s = gl.get(skey)
+        if s is None:
+            issues += _fail(f"gas_layer_overlaps.{skey} fehlt")
+            continue
+        val = abs(ga[gas]["gesamt"] if dom is None else ga[gas]["domains"][dom]["total"])
+        if not _close(s["gas_total"], val, 0.01):
+            issues += _fail(f"{skey}: gas_total {s['gas_total']} ≠ impact_master {val}")
+        o = s["overlap_with_co2_layer"]
+        if not (0 <= o <= s["gas_total"] + 0.01):
+            issues += _fail(f"{skey}: overlap {o} außerhalb [0, gas_total]")
+        lever = s.get("co2_lever")
+        if o > 0:
+            lever_val = next((abs(d["apps"][lever]) for d in co2["domains"].values()
+                              if lever in (d.get("apps") or {})), None)
+            if lever_val is None or o > lever_val + 0.01:
+                issues += _fail(f"{skey}: overlap {o} > CO₂-Schicht-Wert von {lever}")
+        tot += o
+        if s["evidence"] == "belegt":
+            belegt += o
+    sm = gl["summary"]
+    if not (_close(sm["overlap_total"], tot, 0.01) and _close(sm["overlap_belegt"], belegt, 0.01)
+            and _close(sm["overlap_angenommen"], tot - belegt, 0.01)):
+        issues += _fail("gas_layer_overlaps.summary passt nicht zu den Einzelquellen")
+    gt = ga["ghg_total"]
+    naive = gt["co2"] + gt["ch4_co2eq"] + gt["n2o_co2eq"] + gt["f_gases_co2eq"]
+    if gt.get("total_status") == "CURRENT":
+        if not _close(gt["total"], naive + tot, 0.01):
+            issues += _fail(f"ghg_total.total {gt['total']} ≠ naive {naive:.2f} + Overlap {tot:.2f}")
+        if not _close(gt.get("total_evidence_only"), naive + belegt, 0.01):
+            issues += _fail(f"ghg_total.total_evidence_only ≠ naive + belegter Overlap ({naive + belegt:.2f})")
+    if issues == 0:
+        print(f"  ✅ Gruppen B/C/D arithmetisch konsistent; Gas-Overlap {tot:.1f} Gt "
+              f"(belegt {belegt:.1f}); all-GHG {naive + tot:.2f}")
+    return issues
+
+
 def main() -> int:
     print()
     print("═" * 78)
@@ -522,6 +605,7 @@ def main() -> int:
     total += check_ghg(imp)
     total += check_secj(imp)
     total += check_sources(REPO_ROOT, co2, imp)
+    total += check_overlap_matrix(co2, imp, _load_overlap(REPO_ROOT))
 
     if ci:
         if advisory:

@@ -36,7 +36,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | **−58,6 Gt/a** | CO₂-only, Schicht 1 (direkt, „reduktion_hart") | ✅ **CURRENT** | `canon/data/co2_master.yaml` v1.6 `gesamt.reduktion_hart` (Wert unverändert seit v1.5) |
 | **−87,1 Gt/a** | CO₂-Gesamtpotenzial (hart −58,6 + weich/vermieden −28,5) | ✅ **CURRENT** | co2_master.yaml `gesamt.total_potenzial` |
 | **1,065 (106,5 %)** | Anteil an globaler Baseline (55 Gt) → netto-negativ möglich | ✅ **CURRENT** | co2_master.yaml `gesamt.anteil_global_emissions` |
-| **−58,6 … −72,45 Gt/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase, GWP100 AR6) — **Spanne**: volle ↔ keine Überlappung zwischen CO₂eq-Schicht und CH₄/N₂O-Schicht | ✅ **CURRENT (RANGE)** — kein Punktwert, bis jede CH₄/N₂O-Quelle zugeordnet ist | `canon/data/impact_master.yaml` `ghg_total.range_*` · `canon/decisions/DEC_2026-10-14_ghg_total_range.md` |
+| **−68,85 Gt/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase, GWP100 AR6), Brutto-Potenzial nach quellenweiser Overlap-Zuordnung (konservativ; nur belegte Overlaps: −70,45). Grenzfälle: −58,6 (volle) … −72,45 (keine Überlappung) | ✅ **CURRENT** — keine eigene all-GHG-Simulation; realistischer Netto-Wert nur für CO₂ (−43,2) | `canon/data/impact_master.yaml` `ghg_total` · `canon/data/overlap_matrix.yaml` · `canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md` |
 | ~~−64,5 Gt/a~~ | Früher als „all-GHG, Overlap-bereinigt“ geführt | ❌ **DEPRECATED** 2026-10-14 — war nie bereinigt, sondern die naive Summe auf CO₂-Basis v2.0 (−50,7−7,5−5,6−0,7) | `canon/decisions/DEC_2026-10-14_ghg_total_range.md` |
 | **−43,2 Gt/a** | Realistischer **Netto-Erwartungswert** (Monte-Carlo Szenario B, Median) [90 %-KI −52,8…−34,6] | ✅ **CURRENT** (realistische Lesart) | Bilanz-Studie v1.5 `monte_carlo.py` |
 | **−14,9 Gt/a** | Netto bei **50 %-Umsetzungs-Stresstest** (Szenario S, Median) [−20,5…−9,8] | ✅ **CURRENT** (konservativ) | Bilanz-Studie v1.5 |
@@ -80,7 +80,8 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | Dokument | Status |
 |---|---|
 | `canon/data/co2_master.yaml` v1.6 | ✅ CURRENT — CO₂-SSoT (v1.6 = Datenhygiene, keine CO₂-Wert-Änderung) |
-| `canon/data/impact_master.yaml` v2.7 | ✅ CURRENT — Multi-Impact-SSoT (inkl. SEC-J-Scores); v2.7: GWP100 auf IPCC AR6 korrigiert (CH₄ −7,38 · N₂O −5,77 Gt CO₂eq/a) |
+| `canon/data/overlap_matrix.yaml` v1.0 | ✅ CURRENT — maschinenlesbare Doppelzählungs-Bereinigung (Hebel-Gruppen B/C/D + CO₂eq-↔-Gas-Schicht); geprüft durch Check 11 |
+| `canon/data/impact_master.yaml` v2.8 | ✅ CURRENT — Multi-Impact-SSoT (inkl. SEC-J-Scores); v2.7: GWP100 auf IPCC AR6 korrigiert (CH₄ −7,38 · N₂O −5,77 Gt CO₂eq/a) |
 | `canon/de/04_Band4_Anwendungen_v4.2.md` | ✅ CURRENT — Anwendungs-Kanon |
 | `canon/de/HEBEL_KATALOG_v1.0.md` (v1.10) | ✅ CURRENT — Hebel-Index |
 | `canon/de/06_framework_extensions_v2.0_SECJ.md` | ✅ CURRENT — autoritative SEC-J-Spec |
