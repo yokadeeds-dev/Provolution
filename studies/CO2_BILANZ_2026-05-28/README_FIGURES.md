@@ -31,7 +31,11 @@ python figure_monte_carlo.py     # F1
 python peer_review_figures.py    # F2–F5, percentiles.csv, variance_contributions.csv
 ```
 
-Abhängigkeiten: `numpy`, `matplotlib` (getestet np 2.4.4 / mpl 3.10.8).
+Abhängigkeiten: `numpy`, `matplotlib`, `pyyaml` (getestet np 2.4.4 / mpl 3.10.8). `pyyaml` seit 2026-10-14 für die Senken-Sensitivität in `monte_carlo.py` (liest `canon/data/`).
+
+## Senken-Sensitivität (2026-10-14)
+
+`monte_carlo.py` rechnet zusätzlich eine Variante, in der Rebound nicht auf Senken wirkt (Boden D15∪D16 netto 5,0 + Blue Carbon K 1,5 = 6,5 Gt = 11,1 % von Schicht 1, aus den YAML-Dateien gelesen). Gleiche Zufallsziehungen, nur der Rebound-Term unterscheidet sich. Effekt auf den Median: A −0,9 · **B −0,7 (−43,2 → −43,9)** · C −0,4 · S −1,0 Gt. Die Headline-Werte bleiben bei der konservativen Methodik (Rebound auf ganze Schicht 1); siehe `canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md`. Figuren und CSV-Tabellen sind davon unberührt (byte-identisch reproduziert).
 
 ## Anti-Drift-Garantie
 

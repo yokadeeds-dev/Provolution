@@ -1,6 +1,6 @@
 # Impact Master Data - Single Source of Truth (Multi-Impact)
 # Provolution Framework - Multi-Dimensional Impact Assessment
-# Version: 2.7 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
+# Version: 2.8 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
 # Datum: 2026-10-14 (Erstanlage 2026-01-24)
 # Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
 #
@@ -9,13 +9,17 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.7"
+  version: "2.8"
   last_updated: "2026-10-14"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_8_2026-10-14:
+      - "all-GHG-Punktwert (DEC_2026-10-14_overlap_matrix_ghg_point): neue Datei canon/data/overlap_matrix.yaml ordnet jede CH4/N2O/F-Gas-Quelle der CO2-Schicht zu"
+      - "ghg_total.total null → -68.85 (CURRENT, konservativ); total_evidence_only -70.45; Spanne -58.6 … -72.45 bleibt als Grenzfälle erhalten"
+      - "uncertainty_overall.ghg_total und external_validation an Punktwert angepasst"
     v2_7_2026-10-14:
       - "Datenhygiene nach externem YAML-Review: GWP100-Faktoren waren AR5 (CH4 28, N2O 265), obwohl als 'IPCC AR6' gekennzeichnet"
       - "Umstellung auf IPCC AR6 WG1 Table 7.15: CH4 fossil 29.8, CH4 biogen/non-fossil 27.0, N2O 273"
@@ -193,16 +197,17 @@ ghg_accounting:
     ch4_co2eq: -7.38  # v2.7 AR6
     n2o_co2eq: -5.77  # v2.7 AR6
     f_gases_co2eq: -0.7
-    # v2.7 (DEC_2026-10-14_ghg_total_range): Spanne statt Punktwert.
-    # Die CO2-Schicht nutzt CO2eq-Faktoren; ob CH4/N2O-Wirkungen darin schon enthalten sind,
-    # ist pro Quelle nicht dokumentiert → Überlappung zwischen 0 % und 100 % möglich.
-    total: null  # kein Punktwert, solange die Überlappung CO2eq-Schicht ↔ CH4/N2O-Schicht nicht pro Quelle zugeordnet ist
-    total_status: "RANGE"  # RANGE | CURRENT (CURRENT erst mit quellenweiser Zuordnung + Punktwert)
-    range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten
+    # v2.8 (DEC_2026-10-14_overlap_matrix_ghg_point): Punktwert aus quellenweiser Zuordnung
+    # (canon/data/overlap_matrix.yaml gas_layer_overlaps): total = naive Summe + Σ overlap_with_co2_layer.
+    total: -68.85  # Gt CO₂eq/Jahr = -72.45 + 3.6 (B10-Deponie-CH4 2.0 belegt + D18-Ernährung-CH4 1.6 angenommen); konservativ
+    total_status: "CURRENT"
+    total_evidence_only: -70.45  # nur belegte Überlappung (2.0); Differenz 1.6 = Annahme D18 (Tag-Drift, Herleitung undokumentiert)
+    overlap_source: "canon/data/overlap_matrix.yaml"
+    range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten (Grenzfall)
     range_upper_no_overlap: -72.45    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
-    unsicherheit: null  # vorher [-81.2, -48.6] = -64.5 ±25 % (pauschal, keine eigene Simulation); entfällt mit dem Punktwert
+    unsicherheit: null  # keine eigene all-GHG-Simulation; Monte-Carlo existiert nur für die CO2-Schicht (vorher pauschal [-81.2, -48.6])
     deprecated_total: -64.5  # NICHT ZITIEREN: war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7 + -7.5 + -5.6 + -0.7 = -64.5, Commit 1b683b2, 2026-01-24). Der spätere Kommentar 'enthält Overlap-Bereinigung' (2026-05-28) war unzutreffend.
-    note: "Engere Spanne erfordert die Zuordnung jeder CH4/N2O-Quelle (B10/B12 Deponie, C Erdgas-Leckagen, D15/D18 Landwirtschaft/Ernährung, D Düngung) zu 'in CO2eq-Schicht enthalten' bzw. 'zusätzlich'. Größte Unsicherheit: Domäne D."
+    note: "Zuordnung pro Quelle in overlap_matrix.yaml: B10 (Band 4: CO2-Wert = Deponie-Methan) belegt; C11/D15/D16 reines CO2 (Verbrennung/Sequestrierung) → Gase zusätzlich; D18 konservativ als voll überlappend angenommen. Brutto-Potenzial vor Umsetzung/Rebound — keine Prognose."
 
 # ============================================================================
 # TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
@@ -465,7 +470,7 @@ energy_system:
       vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
       nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
       nach_rebound_median_S: -14.9  # Stresstest
-    ghg_total_rebound: null  # all-GHG nach Rebound erst, wenn ghg_total einen Punktwert hat (total_status CURRENT), dann über dieselbe Monte-Carlo-Logik (kein eigener Faktor)
+    ghg_total_rebound: null  # all-GHG nach Rebound: Punktwert existiert jetzt (-68.85), aber Monte-Carlo läuft nur für die CO2-Schicht; eine all-GHG-Simulation (Verteilungen für CH4/N2O) steht aus — kein eigener Faktor
     # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf nie bereinigten Wert -64.5,
     # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
@@ -767,7 +772,8 @@ validation:
   uncertainty_overall:
     method: "Monte Carlo Simulation (10,000 iterations)"
     ghg_total:  # v2.7: mean -64.5 / p05 -81.2 / p95 -48.6 entfernt — war pauschal ±25 % um einen nie bereinigten Wert, keine Simulation (DEC_2026-10-14_ghg_total_range)
-      range: [-72.45, -58.6]  # Überlappungs-Spanne, siehe ghg_accounting.ghg_total
+      point: -68.85  # quellenweise Zuordnung (overlap_matrix.yaml), keine Simulation
+      range: [-72.45, -58.6]  # Grenzfälle keine/volle Überlappung
       co2_only_monte_carlo: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"  # einzige echte Simulation (CO2-Schicht)
     
     environmental:
@@ -786,7 +792,7 @@ validation:
       - source: "IEA Net Zero 2050"
         alignment: "95% overlap in key technologies"
       - source: "Project Drawdown"
-        comparison: "Unser CO2-Potenzial -58.6 Gt (all-GHG Spanne -58.6 … -72.45) vs. deren -58 Gt; v2.7: vorher '-64.5', nie bereinigt"
+        comparison: "Unser CO2-Potenzial -58.6 Gt (all-GHG -68.85, Spanne -58.6 … -72.45) vs. deren -58 Gt; vorher '-64.5', nie bereinigt"
   
   peer_review_status:
     methodology: "Ready for submission"

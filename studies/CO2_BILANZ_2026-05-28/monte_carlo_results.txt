@@ -59,3 +59,16 @@ S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)       27.0%  (Teil-Reduktion)
 
 PF-Report E4-Adressierung: Monte-Carlo-Propagation auf 3 Hauptszenarien + Stresstest ✓
 PF-Report E7-Adressierung: Stresstest 50%-Umsetzung als 4. Szenario ✓
+
+==============================================================================
+SENKEN-SENSITIVITÄT · Rebound ohne Senken (Boden D15∪D16 + Blue Carbon K)
+==============================================================================
+Senken-Netto: 6.5 Gt = 11.1% von Schicht 1 (aus co2_master + overlap_matrix)
+Szenario                                           Headline  ohne Senken       Δ
+──────────────────────────────────────────────────────────────────────────────
+A · konservativ-realistisch                           -31.3        -32.2    -0.9
+B · mittel-realistisch (Erwartungswert)               -43.2        -43.9    -0.7
+C · optimistisch-realistisch                          -61.1        -61.6    -0.4
+S · Stresstest 50%-Umsetzung (PF-E7-Adressierung)      -14.9        -15.8    -1.0
+
+Headline-Werte bleiben die konservative Methodik (Rebound auf ganze Schicht 1).
