@@ -6,7 +6,7 @@ Datum: 2026-01-24
 Status: ⚠️ **SNAPSHOT 2026-01-24** — Konzept-/Dimensionsbeschreibung gültig; **eingebettete Kennzahlen und Pfade sind historisch.**
 
 > **Autoritative Werte & Status:** [`canon/STATUS.md`](../STATUS.md) + die SSoT-Dateien [`canon/data/impact_master.yaml`](impact_master.yaml) (v2.6) und [`canon/data/co2_master.yaml`](co2_master.yaml) (v1.5).
-> Diese Datei beschreibt das **v2.0-Multi-Impact-Konzept** (sechs Impact-Dimensionen) — die hier genannten Zahlen (z.B. −64,5 Gt all-GHG, 42M Jobs, 420 Mha) stammen vom Stand 2026-01-24, verweisen auf den alten `20_CANON/`-Pfad und sind **nicht** als aktuelle Werte zu zitieren. Insbesondere −64,5 Gt ist all-GHG und steht laut `STATUS.md` §2 auf `PENDING v2.2` (Overlap-Re-Computation).
+> Diese Datei beschreibt das **v2.0-Multi-Impact-Konzept** (sechs Impact-Dimensionen) — die hier genannten Zahlen (z.B. −64,5 Gt all-GHG, 42M Jobs, 420 Mha) stammen vom Stand 2026-01-24, verweisen auf den alten `20_CANON/`-Pfad und sind **nicht** als aktuelle Werte zu zitieren. Insbesondere −64,5 Gt ist **DEPRECATED** (2026-10-14): Es war nie overlap-bereinigt, sondern die naive Summe auf CO₂-Basis v2.0; aktuell gilt die Spanne −58,6 … −72,45 (`STATUS.md` §2).
 
 ---
 
@@ -163,7 +163,7 @@ rebound:
   economy_wide: 0.10
   
   net_factor: 0.50  # 50% Rebound gesamt
-  adjusted_impact: -32.3 Gt CO₂eq/Jahr
+  adjusted_impact: -32.3 Gt CO₂eq/Jahr  # DEPRECATED 2026-10-14, siehe canon/decisions/DEC_2026-10-14_rebound_single_source.md
 ```
 
 ---

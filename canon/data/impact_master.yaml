@@ -1,7 +1,7 @@
 # Impact Master Data - Single Source of Truth (Multi-Impact)
 # Provolution Framework - Multi-Dimensional Impact Assessment
-# Version: 2.6 (Stand 2026-05-29; v2.0 erweiterte CO2-only → Multi-Impact)
-# Datum: 2026-05-29 (Erstanlage 2026-01-24)
+# Version: 2.7 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
+# Datum: 2026-10-14 (Erstanlage 2026-01-24)
 # Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
 #
 # Kanonische Hebel-Liste: canon/de/HEBEL_KATALOG_v1.0.md
@@ -9,13 +9,21 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.6"
-  last_updated: "2026-05-29"
+  version: "2.7"
+  last_updated: "2026-10-14"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_7_2026-10-14:
+      - "Datenhygiene nach externem YAML-Review: GWP100-Faktoren waren AR5 (CH4 28, N2O 265), obwohl als 'IPCC AR6' gekennzeichnet"
+      - "Umstellung auf IPCC AR6 WG1 Table 7.15: CH4 fossil 29.8, CH4 biogen/non-fossil 27.0, N2O 273"
+      - "CO2eq-Werte deterministisch umgerechnet (Wert × GWP_AR6/GWP_AR5), Annahme: v2.0-Werte basierten auf GWP 28 bzw. 265. CH4: B (Abfall, biogen) -2.8 → -2.70; D (Landwirtschaft, biogen) -3.2 → -3.09; C (Erdgas-Leckagen, fossil) -1.5 → -1.60; gesamt -7.5 → -7.38. N2O: D -4.8 → -4.94; B -0.8 → -0.82; gesamt -5.6 → -5.77. Unsicherheitsbänder proportional skaliert"
+      - "ghg_total (DEC_2026-10-14_ghg_total_range, User-Entscheidung A): -64.5 war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7-7.5-5.6-0.7). Ersetzt durch Spanne -58.6 (volle Überlappung) … -72.45 (keine Überlappung); total = null, total_status = RANGE; pauschales CI [-81.2,-48.6] und uncertainty_overall.ghg_total-Punktwerte entfernt"
+      - "Rebound Single Source (DEC_2026-10-14_rebound_single_source, User-Entscheidung A): net_rebound_factor 0.50 + adjusted_impact -32.3 entfernt; Rebound nur noch in Monte-Carlo (Schicht 4). Komponenten 25/15/10 % bleiben als Literatur-Belege; reporting vor/nach Rebound explizit (-58.6 / -43.2 / -14.9)"
+      - "C-2026-008: hash PENDING → SHA-256 der Quelldatei; toter Dossier-Pfad durch source_ref ersetzt"
+      - "Keine Änderung an CO2-Werten, SEC-J-Scores oder Domain-Totals"
     v2_6_2026-05-29:
       - "PR #15: J01 Kreislauf-Gebäude Promotion STUB → band4-canonical"
       - "Vollkonzept in canon/de/04_Band4_Anwendungen_v4.2.md KAPITEL 10c (13-Sektionen-Format)"
@@ -87,7 +95,7 @@ meta:
 
 ghg_accounting:
   
-  # CO2-Bilanz (synchron mit co2_master.yaml v1.5, Stand 2026-05-29)
+  # CO2-Bilanz (synchron mit co2_master.yaml v1.6, Stand 2026-10-14; CO2-Werte unverändert seit v1.5)
   co2:
     gesamt:
       reduktion_hart: -58.6  # Gt CO₂eq/Jahr v2.1 — n=49 (v2.0 hatte -58.0 vor B09/B10-Drift-Resolution + D19-Promotion); n=49 = 38 band4-canonical + 5 yaml-only + 5 community + 1 STUB (nach J01-Promotion PR #15)
@@ -96,7 +104,7 @@ ghg_accounting:
       anteil_global_emissions: 1.065  # 106.5% = Net Negative (inkl. aktive Sequestration D16)
       korrelation_theorie_praxis: 0.94
 
-    # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.5
+    # Domain-Totals (A-K) — synchron zu co2_master.yaml v1.6
     domains:
       A_governance: -8.2
       B_production: -14.6  # v2.1: -15.8 → -14.6 nach B09/B10-Drift-Resolution (wasserstoff/ccs → materialfluss-steuerung/abfall-zu-ressource)
@@ -113,47 +121,54 @@ ghg_accounting:
   # Weitere Treibhausgase (NEU)
   methane_ch4:
     description: "Methan-Emissionen (CH4) in CO2eq-Äquivalenten"
-    gwp_factor: 28  # GWP100 nach IPCC AR6
-    
+    gwp_reference: "IPCC AR6 WG1 (2021) Table 7.15, GWP100"
+    gwp_factor_fossil: 29.8      # CH4 fossilen Ursprungs (inkl. Oxidation zu CO2)
+    gwp_factor_non_fossil: 27.0  # CH4 biogen/nicht-fossil
+    # v2.7: vorher gwp_factor 28 (= AR5, fälschlich als AR6 gekennzeichnet); Werte umgerechnet × GWP_AR6/28
+
     domains:
       B_production:
-        total: -2.8  # Gt CO₂eq/Jahr
+        total: -2.70  # Gt CO₂eq/Jahr; biogen (27.0); v2.7: -2.8 × 27.0/28
+        gwp_basis: non_fossil
         hauptquellen:
           - "Abfallmanagement (B10): Reduktion durch Kreislaufwirtschaft"
           - "Biomasse (B12): Vermiedene Deponierung"
-      
+
       D_food_land:
-        total: -3.2  # Gt CO₂eq/Jahr
+        total: -3.09  # Gt CO₂eq/Jahr; biogen (27.0); v2.7: -3.2 × 27.0/28
+        gwp_basis: non_fossil
         hauptquellen:
           - "Regenerative Landwirtschaft (D15): Verbesserte Gülle-Bewirtschaftung"
           - "Ernährungswandel (D18): Reduzierte Tierhaltung"
-      
+
       C_energy:
-        total: -1.5  # Gt CO₂eq/Jahr
+        total: -1.60  # Gt CO₂eq/Jahr; fossil (29.8); v2.7: -1.5 × 29.8/28
+        gwp_basis: fossil
         hauptquellen:
           - "Leckagen in Erdgas-Infrastruktur: Vermieden durch Elektrifizierung"
-    
-    gesamt: -7.5  # Gt CO₂eq/Jahr (zusätzlich zu CO₂)
-    unsicherheit: [-9.5, -5.8]  # 95% CI
+
+    gesamt: -7.38  # Gt CO₂eq/Jahr (zusätzlich zu CO₂); v2.7: -7.5 → -7.38 (AR6); aus ungerundeten Domain-Werten
+    unsicherheit: [-9.35, -5.71]  # 95% CI; v2.7 proportional skaliert (vorher [-9.5, -5.8])
   
   nitrous_oxide_n2o:
     description: "Lachgas-Emissionen (N2O) in CO2eq-Äquivalenten"
-    gwp_factor: 265  # GWP100 nach IPCC AR6
-    
+    gwp_reference: "IPCC AR6 WG1 (2021) Table 7.15, GWP100"
+    gwp_factor: 273  # v2.7: vorher 265 (= AR5, fälschlich als AR6 gekennzeichnet); Werte umgerechnet × 273/265
+
     domains:
       D_food_land:
-        total: -4.8  # Gt CO₂eq/Jahr
+        total: -4.94  # Gt CO₂eq/Jahr; v2.7: -4.8 × 273/265
         hauptquellen:
           - "Regenerative Landwirtschaft (D15): Reduzierter Mineraldünger"
           - "Präzisionslandwirtschaft: Optimierte N-Ausbringung"
       
       B_production:
-        total: -0.8  # Gt CO₂eq/Jahr
+        total: -0.82  # Gt CO₂eq/Jahr; v2.7: -0.8 × 273/265
         hauptquellen:
           - "Industrieprozesse: Verbesserte Katalysatoren"
-    
-    gesamt: -5.6  # Gt CO₂eq/Jahr
-    unsicherheit: [-7.2, -4.3]  # 95% CI
+
+    gesamt: -5.77  # Gt CO₂eq/Jahr; v2.7: -5.6 → -5.77 (AR6); aus ungerundeten Domain-Werten
+    unsicherheit: [-7.42, -4.43]  # 95% CI; v2.7 proportional skaliert (vorher [-7.2, -4.3])
   
   f_gases:
     description: "Fluorierte Gase (HFCs, PFCs, SF6, NF3)"
@@ -175,12 +190,19 @@ ghg_accounting:
   # Gesamt-GHG-Bilanz (ALLE Treibhausgase)
   ghg_total:
     co2: -58.6  # v2.1: -57.0 → -58.6 (sync mit gesamt.reduktion_hart)
-    ch4_co2eq: -7.5
-    n2o_co2eq: -5.6
+    ch4_co2eq: -7.38  # v2.7 AR6
+    n2o_co2eq: -5.77  # v2.7 AR6
     f_gases_co2eq: -0.7
-    total: -64.5  # Gt CO₂eq/Jahr — PENDING v2.2: enthält Overlap-Bereinigung gegenüber naiver Summe -72.4 (-58.6+-7.5+-5.6+-0.7); Overlap-Re-Computation auf v2.1-Basis vorgesehen
-    unsicherheit: [-81.2, -48.6]  # 95% CI
-    note: "ghg_total.total Overlap-Bereinigung in v2.0 mit alten CO2-Werten gerechnet; vollständiges Re-Computation in v2.2 vorgesehen. Der ChatGPT-Audit-Befund (2026-05-28) zur Differenz CO2 vs total ist methodisch erklärbar durch Overlap-Korrektur (CO2-Maßnahmen reduzieren auch CH4/N2O), nicht durch Rechenfehler."
+    # v2.7 (DEC_2026-10-14_ghg_total_range): Spanne statt Punktwert.
+    # Die CO2-Schicht nutzt CO2eq-Faktoren; ob CH4/N2O-Wirkungen darin schon enthalten sind,
+    # ist pro Quelle nicht dokumentiert → Überlappung zwischen 0 % und 100 % möglich.
+    total: null  # kein Punktwert, solange die Überlappung CO2eq-Schicht ↔ CH4/N2O-Schicht nicht pro Quelle zugeordnet ist
+    total_status: "RANGE"  # RANGE | CURRENT (CURRENT erst mit quellenweiser Zuordnung + Punktwert)
+    range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten
+    range_upper_no_overlap: -72.45    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
+    unsicherheit: null  # vorher [-81.2, -48.6] = -64.5 ±25 % (pauschal, keine eigene Simulation); entfällt mit dem Punktwert
+    deprecated_total: -64.5  # NICHT ZITIEREN: war nie overlap-bereinigt, sondern die naive Summe auf CO2-Basis v2.0 (-50.7 + -7.5 + -5.6 + -0.7 = -64.5, Commit 1b683b2, 2026-01-24). Der spätere Kommentar 'enthält Overlap-Bereinigung' (2026-05-28) war unzutreffend.
+    note: "Engere Spanne erfordert die Zuordnung jeder CH4/N2O-Quelle (B10/B12 Deponie, C Erdgas-Leckagen, D15/D18 Landwirtschaft/Ernährung, D Düngung) zu 'in CO2eq-Schicht enthalten' bzw. 'zusätzlich'. Größte Unsicherheit: Domäne D."
 
 # ============================================================================
 # TEIL 1.5: COMMUNITY INTEGRATIONS (außerhalb A-J Hebel-Domains)
@@ -195,12 +217,13 @@ community_integrations:
   integrations:
     C-2026-008:
       id: "C-2026-008"
-      hash: "PENDING"  # source_sha256 (Präzisionsfermentation.docx) — finaler Hash in Commit C/D
+      hash: "b5ebb212e17b0dc905b49f062e289f6a2890a5f8e2b5112f6e89aff7b33c00d0"  # SHA-256 von Präzisionsfermentation.docx (ermittelt 2026-10-14)
+      source_ref: "github.com/yokadeeds-dev/Provolution-legacy @ b279e92 : 07_SOURCE/community_submissions/accepted/Präzisionsfermentation.docx"
       sec_community: 1.0
       plausibility_p: 1.0
       decision_date: "2026-04-18"
       evidence_level: 2
-      dossier: "07_SOURCE/community_dossiers/generated/C-2026-008_dossier.md"
+      dossier: null  # Generiertes Dossier existierte nie (Legacy enthält nur C-2026-001…007); Quelle siehe source_ref
       quelle: "canon/de/04_Band4_Community_Integrations.md"
       co2_impact_gt_per_year: -3.0  # PF -2.0 + Hanf-Kaskade -1.0
 
@@ -428,9 +451,23 @@ energy_system:
         estimated_magnitude: 0.10  # 10%
         mitigation: "Degrowth-kompatible Governance"
     
-    net_rebound_factor: 0.50  # 50% Rebound gesamt
-    adjusted_impact: -32.3  # Gt CO₂eq/Jahr (von -64.5)
-    hinweis: "Konservative Schätzung bereits in -58.6 Hauptwert teilweise integriert"
+    # v2.7 (DEC_2026-10-14_rebound_single_source): Rebound wird NUR in der Monte-Carlo-Bilanz
+    # (studies/CO2_BILANZ_2026-05-28/monte_carlo.py, Schicht 4) gerechnet. Die drei Komponenten
+    # oben sind Literatur-Belege für die Bandbreite, KEIN eigener Abzugsfaktor.
+    literature_sum_upper_bound: 0.50  # Summe 25+15+10 % = theoretische Obergrenze; NICHT anwenden (läge über dem eigenen Stresstest 30 %; Senken/Suffizienz haben keinen Rebound)
+    single_source: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"
+    monte_carlo_rebound_rates:  # mean je Szenario, ±3 % Normalverteilung, angewendet auf Schicht 1+2
+      A_konservativ: 0.20
+      B_erwartungswert: 0.15
+      C_optimistisch: 0.08
+      S_stresstest: 0.30
+    reporting:
+      vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
+      nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
+      nach_rebound_median_S: -14.9  # Stresstest
+    ghg_total_rebound: null  # all-GHG nach Rebound erst, wenn ghg_total einen Punktwert hat (total_status CURRENT), dann über dieselbe Monte-Carlo-Logik (kein eigener Faktor)
+    # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf nie bereinigten Wert -64.5,
+    # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
 # ============================================================================
 # TEIL 5: GOVERNANCE & COMPLIANCE
@@ -729,11 +766,9 @@ validation:
   
   uncertainty_overall:
     method: "Monte Carlo Simulation (10,000 iterations)"
-    ghg_total:
-      mean: -64.5  # Gt CO₂eq/Jahr
-      p05: -81.2
-      p95: -48.6
-      relative: "±25%"
+    ghg_total:  # v2.7: mean -64.5 / p05 -81.2 / p95 -48.6 entfernt — war pauschal ±25 % um einen nie bereinigten Wert, keine Simulation (DEC_2026-10-14_ghg_total_range)
+      range: [-72.45, -58.6]  # Überlappungs-Spanne, siehe ghg_accounting.ghg_total
+      co2_only_monte_carlo: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"  # einzige echte Simulation (CO2-Schicht)
     
     environmental:
       water: "±18%"
@@ -751,7 +786,7 @@ validation:
       - source: "IEA Net Zero 2050"
         alignment: "95% overlap in key technologies"
       - source: "Project Drawdown"
-        comparison: "Our -64.5 Gt vs. their -58 Gt (higher due to systemic integration)"
+        comparison: "Unser CO2-Potenzial -58.6 Gt (all-GHG Spanne -58.6 … -72.45) vs. deren -58 Gt; v2.7: vorher '-64.5', nie bereinigt"
   
   peer_review_status:
     methodology: "Ready for submission"
