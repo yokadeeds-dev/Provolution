@@ -41,6 +41,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | **−14,9 Gt/a** | Netto bei **50 %-Umsetzungs-Stresstest** (Szenario S, Median) [−20,5…−9,8] | ✅ **CURRENT** (konservativ) | Bilanz-Studie v1.5 |
 | ~~−50,7 Gt/a~~ | Älterer „100 % von Ziel"-Snapshot | ❌ **DEPRECATED-SNAPSHOT** — abgelöst durch −58,6 | historische Stände in `canon/de/05_Band5_*`, `canon/docs/BAND5_INTEGRATION_H01.md` |
 | ~~−58,0 Gt/a~~ | Vor-Drift-Resolution-Wert | ❌ **SUPERSEDED** — abgelöst durch −58,6 | alte README/GitHub-Description-Stände |
+| ~~−32,3 Gt/a~~ | „Rebound-adjustiert“ (Pauschal-Rebound 50 % auf −64,5) | ❌ **DEPRECATED** 2026-10-14 — Rebound nur noch in Monte-Carlo (vor Rebound −58,6 · nach Rebound −43,2) | `canon/decisions/DEC_2026-10-14_rebound_single_source.md` |
 
 **Defensive Lesart aller Potenzial-Werte:** Es sind *gescreente technisch/systemische Potenziale unter definierten Annahmen* — keine Prognosen, keine sofort realisierbaren Jahres-Reduktionen. Sie enthalten Overlaps, Constraints und Unsicherheitsbänder. Die realistischen Netto-Größen sind die Monte-Carlo-Mediane (−43,2 Szenario B / −14,9 Stresstest S).
 
