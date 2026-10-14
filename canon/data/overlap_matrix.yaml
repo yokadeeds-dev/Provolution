@@ -1,5 +1,5 @@
 # Overlap-Matrix — maschinenlesbare Doppelzählungs-Bereinigung
-# Provolution Framework · Version 1.0 · Datum 2026-10-14
+# Provolution Framework · Version 1.1 · Datum 2026-10-14
 # Alle Werte in Gt CO₂eq/Jahr als positive Beträge (Overlap = abgezogene Menge)
 #
 # Zweck: Macht die bisher nur als Fließtext dokumentierte Doppelzählungs-Bereinigung
@@ -12,10 +12,10 @@
 # Entscheidung: canon/decisions/DEC_2026-10-14_overlap_matrix_ghg_point.md
 
 meta:
-  version: "1.0"
+  version: "1.1"
   last_updated: "2026-10-14"
-  basis_co2: "canon/data/co2_master.yaml v1.6"
-  basis_gases: "canon/data/impact_master.yaml v2.7 (GWP100 IPCC AR6)"
+  basis_co2: "canon/data/co2_master.yaml v1.7"
+  basis_gases: "canon/data/impact_master.yaml v2.10 (GWP100 IPCC AR6)"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TEIL 1: Hebel ↔ Hebel innerhalb der CO₂-Schicht (Domains B, C, D)
@@ -52,11 +52,11 @@ lever_overlaps:
     gross_sum: 9.0
     net: 5.0
     overlap: 4.0
-    additive: [D17_hanf_oekosystem, D18_ernaehrung, D19_algen_bioraffinerie]
+    additive: [D17_hanf_oekosystem, D18_urbane_landwirtschaft, D19_algen_bioraffinerie]
     rule: "Boden-Senken (D16) sind primär Mechanismus der Regenerativen Landwirtschaft (D15); D17a/D17b sind Multiplikatoren innerhalb D17 (kein eigener Wert)"
     source: "studies/CO2_BILANZ_2026-05-28/CO2_BILANZ_KOMPLETT.md §2"
     pair_coefficients: {D15_regen_landwirtschaft__D16_co2_senken_boden: 4.0}  # Gruppe = genau ein Paar → Koeffizient belegt
-    history: "D19 (−0.3) am 2026-05-28 additiv ergänzt (−9.4 → −9.7)"
+    history: "D19 (−0.3) am 2026-05-28 additiv ergänzt (−9.4 → −9.7); D18 −1.6 → −0.05 am 2026-10-14 (−9.7 → −8.15)"
 
 # ─────────────────────────────────────────────────────────────────────────────
 # TEIL 2: CO₂eq-Schicht ↔ CH₄/N₂O/F-Gas-Schicht (für den all-GHG-Punktwert)
@@ -78,10 +78,10 @@ gas_layer_overlaps:
     rationale: "Band 4 C11: 'CO₂-Reduktion 15 Gt/Jahr' aus Verbrennung im Stromsektor; vorgelagerte Erdgas-Leckagen (flüchtiges CH₄) sind darin nicht enthalten"
   ch4_D_food_land:
     gas_total: 3.09
-    overlap_with_co2_layer: 1.6
-    co2_lever: D18_ernaehrung
-    evidence: "Annahme (konservativ)"
-    rationale: "Die CH₄-Quelle 'Ernährungswandel (D18): reduzierte Tierhaltung' kann im CO₂-Schicht-Wert D18_ernaehrung (−1.6 Gt CO₂eq) bereits enthalten sein; Herleitung von −1.6 ist nicht dokumentiert → volle Überlappung angenommen (verkleinert den Punktwert). Achtung Tag-Drift: Band 4 führt D18 als 'Urbane Landwirtschaft' (Transport −50 Mt), co2_master als 'ernaehrung' (−1.6). Recherche 2026-10-14: −1.6 hat keine Herleitung (erstmals in co2_master v1.1 am 2026-01-24, Commit 6bc312e; nicht in Band 4/5, nicht im ChatGPT-Archiv) → Klärung offen (User-Entscheidung). D15 (Gülle) ist reine CO₂-Sequestrierung → zusätzlich"
+    overlap_with_co2_layer: 0.0
+    co2_lever: D15_regen_landwirtschaft
+    evidence: "belegt"
+    rationale: "v1.1 (2026-10-14, DEC_2026-10-14_d18_band4_canonical): Nach Korrektur von D18 auf band4-canonical (Urbane Landwirtschaft, Transport −0.05) deckt kein CO₂-Schicht-Hebel die Methan-Reduktion aus Gülle/Tierhaltung ab → voll zusätzlich. D15 ist reine Boden-Sequestrierung. Vorher (v1.0): Annahme 1.6 Overlap mit D18_ernaehrung, dessen Wert −1.6 keine Herleitung hatte (vermutlich genau dieser Tierhaltungs-Effekt, also doppelt gezählt)"
   n2o_D_food_land:
     gas_total: 4.94
     overlap_with_co2_layer: 0.0
@@ -102,6 +102,6 @@ gas_layer_overlaps:
     rationale: "Kältemittel (Wärmepumpen) und SF₆-Ersatz — kein CO₂-Schicht-Hebel deckt F-Gase ab"
 
   summary:
-    overlap_total: 3.6       # 2.0 + 1.6
+    overlap_total: 2.0       # nur B10 (v1.0: 3.6 inkl. D18-Annahme 1.6)
     overlap_belegt: 2.0
-    overlap_angenommen: 1.6
+    overlap_angenommen: 0.0

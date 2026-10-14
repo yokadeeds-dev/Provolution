@@ -7,7 +7,7 @@
 **Datum:** 2026-04-27
 **Status:** Publication-Ready
 
-> ⚠️ **Hinweis zu Kennzahlen:** Dieser Band enthält historische Headline-Werte (u.a. **−50,7 Gt/Jahr** als „100 % von Ziel"). Der **aktuelle autoritative CO₂-hart-Wert ist −58,6 Gt/Jahr** (`canon/data/co2_master.yaml` v1.5). Für alle gültigen Kennzahlen und das Werte-Glossar gilt [`canon/STATUS.md`](../STATUS.md) als Quelle. Fließtext-Werte hier sind Lesefassung, nicht Wertequelle.
+> ⚠️ **Hinweis zu Kennzahlen:** Dieser Band enthält historische Headline-Werte (u.a. **−50,7 Gt/Jahr** als „100 % von Ziel"). Der **aktuelle autoritative CO₂-hart-Wert ist −57,05 Gt/Jahr** (`canon/data/co2_master.yaml` v1.7). Für alle gültigen Kennzahlen und das Werte-Glossar gilt [`canon/STATUS.md`](../STATUS.md) als Quelle. Fließtext-Werte hier sind Lesefassung, nicht Wertequelle.
 >
 > ⚠️ **SEC-J-Gewichte aktualisiert (2026-05-29):** Dieser Band wurde ursprünglich (v3.1, 2026-04-27) mit der **DEPRECATED v1.0-Formel** `0,40·S + 0,25·E + 0,15·C + 0,20·J` verfasst. Autoritativ ist seit 2026-05-10 **PS-U 2.0 STANDARD** `0,30·S + 0,25·E + 0,30·C + 0,15·J` (`canon/de/06_framework_extensions_v2.0_SECJ.md`). Formel und Berechnungsbeispiele unten wurden darauf umgestellt. **Per-Hebel-SEC-J-Werte sind kanonisch ausschließlich in `canon/data/impact_master.yaml` / `HEBEL_KATALOG_v1.0.md`** — Tabellen in diesem Band sind illustrativ.
 
@@ -462,7 +462,7 @@ Impact(M) = CO₂-Potential / Max CO₂-Potential
 - M10 (Jahr 10): Kipppunkte kompensiert
 
 **KPIs Jahr 10:**
-- CO₂-Reduktion: 50.7 Gt/Jahr (100% von Ziel) <!-- HISTORISCH: aktueller autoritativer Wert −58,6 Gt/Jahr, siehe canon/STATUS.md §2 -->
+- CO₂-Reduktion: 50.7 Gt/Jahr (100% von Ziel) <!-- HISTORISCH: aktueller autoritativer Wert −57,05 Gt/Jahr, siehe canon/STATUS.md §2 -->
 - SEC-Durchschnitt: ≥0.85 (stabil)
 - Kosten-Nutzen: Positiv (ROI >1.0)
 - Soziale Akzeptanz: >70%

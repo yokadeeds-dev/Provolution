@@ -1,17 +1,17 @@
 # Provolution CO₂ Budget — Figure Captions (submission-ready, EN)
 
 Monte-Carlo uncertainty study, n = 10,000 iterations per scenario, seed = 42.
-Data basis: `co2_master.yaml` v1.3 + balance study §6 (v1.5).
+Data basis: `co2_master.yaml` v1.7 (layer 1 = −57.05 Gt, read live) + balance study §6. As of 2026-10-14 (D18 drift resolution).
 Global baseline: IPCC AR6 (2023) = 55.0 Gt CO₂eq/yr.
 
 Scenarios:
 
 | Code | Scenario | impl | rebound | Median (Gt CO₂eq/yr) | 90% CI | % baseline |
 |---|---|---|---|---|---|---|
-| **S** | stress test, 50% deployment | 50% | 30% | −14.9 | [−20.5, −9.8] | 27.0% |
-| **A** | conservative-realistic | 70% | 20% | −31.3 | [−39.1, −24.2] | 56.9% |
-| **B** | expected value (mid-realistic) | 75% | 15% | −43.2 | [−52.8, −34.6] | 78.5% |
-| **C** | optimistic-realistic | 85% | 8% | −61.1 | [−73.1, −50.2] | 111.1% |
+| **S** | stress test, 50% deployment | 50% | 30% | −14.3 | [−19.8, −9.4] | 26.0% |
+| **A** | conservative-realistic | 70% | 20% | −30.4 | [−38.1, −23.5] | 55.3% |
+| **B** | expected value (mid-realistic) | 75% | 15% | −42.2 | [−51.6, −33.8] | 76.7% |
+| **C** | optimistic-realistic | 85% | 8% | −59.9 | [−71.7, −49.2] | 108.9% |
 
 Negative values denote net reduction. All figures are reproducible from
 `monte_carlo.py` (single source of truth); the figure scripts import that module
@@ -27,8 +27,8 @@ scenarios S/A/B/C. Overlaid per scenario: median (white dot), 50% interquartile
 range (thick bar, p25–p75), and 90% confidence interval (thin whisker, p5–p95).
 The red dashed line marks net-zero (−55 Gt CO₂eq/yr, full compensation of the
 global baseline). Median labels give the share of the baseline. Only scenario C
-(optimistic-realistic) crosses the net-zero threshold at the median (111% of
-baseline); scenario B sits on the climate-positive path at 78%.
+(optimistic-realistic) crosses the net-zero threshold at the median (109% of
+baseline); scenario B sits on the climate-positive path at 77%.
 
 ## Figure 2 — Sensitivity analysis
 **File:** `Figure2_Sensitivity.png` / `.svg` · Data: `variance_contributions_en.csv`
@@ -38,7 +38,7 @@ by scenario. Computed as a first-order covariance decomposition
 Var(net) = Σᵢ Cov(Xᵢ, net), valid because the net budget is the exact sum of its
 components; contributions sum to 100% per scenario (`sum_check` column). Layer 1
 (direct leverage, coupled to the deployment rate) dominates the uncertainty in
-all scenarios (67–117%). The **negative** rebound contribution (−28% to 0%) is
+all scenarios (66–117%). The **negative** rebound contribution (−28% to 0%) is
 not an artefact: rebound is anti-correlated with net reduction and therefore
 **dampens** the variance; its magnitude declines from scenario S (high rebound
 rate) to C (low rate). Material bottlenecks and climate deterioration each
@@ -68,14 +68,14 @@ target-attainment probabilities:
 | Scenario | P(climate-positive) | P(net-zero) |
 |---|---|---|
 | S · stress test 50% | 0.0% | 0.0% |
-| A · conservative | 35.5% | 0.0% |
-| B · expected value | 97.5% | 2.4% |
-| C · optimistic | 100.0% | 81.4% |
+| A · conservative | 28.1% | 0.0% |
+| B · expected value | 96.3% | 1.4% |
+| C · optimistic | 100.0% | 76.8% |
 
 Translating the distribution into decision probabilities directly addresses
 robustness: even in the expected-value scenario B the climate-positive path is
-near-certain (97.5%), while full net-zero becomes likely only under optimistic
-assumptions (C: 81.4%).
+near-certain (96.3%), while full net-zero becomes likely only under optimistic
+assumptions (C: 76.8%).
 
 ## Figure 5 — Convergence diagnostic
 **File:** `Figure5_Convergence.png` / `.svg`

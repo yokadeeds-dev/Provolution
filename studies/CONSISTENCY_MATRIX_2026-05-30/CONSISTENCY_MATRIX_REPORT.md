@@ -39,14 +39,14 @@ Jede dieser Kanten ist einzeln prüf- und widerlegbar:
 
 | Paar | Typ | Beleg |
 |---|---|---|
-| B07 ↔ B08/B09/B10/B11/B12/B13 | **OVL** | co2_master `double_counting_prevention` (B07 −23 → −15,8 nach Overlap-Abzug) |
+| B07 ↔ B08/B09/B10/B11/B12/B13 | **OVL** | co2_master `double_counting_prevention` (Gruppe B07–B12: −31,3 → −14,3 nach Overlap-Abzug, `canon/data/overlap_matrix.yaml`) |
 | B12 ↔ D15 | **CONF** | impact_master B12-Warnung: Tank-oder-Teller / Flächenkonkurrenz |
 | B12 ↔ D18 | **CONF** | impact_master B12-Warnung: Tank-oder-Teller / Flächenkonkurrenz |
 | B09 ↔ C12 | **DEP** | impact_master C12-Warnung: Li/Co-Lieferkette → B09-Transparenz zwingend |
 | C12 ↔ H31 | **DEP** | impact_master C12-Warnung: → H31-Regulierung zwingend |
 | D16 ↔ G27 | **DEP** | impact_master D16-Notiz: G27-Monitoring der Carbon-Payments zwingend |
 
-Die 6 OVL-Kanten sind **Accounting-Overlaps** (in der CO₂-Aggregation bereits bereinigt, Netto-Median −43,2 Gt) — keine Viability-Konflikte. Die 3 DEP-Kanten sind **dokumentierte Implementierungs-Auflagen** (erfüllbar). Echte **Viability-Konflikte: nur 2**, beide an B12.
+Die 6 OVL-Kanten sind **Accounting-Overlaps** (in der CO₂-Aggregation bereits bereinigt, Netto-Median −42,2 Gt) — keine Viability-Konflikte. Die 3 DEP-Kanten sind **dokumentierte Implementierungs-Auflagen** (erfüllbar). Echte **Viability-Konflikte: nur 2**, beide an B12.
 
 ---
 
@@ -88,7 +88,7 @@ Diese Konflikte habe ich **hypothetisch** ergänzt — sie sind **nicht** kanon-
 
 ## 7. Was als Nächstes
 
-- **Hälfte 2 von Punkt 4 — Carbon-Flow-Sankey:** Visualisierung der OVL-Bereinigung (Brutto-Potenzial −87,1/−58,6 → Overlap-Abzug → realistischer Netto-Median −43,2). matplotlib ist verfügbar (3.10.8) → als Figur + Skript machbar. **Folge-PR.**
+- **Hälfte 2 von Punkt 4 — Carbon-Flow-Sankey:** Visualisierung der OVL-Bereinigung (Brutto-Potenzial −85,55/−57,05 → Overlap-Abzug → realistischer Netto-Median −42,2). matplotlib ist verfügbar (3.10.8) → als Figur + Skript machbar. **Folge-PR.**
 - **Härtung:** systematische Paar-für-Paar-Konflikt-Elicitation (Domänen-Review), Adjudikation der inferierten Kanten (§6), Synergie-Stichproben extern prüfen lassen.
 
 ---

@@ -7,6 +7,8 @@
 - `manuscript/COVER_LETTER_EarthSystemGovernance.md`
 **Affected sections:** Abstract; §1.3 Contribution; §4.2 Domain Classification; §4.3 Dynamic Application Set; §5.1 Table 1; §5.2 Table 2; §7 Conclusion
 
+> **Superseded in part (2026-10-14):** the "current canonical" figures below are Canon v1.5. For Canon v2.3 (CO₂ headline −57.05, net −42.2, stress test −14.3, all-GHG −68.90 / net −51.2) see [`CORRIGENDUM_2026-10-14.md`](CORRIGENDUM_2026-10-14.md).
+
 > **Companion to the formula corrigenda.** `CORRIGENDUM_2026-04-27.md` and `CORRIGENDUM_2026-05-28.md` correct the **SEC-J formula** (Discussion §5). The present corrigendum corrects the **quantitative and structural figures** that changed as a consequence of moving to PS-U 2.0 / SEC-J and of canon growth between the 2026-04-18 submission snapshot and Canon v1.5 (2026-05-29). It does **not** modify the submitted manuscript body, which is deliberately preserved as a frozen submission snapshot.
 
 ---
