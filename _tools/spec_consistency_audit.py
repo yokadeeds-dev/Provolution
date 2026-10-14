@@ -1,7 +1,7 @@
 """
 Provolution Repo Spec-Consistency Audit Tool
 ==============================================
-"Probatio Consistentia" v0.1 · 2026-05-28
+"Probatio Consistentia" v0.2 · 2026-10-14 (v0.1: 2026-05-28)
 
 Scannt das Provolution clean-Public-Repo nach **stillen Inkonsistenzen** —
 Konflikten zwischen Dateien, die durch Diff-orientierte Reviews (PR-Audits,
@@ -23,18 +23,26 @@ Checks:
   2. reduktion_hart Cross-File-Sync zwischen den beiden zentralen YAMLs
   3. DEPRECATED-Marker bei vN.0/vM.0-Spec-Paaren
   4. SEC-J-Werte pro Hebel: Band 4 ↔ impact_master.yaml
+  --- v0.2 (2026-10-14, YAML-geparst, deterministisch) ---
+  5. CO₂-Aggregate: Domain-Summen, App-Summen, Gesamt, Potenzial, Anteil
+  6. Abgeleitete Zähler: metrics.anzahl_anwendungen / anzahl_domains, ID-Eindeutigkeit
+  7. Cross-File-Sync co2_master.yaml ↔ impact_master.yaml (Gesamt, Domains, Communities)
+  8. GHG: GWP100 = IPCC AR6, Gas-Summen, ghg_total-Komponenten + Spanne (RANGE/CURRENT), Rebound-Kette
+  9. SEC-J: STANDARD-Formel, J-Veto, J-Warnschwelle mit Auflage
+ 10. Quellen: Repo-Pfade existieren, Hashes im SHA-256-Format
 
 Verwendung:
-    python _tools/spec_consistency_audit.py
+    python _tools/spec_consistency_audit.py          # alle Checks, Exit = Summe aller Befunde
+    python _tools/spec_consistency_audit.py --ci     # CI-Modus: blockierend nur Checks 2 + 5-10;
+                                                     # heuristische Checks 1/3/4 nur als Hinweis
 
-Exit-Code: 0 wenn keine Konflikte, sonst Anzahl gefundener Konflikt-Befunde.
+Exit-Code: 0 wenn keine (blockierenden) Konflikte, sonst Anzahl Befunde (max. 127).
+Abhängigkeit Checks 5-10: PyYAML (pip install pyyaml).
 
-Geplante Erweiterungen (v0.2+):
-  - Domain-Totals B/C/D/.../K Cross-Sync
-  - ghg_total.* interne Konsistenz
-  - Pfad-Drift legacy → clean (06_CANON/ vs canon/de/)
-  - JSON-Output für CI-Integration
-  - --strict für Warnings → Failure
+Geplante Erweiterungen (v0.3+):
+  - Pfad-Drift legacy → clean (06_CANON/ vs canon/de/) in Markdown
+  - JSON-Output
+  - maschinenlesbare Overlap-Matrix (B/C/D) statt Ungleichungs-Check
 """
 
 import re
@@ -266,19 +274,261 @@ def check_band4_secj_sync(repo: Path) -> int:
     return issues
 
 
+# ═════════════════════════════════════════════════════════════════════════════
+# v0.2 — YAML-geparste Daten-Checks (deterministisch, CI-blockierend)
+# ═════════════════════════════════════════════════════════════════════════════
+
+TOL = 0.05  # Gt — Rundungstoleranz für Summen aus 1-2-Nachkommastellen-Werten
+
+# IPCC AR6 WG1 (2021) Table 7.15, GWP100
+GWP_AR6 = {"ch4_fossil": 29.8, "ch4_non_fossil": 27.0, "n2o": 273}
+
+# Domains, deren Total bewusst overlap-bereinigt ist (|total| < |Summe apps|)
+OVERLAP_DOMAINS = {"B_production", "C_energy", "D_food_land"}
+
+
+def _load_yamls(repo: Path):
+    import yaml
+    data = repo / "canon" / "data"
+    with open(data / "co2_master.yaml", encoding="utf-8") as f:
+        co2 = yaml.safe_load(f)
+    with open(data / "impact_master.yaml", encoding="utf-8") as f:
+        imp = yaml.safe_load(f)
+    return co2, imp
+
+
+def _close(a, b, tol=TOL):
+    return a is not None and b is not None and abs(float(a) - float(b)) <= tol
+
+
+def _fail(msg):
+    print(f"  ❌ {msg}")
+    return 1
+
+
+def check_co2_aggregates(co2) -> int:
+    banner("CHECK 5: CO₂-Aggregate (co2_master.yaml)")
+    issues = 0
+    domains = co2["domains"]
+    for key, d in domains.items():
+        s = sum((d.get("apps") or {}).values())
+        if key in OVERLAP_DOMAINS:
+            if abs(d["total"]) > abs(s) + TOL:
+                issues += _fail(f"{key}: overlap-bereinigtes total {d['total']} größer als Summe apps {s:.2f}")
+        elif not _close(s, d["total"]):
+            issues += _fail(f"{key}: Summe apps {s:.2f} ≠ total {d['total']}")
+    dom_sum = sum(d["total"] for d in domains.values())
+    comm = co2["community_integrations"]
+    comm_sum = sum(i["co2_impact_gt_per_year"] for i in comm["integrations"].values())
+    if not _close(comm_sum, comm["total"]):
+        issues += _fail(f"community_integrations: Summe {comm_sum} ≠ total {comm['total']}")
+    g = co2["gesamt"]
+    if not _close(dom_sum + comm["total"], g["reduktion_hart"]):
+        issues += _fail(f"Domains {dom_sum:.2f} + Communities {comm['total']} ≠ reduktion_hart {g['reduktion_hart']}")
+    if not _close(g["reduktion_hart"] + g["vermeidung_weich"], g["total_potenzial"]):
+        issues += _fail(f"reduktion_hart + vermeidung_weich ≠ total_potenzial {g['total_potenzial']}")
+    base = co2["validation"]["global_emissions_baseline"]
+    if not _close(abs(g["reduktion_hart"]) / base, g["anteil_global_emissions"], 0.005):
+        issues += _fail(f"anteil_global_emissions {g['anteil_global_emissions']} ≠ |reduktion_hart|/{base}")
+    if issues == 0:
+        print(f"  ✅ Domains {dom_sum:.1f} + Communities {comm['total']} = {g['reduktion_hart']} Gt; "
+              f"Potenzial {g['total_potenzial']}; Anteil {g['anteil_global_emissions']}")
+    return issues
+
+
+def check_derived_counters(co2) -> int:
+    banner("CHECK 6: Abgeleitete Zähler + ID-Eindeutigkeit")
+    issues = 0
+    domains = co2["domains"]
+    apps = {k: v for d in domains.values() for k, v in (d.get("apps") or {}).items()}
+    n_comm = len(co2["community_integrations"]["integrations"])
+    n_apps = len(apps) + n_comm
+    m = co2["metrics"]
+    if m["anzahl_anwendungen"] != n_apps:
+        issues += _fail(f"metrics.anzahl_anwendungen={m['anzahl_anwendungen']}, abgeleitet {n_apps} "
+                        f"({len(apps)} apps + {n_comm} communities)")
+    if m["anzahl_domains"] != len(domains):
+        issues += _fail(f"metrics.anzahl_domains={m['anzahl_domains']}, abgeleitet {len(domains)}")
+    ids = [k.split("_")[0] for k in apps]
+    dupes = sorted({i for i in ids if ids.count(i) > 1})
+    if dupes:
+        issues += _fail(f"doppelte Hebel-IDs: {dupes}")
+    top_key, top_val = min(apps.items(), key=lambda x: x[1])
+    h = m["hoechste_einzelanwendung"]
+    if h["wert"] != top_val or not top_key.startswith(h["id"]):
+        issues += _fail(f"hoechste_einzelanwendung {h['id']} ({h['wert']}) ≠ {top_key} ({top_val})")
+    if issues == 0:
+        print(f"  ✅ {n_apps} Anwendungen ({len(apps)} apps + {n_comm} communities), "
+              f"{len(domains)} Domains, IDs eindeutig")
+    return issues
+
+
+def check_cross_file_sync(co2, imp) -> int:
+    banner("CHECK 7: Cross-File-Sync co2_master.yaml ↔ impact_master.yaml")
+    issues = 0
+    ic = imp["ghg_accounting"]["co2"]
+    for k, v in co2["gesamt"].items():
+        if k in ic["gesamt"] and ic["gesamt"][k] != v:
+            issues += _fail(f"gesamt.{k}: co2 {v} ≠ impact {ic['gesamt'][k]}")
+    for k, d in co2["domains"].items():
+        if ic["domains"].get(k) != d["total"]:
+            issues += _fail(f"domains.{k}: co2 {d['total']} ≠ impact {ic['domains'].get(k)}")
+    extra = set(ic["domains"]) - set(co2["domains"])
+    if extra:
+        issues += _fail(f"Domains nur in impact_master: {sorted(extra)}")
+    ca, cb = co2["community_integrations"], imp["community_integrations"]
+    if ca["total"] != cb["total"]:
+        issues += _fail(f"community total: {ca['total']} ≠ {cb['total']}")
+    for cid, a in ca["integrations"].items():
+        b = cb["integrations"].get(cid)
+        if b is None:
+            issues += _fail(f"{cid} fehlt in impact_master")
+            continue
+        for fld in ("hash", "source_ref", "co2_impact_gt_per_year", "decision_date", "dossier"):
+            if a.get(fld) != b.get(fld):
+                issues += _fail(f"{cid}.{fld}: {a.get(fld)} ≠ {b.get(fld)}")
+    if imp["ghg_accounting"]["ghg_total"]["co2"] != co2["gesamt"]["reduktion_hart"]:
+        issues += _fail("ghg_total.co2 ≠ co2_master gesamt.reduktion_hart")
+    if issues == 0:
+        print("  ✅ Gesamt, Domain-Totals, Community-Integrationen und ghg_total.co2 synchron")
+    return issues
+
+
+def check_ghg(imp) -> int:
+    banner("CHECK 8: GHG — GWP100 (IPCC AR6), Gas-Summen, Spanne, Rebound-Kette")
+    issues = 0
+    ga = imp["ghg_accounting"]
+    ch4, n2o, fg = ga["methane_ch4"], ga["nitrous_oxide_n2o"], ga["f_gases"]
+    if (ch4.get("gwp_factor_fossil") != GWP_AR6["ch4_fossil"]
+            or ch4.get("gwp_factor_non_fossil") != GWP_AR6["ch4_non_fossil"]):
+        issues += _fail(f"CH₄-GWP ≠ AR6 ({GWP_AR6['ch4_fossil']} fossil / {GWP_AR6['ch4_non_fossil']} non-fossil)")
+    if n2o.get("gwp_factor") != GWP_AR6["n2o"]:
+        issues += _fail(f"N₂O-GWP {n2o.get('gwp_factor')} ≠ AR6 {GWP_AR6['n2o']}")
+    for key, d in ch4["domains"].items():
+        if d.get("gwp_basis") not in ("fossil", "non_fossil"):
+            issues += _fail(f"methane_ch4.{key}: gwp_basis fehlt/ungültig")
+    for name, gas in (("methane_ch4", ch4), ("nitrous_oxide_n2o", n2o), ("f_gases", fg)):
+        s = sum(d["total"] for d in gas["domains"].values())
+        if not _close(s, gas["gesamt"], 0.02):
+            issues += _fail(f"{name}: Summe Domains {s:.2f} ≠ gesamt {gas['gesamt']}")
+        lo, hi = gas["unsicherheit"]
+        if not (lo <= gas["gesamt"] <= hi):
+            issues += _fail(f"{name}: gesamt {gas['gesamt']} außerhalb Unsicherheit [{lo}, {hi}]")
+    gt = ga["ghg_total"]
+    for comp, gas in (("ch4_co2eq", ch4), ("n2o_co2eq", n2o), ("f_gases_co2eq", fg)):
+        if gt[comp] != gas["gesamt"]:
+            issues += _fail(f"ghg_total.{comp} {gt[comp]} ≠ {gas['gesamt']}")
+    # ghg_total: RANGE (Spanne volle ↔ keine Überlappung, total = null) oder CURRENT (Punktwert
+    # innerhalb der Spanne) — siehe canon/decisions/DEC_2026-10-14_ghg_total_range.md
+    status = gt.get("total_status")
+    naive = gt["co2"] + gt["ch4_co2eq"] + gt["n2o_co2eq"] + gt["f_gases_co2eq"]
+    if status == "RANGE":
+        if gt.get("total") is not None:
+            issues += _fail(f"ghg_total.total = {gt['total']}, bei total_status RANGE muss es null sein")
+        if gt.get("range_lower_full_overlap") != gt["co2"]:
+            issues += _fail(f"range_lower_full_overlap {gt.get('range_lower_full_overlap')} ≠ co2 {gt['co2']}")
+        if not _close(gt.get("range_upper_no_overlap"), naive, 0.01):
+            issues += _fail(f"range_upper_no_overlap {gt.get('range_upper_no_overlap')} ≠ naive Summe {naive:.2f}")
+    elif status == "CURRENT":
+        t = gt.get("total")
+        if t is None or not (naive - TOL <= t <= gt["co2"] + TOL):
+            issues += _fail(f"ghg_total.total {t} außerhalb der Spanne [{naive:.2f}, {gt['co2']}]")
+    else:
+        issues += _fail(f"ghg_total.total_status fehlt/ungültig: {status} (erlaubt: RANGE, CURRENT)")
+    rb = imp["energy_system"]["rebound_effects"]
+    if "adjusted_impact" in rb or "net_rebound_factor" in rb:
+        issues += _fail("rebound_effects: Pauschalfaktor/adjusted_impact wieder vorhanden "
+                        "(siehe canon/decisions/DEC_2026-10-14_rebound_single_source.md)")
+    if status != "CURRENT" and rb.get("ghg_total_rebound") is not None:
+        issues += _fail("rebound_effects.ghg_total_rebound gesetzt, obwohl ghg_total keinen Punktwert hat")
+    if (rb.get("reporting") or {}).get("vor_rebound") != gt["co2"]:
+        issues += _fail("rebound_effects.reporting.vor_rebound ≠ reduktion_hart")
+    if issues == 0:
+        shown = f"Spanne {naive:.2f} … {gt['co2']}" if status == "RANGE" else f"{gt['total']}"
+        print(f"  ✅ GWP AR6, Gas-Summen konsistent; ghg_total [{status}] {shown}")
+    return issues
+
+
+def check_secj(imp) -> int:
+    banner("CHECK 9: SEC-J — Formel, Veto, Warnschwelle")
+    issues = 0
+    s = imp["sec_j_scores"]
+    veto, warn = s["meta"]["veto_threshold"], s["meta"]["warning_threshold"]
+    constraints = s.get("implementation_constraints") or {}
+    n = 0
+    for key, v in s["individual_calculated"].items():
+        if not isinstance(v, dict) or not all(x in v for x in ("s", "e", "c", "j", "sec_j")):
+            continue
+        n += 1
+        j = v["j"]
+        if j is not None and j < veto:
+            if v["sec_j"] is not None:
+                issues += _fail(f"{key}: J={j} < {veto} → SEC-J muss null sein (Veto), ist {v['sec_j']}")
+            continue
+        calc = 0.30 * v["s"] + 0.25 * v["e"] + 0.30 * v["c"] + 0.15 * v["j"]
+        if abs(calc - v["sec_j"]) > 0.011:
+            issues += _fail(f"{key}: SEC-J {v['sec_j']} ≠ STANDARD-Formel {calc:.3f}")
+        if j is not None and j < warn and "warning" not in v and key.split("_")[0] not in constraints:
+            issues += _fail(f"{key}: J={j} < {warn} ohne warning/implementation_constraint")
+    if issues == 0:
+        print(f"  ✅ {n} individuell berechnete Hebel: Formel, Veto und Warnschwelle konsistent")
+    return issues
+
+
+def check_sources(repo: Path, co2, imp) -> int:
+    banner("CHECK 10: Quellen — Pfade + Hashes")
+    issues = 0
+    hex64 = re.compile(r"^[0-9a-f]{64}$")
+    for label, data in (("co2", co2), ("impact", imp)):
+        for cid, c in data["community_integrations"]["integrations"].items():
+            h = c.get("hash")
+            if not isinstance(h, str) or not hex64.match(h):
+                issues += _fail(f"{label}:{cid}.hash kein SHA-256: {h}")
+            for fld in ("dossier", "quelle"):
+                path = c.get(fld)
+                if path and not (repo / path).exists():
+                    issues += _fail(f"{label}:{cid}.{fld} existiert nicht: {path}")
+    single = imp["energy_system"]["rebound_effects"].get("single_source")
+    if single and not (repo / single).exists():
+        issues += _fail(f"rebound_effects.single_source existiert nicht: {single}")
+    for rp in imp["sec_j_scores"]["meta"].get("audit_reports", []):
+        if not (repo / rp).exists():
+            issues += _fail(f"sec_j_scores.meta.audit_reports: {rp} existiert nicht")
+    if issues == 0:
+        print("  ✅ Alle referenzierten Repo-Pfade existieren, Hashes im SHA-256-Format")
+    return issues
+
+
 def main() -> int:
     print()
     print("═" * 78)
     print("  PROVOLUTION REPO SPEC-CONSISTENCY AUDIT")
-    print("  'Probatio Consistentia' v0.1 · 2026-05-28")
+    print("  'Probatio Consistentia' v0.2 · 2026-10-14")
     print("═" * 78)
     print(f"  Repo-Root: {REPO_ROOT}")
 
-    total = 0
-    total += check_secj_formulas(REPO_ROOT)
-    total += check_reduktion_hart_sync(REPO_ROOT)
-    total += check_deprecated_markers(REPO_ROOT)
-    total += check_band4_secj_sync(REPO_ROOT)
+    ci = "--ci" in sys.argv
+
+    advisory = 0
+    advisory += check_secj_formulas(REPO_ROOT)
+    advisory += check_deprecated_markers(REPO_ROOT)
+    advisory += check_band4_secj_sync(REPO_ROOT)
+
+    total = check_reduktion_hart_sync(REPO_ROOT)
+    co2, imp = _load_yamls(REPO_ROOT)
+    total += check_co2_aggregates(co2)
+    total += check_derived_counters(co2)
+    total += check_cross_file_sync(co2, imp)
+    total += check_ghg(imp)
+    total += check_secj(imp)
+    total += check_sources(REPO_ROOT, co2, imp)
+
+    if ci:
+        if advisory:
+            print()
+            print(f"  ℹ️  {advisory} heuristische Hinweise (Checks 1/3/4) — im CI-Modus nicht blockierend")
+    else:
+        total += advisory
 
     print()
     print("═" * 78)

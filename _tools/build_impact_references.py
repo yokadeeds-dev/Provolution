@@ -21,14 +21,14 @@ from pathlib import Path
 from typing import Dict, List, Tuple
 import sys
 
-# Konfiguration
-MASTER_DATA_CO2 = Path(__file__).parent / "20_CANON" / "data" / "co2_master.yaml"
-MASTER_DATA_IMPACT = Path(__file__).parent / "20_CANON" / "data" / "impact_master.yaml"
-CANON_DIR = Path(__file__).parent / "06_CANON"
-CANON_20_DIR = Path(__file__).parent / "20_CANON"
-ENGLISH_DIR = Path(__file__).parent / "10_ENGLISH"
-RELEASE_DIR = Path(__file__).parent / "_release"
-PILOTEN_DIR = Path(__file__).parent / "03_PILOTEN"
+# Konfiguration (Pfade auf Clean-Repo-Struktur migriert 2026-10-14; vorher
+# legacy 20_CANON/06_CANON/10_ENGLISH/03_PILOTEN relativ zu _tools/ = tot)
+REPO_ROOT = Path(__file__).parent.parent
+MASTER_DATA_CO2 = REPO_ROOT / "canon" / "data" / "co2_master.yaml"
+MASTER_DATA_IMPACT = REPO_ROOT / "canon" / "data" / "impact_master.yaml"
+CANON_DIR = REPO_ROOT / "canon"
+APPLICATIONS_DIR = REPO_ROOT / "applications"
+MANUSCRIPT_DIR = REPO_ROOT / "manuscript"
 
 # Platzhalter-Definitionen mit Source-Mapping
 PLACEHOLDERS = {
@@ -62,7 +62,9 @@ PLACEHOLDERS = {
     # === MULTI-IMPACT (aus impact_master.yaml) ===
     
     # GHG Extended
-    '{{GHG_TOTAL}}': ('impact', 'ghg_accounting.ghg_total.total'),
+    # 2026-10-14: ghg_total.total = null (Spanne statt Punktwert, DEC_2026-10-14_ghg_total_range)
+    '{{GHG_TOTAL_RANGE_LOW}}': ('impact', 'ghg_accounting.ghg_total.range_lower_full_overlap'),
+    '{{GHG_TOTAL_RANGE_HIGH}}': ('impact', 'ghg_accounting.ghg_total.range_upper_no_overlap'),
     '{{GHG_CH4}}': ('impact', 'ghg_accounting.methane_ch4.gesamt'),
     '{{GHG_N2O}}': ('impact', 'ghg_accounting.nitrous_oxide_n2o.gesamt'),
     '{{GHG_F_GASES}}': ('impact', 'ghg_accounting.f_gases.gesamt'),
@@ -81,7 +83,9 @@ PLACEHOLDERS = {
     
     # Energy & Rebound
     '{{DIGITAL_FOOTPRINT}}': ('impact', 'energy_system.digitalization_footprint.components.total.emissions'),
-    '{{REBOUND_FACTOR}}': ('impact', 'energy_system.rebound_effects.net_rebound_factor'),
+    # 2026-10-14: net_rebound_factor (0.50) entfernt — Rebound nur noch Monte-Carlo
+    # (canon/decisions/DEC_2026-10-14_rebound_single_source.md); Platzhalter = Szenario-B-Rate
+    '{{REBOUND_FACTOR}}': ('impact', 'energy_system.rebound_effects.monte_carlo_rebound_rates.B_erwartungswert'),
     
     # Pathways
     '{{TEMP_HIGH_2050}}': ('impact', 'transformation_pathways.scenarios.provolution_high.temperature'),
@@ -342,11 +346,9 @@ def main():
     
     # Verarbeite Verzeichnisse
     directories = [
-        ("06_CANON (Kanonische Dokumente)", CANON_DIR),
-        ("20_CANON (Daten & Dokumentation)", CANON_20_DIR),
-        ("03_PILOTEN (Praxisprojekte)", PILOTEN_DIR),
-        ("10_ENGLISH (Englische Versionen)", ENGLISH_DIR),
-        ("_release (Releases)", RELEASE_DIR),
+        ("canon (Kanon DE/EN, Daten, Docs)", CANON_DIR),
+        ("applications (Piloten, Kreislauf, Marine)", APPLICATIONS_DIR),
+        ("manuscript (Manuskript-Pakete)", MANUSCRIPT_DIR),
     ]
     
     total_replacements = 0

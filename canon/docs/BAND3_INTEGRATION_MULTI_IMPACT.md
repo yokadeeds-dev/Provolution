@@ -257,7 +257,7 @@ Methodik:
 
 Provolution_Metrik:
   Rebound_Factor: 0.5 (50%)
-  Adjustierte_GHG: -32.3 Gt CO₂eq/Jahr (von -64.5)
+  Adjustierte_GHG: -32.3 Gt CO₂eq/Jahr (von -64.5)  # DEPRECATED 2026-10-14, siehe canon/decisions/DEC_2026-10-14_rebound_single_source.md
 ```
 
 **Beispiel H01:**

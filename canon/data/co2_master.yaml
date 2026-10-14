@@ -1,7 +1,7 @@
 # CO₂-Bilanz Master Data - Single Source of Truth (CO2-spezifisch)
 # Provolution Framework - Hebel-Katalog (A-K) + Community-Integrations
-# Version: 1.0
-# Datum: 2026-01-24
+# Version: 1.6 (Erstanlage 1.0 am 2026-01-24)
+# Datum: 2026-10-14
 # Alle Werte in Gt CO₂eq/Jahr (negativ = Reduktion/Senke)
 #
 # Kanonische Hebel-Liste (aktuell 49 Hebel über 11 Domänen A–K inkl. Stubs + Communities):
@@ -9,14 +9,15 @@
 # Diese YAML-Datei ist das CO2-quantifizierte Subset davon.
 
 meta:
-  version: "1.5"
-  last_updated: "2026-05-29"
+  version: "1.6"
+  last_updated: "2026-10-14"
   description: "Zentrale CO₂-Bilanz aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 - Gesamtbilanz"
   changelog_v1_2: "PF-Report-Adressierung (E4 Datenlage): A03-A06/E20/E21/F23 Tag-Drifts korrigiert; B13 -0.3 ergänzt; Domain K Marine & Küste mit 4 Stub-Hebeln K01-K04 angelegt (-1.5 Gt); Gesamt-Werte aktualisiert: reduktion_hart -58.0 → -59.8; B09/B10 inhaltliche Drift bleibt als offener Punkt"
   changelog_v1_3: "Drift-Resolutions 2026-05-28: (1) B09 wasserstoff -2.8 → materialfluss-steuerung -0.5 (band4-canonical Wert; H2 als separater Hebel-Kandidat zurückgestellt, partial-coverage durch B11 transformation -1.8 angedeutet); (2) B10 ccs -1.2 → abfall-zu-ressource -2.0 (band4-canonical Wert; CCS als separater Hebel-Kandidat zurückgestellt); (3) D19 Algen-Bioraffinerie unter D_food_land neu hinzugefügt (-0.3 Gt; Promotion Kategorie B → A, vollintegriert Band 4 v4.2); (4) K01-K04 STUB-Status → band4-canonical (Vollkonzepte in Band 4 v4.2 KAPITEL 10b); Domain B total: -16.1 → -14.6; Domain D total: -9.4 → -9.7; gesamt.reduktion_hart: -59.8 → -58.6"
   changelog_v1_4: "PS-U 2.0 SEC-J-Nachrüstung 2026-05-28 (User-PF-Sitzung): Architektonische Lücke geschlossen — alle in der Sitzung bewerteten Hebel haben jetzt J-Score + SEC-J. Datentechnisch sind die SEC-J-Werte in impact_master.yaml v2.2 unter sec_j_scores zentral abgelegt. Domain B, C, D individuell kalkuliert; Domain A, E, F, G, H batch-bewertet (Einzelhebel-Berechnung ausstehend). Gesamt-Ø SEC-J = 0,91; kein J<0,50-Veto ausgelöst; B09 J=0,72 als Warnschwelle dokumentiert (Algorithmisches-Management-Risiko). Vollständiger Audit-Bericht: studies/AI_AUDIT_2026-05-28/PF_SEC-J_NACHRUESTUNG_2026-05-28.md"
   changelog_v1_5: "J01 Kreislauf-Gebäude Promotion STUB → band4-canonical (PR #15, 2026-05-29 abends). Vollkonzept in Band 4 v4.2 KAPITEL 10c mit 13-Sektionen-Format eingefügt. Domain J total -3.0 Gt unverändert; nur Status-Anhebung. Fünf modulare Bausteine: Embodied-Carbon-Limit + Hempcrete (netto-negativ ~110 kg CO₂/m³) + Hanfbast-Bewehrung (BasEcoCrete) + Hanffaser-Dämmung + Material-Pässe/Urban-Mining. SEC-J 0,93 aus PR #13. Hanf-Bau-Recherche-Quelle: studies/SOURCES_2026-05-29/B11_HANF_STAHL_RECHERCHE.md. Aggregate gesamt-Reduktion unverändert (-58.6); n_band4_canonical 37 → 38; n_stub 2 → 1 (siehe HEBEL_KATALOG)."
+  changelog_v1_6: "Datenhygiene 2026-10-14 (externes YAML-Review): keine CO₂-Wert-Änderung. metrics.anzahl_anwendungen 36 → 41 und anzahl_domains 10 → 11 (jetzt aus der YAML-Struktur abgeleitet und per _tools/spec_consistency_audit.py geprüft; 41 = CO₂-quantifiziertes Subset, Kanon-Gesamtzahl 49 laut canon/STATUS.md §3); veraltete Kommentarwerte korrigiert (B-Domain -15.8 → -14.6, Domain-Summe -55.0/-58.0 → -55.6/-58.6); C-2026-008 hash PENDING → SHA-256 der Quelldatei, toter Dossier-Pfad (nie generiert) durch source_ref ersetzt."
 
 # Hinweis zur SEC-J-Integration (v1.4):
 # co2_master.yaml bleibt CO2-only-SSoT (Quantitäten in Gt CO₂eq).
@@ -89,7 +90,7 @@ methodology:
   
   double_counting_prevention:
     method: "Hierarchical domain allocation with overlap matrices"
-    example_b_production: "B07 (Circular Economy) gross potential -23 Gt is reduced to -15.8 Gt domain total after removing overlaps with B08-B12"
+    example_b_production: "B07 (Circular Economy) gross potential -23 Gt is reduced to -14.6 Gt domain total (v1.3) after removing overlaps with B08-B13"
     verification: "Cross-reference matrix in Band 5, Chapter 5.5"
     baseline_consistency: "Common baseline scenario (BAU 2023) for all applications"
   
@@ -250,24 +251,25 @@ domains:
 # Quelle: canon/de/04_Band4_Community_Integrations.md
 community_integrations:
   beschreibung: "Externe Community-Beiträge (AGENTIC_INTEGRATE-Pipeline) ohne Zuordnung zu A-J Hebel-Domains"
-  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.0) vs. reduktion_hart (-58.0)
+  total: -3.0  # Gt CO₂eq/Jahr — erklärt Differenz Domain-Summe (-55.6) vs. reduktion_hart (-58.6)
   integrations:
     C-2026-008:
       id: "C-2026-008"
-      hash: "PENDING"  # source_sha256 (Präzisionsfermentation.docx) — finaler Hash in Commit C/D
+      hash: "b5ebb212e17b0dc905b49f062e289f6a2890a5f8e2b5112f6e89aff7b33c00d0"  # SHA-256 von Präzisionsfermentation.docx (ermittelt 2026-10-14)
+      source_ref: "github.com/yokadeeds-dev/Provolution-legacy @ b279e92 : 07_SOURCE/community_submissions/accepted/Präzisionsfermentation.docx"
       sec_community: 1.0
       plausibility_p: 1.0
       decision_date: "2026-04-18"
       evidence_level: 2
-      dossier: "07_SOURCE/community_dossiers/generated/C-2026-008_dossier.md"
+      dossier: null  # Generiertes Dossier existierte nie (Legacy enthält nur C-2026-001…007); Quelle siehe source_ref
       quelle: "canon/de/04_Band4_Community_Integrations.md"
       co2_impact_gt_per_year: -3.0  # PF -2.0 + Hanf-Kaskade -1.0
 
 # Zusätzliche Metriken für Analyse
 metrics:
   durchschnitt_sec_score: 0.90  # SEC-J Ø (PS-U 2.0 STANDARD, 25 individuell + 5 Batch; autoritativ STATUS.md §3); alter 3-Achsen-SEC-Ø war 0.914 (historisch). Key-Name aus Kompat-Gründen beibehalten (gelesen von _tools/build_impact_references.py → {{SEC_SCORE_AVG}})
-  anzahl_anwendungen: 36  # v1.3 2026-05-28: +D19 (Promotion zu band4-canonical); n wächst dynamisch via AUTO-INTEGRATE (SEC ≥ 0.82)
-  anzahl_domains: 10
+  anzahl_anwendungen: 41  # ABGELEITET (v1.6): Summe domains.*.apps (40) + community_integrations (1) = CO₂-quantifiziertes Subset; Kanon-Gesamtzahl 49 siehe canon/STATUS.md §3. Wird von _tools/spec_consistency_audit.py gegen die Struktur geprüft.
+  anzahl_domains: 11  # ABGELEITET (v1.6): Anzahl Einträge unter domains (A–K)
   hoechste_einzelanwendung: 
     id: "B07"
     name: "Kreislaufwirtschaft"
