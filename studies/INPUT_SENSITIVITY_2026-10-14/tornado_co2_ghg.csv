@@ -1,0 +1,54 @@
+kategorie,eingang,wert_unten,wert_oben,d_co2_unten,d_co2_oben,swing_co2,d_ghg_unten,d_ghg_oben,swing_ghg,quelle_bandbreite
+Hebel,A01_sec_priorisierung,-1.500,-2.500,0.321,-0.318,0.639,0.313,-0.319,0.632,Standard ±25 %
+Hebel,A02_entscheidungskarte,-1.125,-1.875,0.240,-0.238,0.478,0.235,-0.239,0.475,Standard ±25 %
+Hebel,A03_risikoabschaetzung,-1.350,-2.250,0.288,-0.286,0.574,0.283,-0.287,0.570,Standard ±25 %
+Hebel,A04_szenarien_vergleich,-0.900,-1.500,0.192,-0.191,0.383,0.188,-0.191,0.379,Standard ±25 %
+Hebel,A05_pilotprojekt_framework,-0.675,-1.125,0.144,-0.144,0.287,0.142,-0.143,0.285,Standard ±25 %
+Hebel,A06_skalierungs_protokoll,-0.600,-1.000,0.128,-0.128,0.256,0.126,-0.127,0.253,Standard ±25 %
+Hebel,B07_kreislaufwirtschaft,-17.250,-28.750,1.674,-1.664,3.338,1.664,-1.648,3.313,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B08_bio_polymere,-1.125,-1.875,0.110,-0.110,0.219,0.108,-0.109,0.217,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B09_materialfluss_steuerung,-0.375,-0.625,0.037,-0.037,0.074,0.037,-0.036,0.073,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B10_abfall_zu_ressource,-1.500,-2.500,0.146,-0.146,0.292,0.144,-0.145,0.289,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B11_transformation,-1.350,-2.250,0.132,-0.132,0.263,0.129,-0.131,0.260,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B12_biomasse,-1.875,-3.125,0.183,-0.182,0.365,0.178,-0.181,0.360,"Standard ±25 %, Overlap-Faktor 0.46"
+Hebel,B13_lokale_on_demand_fertigung,-0.200,-0.500,0.064,-0.128,0.192,0.064,-0.127,0.191,YAML-Bandbreite
+Hebel,C11_erneuerbare,-11.250,-18.750,1.458,-1.458,2.916,1.456,-1.447,2.903,"Standard ±25 %, Overlap-Faktor 0.61"
+Hebel,C12_speicher,-1.575,-2.625,0.206,-0.204,0.411,0.202,-0.204,0.406,"Standard ±25 %, Overlap-Faktor 0.61"
+Hebel,C13_smart_grid,-1.350,-2.250,0.176,-0.176,0.352,0.172,-0.175,0.347,"Standard ±25 %, Overlap-Faktor 0.61"
+Hebel,C14_dezentral,-0.900,-1.500,0.117,-0.118,0.235,0.115,-0.117,0.232,"Standard ±25 %, Overlap-Faktor 0.61"
+Hebel,D15_regen_landwirtschaft,-3.000,-5.000,0.356,-0.353,0.709,0.348,-0.354,0.701,"Standard ±25 %, Overlap-Faktor 0.56"
+Hebel,D16_co2_senken_boden,-3.750,-6.250,0.443,-0.442,0.885,0.435,-0.440,0.875,"Standard ±25 %, Overlap-Faktor 0.56"
+Hebel,D17_hanf_oekosystem,-2.100,-3.500,0.446,-0.446,0.892,0.439,-0.443,0.882,Standard ±25 %
+Hebel,D18_urbane_landwirtschaft,-0.038,-0.062,0.008,-0.008,0.016,0.008,-0.008,0.016,Standard ±25 %
+Hebel,D19_algen_bioraffinerie,-0.300,-0.500,0.000,-0.128,0.128,0.000,-0.127,0.127,YAML-Bandbreite
+Hebel,E19_sec_literacy,-0.600,-1.000,0.128,-0.128,0.256,0.126,-0.127,0.253,Standard ±25 %
+Hebel,E20_partizipation,-0.450,-0.750,0.096,-0.096,0.192,0.095,-0.095,0.190,Standard ±25 %
+Hebel,E21_gerechtigkeits_mechanismen,-0.300,-0.500,0.064,-0.064,0.128,0.064,-0.063,0.127,Standard ±25 %
+Hebel,F22_open_innovation,-0.900,-1.500,0.192,-0.191,0.383,0.188,-0.191,0.379,Standard ±25 %
+Hebel,F23_forschungs_priorisierung,-0.675,-1.125,0.144,-0.144,0.287,0.142,-0.143,0.285,Standard ±25 %
+Hebel,G27_mrv_system,-0.225,-0.375,0.048,-0.048,0.096,0.048,-0.047,0.095,Standard ±25 %
+Hebel,G28_ki_monitoring,-0.150,-0.250,0.033,-0.032,0.065,0.032,-0.031,0.064,Standard ±25 %
+Hebel,G29_blockchain_tracking,-0.075,-0.125,0.016,-0.016,0.032,0.016,-0.016,0.032,Standard ±25 %
+Hebel,H30_finanzierung,-0.225,-0.375,0.048,-0.048,0.096,0.048,-0.047,0.095,Standard ±25 %
+Hebel,H31_regulierung,-0.150,-0.250,0.033,-0.032,0.065,0.032,-0.031,0.064,Standard ±25 %
+Hebel,H32_koordination,-0.000,-0.000,0.000,0.000,0.000,0.000,0.000,0.000,Standard ±25 %
+Hebel,I33_kreislauf_auto,-0.750,-1.250,0.160,-0.159,0.320,0.157,-0.159,0.316,Standard ±25 %
+Hebel,I34_kreislauf_lnf,-0.225,-0.375,0.048,-0.048,0.096,0.048,-0.047,0.095,Standard ±25 %
+Hebel,J01_kreislauf_gebaeude,-2.250,-3.750,0.476,-0.478,0.954,0.470,-0.475,0.945,Standard ±25 %
+Hebel,K01_mangroven,-0.500,-1.000,0.160,-0.159,0.320,0.157,-0.159,0.316,YAML-Bandbreite
+Hebel,K02_seegras,-0.200,-0.500,0.096,-0.096,0.192,0.095,-0.095,0.190,YAML-Bandbreite
+Hebel,K03_kelp,-0.100,-0.300,0.064,-0.064,0.128,0.064,-0.063,0.127,YAML-Bandbreite
+Hebel,K04_salzmarschen,-0.100,-0.300,0.064,-0.064,0.128,0.064,-0.063,0.127,YAML-Bandbreite
+Hebel,C-2026-008,-2.250,-3.750,0.476,-0.478,0.954,0.470,-0.475,0.945,Standard ±25 %
+Overlap,Overlap B_production,12.750,21.250,-2.696,2.717,5.413,-2.686,2.697,5.383,Standard ±25 %
+Overlap,Overlap C_energy,5.850,9.750,-1.241,1.240,2.482,-1.233,1.239,2.473,Standard ±25 %
+Overlap,Overlap D_food_land,3.000,5.000,-0.637,0.633,1.270,-0.629,0.627,1.256,Standard ±25 %
+Szenario-Parameter,Umsetzungsrate,0.700,0.850,3.061,-6.094,9.156,3.676,-7.337,11.013,Szenario A ↔ C
+Szenario-Parameter,Rebound-Rate,0.200,0.080,2.372,-3.298,5.670,2.349,-3.297,5.646,Szenario A ↔ C
+Szenario-Parameter,Schicht 2 Kaskaden,-3.200,-8.000,1.836,-1.270,3.106,1.779,-1.272,3.051,Szenario A ↔ C
+Szenario-Parameter,Schicht 3 Folgewirkungen,-2.700,-12.600,3.624,-3.696,7.319,3.610,-3.742,7.353,Szenario A ↔ C
+Szenario-Parameter,Material-Engpässe,3.000,1.000,1.000,-1.000,2.000,1.000,-1.000,2.000,Szenario A ↔ C
+Szenario-Parameter,Klima-Verschlechterung,2.000,0.500,0.500,-1.000,1.500,0.500,-1.000,1.500,Szenario A ↔ C
+Gasmenge,CH₄-Menge,-5.710,-9.350,,,,1.250,-1.504,2.754,impact_master Unsicherheitsband
+Gasmenge,N₂O-Menge,-4.430,-7.420,,,,1.010,-1.260,2.270,impact_master Unsicherheitsband
+Gasmenge,F-Gas-Menge,-0.500,-1.000,,,,0.149,-0.234,0.383,impact_master Unsicherheitsband
