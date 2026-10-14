@@ -27,7 +27,7 @@ Checks:
   5. CO₂-Aggregate: Domain-Summen, App-Summen, Gesamt, Potenzial, Anteil
   6. Abgeleitete Zähler: metrics.anzahl_anwendungen / anzahl_domains, ID-Eindeutigkeit
   7. Cross-File-Sync co2_master.yaml ↔ impact_master.yaml (Gesamt, Domains, Communities)
-  8. GHG: GWP100 = IPCC AR6, Gas-Summen, ghg_total-Komponenten, PENDING-/Rebound-Kette
+  8. GHG: GWP100 = IPCC AR6, Gas-Summen, ghg_total-Komponenten + Spanne (RANGE/CURRENT), Rebound-Kette
   9. SEC-J: STANDARD-Formel, J-Veto, J-Warnschwelle mit Auflage
  10. Quellen: Repo-Pfade existieren, Hashes im SHA-256-Format
 
@@ -395,7 +395,7 @@ def check_cross_file_sync(co2, imp) -> int:
 
 
 def check_ghg(imp) -> int:
-    banner("CHECK 8: GHG — GWP100 (IPCC AR6), Gas-Summen, PENDING-/Rebound-Kette")
+    banner("CHECK 8: GHG — GWP100 (IPCC AR6), Gas-Summen, Spanne, Rebound-Kette")
     issues = 0
     ga = imp["ghg_accounting"]
     ch4, n2o, fg = ga["methane_ch4"], ga["nitrous_oxide_n2o"], ga["f_gases"]
@@ -418,22 +418,34 @@ def check_ghg(imp) -> int:
     for comp, gas in (("ch4_co2eq", ch4), ("n2o_co2eq", n2o), ("f_gases_co2eq", fg)):
         if gt[comp] != gas["gesamt"]:
             issues += _fail(f"ghg_total.{comp} {gt[comp]} ≠ {gas['gesamt']}")
+    # ghg_total: RANGE (Spanne volle ↔ keine Überlappung, total = null) oder CURRENT (Punktwert
+    # innerhalb der Spanne) — siehe canon/decisions/DEC_2026-10-14_ghg_total_range.md
     status = gt.get("total_status")
-    if status not in ("PENDING", "CURRENT"):
-        issues += _fail(f"ghg_total.total_status fehlt/ungültig: {status}")
     naive = gt["co2"] + gt["ch4_co2eq"] + gt["n2o_co2eq"] + gt["f_gases_co2eq"]
-    if status == "CURRENT" and abs(gt["total"]) > abs(naive) + TOL:
-        issues += _fail(f"ghg_total.total {gt['total']} größer als naive Summe {naive:.2f}")
+    if status == "RANGE":
+        if gt.get("total") is not None:
+            issues += _fail(f"ghg_total.total = {gt['total']}, bei total_status RANGE muss es null sein")
+        if gt.get("range_lower_full_overlap") != gt["co2"]:
+            issues += _fail(f"range_lower_full_overlap {gt.get('range_lower_full_overlap')} ≠ co2 {gt['co2']}")
+        if not _close(gt.get("range_upper_no_overlap"), naive, 0.01):
+            issues += _fail(f"range_upper_no_overlap {gt.get('range_upper_no_overlap')} ≠ naive Summe {naive:.2f}")
+    elif status == "CURRENT":
+        t = gt.get("total")
+        if t is None or not (naive - TOL <= t <= gt["co2"] + TOL):
+            issues += _fail(f"ghg_total.total {t} außerhalb der Spanne [{naive:.2f}, {gt['co2']}]")
+    else:
+        issues += _fail(f"ghg_total.total_status fehlt/ungültig: {status} (erlaubt: RANGE, CURRENT)")
     rb = imp["energy_system"]["rebound_effects"]
     if "adjusted_impact" in rb or "net_rebound_factor" in rb:
         issues += _fail("rebound_effects: Pauschalfaktor/adjusted_impact wieder vorhanden "
                         "(siehe canon/decisions/DEC_2026-10-14_rebound_single_source.md)")
-    if status == "PENDING" and rb.get("ghg_total_rebound") is not None:
-        issues += _fail("rebound_effects.ghg_total_rebound gesetzt, obwohl ghg_total PENDING")
+    if status != "CURRENT" and rb.get("ghg_total_rebound") is not None:
+        issues += _fail("rebound_effects.ghg_total_rebound gesetzt, obwohl ghg_total keinen Punktwert hat")
     if (rb.get("reporting") or {}).get("vor_rebound") != gt["co2"]:
         issues += _fail("rebound_effects.reporting.vor_rebound ≠ reduktion_hart")
     if issues == 0:
-        print(f"  ✅ GWP AR6, Gas-Summen konsistent; ghg_total {gt['total']} [{status}], naive Summe {naive:.2f}")
+        shown = f"Spanne {naive:.2f} … {gt['co2']}" if status == "RANGE" else f"{gt['total']}"
+        print(f"  ✅ GWP AR6, Gas-Summen konsistent; ghg_total [{status}] {shown}")
     return issues
 
 

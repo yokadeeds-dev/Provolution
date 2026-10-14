@@ -36,12 +36,13 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | **−58,6 Gt/a** | CO₂-only, Schicht 1 (direkt, „reduktion_hart") | ✅ **CURRENT** | `canon/data/co2_master.yaml` v1.6 `gesamt.reduktion_hart` (Wert unverändert seit v1.5) |
 | **−87,1 Gt/a** | CO₂-Gesamtpotenzial (hart −58,6 + weich/vermieden −28,5) | ✅ **CURRENT** | co2_master.yaml `gesamt.total_potenzial` |
 | **1,065 (106,5 %)** | Anteil an globaler Baseline (55 Gt) → netto-negativ möglich | ✅ **CURRENT** | co2_master.yaml `gesamt.anteil_global_emissions` |
-| **−64,5 Gt/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase), Overlap-bereinigt | ⏳ **PENDING v2.2** — auf alter CO₂-Basis gerechnet, Overlap-Re-Computation ausstehend; **nicht als final zitieren** | `canon/data/impact_master.yaml` `ghg_total.total` |
+| **−58,6 … −72,45 Gt/a** | **all-GHG** (CO₂+CH₄+N₂O+F-Gase, GWP100 AR6) — **Spanne**: volle ↔ keine Überlappung zwischen CO₂eq-Schicht und CH₄/N₂O-Schicht | ✅ **CURRENT (RANGE)** — kein Punktwert, bis jede CH₄/N₂O-Quelle zugeordnet ist | `canon/data/impact_master.yaml` `ghg_total.range_*` · `canon/decisions/DEC_2026-10-14_ghg_total_range.md` |
+| ~~−64,5 Gt/a~~ | Früher als „all-GHG, Overlap-bereinigt“ geführt | ❌ **DEPRECATED** 2026-10-14 — war nie bereinigt, sondern die naive Summe auf CO₂-Basis v2.0 (−50,7−7,5−5,6−0,7) | `canon/decisions/DEC_2026-10-14_ghg_total_range.md` |
 | **−43,2 Gt/a** | Realistischer **Netto-Erwartungswert** (Monte-Carlo Szenario B, Median) [90 %-KI −52,8…−34,6] | ✅ **CURRENT** (realistische Lesart) | Bilanz-Studie v1.5 `monte_carlo.py` |
 | **−14,9 Gt/a** | Netto bei **50 %-Umsetzungs-Stresstest** (Szenario S, Median) [−20,5…−9,8] | ✅ **CURRENT** (konservativ) | Bilanz-Studie v1.5 |
 | ~~−50,7 Gt/a~~ | Älterer „100 % von Ziel"-Snapshot | ❌ **DEPRECATED-SNAPSHOT** — abgelöst durch −58,6 | historische Stände in `canon/de/05_Band5_*`, `canon/docs/BAND5_INTEGRATION_H01.md` |
 | ~~−58,0 Gt/a~~ | Vor-Drift-Resolution-Wert | ❌ **SUPERSEDED** — abgelöst durch −58,6 | alte README/GitHub-Description-Stände |
-| ~~−32,3 Gt/a~~ | „Rebound-adjustiert“ (Pauschal-Rebound 50 % auf −64,5) | ❌ **DEPRECATED** 2026-10-14 — Rebound nur noch in Monte-Carlo (vor Rebound −58,6 · nach Rebound −43,2) | `canon/decisions/DEC_2026-10-14_rebound_single_source.md` |
+| ~~−32,3 Gt/a~~ | „Rebound-adjustiert“ (Pauschal-Rebound 50 % auf das nie bereinigte −64,5) | ❌ **DEPRECATED** 2026-10-14 — Rebound nur noch in Monte-Carlo (vor Rebound −58,6 · nach Rebound −43,2) | `canon/decisions/DEC_2026-10-14_rebound_single_source.md` |
 
 **Defensive Lesart aller Potenzial-Werte:** Es sind *gescreente technisch/systemische Potenziale unter definierten Annahmen* — keine Prognosen, keine sofort realisierbaren Jahres-Reduktionen. Sie enthalten Overlaps, Constraints und Unsicherheitsbänder. Die realistischen Netto-Größen sind die Monte-Carlo-Mediane (−43,2 Szenario B / −14,9 Stresstest S).
 
@@ -92,7 +93,7 @@ Das Repository führt **mehrere verschiedene Totale**, weil sie **verschiedene M
 | `studies/PV_DEMO_2026-05-30/` | ✅ CURRENT (Methodik-Demo) — PV-Claim-Detektion + Modul-Routing (Blüm, Weidel); Behauptungs-Ebene, ≠ Maßnahmen-OoS |
 | `canon/de/SECJ_SPEC_v1.0.md` | ❌ DEPRECATED (Header gesetzt) |
 | `manuscript/peer_reviews/GEM_SYSTEM_PROMPT_PS_Universal_v1.1.md` | ⚠️ NICHT-KANONISCHES PARADIGMA — W_min-Hart-Gate-Screening-Gem (2026-03-29); Repo-Kanon nutzt PS-U-2.0-**Summenformel**. Paradigma-Hinweis im Header gesetzt; eigenständiges Screening-/Debug-Werkzeug, **keine** kanonischen SEC-J-Scores. *(Drift vom `spec_consistency_audit.py` derzeit nicht erfasst — Paradigma-Check ist offener Linter-Punkt.)* |
-| `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 siehe §2 PENDING |
+| `canon/data/README_MULTI_IMPACT.md` | ⚠️ SNAPSHOT 2026-01-24 — Metrik-Beschreibung gültig, Werte/Pfade historisch; −64,5 ist DEPRECATED (siehe §2) |
 | `canon/de/05_Band5_*` (v3.1) | ✅ SEC-J-Gewichte 2026-05-29 auf PS-U 2.0 STANDARD reconciled (PR #18); enthält weiterhin −50,7-Snapshots als historische Werte (siehe §2); Anhang-A-Tabelle als Legacy-3-Achsen-SEC markiert |
 | `canon/docs/BAND5_INTEGRATION_H01.md` | ⚠️ Snapshot 2026-01-24 (−50,7 / −64,5 / 30 Apps), Banner gesetzt |
 | `manuscript/MANUSCRIPT_DRAFT_v0.1*` | ⚠️ Submitted-Snapshot — nur mit Corrigenda zitieren: Formel (`CORRIGENDUM_2026-04-27`+`2026-05-28`) + Zahlen/Struktur (`CORRIGENDUM_2026-05-30`) |
