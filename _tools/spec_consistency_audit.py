@@ -1,7 +1,7 @@
 """
 Provolution Repo Spec-Consistency Audit Tool
 ==============================================
-"Probatio Consistentia" v0.2 · 2026-10-14 (v0.1: 2026-05-28)
+"Probatio Consistentia" v0.3 · 2026-10-14 (v0.1: 2026-05-28)
 
 Scannt das Provolution clean-Public-Repo nach **stillen Inkonsistenzen** —
 Konflikten zwischen Dateien, die durch Diff-orientierte Reviews (PR-Audits,
@@ -31,7 +31,8 @@ Checks:
   9. SEC-J: STANDARD-Formel, J-Veto, J-Warnschwelle mit Auflage
  10. Quellen: Repo-Pfade existieren, Hashes im SHA-256-Format
  11. Overlap-Matrix (canon/data/overlap_matrix.yaml): Gruppen-Arithmetik B/C/D,
-     Gas-Schicht-Zuordnung, all-GHG-Punktwert = naive Summe + Σ Overlap
+     Gas-Schicht-Zuordnung, all-GHG-Punktwert = naive Summe + Σ Overlap,
+     all-GHG-Monte-Carlo-Werte = ghg_percentiles.csv
 
 Verwendung:
     python _tools/spec_consistency_audit.py          # alle Checks, Exit = Summe aller Befunde
@@ -576,9 +577,27 @@ def check_overlap_matrix(co2, imp, ovl) -> int:
             issues += _fail(f"ghg_total.total {gt['total']} ≠ naive {naive:.2f} + Overlap {tot:.2f}")
         if not _close(gt.get("total_evidence_only"), naive + belegt, 0.01):
             issues += _fail(f"ghg_total.total_evidence_only ≠ naive + belegter Overlap ({naive + belegt:.2f})")
+    # Teil 3: all-GHG-Monte-Carlo — YAML-Werte = Skript-Output (ghg_percentiles.csv)
+    mcn = gt.get("monte_carlo_net")
+    if mcn:
+        import csv
+        with open(REPO_ROOT / mcn["source"], encoding="utf-8") as f:
+            rows = {r["scenario"][0]: r for r in csv.DictReader(f)}
+        b = rows["B"]
+        pairs = [("A_median", rows["A"]["ghg_p50"]), ("B_median", b["ghg_p50"]),
+                 ("C_median", rows["C"]["ghg_p50"]), ("S_median", rows["S"]["ghg_p50"]),
+                 ("B_median_rebound_on_gases", b["ghg_p50_rebound_on_gases"])]
+        for k, v in pairs:
+            if not _close(mcn.get(k), float(v), 0.05):
+                issues += _fail(f"monte_carlo_net.{k} {mcn.get(k)} ≠ CSV {v}")
+        if not (_close(mcn["B_ci90"][0], float(b["ghg_p5"]), 0.05) and _close(mcn["B_ci90"][1], float(b["ghg_p95"]), 0.05)):
+            issues += _fail("monte_carlo_net.B_ci90 ≠ CSV p5/p95")
+        if imp["energy_system"]["rebound_effects"].get("ghg_total_rebound") != mcn["B_median"]:
+            issues += _fail("rebound_effects.ghg_total_rebound ≠ monte_carlo_net.B_median")
     if issues == 0:
         print(f"  ✅ Gruppen B/C/D arithmetisch konsistent; Gas-Overlap {tot:.1f} Gt "
-              f"(belegt {belegt:.1f}); all-GHG {naive + tot:.2f}")
+              f"(belegt {belegt:.1f}); all-GHG {naive + tot:.2f}"
+              + (f"; Monte-Carlo B {mcn['B_median']}" if mcn else ""))
     return issues
 
 
@@ -586,7 +605,7 @@ def main() -> int:
     print()
     print("═" * 78)
     print("  PROVOLUTION REPO SPEC-CONSISTENCY AUDIT")
-    print("  'Probatio Consistentia' v0.2 · 2026-10-14")
+    print("  'Probatio Consistentia' v0.3 · 2026-10-14")
     print("═" * 78)
     print(f"  Repo-Root: {REPO_ROOT}")
 

@@ -1,6 +1,6 @@
 # Impact Master Data - Single Source of Truth (Multi-Impact)
 # Provolution Framework - Multi-Dimensional Impact Assessment
-# Version: 2.8 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
+# Version: 2.9 (Stand 2026-10-14; v2.0 erweiterte CO2-only → Multi-Impact)
 # Datum: 2026-10-14 (Erstanlage 2026-01-24)
 # Alle Werte quantifiziert mit Quellen und Unsicherheitsbändern
 #
@@ -9,13 +9,16 @@
 # mit quantifizierten Werten.
 
 meta:
-  version: "2.8"
+  version: "2.9"
   last_updated: "2026-10-14"
   description: "Zentrale Impact-Datenbank aller Provolution-Hebel + Community-Integrations"
   source: "Band 5, Kapitel 5.5 + ProjectImpactSchema v0.1"
   schema_version: "0.1"
 
   changelog:
+    v2_9_2026-10-14:
+      - "all-GHG-Monte-Carlo (DEC_2026-10-14_ghg_monte_carlo): neues Skript studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py; CO2-Schicht identisch zur Headline (assert), Gas-Schicht aus Unsicherheitsbändern + overlap_matrix"
+      - "ghg_total.monte_carlo_net: B Median -51.6 [90 % KI -61.4 … -43.0], A -39.2, C -70.7, S -20.5; rebound_effects.ghg_total_rebound null → -51.6"
     v2_8_2026-10-14:
       - "all-GHG-Punktwert (DEC_2026-10-14_overlap_matrix_ghg_point): neue Datei canon/data/overlap_matrix.yaml ordnet jede CH4/N2O/F-Gas-Quelle der CO2-Schicht zu"
       - "ghg_total.total null → -68.85 (CURRENT, konservativ); total_evidence_only -70.45; Spanne -58.6 … -72.45 bleibt als Grenzfälle erhalten"
@@ -202,6 +205,14 @@ ghg_accounting:
     total: -68.85  # Gt CO₂eq/Jahr = -72.45 + 3.6 (B10-Deponie-CH4 2.0 belegt + D18-Ernährung-CH4 1.6 angenommen); konservativ
     total_status: "CURRENT"
     total_evidence_only: -70.45  # nur belegte Überlappung (2.0); Differenz 1.6 = Annahme D18 (Tag-Drift, Herleitung undokumentiert)
+    monte_carlo_net:  # v2.9: all-GHG nach Umsetzung, Verlusten und Rebound (CO2-Schicht) — studies/CO2_BILANZ_2026-05-28/ghg_monte_carlo.py, seed 42
+      source: "studies/CO2_BILANZ_2026-05-28/ghg_percentiles.csv"
+      A_median: -39.2
+      B_median: -51.6   # Erwartungswert; 90 % KI siehe B_ci90
+      B_ci90: [-61.4, -43.0]
+      C_median: -70.7
+      S_median: -20.5
+      B_median_rebound_on_gases: -50.4  # Sensitivität: Rebound auch auf Gas-Schicht
     overlap_source: "canon/data/overlap_matrix.yaml"
     range_lower_full_overlap: -58.6   # = co2: CH4/N2O vollständig schon in CO2eq-Werten enthalten (Grenzfall)
     range_upper_no_overlap: -72.45    # = naive Summe co2 + ch4 + n2o + f_gases (keine Überlappung)
@@ -470,7 +481,7 @@ energy_system:
       vor_rebound: -58.6   # = co2.gesamt.reduktion_hart (gescreentes Brutto-Potenzial, enthält KEINEN Rebound-Abzug)
       nach_rebound_median_B: -43.2  # Monte-Carlo Szenario B (inkl. Umsetzungsrate, Rebound, Engpässe, Klima); canon/STATUS.md §2
       nach_rebound_median_S: -14.9  # Stresstest
-    ghg_total_rebound: null  # all-GHG nach Rebound: Punktwert existiert jetzt (-68.85), aber Monte-Carlo läuft nur für die CO2-Schicht; eine all-GHG-Simulation (Verteilungen für CH4/N2O) steht aus — kein eigener Faktor
+    ghg_total_rebound: -51.6  # v2.9: all-GHG nach Rebound = Monte-Carlo Szenario B Median (ghg_monte_carlo.py, gleiche Logik wie CO2, kein eigener Faktor); Rebound nur auf CO2-Schicht, siehe ghg_total.monte_carlo_net
     # ENTFERNT v2.7: net_rebound_factor 0.50 + adjusted_impact -32.3 (Pauschalfaktor auf nie bereinigten Wert -64.5,
     # widersprach Monte-Carlo-Methodik). ENTFERNT: Hinweis "bereits in -58.6 teilweise integriert" (falsch: -58.6 ist Brutto).
 
@@ -772,7 +783,8 @@ validation:
   uncertainty_overall:
     method: "Monte Carlo Simulation (10,000 iterations)"
     ghg_total:  # v2.7: mean -64.5 / p05 -81.2 / p95 -48.6 entfernt — war pauschal ±25 % um einen nie bereinigten Wert, keine Simulation (DEC_2026-10-14_ghg_total_range)
-      point: -68.85  # quellenweise Zuordnung (overlap_matrix.yaml), keine Simulation
+      point: -68.85  # Brutto, quellenweise Zuordnung (overlap_matrix.yaml)
+      monte_carlo_B: [-61.4, -51.6, -43.0]  # p5, Median, p95 netto (ghg_monte_carlo.py)
       range: [-72.45, -58.6]  # Grenzfälle keine/volle Überlappung
       co2_only_monte_carlo: "studies/CO2_BILANZ_2026-05-28/monte_carlo.py"  # einzige echte Simulation (CO2-Schicht)
     
