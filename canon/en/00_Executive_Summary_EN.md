@@ -2,7 +2,7 @@
 **Systematic Climate Transformation Framework**
 **Version 4.2 | January 2026**
 
-> ⚠️ **Snapshot (Jan 2026).** Some figures in this summary predate the current canon (e.g. n=30 applications across domains A–H, −58.0/−50.7 Gt). **Authoritative status & values: [`canon/STATUS.md`](../STATUS.md)** — currently **49 levers across 11 domains (A–K), 38 band4-canonical**, CO₂-hard mitigation potential **−58.6 Gt/yr** (screened potential, not a forecast).
+> ⚠️ **Snapshot (Jan 2026).** Some figures in this summary predate the current canon (e.g. n=30 applications across domains A–H, −58.0/−50.7 Gt). **Authoritative status & values: [`canon/STATUS.md`](../STATUS.md)** — currently **49 levers across 11 domains (A–K), 38 band4-canonical**, CO₂-hard mitigation potential **−57.05 Gt/yr** screened ceiling (realistic net expectation **−42.2 Gt/yr**, Monte-Carlo scenario B median) — screened potential, not a forecast.
 
 ---
 
